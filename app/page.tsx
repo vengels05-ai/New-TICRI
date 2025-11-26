@@ -210,6 +210,43 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+
+      {/* Useful Links */}
+      <section className="py-12 bg-gray-50 border-t border-gray-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold mb-6 text-[#0F2C47] text-center">
+            Useful Links
+          </h2>
+          <div className="space-y-4">
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <a 
+                href="https://www.usafacts.org" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-lg font-semibold text-[#C41E3A] hover:text-[#9B1829] transition-colors"
+              >
+                USAFacts.org
+              </a>
+              <p className="text-gray-700 mt-2">
+                A nonprofit, neutral, government-sourced data reference.
+              </p>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+              <a 
+                href="https://www.535project.org" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-lg font-semibold text-[#C41E3A] hover:text-[#9B1829] transition-colors"
+              >
+                535 Project
+              </a>
+              <p className="text-gray-700 mt-2">
+                For more information about civic engagement efforts, see www.535project.org
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
