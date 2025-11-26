@@ -1,0 +1,1058 @@
+import Link from 'next/link';
+
+export default function Article1Page() {
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <Link 
+          href="/articles" 
+          className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-8"
+        >
+          ← Back to Articles
+        </Link>
+
+        {/* Hero Section */}
+        <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-8 rounded-lg shadow-lg mb-8">
+          <div className="flex items-start gap-4 mb-4">
+            <span className="text-5xl">🏛️</span>
+            <div>
+              <h1 className="text-4xl font-bold mb-2">Article I</h1>
+              <h2 className="text-2xl font-semibold">The Legislative Branch</h2>
+            </div>
+          </div>
+          <p className="text-lg leading-relaxed">
+            Article I creates the legislative branch of the federal government, establishing Congress with its two chambers 
+            (House and Senate), defining their enumerated powers, setting their procedures, and placing important limits 
+            on both federal and state authority.
+          </p>
+        </div>
+
+        {/* Introduction */}
+        <div className="bg-white rounded-lg shadow-md p-8 mb-8">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4">Overview</h3>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Article I establishes Congress as the <strong>first branch</strong> of government with enumerated powers and 
+            important constitutional limits, creating the foundation for all federal legislative authority while preserving 
+            the federal system and protecting individual rights. It is the longest and most detailed article, reflecting 
+            the Framers' view that Congress would be the primary policymaking body.
+          </p>
+          <p className="text-gray-700 leading-relaxed">
+            Each section below uses the <strong>TICRI Constitutional Breakdown</strong> methodology to provide:
+          </p>
+          <ul className="list-disc list-inside mt-3 space-y-1 text-gray-700 ml-4">
+            <li>📜 Exact Constitutional Text</li>
+            <li>💭 Plain English Translation</li>
+            <li>⚡ Government Powers Created</li>
+            <li>🚫 Government Restrictions</li>
+            <li>❌ What It Does NOT Say</li>
+            <li>⚖️ Supreme Court Interpretations</li>
+          </ul>
+        </div>
+
+        {/* Table of Contents */}
+        <div className="bg-blue-50 rounded-lg p-6 mb-8">
+          <h3 className="text-xl font-bold text-gray-900 mb-4">Jump to Section:</h3>
+          <div className="grid md:grid-cols-2 gap-3">
+            <a href="#section-1" className="text-blue-600 hover:text-blue-800 hover:underline">
+              § 1 — Legislative Powers Vested in Congress
+            </a>
+            <a href="#section-2" className="text-blue-600 hover:text-blue-800 hover:underline">
+              § 2 — The House of Representatives
+            </a>
+            <a href="#section-3" className="text-blue-600 hover:text-blue-800 hover:underline">
+              § 3 — The Senate
+            </a>
+            <a href="#section-4" className="text-blue-600 hover:text-blue-800 hover:underline">
+              § 4 — Congressional Elections
+            </a>
+            <a href="#section-5" className="text-blue-600 hover:text-blue-800 hover:underline">
+              § 5 — Congressional Rules & Procedures
+            </a>
+            <a href="#section-6" className="text-blue-600 hover:text-blue-800 hover:underline">
+              § 6 — Compensation & Privileges
+            </a>
+            <a href="#section-7" className="text-blue-600 hover:text-blue-800 hover:underline">
+              § 7 — How Bills Become Laws
+            </a>
+            <a href="#section-8" className="text-blue-600 hover:text-blue-800 hover:underline">
+              § 8 — Powers of Congress (Enumerated Powers)
+            </a>
+            <a href="#section-9" className="text-blue-600 hover:text-blue-800 hover:underline">
+              § 9 — Limits on Federal Government
+            </a>
+            <a href="#section-10" className="text-blue-600 hover:text-blue-800 hover:underline">
+              § 10 — Limits on State Governments
+            </a>
+          </div>
+        </div>
+
+        {/* SECTION 1 */}
+        <div id="section-1" className="bg-white rounded-lg shadow-md p-8 mb-6 scroll-mt-20">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-blue-600 pb-2">
+            Section 1 — Legislative Powers Vested in Congress
+          </h3>
+          
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">📜 Exact Text</h4>
+            <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
+              "All legislative Powers herein granted shall be vested in a Congress of the United States, which shall 
+              consist of a Senate and House of Representatives."
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">💭 Plain English</h4>
+            <p className="text-gray-700">
+              All federal lawmaking power that the Constitution gives is placed in Congress, and Congress is divided into 
+              two parts: the House of Representatives and the Senate.
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">⚡ Government Powers Created</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong>Creates Congress</strong> — Establishes the United States Congress as the national legislature</li>
+              <li><strong>Grants Lawmaking Power</strong> — Gives Congress all legislative authority the Constitution permits</li>
+              <li><strong>Establishes Bicameral Structure</strong> — Congress must always have two chambers: House and Senate</li>
+              <li><strong>Foundational Principle of Enumerated Powers</strong> — Legislative power exists only where the Constitution grants it</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">🚫 Government Restrictions</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong>Enumerated Powers Only</strong> — Congress has no power beyond what is specifically granted in Section 8</li>
+              <li><strong>No Implied General Authority</strong> — Cannot claim power because "it's reasonable" or "good policy"</li>
+              <li><strong>Cannot Change Bicameralism</strong> — Cannot abolish or merge chambers</li>
+              <li><strong>President and Courts Cannot Legislate</strong> — Executive and judicial branches cannot make laws</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">❌ What It Does NOT Say</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li>Does NOT give Congress unlimited power—only "herein granted" powers</li>
+              <li>Does NOT allow the President or courts to make laws</li>
+              <li>Does NOT specify how many members each chamber should have</li>
+              <li>Does NOT define what counts as "legislative" vs "executive" power in all cases</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">⚖️ Key Supreme Court Cases</h4>
+            <div className="space-y-4">
+              <div className="bg-blue-50 p-4 rounded">
+                <h5 className="font-bold text-gray-900">INS v. Chadha (1983)</h5>
+                <p className="text-gray-700 mt-2">
+                  Struck down the legislative veto, holding that when Congress takes legislative action, it must follow 
+                  bicameralism (both houses) and presentment (to the President). Reaffirmed that Article I creates strict 
+                  procedural requirements for lawmaking.
+                </p>
+              </div>
+              <div className="bg-blue-50 p-4 rounded">
+                <h5 className="font-bold text-gray-900">Clinton v. City of New York (1998)</h5>
+                <p className="text-gray-700 mt-2">
+                  Invalidated the line-item veto, ruling that the President cannot unilaterally amend or repeal parts of 
+                  statutes. Only Congress has legislative power, and the President's role is limited to signing or vetoing 
+                  entire bills.
+                </p>
+              </div>
+              <div className="bg-blue-50 p-4 rounded">
+                <h5 className="font-bold text-gray-900">Youngstown Sheet & Tube Co. v. Sawyer (1952)</h5>
+                <p className="text-gray-700 mt-2">
+                  The "Steel Seizure Case" ruled that the President cannot make law or seize private property without 
+                  congressional authorization. The legislative power belongs to Congress alone.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* SECTION 2 */}
+        <div id="section-2" className="bg-white rounded-lg shadow-md p-8 mb-6 scroll-mt-20">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-blue-600 pb-2">
+            Section 2 — The House of Representatives
+          </h3>
+          
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">� Exact Constitutional Text (Key Excerpts)</h4>
+            <div className="space-y-3">
+              <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
+                "The House of Representatives shall be composed of Members chosen every second Year by the People of the several States..."
+              </p>
+              <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
+                "No Person shall be a Representative who shall not have attained to the Age of twenty five Years, and been seven Years a Citizen of the United States..."
+              </p>
+              <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
+                "Representatives and direct Taxes shall be apportioned among the several States... according to their respective Numbers..."
+              </p>
+              <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
+                "The House of Representatives shall chuse their Speaker and other Officers; and shall have the sole Power of Impeachment."
+              </p>
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">�💭 Plain English Translation</h4>
+            <p className="text-gray-700">
+              The House of Representatives is one part of Congress. Its members are elected every two years by voters in 
+              each state. To serve, a person must be at least 25 years old, a U.S. citizen for at least seven years, and 
+              live in the state they represent. Seats are divided among states by population using a census every 10 years. 
+              The House chooses its Speaker and has the sole power to impeach federal officials.
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">⚡ Government Powers Created</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong>Creates the House of Representatives</strong> — First chamber of bicameral Congress</li>
+              <li><strong>Two-Year Terms</strong> — Ensures frequent accountability to voters</li>
+              <li><strong>Population-Based Representation</strong> — More populous states get more Representatives</li>
+              <li><strong>Census Authority</strong> — Requires counting population every 10 years for apportionment</li>
+              <li><strong>Sole Power of Impeachment</strong> — Only House can bring impeachment charges against federal officials</li>
+              <li><strong>Chooses Speaker</strong> — House selects its own presiding officer</li>
+              <li><strong>Qualifications Enforcement</strong> — Can judge elections and qualifications of members</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">📋 Qualifications for Representatives</h4>
+            <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
+              <li><strong>At least 25 years old</strong></li>
+              <li><strong>U.S. citizen for at least 7 years</strong></li>
+              <li><strong>Resident of the state they represent</strong></li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">🚫 Government Restrictions</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong>Cannot Skip Elections</strong> — Elections must happen every two years</li>
+              <li><strong>Cannot Add Qualifications</strong> — States cannot impose requirements beyond age, citizenship, residency</li>
+              <li><strong>Equal Population Districts</strong> — Must maintain "one person, one vote" within states</li>
+              <li><strong>Must Guarantee One Seat Per State</strong> — Even smallest states get at least one Representative</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">❌ What It Does NOT Say</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li>Does NOT specify total number of Representatives (currently 435 by law)</li>
+              <li>Does NOT require Representatives to live in their specific district (only the state)</li>
+              <li>Does NOT mandate term limits for House members</li>
+              <li>Does NOT allow House to convict in impeachment (Senate has sole power to try)</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">⚖️ Key Supreme Court Cases</h4>
+            <div className="space-y-4">
+              <div className="bg-blue-50 p-4 rounded">
+                <h5 className="font-bold text-gray-900">Powell v. McCormack (1969)</h5>
+                <p className="text-gray-700 mt-2">
+                  Ruled that Congress cannot exclude a duly elected member who meets the three constitutional qualifications 
+                  (age, citizenship, residency). Congress can expel members by 2/3 vote but cannot add extra qualifications.
+                </p>
+              </div>
+              <div className="bg-blue-50 p-4 rounded">
+                <h5 className="font-bold text-gray-900">Wesberry v. Sanders (1964)</h5>
+                <p className="text-gray-700 mt-2">
+                  Established the "one person, one vote" principle for House districts within each state. Congressional 
+                  districts must have substantially equal populations.
+                </p>
+              </div>
+              <div className="bg-blue-50 p-4 rounded">
+                <h5 className="font-bold text-gray-900">U.S. Term Limits, Inc. v. Thornton (1995)</h5>
+                <p className="text-gray-700 mt-2">
+                  States cannot impose term limits on their congressional delegations. The qualifications in Article I 
+                  (age, citizenship, residency) are exclusive and cannot be supplemented.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 mt-4">
+            <p className="text-sm text-gray-700">
+              <strong>Note:</strong> The original "three-fifths" apportionment language remains in the printed text but was 
+              eliminated by the 13th and 14th Amendments.
+            </p>
+          </div>
+        </div>
+
+        {/* SECTION 3 */}
+        <div id="section-3" className="bg-white rounded-lg shadow-md p-8 mb-6 scroll-mt-20">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-blue-600 pb-2">
+            Section 3 — The Senate
+          </h3>
+          
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">� Exact Constitutional Text (Key Excerpts)</h4>
+            <div className="space-y-3">
+              <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
+                "The Senate of the United States shall be composed of two Senators from each State... and each Senator shall have one Vote."
+              </p>
+              <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
+                "No Person shall be a Senator who shall not have attained to the Age of thirty Years, and been nine Years a Citizen of the United States..."
+              </p>
+              <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
+                "The Senate shall have the sole Power to try all Impeachments... And no Person shall be convicted without the Concurrence of two thirds of the Members present."
+              </p>
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">�💭 Plain English Translation</h4>
+            <p className="text-gray-700">
+              The Senate is made up of two Senators from each state, elected directly by the people (17th Amendment). 
+              Senators serve six-year terms, staggered so one-third are elected every two years. Senators must be at least 
+              30 years old, U.S. citizens for nine years, and live in their state. The Vice President presides over the 
+              Senate and votes only to break ties. The Senate has sole authority to conduct impeachment trials; conviction 
+              requires a two-thirds vote.
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">⚡ Government Powers Created</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong>Equal State Representation</strong> — Each state gets exactly two Senators regardless of population</li>
+              <li><strong>Six-Year Terms</strong> — Longer terms for stability and independence</li>
+              <li><strong>Staggered Elections</strong> — One-third elected every two years (continuity of membership)</li>
+              <li><strong>Sole Power to Try Impeachments</strong> — Only Senate can conduct impeachment trials</li>
+              <li><strong>2/3 Vote for Conviction</strong> — Supermajority required to remove officials</li>
+              <li><strong>Vice President as President of Senate</strong> — VP presides but only votes to break ties</li>
+              <li><strong>President Pro Tempore</strong> — Senate chooses presiding officer when VP is absent</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">📋 Qualifications for Senators</h4>
+            <ul className="list-disc list-inside space-y-1 text-gray-700 ml-4">
+              <li><strong>At least 30 years old</strong> (older than House requirement)</li>
+              <li><strong>U.S. citizen for at least 9 years</strong> (longer than House requirement)</li>
+              <li><strong>Resident of the state they represent</strong></li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">🚫 Government Restrictions</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong>Cannot Change Equal Representation</strong> — Article V prohibits amending equal state representation without state consent</li>
+              <li><strong>Conviction Requires 2/3 Supermajority</strong> — Simple majority insufficient for impeachment conviction</li>
+              <li><strong>Cannot Add Qualifications</strong> — States cannot impose extra requirements beyond constitutional ones</li>
+              <li><strong>Chief Justice Must Preside for Presidential Trials</strong> — VP cannot preside when President is tried</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">❌ What It Does NOT Say</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li>Does NOT allow Senate to alter the two-senator-per-state rule</li>
+              <li>Does NOT specify penalties for impeachment beyond removal and disqualification</li>
+              <li>Does NOT require unanimous consent for conviction</li>
+              <li>Does NOT mandate Senate term limits</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">⚖️ Key Supreme Court Cases</h4>
+            <div className="space-y-4">
+              <div className="bg-blue-50 p-4 rounded">
+                <h5 className="font-bold text-gray-900">Nixon v. United States (1993)</h5>
+                <p className="text-gray-700 mt-2">
+                  Impeachment proceedings are non-justiciable "political questions." Courts cannot review Senate impeachment 
+                  procedures or convictions. The Senate has "sole power" to try impeachments.
+                </p>
+              </div>
+              <div className="bg-blue-50 p-4 rounded">
+                <h5 className="font-bold text-gray-900">Powell v. McCormack (1969)</h5>
+                <p className="text-gray-700 mt-2">
+                  Applies to Senate as well as House: Congress cannot exclude members who meet constitutional qualifications. 
+                  The qualifications listed are exclusive.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 mt-4">
+            <p className="text-sm text-gray-700">
+              <strong>Note:</strong> The 17th Amendment (1913) changed Senate elections from state legislature selection 
+              to direct popular vote by the people of each state.
+            </p>
+          </div>
+        </div>
+
+        {/* SECTION 4 */}
+        <div id="section-4" className="bg-white rounded-lg shadow-md p-8 mb-6 scroll-mt-20">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-blue-600 pb-2">
+            Section 4 — Congressional Elections
+          </h3>
+          
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">� Exact Constitutional Text</h4>
+            <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
+              "The Times, Places and Manner of holding Elections for Senators and Representatives, shall be prescribed in 
+              each State by the Legislature thereof; but the Congress may at any time by Law make or alter such Regulations..."
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">�💭 Plain English Translation</h4>
+            <p className="text-gray-700">
+              States control the time, place, and manner of congressional elections, but Congress can override those rules 
+              by passing its own laws. Congress must meet at least once per year, beginning on January 3 (20th Amendment).
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">⚡ Government Powers Created</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong>State Control of Elections (Initially)</strong> — States set time, place, and manner of congressional elections</li>
+              <li><strong>Congressional Override Power</strong> — Congress can alter or replace state election rules by federal law</li>
+              <li><strong>Mandatory Annual Meeting</strong> — Congress must assemble at least once every year</li>
+              <li><strong>Federal Election Regulation</strong> — Basis for federal voting rights laws</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">🚫 Government Restrictions</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong>Cannot Skip Annual Meetings</strong> — Congress must convene at least once per year</li>
+              <li><strong>States Cannot Nullify Federal Election Laws</strong> — Federal laws supersede state election rules</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">❌ What It Does NOT Say</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li>Does NOT specify who can vote (states originally controlled voting qualifications)</li>
+              <li>Does NOT require direct election of Senators (changed by 17th Amendment)</li>
+              <li>Does NOT mandate uniform federal election day (but Congress later established one)</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">⚖️ Key Supreme Court Cases</h4>
+            <div className="space-y-4">
+              <div className="bg-blue-50 p-4 rounded">
+                <h5 className="font-bold text-gray-900">Arizona State Legislature v. Arizona Independent Redistricting Commission (2015)</h5>
+                <p className="text-gray-700 mt-2">
+                  "Legislature" in the Elections Clause can include ballot initiatives and state constitutional processes, 
+                  not just state legislatures. States can use independent commissions for redistricting.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 mt-4">
+            <p className="text-sm text-gray-700">
+              <strong>Note:</strong> The 20th Amendment (1933) changed the annual meeting date from the first Monday in 
+              December to January 3.
+            </p>
+          </div>
+        </div>
+
+        {/* SECTION 5 */}
+        <div id="section-5" className="bg-white rounded-lg shadow-md p-8 mb-6 scroll-mt-20">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-blue-600 pb-2">
+            Section 5 — Congressional Rules & Procedures
+          </h3>
+          
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">� Exact Constitutional Text (Excerpts)</h4>
+            <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
+              "Each House shall be the Judge of the Elections, Returns and Qualifications of its own Members, and a Majority 
+              of each shall constitute a Quorum to do Business... Each House may determine the Rules of its Proceedings, 
+              punish its Members for disorderly Behaviour, and, with the Concurrence of two thirds, expel a Member."
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">�💭 Plain English Translation</h4>
+            <p className="text-gray-700">
+              Each chamber judges its own election results and qualifications of members. A majority is required for business. 
+              Each chamber sets its own rules, can punish members, and can expel members with a 2/3 vote. Each chamber must 
+              keep a public journal of proceedings. Neither chamber can adjourn for more than three days without the other's consent.
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">⚡ Government Powers Created</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong>Judge Elections & Qualifications</strong> — Each chamber determines if members are properly elected and qualified</li>
+              <li><strong>Quorum Rules</strong> — Majority needed to conduct official business</li>
+              <li><strong>Rulemaking Authority</strong> — Each chamber creates its own procedural rules</li>
+              <li><strong>Disciplinary Power</strong> — Can punish members for misconduct</li>
+              <li><strong>Expulsion Power</strong> — Can expel members with 2/3 vote</li>
+              <li><strong>Journal Requirement</strong> — Must publish official proceedings</li>
+              <li><strong>Recorded Votes</strong> — Must record votes when 1/5 of members request</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">🚫 Government Restrictions</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong>Cannot Exclude Qualified Members</strong> — Must seat members who meet constitutional qualifications (Powell v. McCormack)</li>
+              <li><strong>Expulsion Requires 2/3 Vote</strong> — Cannot remove members with simple majority</li>
+              <li><strong>Must Keep Public Journal</strong> — Proceedings cannot be entirely secret</li>
+              <li><strong>Cannot Adjourn Alone</strong> — Neither chamber can adjourn for more than 3 days without other's consent</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">❌ What It Does NOT Say</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li>Does NOT define specific rules each chamber must follow (e.g., filibuster)</li>
+              <li>Does NOT require unanimous consent or supermajorities for regular business</li>
+              <li>Does NOT mandate televised proceedings</li>
+              <li>Does NOT specify penalties for member misconduct short of expulsion</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">⚖️ Key Supreme Court Cases</h4>
+            <div className="space-y-4">
+              <div className="bg-blue-50 p-4 rounded">
+                <h5 className="font-bold text-gray-900">Powell v. McCormack (1969)</h5>
+                <p className="text-gray-700 mt-2">
+                  Congress cannot refuse to seat an elected member who meets the three constitutional qualifications. 
+                  "Judging qualifications" means verifying constitutional requirements, not adding new ones.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* SECTION 6 */}
+        <div id="section-6" className="bg-white rounded-lg shadow-md p-8 mb-6 scroll-mt-20">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-blue-600 pb-2">
+            Section 6 — Compensation & Privileges
+          </h3>
+          
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">� Exact Constitutional Text (Key Excerpts)</h4>
+            <div className="space-y-3">
+              <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
+                "The Senators and Representatives shall receive a Compensation for their Services, to be ascertained by Law, 
+                and paid out of the Treasury of the United States."
+              </p>
+              <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
+                "They shall in all Cases, except Treason, Felony and Breach of the Peace, be privileged from Arrest during 
+                their Attendance at the Session of their respective Houses..."
+              </p>
+              <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
+                "...for any Speech or Debate in either House, they shall not be questioned in any other Place."
+              </p>
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">�💭 Plain English Translation</h4>
+            <p className="text-gray-700">
+              Members of Congress are paid by the federal treasury. They cannot be arrested while attending or traveling to/from 
+              Congress (except for treason, felony, or breach of peace). They cannot be questioned elsewhere for speeches or 
+              debates in Congress. No member can hold another federal office while serving in Congress, and no one can serve 
+              in Congress while holding a federal office created or whose pay was increased during their term.
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">⚡ Government Powers Created</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong>Federal Compensation</strong> — Congress paid from U.S. Treasury (not by states)</li>
+              <li><strong>Speech or Debate Clause</strong> — Members protected from liability for legislative speech</li>
+              <li><strong>Limited Arrest Immunity</strong> — Cannot be arrested while attending or traveling to/from Congress sessions</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">🚫 Government Restrictions</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong>Incompatibility Clause</strong> — Cannot hold other federal office while in Congress</li>
+              <li><strong>Ineligibility/Emoluments Clause</strong> — Cannot be appointed to federal office created or enriched during their term</li>
+              <li><strong>Arrest Immunity Limited</strong> — No protection for treason, felony, or breach of peace</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">❌ What It Does NOT Say</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li>Does NOT grant absolute immunity from prosecution</li>
+              <li>Does NOT prevent civil lawsuits for actions outside legislative duties</li>
+              <li>Does NOT specify congressional salary amount (set by law)</li>
+              <li>Does NOT protect members from prosecution for criminal activity</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">⚖️ Key Supreme Court Cases</h4>
+            <div className="space-y-4">
+              <div className="bg-blue-50 p-4 rounded">
+                <h5 className="font-bold text-gray-900">Gravel v. United States (1972)</h5>
+                <p className="text-gray-700 mt-2">
+                  Speech or Debate Clause protects legislators and their aides for legislative acts, but does not shield 
+                  them from criminal prosecution for non-legislative conduct.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 mt-4">
+            <p className="text-sm text-gray-700">
+              <strong>Note:</strong> The 27th Amendment (1992) prevents congressional pay raises from taking effect until 
+              after an intervening election.
+            </p>
+          </div>
+        </div>
+
+        {/* SECTION 7 */}
+        <div id="section-7" className="bg-white rounded-lg shadow-md p-8 mb-6 scroll-mt-20">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-blue-600 pb-2">
+            Section 7 — How Bills Become Laws
+          </h3>
+          
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">� Exact Constitutional Text (Key Excerpts)</h4>
+            <div className="space-y-3">
+              <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
+                "All Bills for raising Revenue shall originate in the House of Representatives; but the Senate may propose 
+                or concur with Amendments as on other Bills."
+              </p>
+              <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
+                "Every Bill which shall have passed the House of Representatives and the Senate, shall, before it become a 
+                Law, be presented to the President of the United States; If he approve he shall sign it, but if not he shall 
+                return it, with his Objections..."
+              </p>
+              <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
+                "If after such Reconsideration two thirds of that House shall agree to pass the Bill, it shall be sent... 
+                to the other House... and if approved by two thirds of that House, it shall become a Law."
+              </p>
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">�💭 Plain English Translation</h4>
+            <p className="text-gray-700">
+              All bills for raising revenue must start in the House, but the Senate can propose amendments. Every bill that 
+              passes both chambers goes to the President. The President can sign it (becomes law), veto it (sent back to 
+              Congress), or do nothing for 10 days (becomes law unless Congress adjourns). Congress can override a veto with 
+              a 2/3 vote in both chambers.
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">⚡ Legislative Process Powers</h4>
+            <ol className="list-decimal list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong>Revenue Bills Originate in House</strong> — Tax and spending bills must start in House</li>
+              <li><strong>Bicameral Passage Required</strong> — Both chambers must pass identical bill text</li>
+              <li><strong>Presentment to President</strong> — All bills go to President for signature</li>
+              <li><strong>Presidential Veto Power</strong> — President can reject bills and return with objections</li>
+              <li><strong>Congressional Override</strong> — 2/3 vote in each chamber overrides veto</li>
+              <li><strong>Pocket Veto</strong> — Bill dies if Congress adjourns within 10 days and President doesn't sign</li>
+              <li><strong>Default Passage</strong> — Bill becomes law if President takes no action for 10 days (while Congress in session)</li>
+            </ol>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">🚫 Government Restrictions</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong>Cannot Skip Bicameralism</strong> — Both chambers must pass identical text</li>
+              <li><strong>Cannot Skip Presentment</strong> — President must have opportunity to sign or veto</li>
+              <li><strong>President Cannot Line-Item Veto</strong> — Must veto entire bill (Clinton v. City of New York)</li>
+              <li><strong>Cannot Use Legislative Vetoes</strong> — INS v. Chadha invalidated one-house vetoes</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">❌ What It Does NOT Say</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li>Does NOT allow President to amend bills (only sign or veto)</li>
+              <li>Does NOT permit Senate to originate revenue bills</li>
+              <li>Does NOT define "revenue" precisely (courts have interpreted broadly)</li>
+              <li>Does NOT specify how Congress conducts internal legislative processes</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">⚖️ Key Supreme Court Cases</h4>
+            <div className="space-y-4">
+              <div className="bg-blue-50 p-4 rounded">
+                <h5 className="font-bold text-gray-900">INS v. Chadha (1983)</h5>
+                <p className="text-gray-700 mt-2">
+                  Legislative vetoes are unconstitutional. Congress must follow bicameralism (both houses) and presentment 
+                  (to President) when taking legislative action. One-house vetoes violate Article I procedures.
+                </p>
+              </div>
+              <div className="bg-blue-50 p-4 rounded">
+                <h5 className="font-bold text-gray-900">Clinton v. City of New York (1998)</h5>
+                <p className="text-gray-700 mt-2">
+                  Line-item veto is unconstitutional. President cannot cancel parts of bills after signing them into law. 
+                  The veto power is all-or-nothing for each bill.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mt-4">
+            <h5 className="font-semibold text-gray-900 mb-2">📊 How a Bill Becomes Law</h5>
+            <ol className="list-decimal list-inside space-y-1 text-sm text-gray-700 ml-4">
+              <li>Bill introduced in House or Senate (revenue bills must start in House)</li>
+              <li>Committee review and markup</li>
+              <li>Floor debate and vote in first chamber</li>
+              <li>If passed, sent to second chamber for same process</li>
+              <li>If both chambers pass identical text, sent to President</li>
+              <li>President signs (law), vetoes (returns to Congress), or waits 10 days</li>
+              <li>If vetoed, Congress can override with 2/3 vote in each chamber</li>
+            </ol>
+          </div>
+        </div>
+
+        {/* SECTION 8 */}
+        <div id="section-8" className="bg-white rounded-lg shadow-md p-8 mb-6 scroll-mt-20">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-blue-600 pb-2">
+            Section 8 — Powers of Congress (Enumerated Powers)
+          </h3>
+          
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">� Exact Constitutional Text (Key Clause)</h4>
+            <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
+              "The Congress shall have Power To lay and collect Taxes, Duties, Imposts and Excises, to pay the Debts and 
+              provide for the common Defence and general Welfare of the United States... To make all Laws which shall be 
+              necessary and proper for carrying into Execution the foregoing Powers..."
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">💭 Plain English Translation</h4>
+            <p className="text-gray-700 mb-4">
+              This section lists the specific powers granted to Congress. These are called <strong>"enumerated powers"</strong> 
+              because they are specifically listed. Congress has no general legislative authority — only the powers granted here. 
+              The final "Necessary and Proper Clause" allows Congress to make laws needed to carry out these enumerated powers.
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">⚡ Congressional Powers Include:</h4>
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="bg-gray-50 p-4 rounded">
+                <h5 className="font-semibold text-gray-900 mb-2">Fiscal Powers</h5>
+                <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm ml-2">
+                  <li>Tax and collect revenues</li>
+                  <li>Borrow money on U.S. credit</li>
+                  <li>Coin money and regulate its value</li>
+                  <li>Punish counterfeiting</li>
+                  <li>Establish uniform bankruptcy laws</li>
+                </ul>
+              </div>
+              <div className="bg-gray-50 p-4 rounded">
+                <h5 className="font-semibold text-gray-900 mb-2">Commerce Powers</h5>
+                <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm ml-2">
+                  <li>Regulate interstate commerce</li>
+                  <li>Regulate foreign commerce</li>
+                  <li>Regulate commerce with Indian tribes</li>
+                </ul>
+              </div>
+              <div className="bg-gray-50 p-4 rounded">
+                <h5 className="font-semibold text-gray-900 mb-2">Defense & Foreign Affairs</h5>
+                <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm ml-2">
+                  <li>Declare war</li>
+                  <li>Raise and support armies</li>
+                  <li>Provide and maintain a navy</li>
+                  <li>Make rules for armed forces</li>
+                  <li>Call forth militia</li>
+                  <li>Define/punish piracy and international law violations</li>
+                </ul>
+              </div>
+              <div className="bg-gray-50 p-4 rounded">
+                <h5 className="font-semibold text-gray-900 mb-2">Other Powers</h5>
+                <ul className="list-disc list-inside space-y-1 text-gray-700 text-sm ml-2">
+                  <li>Establish post offices and post roads</li>
+                  <li>Protect patents and copyrights</li>
+                  <li>Create federal courts below Supreme Court</li>
+                  <li>Govern District of Columbia</li>
+                  <li>Govern federal property</li>
+                  <li>Establish naturalization rules</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">🚫 Government Restrictions</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong>Limited to Enumerated Powers</strong> — Congress cannot claim authority beyond listed powers</li>
+              <li><strong>"Necessary and Proper" Is Not Unlimited</strong> — Must be tied to an enumerated power</li>
+              <li><strong>Commerce Power Has Limits</strong> — Cannot regulate purely local activity (Lopez, Morrison)</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">❌ What It Does NOT Say</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li>Does NOT grant general "police power" (that belongs to states)</li>
+              <li>Does NOT allow Congress to regulate anything it deems important</li>
+              <li>Does NOT create federal power over education, marriage, or local criminal law</li>
+              <li>Does NOT give unlimited power under "general welfare" (spending clause, not regulatory power)</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-blue-600 mb-2">⚖️ Key Supreme Court Cases</h4>
+            <div className="space-y-4">
+              <div className="bg-blue-50 p-4 rounded">
+                <h5 className="font-bold text-gray-900">McCulloch v. Maryland (1819)</h5>
+                <p className="text-gray-700 mt-2">
+                  Upheld implied powers under the Necessary and Proper Clause. Congress can charter a national bank as a 
+                  means of executing its fiscal powers. "Let the end be legitimate, let it be within the scope of the 
+                  Constitution, and all means which are appropriate... are constitutional."
+                </p>
+              </div>
+              <div className="bg-blue-50 p-4 rounded">
+                <h5 className="font-bold text-gray-900">United States v. Lopez (1995)</h5>
+                <p className="text-gray-700 mt-2">
+                  Struck down Gun-Free School Zones Act. The Commerce Clause does not grant Congress power to regulate 
+                  non-economic, purely local activity. Possession of a gun near a school is not "interstate commerce."
+                </p>
+              </div>
+              <div className="bg-blue-50 p-4 rounded">
+                <h5 className="font-bold text-gray-900">Gibbons v. Ogden (1824)</h5>
+                <p className="text-gray-700 mt-2">
+                  "Commerce" includes navigation and broadly covers commercial intercourse among states. Federal commerce 
+                  power is supreme and excludes state regulation of interstate commerce.
+                </p>
+              </div>
+              <div className="bg-blue-50 p-4 rounded">
+                <h5 className="font-bold text-gray-900">NFIB v. Sebelius (2012)</h5>
+                <p className="text-gray-700 mt-2">
+                  Commerce Clause does not permit Congress to mandate purchase of health insurance, but the individual 
+                  mandate is permissible as a tax under the Taxing Power.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-blue-50 border-l-4 border-blue-600 p-4 mt-4">
+            <h5 className="font-semibold text-gray-900 mb-2">Necessary and Proper Clause</h5>
+            <p className="text-sm text-gray-700">
+              The final clause grants Congress power to "make all Laws which shall be necessary and proper for carrying 
+              into Execution the foregoing Powers." This is not a grant of unlimited power, but allows Congress to use 
+              reasonable means to execute its enumerated powers.
+            </p>
+          </div>
+        </div>
+
+        {/* SECTION 9 */}
+        <div id="section-9" className="bg-white rounded-lg shadow-md p-8 mb-6 scroll-mt-20">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-red-600 pb-2">
+            Section 9 — Limits on Federal Government
+          </h3>
+          
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-red-600 mb-2">� Exact Constitutional Text (Key Excerpts)</h4>
+            <div className="space-y-3">
+              <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
+                "The Privilege of the Writ of Habeas Corpus shall not be suspended, unless when in Cases of Rebellion or 
+                Invasion the public Safety may require it."
+              </p>
+              <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
+                "No Bill of Attainder or ex post facto Law shall be passed."
+              </p>
+              <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
+                "No Money shall be drawn from the Treasury, but in Consequence of Appropriations made by Law; and a regular 
+                Statement and Account of the Receipts and Expenditures of all public Money shall be published from time to time."
+              </p>
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-red-600 mb-2">💭 Plain English Translation</h4>
+            <p className="text-gray-700">
+              This section lists things the federal government <strong>cannot do</strong>. These are explicit prohibitions 
+              on federal power that protect individual liberty and prevent tyranny.
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-red-600 mb-2">🚫 Federal Government Prohibited From:</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong>Suspending Habeas Corpus</strong> — Except in rebellion or invasion when public safety requires</li>
+              <li><strong>Bills of Attainder</strong> — Cannot declare specific person guilty without trial</li>
+              <li><strong>Ex Post Facto Laws</strong> — Cannot make past actions criminal retroactively</li>
+              <li><strong>Direct Taxes Without Apportionment</strong> — Must be proportional to census (modified by 16th Amendment)</li>
+              <li><strong>Export Taxes</strong> — Cannot tax goods exported from any state</li>
+              <li><strong>Preference to State Ports</strong> — Cannot favor one state's ports over another</li>
+              <li><strong>Spending Without Appropriation</strong> — No money from Treasury without law</li>
+              <li><strong>Secret Spending</strong> — Must publish regular financial statements</li>
+              <li><strong>Titles of Nobility</strong> — Cannot grant noble titles</li>
+              <li><strong>Foreign Emoluments</strong> — Federal officers cannot accept foreign gifts without consent</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-red-600 mb-2">⚡ Rights Protected</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong>Habeas Corpus</strong> — Right to challenge unlawful detention</li>
+              <li><strong>No Retroactive Criminal Laws</strong> — Protection from ex post facto punishment</li>
+              <li><strong>Trial Rights</strong> — Cannot be convicted by legislative act (no bills of attainder)</li>
+              <li><strong>Financial Transparency</strong> — Public has right to know how government spends money</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-red-600 mb-2">❌ What It Does NOT Say</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li>Does NOT prohibit all taxes (only certain types)</li>
+              <li>Does NOT prevent temporary suspension of habeas corpus in emergencies</li>
+              <li>Does NOT ban all retrospective laws (only criminal ex post facto laws)</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-red-600 mb-2">⚖️ Key Supreme Court Cases</h4>
+            <div className="space-y-4">
+              <div className="bg-red-50 p-4 rounded">
+                <h5 className="font-bold text-gray-900">Ex parte Milligan (1866)</h5>
+                <p className="text-gray-700 mt-2">
+                  Civilian courts cannot be replaced by military tribunals when civilian courts are functioning, even during 
+                  wartime. Habeas corpus protects against unlawful military detention of civilians.
+                </p>
+              </div>
+              <div className="bg-red-50 p-4 rounded">
+                <h5 className="font-bold text-gray-900">United States v. Lovett (1946)</h5>
+                <p className="text-gray-700 mt-2">
+                  Struck down law that barred specific named individuals from federal employment as a bill of attainder. 
+                  Congress cannot legislatively determine guilt and impose punishment.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-red-50 border-l-4 border-red-600 p-4 mt-4">
+            <p className="text-sm text-gray-700">
+              <strong>Purpose:</strong> These limits protect individual liberty and prevent federal tyranny. They establish 
+              fundamental rights like habeas corpus and prohibit arbitrary or retroactive punishment.
+            </p>
+          </div>
+        </div>
+
+        {/* SECTION 10 */}
+        <div id="section-10" className="bg-white rounded-lg shadow-md p-8 mb-6 scroll-mt-20">
+          <h3 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-red-600 pb-2">
+            Section 10 — Limits on State Governments
+          </h3>
+          
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-red-600 mb-2">� Exact Constitutional Text (Key Excerpts)</h4>
+            <div className="space-y-3">
+              <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
+                "No State shall enter into any Treaty, Alliance, or Confederation; grant Letters of Marque and Reprisal; 
+                coin Money; emit Bills of Credit; make any Thing but gold and silver Coin a Tender in Payment of Debts; 
+                pass any Bill of Attainder, ex post facto Law, or Law impairing the Obligation of Contracts..."
+              </p>
+              <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
+                "No State shall, without the Consent of the Congress, lay any Imposts or Duties on Imports or Exports... 
+                keep Troops, or Ships of War in time of Peace, enter into any Agreement or Compact with another State, 
+                or with a foreign Power, or engage in War, unless actually invaded..."
+              </p>
+            </div>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-red-600 mb-2">💭 Plain English Translation</h4>
+            <p className="text-gray-700">
+              This section lists things that <strong>states cannot do</strong>. It prevents states from acting like 
+              independent nations and ensures national unity under the Constitution.
+            </p>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-red-600 mb-2">🚫 States Absolutely Prohibited From:</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong>Foreign Relations</strong> — Cannot make treaties or alliances</li>
+              <li><strong>Letters of Marque</strong> — Cannot authorize private warfare at sea</li>
+              <li><strong>Coining Money</strong> — Cannot create their own currency</li>
+              <li><strong>Paper Money</strong> — Cannot emit bills of credit</li>
+              <li><strong>Legal Tender</strong> — Can only make gold/silver legal tender for debts</li>
+              <li><strong>Bills of Attainder</strong> — Cannot pass laws declaring guilt without trial</li>
+              <li><strong>Ex Post Facto Laws</strong> — Cannot make past actions criminal retroactively</li>
+              <li><strong>Contracts Clause</strong> — Cannot impair the obligation of contracts</li>
+              <li><strong>Titles of Nobility</strong> — Cannot grant noble titles</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-red-600 mb-2">🚫 States Prohibited Without Congressional Consent:</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong>Import/Export Duties</strong> — Cannot tax imports or exports (except inspection fees)</li>
+              <li><strong>Peacetime Military</strong> — Cannot keep troops or warships in peacetime</li>
+              <li><strong>Interstate Compacts</strong> — Cannot enter agreements with other states</li>
+              <li><strong>Foreign Agreements</strong> — Cannot make compacts with foreign powers</li>
+              <li><strong>Warfare</strong> — Cannot engage in war unless actually invaded or in imminent danger</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-red-600 mb-2">⚡ Protections Created</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li><strong>Single National Currency</strong> — Prevents competing state currencies</li>
+              <li><strong>One Foreign Policy</strong> — Only federal government conducts foreign relations</li>
+              <li><strong>Contract Rights</strong> — States cannot void or impair existing contracts</li>
+              <li><strong>No Retroactive Criminal Laws</strong> — Same protection as federal government</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-red-600 mb-2">❌ What It Does NOT Say</h4>
+            <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
+              <li>Does NOT prevent states from regulating local commerce</li>
+              <li>Does NOT ban all state cooperation (some compacts allowed with Congress approval)</li>
+              <li>Does NOT prevent states from having state defense forces (National Guard)</li>
+              <li>Does NOT ban all retrospective laws (only criminal ex post facto)</li>
+            </ul>
+          </div>
+
+          <div className="mb-6">
+            <h4 className="text-lg font-semibold text-red-600 mb-2">⚖️ Key Supreme Court Cases</h4>
+            <div className="space-y-4">
+              <div className="bg-red-50 p-4 rounded">
+                <h5 className="font-bold text-gray-900">Home Building & Loan Association v. Blaisdell (1934)</h5>
+                <p className="text-gray-700 mt-2">
+                  Contracts Clause does not absolutely prohibit states from modifying contracts during emergencies. States 
+                  can pass debtor-relief laws if reasonable and limited, even if they affect existing contracts.
+                </p>
+              </div>
+              <div className="bg-red-50 p-4 rounded">
+                <h5 className="font-bold text-gray-900">U.S. Steel Corp. v. Multistate Tax Commission (1978)</h5>
+                <p className="text-gray-700 mt-2">
+                  Not all interstate compacts require congressional approval—only those that enhance state power at the 
+                  expense of federal supremacy or that encroach on federal authority.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-red-50 border-l-4 border-red-600 p-4 mt-4">
+            <p className="text-sm text-gray-700">
+              <strong>Purpose:</strong> Section 10 prevents states from fragmenting national unity. It ensures one currency, 
+              one foreign policy, protection of contract rights, and prevents states from becoming competing nations.
+            </p>
+          </div>
+        </div>
+
+        {/* Summary */}
+        <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white rounded-lg p-8 mt-8">
+          <h3 className="text-2xl font-bold mb-4">Article I Summary</h3>
+          <p className="text-lg leading-relaxed">
+            Article I establishes Congress as the first branch of government with <strong>enumerated powers</strong> and 
+            important constitutional limits, creating the foundation for all federal legislative authority while preserving 
+            the federal system and protecting individual rights.
+          </p>
+          <p className="mt-4 leading-relaxed">
+            It creates a system of <strong>checks and balances</strong> through bicameralism, presidential veto power, 
+            and explicit limits on both federal and state authority, ensuring that power remains divided and accountable 
+            to the people.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}

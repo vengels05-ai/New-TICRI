@@ -1,0 +1,1618 @@
+{
+  "categories": [
+    {
+      "name": "Administrative Law",
+      "count": 1,
+      "acts": [
+        {
+          "slug": "administrative-procedure-act-1946",
+          "title": "Administrative Procedure Act (APA)",
+          "year": "1946",
+          "tags": [
+            "administrative law",
+            "federal agencies",
+            "regulation",
+            "judicial review",
+            "due process"
+          ],
+          "category": "Administrative Law"
+        }
+      ]
+    },
+    {
+      "name": "Antitrust & Competition",
+      "count": 3,
+      "acts": [
+        {
+          "slug": "sherman-antitrust-act-1890",
+          "title": "Sherman Antitrust Act",
+          "year": "1890",
+          "tags": [
+            "antitrust",
+            "competition",
+            "business",
+            "commerce",
+            "monopolies"
+          ],
+          "category": "Antitrust & Competition"
+        },
+        {
+          "slug": "clayton-antitrust-act-1914",
+          "title": "Clayton Antitrust Act",
+          "year": "1914",
+          "tags": [
+            "antitrust",
+            "competition",
+            "business",
+            "commerce",
+            "labor unions"
+          ],
+          "category": "Antitrust & Competition"
+        },
+        {
+          "slug": "federal-trade-commission-act-1914",
+          "title": "Federal Trade Commission Act (FTC Act)",
+          "year": "1914",
+          "tags": [
+            "antitrust",
+            "competition",
+            "consumer protection",
+            "business",
+            "commerce"
+          ],
+          "category": "Antitrust & Competition"
+        }
+      ]
+    },
+    {
+      "name": "Civil Rights & Equality",
+      "count": 12,
+      "acts": [
+        {
+          "slug": "equal-pay-act-1963",
+          "title": "Equal Pay Act of 1963",
+          "year": "1963",
+          "tags": [
+            "civil rights",
+            "employment",
+            "women",
+            "wages",
+            "equality"
+          ],
+          "category": "Civil Rights & Equality"
+        },
+        {
+          "slug": "civil-rights-act-1964",
+          "title": "Civil Rights Act of 1964",
+          "year": "1964",
+          "tags": [
+            "civil rights",
+            "equality",
+            "race",
+            "employment",
+            "education",
+            "public accommodations"
+          ],
+          "category": "Civil Rights & Equality"
+        },
+        {
+          "slug": "voting-rights-act-1965",
+          "title": "Voting Rights Act of 1965",
+          "year": "1965",
+          "tags": [
+            "civil rights",
+            "voting",
+            "elections",
+            "race",
+            "discrimination"
+          ],
+          "category": "Civil Rights & Equality"
+        },
+        {
+          "slug": "age-discrimination-in-employment-act-1967",
+          "title": "Age Discrimination in Employment Act (ADEA)",
+          "year": "1967",
+          "tags": [
+            "civil rights",
+            "employment",
+            "age discrimination",
+            "workers",
+            "equality"
+          ],
+          "category": "Civil Rights & Equality"
+        },
+        {
+          "slug": "fair-housing-act-1968",
+          "title": "Fair Housing Act",
+          "year": "1968",
+          "tags": [
+            "civil rights",
+            "housing",
+            "discrimination",
+            "race",
+            "fair housing"
+          ],
+          "category": "Civil Rights & Equality"
+        },
+        {
+          "slug": "rehabilitation-act-1973",
+          "title": "Rehabilitation Act of 1973",
+          "year": "1973",
+          "tags": [
+            "civil rights",
+            "disabilities",
+            "employment",
+            "federal programs",
+            "accessibility"
+          ],
+          "category": "Civil Rights & Equality"
+        },
+        {
+          "slug": "pregnancy-discrimination-act-1978",
+          "title": "Pregnancy Discrimination Act",
+          "year": "1978",
+          "tags": [
+            "civil rights",
+            "employment",
+            "pregnancy",
+            "women",
+            "equality"
+          ],
+          "category": "Civil Rights & Equality"
+        },
+        {
+          "slug": "americans-with-disabilities-act-1990",
+          "title": "Americans with Disabilities Act (ADA)",
+          "year": "1990",
+          "tags": [
+            "civil rights",
+            "disabilities",
+            "employment",
+            "public accommodations",
+            "accessibility"
+          ],
+          "category": "Civil Rights & Equality"
+        },
+        {
+          "slug": "civil-rights-act-1991",
+          "title": "Civil Rights Act of 1991",
+          "year": "1991",
+          "tags": [
+            "civil rights",
+            "employment",
+            "discrimination",
+            "equality",
+            "lawsuits"
+          ],
+          "category": "Civil Rights & Equality"
+        },
+        {
+          "slug": "violence-against-women-act-1994",
+          "title": "Violence Against Women Act (VAWA)",
+          "year": "1994",
+          "tags": [
+            "civil rights",
+            "public safety",
+            "domestic violence",
+            "sexual assault",
+            "stalking"
+          ],
+          "category": "Civil Rights & Equality"
+        },
+        {
+          "slug": "americans-with-disabilities-act-amendments-2008",
+          "title": "Americans with Disabilities Act Amendments Act (ADAAA)",
+          "year": "2008",
+          "tags": [
+            "civil rights",
+            "disabilities",
+            "employment",
+            "accessibility",
+            "mental health"
+          ],
+          "category": "Civil Rights & Equality"
+        },
+        {
+          "slug": "genetic-information-nondiscrimination-act-2008",
+          "title": "Genetic Information Nondiscrimination Act (GINA)",
+          "year": "2008",
+          "tags": [
+            "civil rights",
+            "employment",
+            "health insurance",
+            "genetics",
+            "privacy"
+          ],
+          "category": "Civil Rights & Equality"
+        }
+      ]
+    },
+    {
+      "name": "Consumer Protection",
+      "count": 6,
+      "acts": [
+        {
+          "slug": "federal-food-drug-and-cosmetic-act-1938",
+          "title": "Federal Food, Drug, and Cosmetic Act (FDCA)",
+          "year": "1938",
+          "tags": [
+            "consumer protection",
+            "public health",
+            "FDA",
+            "food safety",
+            "drug safety",
+            "cosmetics"
+          ],
+          "category": "Consumer Protection"
+        },
+        {
+          "slug": "truth-in-lending-act-1968",
+          "title": "Truth in Lending Act (TILA)",
+          "year": "1968",
+          "tags": [
+            "consumer protection",
+            "finance",
+            "credit",
+            "lending",
+            "disclosure"
+          ],
+          "category": "Consumer Protection"
+        },
+        {
+          "slug": "fair-credit-reporting-act-1970",
+          "title": "Fair Credit Reporting Act (FCRA)",
+          "year": "1970",
+          "tags": [
+            "consumer protection",
+            "credit",
+            "privacy",
+            "finance",
+            "reporting"
+          ],
+          "category": "Consumer Protection"
+        },
+        {
+          "slug": "consumer-product-safety-act-1972",
+          "title": "Consumer Product Safety Act (CPSA)",
+          "year": "1972",
+          "tags": [
+            "consumer protection",
+            "safety",
+            "products",
+            "manufacturing",
+            "regulation"
+          ],
+          "category": "Consumer Protection"
+        },
+        {
+          "slug": "fair-debt-collection-practices-act-1977",
+          "title": "Fair Debt Collection Practices Act (FDCPA)",
+          "year": "1977",
+          "tags": [
+            "consumer protection",
+            "debt collection",
+            "finance",
+            "creditors",
+            "privacy"
+          ],
+          "category": "Consumer Protection"
+        },
+        {
+          "slug": "electronic-fund-transfer-act-1978",
+          "title": "Electronic Fund Transfer Act (EFTA)",
+          "year": "1978",
+          "tags": [
+            "consumer protection",
+            "finance",
+            "banking",
+            "electronic payments",
+            "privacy"
+          ],
+          "category": "Consumer Protection"
+        }
+      ]
+    },
+    {
+      "name": "Criminal Justice",
+      "count": 3,
+      "acts": [
+        {
+          "slug": "controlled-substances-act-1970",
+          "title": "Controlled Substances Act (CSA)",
+          "year": "1970",
+          "tags": [
+            "criminal law",
+            "public health",
+            "drugs",
+            "DEA",
+            "federal enforcement"
+          ],
+          "category": "Criminal Justice"
+        },
+        {
+          "slug": "civil-asset-forfeiture-reform-act-2000",
+          "title": "Civil Asset Forfeiture Reform Act (CAFRA)",
+          "year": "2000",
+          "tags": [
+            "criminal justice",
+            "property rights",
+            "law enforcement",
+            "civil liberties",
+            "forfeiture"
+          ],
+          "category": "Criminal Justice"
+        },
+        {
+          "slug": "first-step-act-2018",
+          "title": "First Step Act",
+          "year": "2018",
+          "tags": [
+            "criminal justice",
+            "sentencing reform",
+            "prison reform",
+            "rehabilitation",
+            "bipartisan"
+          ],
+          "category": "Criminal Justice"
+        }
+      ]
+    },
+    {
+      "name": "Education",
+      "count": 6,
+      "acts": [
+        {
+          "slug": "elementary-and-secondary-education-act-1965",
+          "title": "Elementary and Secondary Education Act (ESEA)",
+          "year": "1965",
+          "tags": [
+            "education",
+            "schools",
+            "federal funding",
+            "civil rights",
+            "students"
+          ],
+          "category": "Education"
+        },
+        {
+          "slug": "head-start-act-1965",
+          "title": "Head Start Act",
+          "year": "1965",
+          "tags": [
+            "education",
+            "children",
+            "poverty",
+            "early childhood",
+            "families"
+          ],
+          "category": "Education"
+        },
+        {
+          "slug": "higher-education-act-1965",
+          "title": "Higher Education Act (HEA)",
+          "year": "1965",
+          "tags": [
+            "education",
+            "college",
+            "student loans",
+            "pell grants",
+            "universities"
+          ],
+          "category": "Education"
+        },
+        {
+          "slug": "family-educational-rights-and-privacy-act-1974",
+          "title": "Family Educational Rights and Privacy Act (FERPA)",
+          "year": "1974",
+          "tags": [
+            "education",
+            "privacy",
+            "students",
+            "parents",
+            "schools"
+          ],
+          "category": "Education"
+        },
+        {
+          "slug": "individuals-with-disabilities-education-act-1990",
+          "title": "Individuals with Disabilities Education Act (IDEA)",
+          "year": "1990",
+          "tags": [
+            "education",
+            "civil rights",
+            "special education",
+            "children",
+            "states"
+          ],
+          "category": "Education"
+        },
+        {
+          "slug": "every-student-succeeds-act-2015",
+          "title": "Every Student Succeeds Act (ESSA)",
+          "year": "2015",
+          "tags": [
+            "education",
+            "students",
+            "schools",
+            "states",
+            "accountability"
+          ],
+          "category": "Education"
+        }
+      ]
+    },
+    {
+      "name": "Emergency Powers",
+      "count": 3,
+      "acts": [
+        {
+          "slug": "defense-production-act-1950",
+          "title": "Defense Production Act (DPA)",
+          "year": "1950",
+          "tags": [
+            "emergency powers",
+            "industrial base",
+            "national defense",
+            "supply chain"
+          ],
+          "category": "Emergency Powers"
+        },
+        {
+          "slug": "national-emergencies-act-1976",
+          "title": "National Emergencies Act (NEA)",
+          "year": "1976",
+          "tags": [
+            "emergency powers",
+            "president",
+            "congress",
+            "separation of powers",
+            "national security"
+          ],
+          "category": "Emergency Powers"
+        },
+        {
+          "slug": "international-emergency-economic-powers-act-1977",
+          "title": "International Emergency Economic Powers Act (IEEPA)",
+          "year": "1977",
+          "tags": [
+            "emergency powers",
+            "sanctions",
+            "national security",
+            "foreign affairs"
+          ],
+          "category": "Emergency Powers"
+        }
+      ]
+    },
+    {
+      "name": "Energy Policy",
+      "count": 4,
+      "acts": [
+        {
+          "slug": "energy-policy-act-1992",
+          "title": "Energy Policy Act of 1992",
+          "year": "1992",
+          "tags": [
+            "energy",
+            "environment",
+            "alternative fuels",
+            "efficiency",
+            "nuclear"
+          ],
+          "category": "Energy Policy"
+        },
+        {
+          "slug": "energy-policy-act-2005",
+          "title": "Energy Policy Act of 2005",
+          "year": "2005",
+          "tags": [
+            "energy",
+            "environment",
+            "renewables",
+            "oil and gas",
+            "nuclear",
+            "efficiency"
+          ],
+          "category": "Energy Policy"
+        },
+        {
+          "slug": "energy-independence-and-security-act-2007",
+          "title": "Energy Independence and Security Act (EISA)",
+          "year": "2007",
+          "tags": [
+            "energy",
+            "environment",
+            "renewables",
+            "fuel economy",
+            "efficiency"
+          ],
+          "category": "Energy Policy"
+        },
+        {
+          "slug": "infrastructure-investment-and-jobs-act-2021",
+          "title": "Infrastructure Investment and Jobs Act (IIJA)",
+          "year": "2021",
+          "tags": [
+            "infrastructure",
+            "transportation",
+            "energy",
+            "broadband",
+            "public works"
+          ],
+          "category": "Energy Policy"
+        }
+      ]
+    },
+    {
+      "name": "Environmental Law",
+      "count": 7,
+      "acts": [
+        {
+          "slug": "national-environmental-policy-act-1969",
+          "title": "National Environmental Policy Act (NEPA)",
+          "year": "1969",
+          "tags": [
+            "environment",
+            "federal agencies",
+            "impact statements",
+            "states",
+            "regulation"
+          ],
+          "category": "Environmental Law"
+        },
+        {
+          "slug": "clean-air-act-1970",
+          "title": "Clean Air Act (CAA)",
+          "year": "1970",
+          "tags": [
+            "environment",
+            "epa",
+            "air quality",
+            "states",
+            "federalism"
+          ],
+          "category": "Environmental Law"
+        },
+        {
+          "slug": "clean-water-act-1972",
+          "title": "Clean Water Act (CWA)",
+          "year": "1972",
+          "tags": [
+            "environment",
+            "epa",
+            "water quality",
+            "states",
+            "federalism"
+          ],
+          "category": "Environmental Law"
+        },
+        {
+          "slug": "endangered-species-act-1973",
+          "title": "Endangered Species Act (ESA)",
+          "year": "1973",
+          "tags": [
+            "environment",
+            "wildlife",
+            "conservation",
+            "federal agencies",
+            "states"
+          ],
+          "category": "Environmental Law"
+        },
+        {
+          "slug": "safe-drinking-water-act-1974",
+          "title": "Safe Drinking Water Act (SDWA)",
+          "year": "1974",
+          "tags": [
+            "environment",
+            "public health",
+            "epa",
+            "water safety",
+            "regulation"
+          ],
+          "category": "Environmental Law"
+        },
+        {
+          "slug": "resource-conservation-and-recovery-act-1976",
+          "title": "Resource Conservation and Recovery Act (RCRA)",
+          "year": "1976",
+          "tags": [
+            "environment",
+            "waste management",
+            "hazardous waste",
+            "epa",
+            "public health"
+          ],
+          "category": "Environmental Law"
+        },
+        {
+          "slug": "comprehensive-environmental-response-compensation-and-liability-act-1980",
+          "title": "Comprehensive Environmental Response, Compensation, and Liability Act (CERCLA / Superfund)",
+          "year": "1980",
+          "tags": [
+            "environment",
+            "hazardous waste",
+            "superfund",
+            "epa",
+            "pollution cleanup"
+          ],
+          "category": "Environmental Law"
+        }
+      ]
+    },
+    {
+      "name": "Finance & Banking",
+      "count": 16,
+      "acts": [
+        {
+          "slug": "federal-reserve-act-1913",
+          "title": "Federal Reserve Act",
+          "year": "1913",
+          "tags": [
+            "finance",
+            "banks",
+            "federal reserve",
+            "monetary policy",
+            "currency"
+          ],
+          "category": "Finance & Banking"
+        },
+        {
+          "slug": "emergency-banking-act-1933",
+          "title": "Emergency Banking Act",
+          "year": "1933",
+          "tags": [
+            "banking",
+            "finance",
+            "gold standard",
+            "federal reserve",
+            "great depression"
+          ],
+          "category": "Finance & Banking"
+        },
+        {
+          "slug": "glass-steagall-act-1933",
+          "title": "Glass–Steagall Act (Banking Act of 1933)",
+          "year": "1933",
+          "tags": [
+            "banking",
+            "finance",
+            "federal reserve",
+            "great depression",
+            "fdic",
+            "separation of powers"
+          ],
+          "category": "Finance & Banking"
+        },
+        {
+          "slug": "gold-reserve-act-1934",
+          "title": "Gold Reserve Act",
+          "year": "1934",
+          "tags": [
+            "gold standard",
+            "finance",
+            "federal reserve",
+            "treasury",
+            "great depression"
+          ],
+          "category": "Finance & Banking"
+        },
+        {
+          "slug": "bretton-woods-agreements-act-1945",
+          "title": "Bretton Woods Agreements Act",
+          "year": "1945",
+          "tags": [
+            "finance",
+            "international",
+            "IMF",
+            "World Bank",
+            "gold standard",
+            "postwar economy"
+          ],
+          "category": "Finance & Banking"
+        },
+        {
+          "slug": "imf-second-amendment-act-1976",
+          "title": "IMF Second Amendment Implementation Act (End of Gold Standard)",
+          "year": "1976",
+          "tags": [
+            "finance",
+            "gold standard",
+            "IMF",
+            "international",
+            "monetary policy",
+            "federal reserve"
+          ],
+          "category": "Finance & Banking"
+        },
+        {
+          "slug": "federal-reserve-reform-act-1977",
+          "title": "Federal Reserve Reform Act",
+          "year": "1977",
+          "tags": [
+            "federal reserve",
+            "monetary policy",
+            "finance",
+            "economy",
+            "inflation"
+          ],
+          "category": "Finance & Banking"
+        },
+        {
+          "slug": "bankruptcy-reform-act-1978",
+          "title": "Bankruptcy Reform Act of 1978",
+          "year": "1978",
+          "tags": [
+            "bankruptcy",
+            "finance",
+            "business",
+            "consumer protection",
+            "courts"
+          ],
+          "category": "Finance & Banking"
+        },
+        {
+          "slug": "didmca-1980",
+          "title": "Depository Institutions Deregulation and Monetary Control Act (DIDMCA)",
+          "year": "1980",
+          "tags": [
+            "banking",
+            "finance",
+            "federal reserve",
+            "interest rates",
+            "deregulation",
+            "monetary policy"
+          ],
+          "category": "Finance & Banking"
+        },
+        {
+          "slug": "garn-st-germain-act-1982",
+          "title": "Garn–St Germain Depository Institutions Act",
+          "year": "1982",
+          "tags": [
+            "banking",
+            "finance",
+            "deregulation",
+            "savings and loan",
+            "housing",
+            "mortgages"
+          ],
+          "category": "Finance & Banking"
+        },
+        {
+          "slug": "firrea-1989",
+          "title": "Financial Institutions Reform, Recovery, and Enforcement Act (FIRREA)",
+          "year": "1989",
+          "tags": [
+            "banking",
+            "finance",
+            "savings and loan",
+            "fdic",
+            "regulation",
+            "housing"
+          ],
+          "category": "Finance & Banking"
+        },
+        {
+          "slug": "fdicia-1991",
+          "title": "Federal Deposit Insurance Corporation Improvement Act (FDICIA)",
+          "year": "1991",
+          "tags": [
+            "banking",
+            "finance",
+            "fdic",
+            "regulation",
+            "capital requirements",
+            "bank failures"
+          ],
+          "category": "Finance & Banking"
+        },
+        {
+          "slug": "gramm-leach-bliley-act-1999",
+          "title": "Gramm–Leach–Bliley Act (GLBA)",
+          "year": "1999",
+          "tags": [
+            "finance",
+            "banking",
+            "privacy",
+            "consumer protection",
+            "insurance"
+          ],
+          "category": "Finance & Banking"
+        },
+        {
+          "slug": "emergency-economic-stabilization-act-2008",
+          "title": "Emergency Economic Stabilization Act (EESA, TARP)",
+          "year": "2008",
+          "tags": [
+            "finance",
+            "banking",
+            "bailout",
+            "2008 crisis",
+            "treasury",
+            "federal reserve"
+          ],
+          "category": "Finance & Banking"
+        },
+        {
+          "slug": "dodd-frank-act-2010",
+          "title": "Dodd–Frank Wall Street Reform and Consumer Protection Act",
+          "year": "2010",
+          "tags": [
+            "finance",
+            "banks",
+            "securities",
+            "consumers",
+            "regulation"
+          ],
+          "category": "Finance & Banking"
+        },
+        {
+          "slug": "economic-growth-regulatory-relief-act-2018",
+          "title": "Economic Growth, Regulatory Relief, and Consumer Protection Act",
+          "year": "2018",
+          "tags": [
+            "finance",
+            "banking",
+            "regulation",
+            "dodd-frank",
+            "consumer protection",
+            "2018 rollback"
+          ],
+          "category": "Finance & Banking"
+        }
+      ]
+    },
+    {
+      "name": "Foreign Policy",
+      "count": 1,
+      "acts": [
+        {
+          "slug": "foreign-assistance-act-1961",
+          "title": "Foreign Assistance Act (FAA)",
+          "year": "1961",
+          "tags": [
+            "foreign policy",
+            "foreign aid",
+            "development",
+            "military assistance",
+            "diplomacy"
+          ],
+          "category": "Foreign Policy"
+        }
+      ]
+    },
+    {
+      "name": "Government Transparency",
+      "count": 1,
+      "acts": [
+        {
+          "slug": "freedom-of-information-act-1966",
+          "title": "Freedom of Information Act (FOIA)",
+          "year": "1966",
+          "tags": [
+            "transparency",
+            "open government",
+            "civil rights",
+            "citizens"
+          ],
+          "category": "Government Transparency"
+        }
+      ]
+    },
+    {
+      "name": "Healthcare & Social Policy",
+      "count": 7,
+      "acts": [
+        {
+          "slug": "medicare-medicaid-act-1965",
+          "title": "Medicare & Medicaid Act",
+          "year": "1965",
+          "tags": [
+            "healthcare",
+            "insurance",
+            "medicare",
+            "medicaid",
+            "elderly",
+            "low income"
+          ],
+          "category": "Healthcare & Social Policy"
+        },
+        {
+          "slug": "emergency-medical-treatment-and-labor-act-1986",
+          "title": "Emergency Medical Treatment and Labor Act (EMTALA)",
+          "year": "1986",
+          "tags": [
+            "healthcare",
+            "emergency care",
+            "hospitals",
+            "patients",
+            "civil rights"
+          ],
+          "category": "Healthcare & Social Policy"
+        },
+        {
+          "slug": "health-insurance-portability-and-accountability-act-1996",
+          "title": "Health Insurance Portability and Accountability Act (HIPAA)",
+          "year": "1996",
+          "tags": [
+            "healthcare",
+            "privacy",
+            "insurance",
+            "patients",
+            "medical records"
+          ],
+          "category": "Healthcare & Social Policy"
+        },
+        {
+          "slug": "childrens-health-insurance-program-1997",
+          "title": "Children’s Health Insurance Program (CHIP)",
+          "year": "1997",
+          "tags": [
+            "healthcare",
+            "insurance",
+            "children",
+            "medicaid",
+            "low income"
+          ],
+          "category": "Healthcare & Social Policy"
+        },
+        {
+          "slug": "mental-health-parity-and-addiction-equity-act-2008",
+          "title": "Mental Health Parity and Addiction Equity Act (MHPAEA)",
+          "year": "2008",
+          "tags": [
+            "mental health",
+            "addiction",
+            "healthcare",
+            "insurance",
+            "parity"
+          ],
+          "category": "Healthcare & Social Policy"
+        },
+        {
+          "slug": "affordable-care-act-2010",
+          "title": "Patient Protection and Affordable Care Act (ACA)",
+          "year": "2010",
+          "tags": [
+            "healthcare",
+            "insurance",
+            "civil rights",
+            "states",
+            "businesses"
+          ],
+          "category": "Healthcare & Social Policy"
+        },
+        {
+          "slug": "inflation-reduction-act-2022",
+          "title": "Inflation Reduction Act (IRA)",
+          "year": "2022",
+          "tags": [
+            "economy",
+            "climate",
+            "healthcare",
+            "taxes",
+            "energy"
+          ],
+          "category": "Healthcare & Social Policy"
+        }
+      ]
+    },
+    {
+      "name": "Immigration",
+      "count": 3,
+      "acts": [
+        {
+          "slug": "immigration-and-nationality-act-1952",
+          "title": "Immigration and Nationality Act (INA)",
+          "year": "1952",
+          "tags": [
+            "immigration",
+            "citizenship",
+            "naturalization",
+            "borders",
+            "asylum"
+          ],
+          "category": "Immigration"
+        },
+        {
+          "slug": "immigration-reform-and-control-act-1986",
+          "title": "Immigration Reform and Control Act (IRCA)",
+          "year": "1986",
+          "tags": [
+            "immigration",
+            "labor",
+            "border security",
+            "legalization",
+            "employer sanctions"
+          ],
+          "category": "Immigration"
+        },
+        {
+          "slug": "illegal-immigration-reform-immigrant-responsibility-act-1996",
+          "title": "Illegal Immigration Reform and Immigrant Responsibility Act (IIRIRA)",
+          "year": "1996",
+          "tags": [
+            "immigration",
+            "border security",
+            "deportation",
+            "asylum",
+            "enforcement"
+          ],
+          "category": "Immigration"
+        }
+      ]
+    },
+    {
+      "name": "International Trade",
+      "count": 1,
+      "acts": [
+        {
+          "slug": "trade-act-1974",
+          "title": "Trade Act of 1974",
+          "year": "1974",
+          "tags": [
+            "trade",
+            "economy",
+            "international commerce",
+            "tariffs",
+            "executive power"
+          ],
+          "category": "International Trade"
+        }
+      ]
+    },
+    {
+      "name": "Labor & Employment",
+      "count": 7,
+      "acts": [
+        {
+          "slug": "national-labor-relations-act-1935",
+          "title": "National Labor Relations Act (NLRA)",
+          "year": "1935",
+          "tags": [
+            "employment",
+            "labor",
+            "unions",
+            "collective bargaining",
+            "workers"
+          ],
+          "category": "Labor & Employment"
+        },
+        {
+          "slug": "fair-labor-standards-act-1938",
+          "title": "Fair Labor Standards Act (FLSA)",
+          "year": "1938",
+          "tags": [
+            "employment",
+            "wages",
+            "overtime",
+            "child labor",
+            "workers"
+          ],
+          "category": "Labor & Employment"
+        },
+        {
+          "slug": "employment-act-1946",
+          "title": "Employment Act",
+          "year": "1946",
+          "tags": [
+            "economy",
+            "employment",
+            "federal reserve",
+            "postwar economy",
+            "policy"
+          ],
+          "category": "Labor & Employment"
+        },
+        {
+          "slug": "occupational-safety-and-health-act-1970",
+          "title": "Occupational Safety and Health Act (OSH Act)",
+          "year": "1970",
+          "tags": [
+            "employment",
+            "workplace safety",
+            "health",
+            "labor",
+            "regulation"
+          ],
+          "category": "Labor & Employment"
+        },
+        {
+          "slug": "humphrey-hawkins-act-1978",
+          "title": "Full Employment and Balanced Growth Act (Humphrey–Hawkins Act)",
+          "year": "1978",
+          "tags": [
+            "economy",
+            "employment",
+            "inflation",
+            "federal reserve",
+            "policy"
+          ],
+          "category": "Labor & Employment"
+        },
+        {
+          "slug": "drug-free-workplace-act-1988",
+          "title": "Drug-Free Workplace Act",
+          "year": "1988",
+          "tags": [
+            "employment",
+            "drugs",
+            "federal contractors",
+            "workplace",
+            "compliance"
+          ],
+          "category": "Labor & Employment"
+        },
+        {
+          "slug": "family-and-medical-leave-act-1993",
+          "title": "Family and Medical Leave Act (FMLA)",
+          "year": "1993",
+          "tags": [
+            "employment",
+            "family leave",
+            "health",
+            "civil rights",
+            "workers"
+          ],
+          "category": "Labor & Employment"
+        }
+      ]
+    },
+    {
+      "name": "Miscellaneous",
+      "count": 3,
+      "acts": [
+        {
+          "slug": "child-abuse-prevention-and-treatment-act-1974",
+          "title": "Child Abuse Prevention and Treatment Act (CAPTA)",
+          "year": "1974",
+          "tags": [
+            "children",
+            "families",
+            "child protection",
+            "mandatory reporting",
+            "welfare"
+          ],
+          "category": "Miscellaneous"
+        },
+        {
+          "slug": "bipartisan-safer-communities-act-2022",
+          "title": "Bipartisan Safer Communities Act",
+          "year": "2022",
+          "tags": [
+            "gun control",
+            "public safety",
+            "mental health",
+            "school safety",
+            "firearms"
+          ],
+          "category": "Miscellaneous"
+        },
+        {
+          "slug": "index",
+          "title": "Acts of Congress",
+          "year": "2025",
+          "tags": [
+            "acts",
+            "law",
+            "congress",
+            "overview"
+          ],
+          "category": "Miscellaneous"
+        }
+      ]
+    },
+    {
+      "name": "National Security & Defense",
+      "count": 9,
+      "acts": [
+        {
+          "slug": "insurrection-act-1807",
+          "title": "Insurrection Act",
+          "year": "1807",
+          "tags": [
+            "military",
+            "domestic deployment",
+            "federalism",
+            "civil-military relations"
+          ],
+          "category": "National Security & Defense"
+        },
+        {
+          "slug": "posse-comitatus-act-1878",
+          "title": "Posse Comitatus Act",
+          "year": "1878",
+          "tags": [
+            "military",
+            "domestic law enforcement",
+            "civil-military relations",
+            "federalism"
+          ],
+          "category": "National Security & Defense"
+        },
+        {
+          "slug": "war-powers-resolution-1973",
+          "title": "War Powers Resolution",
+          "year": "1973",
+          "tags": [
+            "military",
+            "president",
+            "congress",
+            "war powers",
+            "separation of powers"
+          ],
+          "category": "National Security & Defense"
+        },
+        {
+          "slug": "foreign-intelligence-surveillance-act-1978",
+          "title": "Foreign Intelligence Surveillance Act (FISA)",
+          "year": "1978",
+          "tags": [
+            "national security",
+            "surveillance",
+            "foreign intelligence",
+            "privacy",
+            "civil liberties"
+          ],
+          "category": "National Security & Defense"
+        },
+        {
+          "slug": "userra-1994",
+          "title": "Uniformed Services Employment and Reemployment Rights Act (USERRA)",
+          "year": "1994",
+          "tags": [
+            "military",
+            "employment",
+            "reemployment",
+            "veterans",
+            "antidiscrimination"
+          ],
+          "category": "National Security & Defense"
+        },
+        {
+          "slug": "authorization-for-use-of-military-force-2001-2002",
+          "title": "Authorization for Use of Military Force (AUMF)",
+          "year": "2001",
+          "tags": [
+            "military",
+            "war powers",
+            "congress",
+            "president",
+            "national security"
+          ],
+          "category": "National Security & Defense"
+        },
+        {
+          "slug": "usa-patriot-act-2001",
+          "title": "USA PATRIOT Act",
+          "year": "2001",
+          "tags": [
+            "national security",
+            "surveillance",
+            "terrorism",
+            "civil liberties",
+            "law enforcement"
+          ],
+          "category": "National Security & Defense"
+        },
+        {
+          "slug": "homeland-security-act-2002",
+          "title": "Homeland Security Act",
+          "year": "2002",
+          "tags": [
+            "national security",
+            "terrorism",
+            "law enforcement",
+            "immigration",
+            "federal agencies"
+          ],
+          "category": "National Security & Defense"
+        },
+        {
+          "slug": "servicemembers-civil-relief-act-2003",
+          "title": "Servicemembers Civil Relief Act (SCRA)",
+          "year": "2003",
+          "tags": [
+            "military",
+            "servicemembers",
+            "civil protections",
+            "courts",
+            "lenders"
+          ],
+          "category": "National Security & Defense"
+        }
+      ]
+    },
+    {
+      "name": "Natural Resources",
+      "count": 1,
+      "acts": [
+        {
+          "slug": "federal-land-policy-and-management-act-1976",
+          "title": "Federal Land Policy and Management Act (FLPMA)",
+          "year": "1976",
+          "tags": [
+            "public lands",
+            "environment",
+            "natural resources",
+            "blm",
+            "federal management"
+          ],
+          "category": "Natural Resources"
+        }
+      ]
+    },
+    {
+      "name": "Public Health",
+      "count": 5,
+      "acts": [
+        {
+          "slug": "comprehensive-addiction-and-recovery-act-2016",
+          "title": "Comprehensive Addiction and Recovery Act (CARA)",
+          "year": "2016",
+          "tags": [
+            "public health",
+            "addiction",
+            "opioid crisis",
+            "treatment",
+            "recovery"
+          ],
+          "category": "Public Health"
+        },
+        {
+          "slug": "support-for-patients-and-communities-act-2018",
+          "title": "SUPPORT for Patients and Communities Act",
+          "year": "2018",
+          "tags": [
+            "public health",
+            "opioid crisis",
+            "treatment",
+            "recovery",
+            "medicaid"
+          ],
+          "category": "Public Health"
+        },
+        {
+          "slug": "cares-act-2020",
+          "title": "CARES Act",
+          "year": "2020",
+          "tags": [
+            "public health",
+            "covid-19",
+            "economy",
+            "stimulus",
+            "relief"
+          ],
+          "category": "Public Health"
+        },
+        {
+          "slug": "families-first-coronavirus-response-act-2020",
+          "title": "Families First Coronavirus Response Act (FFCRA)",
+          "year": "2020",
+          "tags": [
+            "public health",
+            "covid-19",
+            "employment",
+            "leave",
+            "emergency response"
+          ],
+          "category": "Public Health"
+        },
+        {
+          "slug": "american-rescue-plan-act-2021",
+          "title": "American Rescue Plan Act (ARPA)",
+          "year": "2021",
+          "tags": [
+            "public health",
+            "covid-19",
+            "economy",
+            "stimulus",
+            "relief"
+          ],
+          "category": "Public Health"
+        }
+      ]
+    },
+    {
+      "name": "Securities & Markets",
+      "count": 3,
+      "acts": [
+        {
+          "slug": "securities-act-1933",
+          "title": "Securities Act of 1933",
+          "year": "1933",
+          "tags": [
+            "securities",
+            "investors",
+            "business",
+            "finance",
+            "markets"
+          ],
+          "category": "Securities & Markets"
+        },
+        {
+          "slug": "securities-exchange-act-1934",
+          "title": "Securities Exchange Act of 1934",
+          "year": "1934",
+          "tags": [
+            "securities",
+            "finance",
+            "markets",
+            "SEC",
+            "investors"
+          ],
+          "category": "Securities & Markets"
+        },
+        {
+          "slug": "sarbanes-oxley-act-2002",
+          "title": "Sarbanes–Oxley Act (SOX)",
+          "year": "2002",
+          "tags": [
+            "securities",
+            "finance",
+            "corporate governance",
+            "business",
+            "investors"
+          ],
+          "category": "Securities & Markets"
+        }
+      ]
+    },
+    {
+      "name": "Social Welfare",
+      "count": 1,
+      "acts": [
+        {
+          "slug": "social-security-act-1935",
+          "title": "Social Security Act",
+          "year": "1935",
+          "tags": [
+            "social welfare",
+            "retirement",
+            "disability",
+            "healthcare",
+            "states"
+          ],
+          "category": "Social Welfare"
+        }
+      ]
+    },
+    {
+      "name": "Taxation",
+      "count": 1,
+      "acts": [
+        {
+          "slug": "internal-revenue-code-1986",
+          "title": "Internal Revenue Code of 1986",
+          "year": "1986",
+          "tags": [
+            "tax",
+            "economy",
+            "finance",
+            "IRS",
+            "revenue"
+          ],
+          "category": "Taxation"
+        }
+      ]
+    },
+    {
+      "name": "Technology & Privacy",
+      "count": 6,
+      "acts": [
+        {
+          "slug": "communications-decency-act-230-1996",
+          "title": "Communications Decency Act § 230",
+          "year": "1996",
+          "tags": [
+            "internet",
+            "free speech",
+            "platform liability",
+            "technology",
+            "privacy"
+          ],
+          "category": "Technology & Privacy"
+        },
+        {
+          "slug": "childrens-online-privacy-protection-act-1998",
+          "title": "Children’s Online Privacy Protection Act (COPPA)",
+          "year": "1998",
+          "tags": [
+            "internet",
+            "privacy",
+            "children",
+            "technology",
+            "consumer protection"
+          ],
+          "category": "Technology & Privacy"
+        },
+        {
+          "slug": "digital-millennium-copyright-act-1998",
+          "title": "Digital Millennium Copyright Act (DMCA)",
+          "year": "1998",
+          "tags": [
+            "internet",
+            "copyright",
+            "intellectual property",
+            "technology",
+            "digital media"
+          ],
+          "category": "Technology & Privacy"
+        },
+        {
+          "slug": "fisa-amendments-act-2008",
+          "title": "FISA Amendments Act",
+          "year": "2008",
+          "tags": [
+            "surveillance",
+            "national security",
+            "privacy",
+            "fisa",
+            "foreign intelligence"
+          ],
+          "category": "Technology & Privacy"
+        },
+        {
+          "slug": "cybersecurity-information-sharing-act-2015",
+          "title": "Cybersecurity Information Sharing Act (CISA)",
+          "year": "2015",
+          "tags": [
+            "cybersecurity",
+            "privacy",
+            "national security",
+            "technology",
+            "information sharing"
+          ],
+          "category": "Technology & Privacy"
+        },
+        {
+          "slug": "chips-and-science-act-2022",
+          "title": "CHIPS and Science Act",
+          "year": "2022",
+          "tags": [
+            "technology",
+            "semiconductors",
+            "science",
+            "research",
+            "manufacturing"
+          ],
+          "category": "Technology & Privacy"
+        }
+      ]
+    },
+    {
+      "name": "Voting & Elections",
+      "count": 2,
+      "acts": [
+        {
+          "slug": "hatch-act-1939",
+          "title": "Hatch Act",
+          "year": "1939",
+          "tags": [
+            "government employees",
+            "political activity",
+            "elections",
+            "ethics",
+            "civil service"
+          ],
+          "category": "Voting & Elections"
+        },
+        {
+          "slug": "federal-election-campaign-act-1971",
+          "title": "Federal Election Campaign Act (FECA)",
+          "year": "1971",
+          "tags": [
+            "elections",
+            "campaign finance",
+            "political reform",
+            "transparency",
+            "feca"
+          ],
+          "category": "Voting & Elections"
+        }
+      ]
+    }
+  ],
+  "totalActs": 112
+}
