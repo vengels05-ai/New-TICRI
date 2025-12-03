@@ -38,7 +38,7 @@ ${email ? `From: ${email}` : 'No email provided'}
       },
       body: JSON.stringify({
         personalizations: [{
-          to: [{ email: 'vengels05@gmail.com' }],
+          to: [{ email: 'ticri2025@gmail.com' }],
         }],
         from: { email: 'noreply@new-ticri.pages.dev' },
         subject: `TICRI Contact: ${subject}`,
