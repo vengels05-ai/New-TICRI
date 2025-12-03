@@ -15,7 +15,7 @@ export default function Footer() {
               rights, federalism, and government structure.
             </p>
             <p className="text-sm text-gray-400">
-              © {new Date().getFullYear()} TICRI. All rights reserved.
+              ™ {new Date().getFullYear()} TICRI. All rights reserved.
             </p>
           </div>
 
@@ -63,6 +63,11 @@ export default function Footer() {
               <li>
                 <Link href="/federal-funding" className="text-gray-300 hover:text-[#C41E3A] transition-colors">
                   Federal Funding
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="text-gray-300 hover:text-[#C41E3A] transition-colors">
+                  Contact
                 </Link>
               </li>
               <li>
