@@ -10,18 +10,6 @@ export async function onRequestPost(context) {
       );
     }
 
-    // Get environment variables
-    const EMAIL_USER = context.env.EMAIL_USER;
-    const EMAIL_PASSWORD = context.env.EMAIL_PASSWORD;
-
-    if (!EMAIL_USER || !EMAIL_PASSWORD) {
-      console.error('Email configuration missing');
-      return new Response(
-        JSON.stringify({ error: 'Email service not configured. Please contact the administrator.' }),
-        { status: 503, headers: { 'Content-Type': 'application/json' } }
-      );
-    }
-
     // Prepare email content for MailChannels (free for Cloudflare)
     const emailContent = `
 TICRI Contact Form Submission
@@ -47,8 +35,6 @@ Sent: ${new Date().toLocaleString()}
         personalizations: [
           {
             to: [{ email: 'vengels05@gmail.com', name: 'TICRI' }],
-            dkim_domain: 'new-ticri.pages.dev',
-            dkim_selector: 'mailchannels',
           },
         ],
         from: {
