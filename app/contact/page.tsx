@@ -29,8 +29,6 @@ export default function ContactPage() {
     setSubmitStatus('idle');
 
     try {
-      // Use Formspree or similar service, or direct email with mailto
-      // For now, using a simple fetch to our Cloudflare Function
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -39,14 +37,11 @@ export default function ContactPage() {
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
-
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({ subject: '', message: '', email: '' });
         setWordCount(0);
       } else {
-        console.error('Error response:', data);
         setSubmitStatus('error');
       }
     } catch (error) {
