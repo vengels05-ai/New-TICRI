@@ -22,14 +22,15 @@ ${email ? `From: ${email}` : 'No email provided'}
     const SENDGRID_API_KEY = context.env.SENDGRID_API_KEY || '';
     
     if (!SENDGRID_API_KEY) {
-      // Fallback: just log it for now
-      console.log('Email would be sent:', emailBody);
+      console.error('SENDGRID_API_KEY not configured!');
       return new Response(
-        JSON.stringify({ success: true }),
-        { status: 200, headers: { 'Content-Type': 'application/json' } }
+        JSON.stringify({ error: 'Email service not configured' }),
+        { status: 503, headers: { 'Content-Type': 'application/json' } }
       );
     }
 
+    console.log('Attempting to send email via SendGrid...');
+    
     const response = await fetch('https://api.sendgrid.com/v3/mail/send', {
       method: 'POST',
       headers: {
@@ -53,20 +54,33 @@ ${email ? `From: ${email}` : 'No email provided'}
       }),
     });
 
+    const responseText = await response.text();
+    
     if (!response.ok) {
-      const errorData = await response.text();
-      console.error('SendGrid error:', errorData);
-      throw new Error(`Failed to send: ${errorData}`);
+      console.error('SendGrid error response:', response.status, responseText);
+      return new Response(
+        JSON.stringify({ 
+          error: 'Failed to send email',
+          details: responseText,
+          status: response.status
+        }),
+        { status: 500, headers: { 'Content-Type': 'application/json' } }
+      );
     }
 
+    console.log('SendGrid success:', responseText);
+    
     return new Response(
-      JSON.stringify({ success: true }),
+      JSON.stringify({ success: true, message: 'Email sent successfully' }),
       { status: 200, headers: { 'Content-Type': 'application/json' } }
     );
   } catch (error) {
-    console.error('Error:', error);
+    console.error('Caught error:', error.message, error.stack);
     return new Response(
-      JSON.stringify({ error: 'Failed to send email' }),
+      JSON.stringify({ 
+        error: 'Failed to send email',
+        details: error.message
+      }),
       { status: 500, headers: { 'Content-Type': 'application/json' } }
     );
   }
