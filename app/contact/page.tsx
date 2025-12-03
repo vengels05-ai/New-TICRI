@@ -37,11 +37,16 @@ export default function ContactPage() {
         body: JSON.stringify(formData),
       });
 
+      const data = await response.json();
+      console.log('Response status:', response.status);
+      console.log('Response data:', data);
+
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({ subject: '', message: '', email: '' });
         setWordCount(0);
       } else {
+        console.error('Error response:', data);
         setSubmitStatus('error');
       }
     } catch (error) {
