@@ -41,7 +41,7 @@ ${email ? `From: ${email}` : 'No email provided'}
           to: [{ email: 'ticri2025@gmail.com' }],
         }],
         from: { 
-          email: 'contact@new-ticri.pages.dev',
+          email: 'ticri2025@gmail.com',
           name: 'TICRI Contact Form'
         },
         reply_to: email ? { email: email } : undefined,
