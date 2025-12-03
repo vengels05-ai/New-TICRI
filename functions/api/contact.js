@@ -40,7 +40,11 @@ ${email ? `From: ${email}` : 'No email provided'}
         personalizations: [{
           to: [{ email: 'ticri2025@gmail.com' }],
         }],
-        from: { email: 'noreply@new-ticri.pages.dev' },
+        from: { 
+          email: 'contact@new-ticri.pages.dev',
+          name: 'TICRI Contact Form'
+        },
+        reply_to: email ? { email: email } : undefined,
         subject: `TICRI Contact: ${subject}`,
         content: [{
           type: 'text/plain',
@@ -50,7 +54,9 @@ ${email ? `From: ${email}` : 'No email provided'}
     });
 
     if (!response.ok) {
-      throw new Error('Failed to send');
+      const errorData = await response.text();
+      console.error('SendGrid error:', errorData);
+      throw new Error(`Failed to send: ${errorData}`);
     }
 
     return new Response(
