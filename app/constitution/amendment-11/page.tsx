@@ -9,9 +9,13 @@ export default function Amendment11Page() {
             ← Back to Constitution
           </Link>
           <div className="text-6xl font-bold mb-4">XI</div>
-          <h1 className="text-4xl md:text-5xl font-bold">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Eleventh Amendment
           </h1>
+          <div className="text-gray-200 text-lg">
+            <p>Passed by Congress: March 4, 1794</p>
+            <p>Ratified: February 7, 1795</p>
+          </div>
         </div>
       </section>
 

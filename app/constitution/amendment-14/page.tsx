@@ -9,9 +9,13 @@ export default function Amendment14Page() {
             ← Back to Constitution
           </Link>
           <div className="text-6xl font-bold mb-4">XIV</div>
-          <h1 className="text-4xl md:text-5xl font-bold">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Fourteenth Amendment
           </h1>
+          <div className="text-gray-200 text-lg">
+            <p>Passed by Congress: June 13, 1866</p>
+            <p>Ratified: July 9, 1868</p>
+          </div>
         </div>
       </section>
 

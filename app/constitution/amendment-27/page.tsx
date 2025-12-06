@@ -13,7 +13,11 @@ export default function Amendment27() {
 
         <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-8 rounded-lg shadow-lg mb-8">
           <h1 className="text-4xl font-bold mb-2">Amendment XXVII</h1>
-          <p className="text-xl">Twenty-Seventh Amendment</p>
+          <p className="text-xl mb-4">Twenty-Seventh Amendment</p>
+          <div className="text-gray-200 text-lg">
+            <p>Passed by Congress: September 25, 1789</p>
+            <p>Ratified: May 7, 1992</p>
+          </div>
         </div>
 
         <div className="bg-white rounded-lg shadow-md p-8 mb-6">

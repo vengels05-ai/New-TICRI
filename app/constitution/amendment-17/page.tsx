@@ -9,9 +9,13 @@ export default function Amendment17Page() {
             ← Back to Constitution
           </Link>
           <div className="text-6xl font-bold mb-4">XVII</div>
-          <h1 className="text-4xl md:text-5xl font-bold">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Seventeenth Amendment
           </h1>
+          <div className="text-gray-200 text-lg">
+            <p>Passed by Congress: May 13, 1912</p>
+            <p>Ratified: April 8, 1913</p>
+          </div>
         </div>
       </section>
 

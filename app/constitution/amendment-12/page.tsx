@@ -9,9 +9,13 @@ export default function Amendment12Page() {
             ← Back to Constitution
           </Link>
           <div className="text-6xl font-bold mb-4">XII</div>
-          <h1 className="text-4xl md:text-5xl font-bold">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Twelfth Amendment
           </h1>
+          <div className="text-gray-200 text-lg">
+            <p>Passed by Congress: December 9, 1803</p>
+            <p>Ratified: June 15, 1804</p>
+          </div>
         </div>
       </section>
 

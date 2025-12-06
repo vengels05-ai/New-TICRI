@@ -9,9 +9,13 @@ export default function Amendment19Page() {
             ← Back to Constitution
           </Link>
           <div className="text-6xl font-bold mb-4">XIX</div>
-          <h1 className="text-4xl md:text-5xl font-bold">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Nineteenth Amendment
           </h1>
+          <div className="text-gray-200 text-lg">
+            <p>Passed by Congress: June 4, 1919</p>
+            <p>Ratified: August 18, 1920</p>
+          </div>
         </div>
       </section>
 

@@ -9,9 +9,13 @@ export default function Amendment8Page() {
             ← Back to Constitution
           </Link>
           <div className="text-6xl font-bold mb-4">VIII</div>
-          <h1 className="text-4xl md:text-5xl font-bold">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Eighth Amendment
           </h1>
+          <div className="text-gray-200 text-lg">
+            <p>Passed by Congress: September 25, 1789</p>
+            <p>Ratified: December 15, 1791</p>
+          </div>
         </div>
       </section>
 

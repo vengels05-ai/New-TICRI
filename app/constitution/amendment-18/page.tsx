@@ -9,9 +9,13 @@ export default function Amendment18Page() {
             ← Back to Constitution
           </Link>
           <div className="text-6xl font-bold mb-4">XVIII</div>
-          <h1 className="text-4xl md:text-5xl font-bold">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Eighteenth Amendment (Repealed)
           </h1>
+          <div className="text-gray-200 text-lg">
+            <p>Passed by Congress: December 18, 1917</p>
+            <p>Ratified: January 16, 1919</p>
+          </div>
         </div>
       </section>
 

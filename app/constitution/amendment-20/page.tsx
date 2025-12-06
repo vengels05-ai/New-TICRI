@@ -9,9 +9,13 @@ export default function Amendment20Page() {
             ← Back to Constitution
           </Link>
           <div className="text-6xl font-bold mb-4">XX</div>
-          <h1 className="text-4xl md:text-5xl font-bold">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Twentieth Amendment
           </h1>
+          <div className="text-gray-200 text-lg">
+            <p>Passed by Congress: March 2, 1932</p>
+            <p>Ratified: January 23, 1933</p>
+          </div>
         </div>
       </section>
 

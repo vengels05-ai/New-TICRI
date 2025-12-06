@@ -9,9 +9,13 @@ export default function Amendment13Page() {
             ← Back to Constitution
           </Link>
           <div className="text-6xl font-bold mb-4">XIII</div>
-          <h1 className="text-4xl md:text-5xl font-bold">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Thirteenth Amendment
           </h1>
+          <div className="text-gray-200 text-lg">
+            <p>Passed by Congress: January 31, 1865</p>
+            <p>Ratified: December 6, 1865</p>
+          </div>
         </div>
       </section>
 
