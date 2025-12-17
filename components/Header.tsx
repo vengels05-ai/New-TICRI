@@ -68,6 +68,9 @@ export default function Header() {
             <Link href="/parties" className="hover:text-[#C41E3A] transition-colors text-sm lg:text-base">
               Parties
             </Link>
+            <Link href="/spending" className="hover:text-[#C41E3A] transition-colors text-sm lg:text-base">
+              Spending
+            </Link>
             <Link href="/535" className="hover:text-[#C41E3A] transition-colors text-sm lg:text-base">
               535
             </Link>
@@ -199,6 +202,13 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Parties & Policy
+            </Link>
+            <Link
+              href="/spending"
+              className="block px-3 py-2 rounded-md hover:bg-[#1A3A5C] transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Government Spending
             </Link>
             <Link
               href="/535"

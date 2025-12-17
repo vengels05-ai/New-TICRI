@@ -396,7 +396,7 @@ export default function SpendingPage() {
     return () => {
       clearTimeout(timer);
     };
-  }, [activeTab, chartsInitialized]);
+  }, [activeTab]);
 
   return (
     <div className="flex flex-col min-h-screen bg-slate-50">
