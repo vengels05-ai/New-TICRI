@@ -5,6 +5,7 @@ import Chart from 'chart.js/auto';
 
 export default function SpendingPage() {
   const [activeTab, setActiveTab] = useState('overview');
+  const [chartsInitialized, setChartsInitialized] = useState<{[key: string]: boolean}>({});
   
   // Chart refs
   const overviewChartRef = useRef<HTMLCanvasElement>(null);
@@ -21,10 +22,15 @@ export default function SpendingPage() {
   // Store chart instances
   const chartsRef = useRef<{ [key: string]: Chart }>({});
 
+  // Initialize charts when tab changes
   useEffect(() => {
-    // Destroy existing charts
-    Object.values(chartsRef.current).forEach(chart => chart.destroy());
-    chartsRef.current = {};
+    // Skip if already initialized
+    if (chartsInitialized[activeTab]) {
+      return;
+    }
+
+    // Small delay to ensure canvas elements are rendered
+    const timer = setTimeout(() => {
 
     // Data arrays
     const years1900_2024 = Array.from({length: 125}, (_, i) => 1900 + i);
@@ -162,8 +168,8 @@ export default function SpendingPage() {
     });
     const interestShare = years1962_2024.map(y => 100 - (mandatoryShare[y-1962] + discretionaryShare[y-1962]));
 
-    // Create all charts
-    if (gdpDeficitChartRef.current) {
+    // Create charts based on active tab
+    if (activeTab === 'overview' && gdpDeficitChartRef.current && !chartsRef.current.gdpDeficit) {
       chartsRef.current.gdpDeficit = new Chart(gdpDeficitChartRef.current, {
         type: 'bar',
         data: {
@@ -187,7 +193,7 @@ export default function SpendingPage() {
       });
     }
 
-    if (overviewChartRef.current) {
+    if (activeTab === 'overview' && overviewChartRef.current && !chartsRef.current.overview) {
       chartsRef.current.overview = new Chart(overviewChartRef.current, {
         type: 'line',
         data: {
@@ -208,7 +214,7 @@ export default function SpendingPage() {
       });
     }
 
-    if (revenueSourceChartRef.current) {
+    if (activeTab === 'revenue' && revenueSourceChartRef.current && !chartsRef.current.revenueSource) {
       chartsRef.current.revenueSource = new Chart(revenueSourceChartRef.current, {
         type: 'line',
         data: {
@@ -228,7 +234,7 @@ export default function SpendingPage() {
       });
     }
 
-    if (revenueShareChartRef.current) {
+    if (activeTab === 'revenue' && revenueShareChartRef.current && !chartsRef.current.revenueShare) {
       chartsRef.current.revenueShare = new Chart(revenueShareChartRef.current, {
         type: 'line',
         data: {
@@ -259,7 +265,7 @@ export default function SpendingPage() {
       });
     }
 
-    if (functionChartRef.current) {
+    if (activeTab === 'spending' && functionChartRef.current && !chartsRef.current.function) {
       chartsRef.current.function = new Chart(functionChartRef.current, {
         type: 'line',
         data: {
@@ -284,7 +290,7 @@ export default function SpendingPage() {
       });
     }
 
-    if (agencyChartRef.current) {
+    if (activeTab === 'agency' && agencyChartRef.current && !chartsRef.current.agency) {
       chartsRef.current.agency = new Chart(agencyChartRef.current, {
         type: 'bar',
         data: {
@@ -304,7 +310,7 @@ export default function SpendingPage() {
       });
     }
 
-    if (hhsDodChartRef.current) {
+    if (activeTab === 'agency' && hhsDodChartRef.current && !chartsRef.current.hhsDod) {
       chartsRef.current.hhsDod = new Chart(hhsDodChartRef.current, {
         type: 'line',
         data: {
@@ -322,7 +328,7 @@ export default function SpendingPage() {
       });
     }
 
-    if (debtGdpChartRef.current) {
+    if (activeTab === 'debt' && debtGdpChartRef.current && !chartsRef.current.debtGdp) {
       chartsRef.current.debtGdp = new Chart(debtGdpChartRef.current, {
         type: 'line',
         data: {
@@ -344,7 +350,7 @@ export default function SpendingPage() {
       });
     }
 
-    if (interestChartRef.current) {
+    if (activeTab === 'debt' && interestChartRef.current && !chartsRef.current.interest) {
       chartsRef.current.interest = new Chart(interestChartRef.current, {
         type: 'bar',
         data: {
@@ -362,7 +368,7 @@ export default function SpendingPage() {
       });
     }
 
-    if (structureChartRef.current) {
+    if (activeTab === 'structure' && structureChartRef.current && !chartsRef.current.structure) {
       chartsRef.current.structure = new Chart(structureChartRef.current, {
         type: 'line',
         data: {
@@ -383,10 +389,14 @@ export default function SpendingPage() {
       });
     }
 
+    // Mark this tab as initialized
+    setChartsInitialized(prev => ({...prev, [activeTab]: true}));
+    }, 100); // Small delay to ensure canvas is rendered
+
     return () => {
-      Object.values(chartsRef.current).forEach(chart => chart.destroy());
+      clearTimeout(timer);
     };
-  }, []);
+  }, [activeTab, chartsInitialized]);
 
   return (
     <div className="flex flex-col min-h-screen bg-slate-50">
