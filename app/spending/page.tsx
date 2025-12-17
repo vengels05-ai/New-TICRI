@@ -5,7 +5,6 @@ import Chart from 'chart.js/auto';
 
 export default function SpendingPage() {
   const [activeTab, setActiveTab] = useState('overview');
-  const [chartsInitialized, setChartsInitialized] = useState<{[key: string]: boolean}>({});
   
   // Chart refs
   const overviewChartRef = useRef<HTMLCanvasElement>(null);
@@ -24,11 +23,6 @@ export default function SpendingPage() {
 
   // Initialize charts when tab changes
   useEffect(() => {
-    // Skip if already initialized
-    if (chartsInitialized[activeTab]) {
-      return;
-    }
-
     // Small delay to ensure canvas elements are rendered
     const timer = setTimeout(() => {
 
@@ -389,8 +383,6 @@ export default function SpendingPage() {
       });
     }
 
-    // Mark this tab as initialized
-    setChartsInitialized(prev => ({...prev, [activeTab]: true}));
     }, 100); // Small delay to ensure canvas is rendered
 
     return () => {
