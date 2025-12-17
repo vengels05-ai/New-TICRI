@@ -80,6 +80,13 @@ export default function HomePage() {
       color: 'from-purple-50 to-purple-100 border-purple-700'
     },
     {
+      title: 'Government Spending',
+      description: '124 years of federal budget data: receipts, outlays, and debt (1900-2024).',
+      icon: '📊',
+      href: '/spending',
+      color: 'from-cyan-50 to-cyan-100 border-cyan-600'
+    },
+    {
       title: '535',
       description: 'How Congress works: the House, Senate, 17th Amendment, filibuster, and sub-committees.',
       icon: '🏛️',
