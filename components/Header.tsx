@@ -53,6 +53,9 @@ export default function Header() {
             <Link href="/state-powers" className="hover:text-[#C41E3A] transition-colors text-sm lg:text-base">
               State Powers
             </Link>
+            <Link href="/state-constitutions" className="hover:text-[#C41E3A] transition-colors text-sm lg:text-base">
+              State Constitutions
+            </Link>
             <Link href="/cases" className="hover:text-[#C41E3A] transition-colors text-sm lg:text-base">
               Cases
             </Link>
@@ -167,6 +170,13 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               State Powers
+            </Link>
+            <Link
+              href="/state-constitutions"
+              className="block px-3 py-2 rounded-md hover:bg-[#1A3A5C] transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              State Constitutions
             </Link>
             <Link
               href="/cases"

@@ -52,6 +52,13 @@ export default function HomePage() {
       color: 'from-orange-50 to-orange-100 border-orange-600'
     },
     {
+      title: 'State Constitutions',
+      description: 'Explore the fundamental governing documents of all 50 states.',
+      icon: '🗺️',
+      href: '/state-constitutions',
+      color: 'from-teal-50 to-teal-100 border-teal-600'
+    },
+    {
       title: 'Federal Funding',
       description: 'How federal money works and its impact on state autonomy.',
       icon: '💰',
