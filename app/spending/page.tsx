@@ -450,7 +450,7 @@ export default function SpendingPage() {
       <main className="flex-grow p-4 md:p-8 max-w-8xl mx-auto w-full">
         
         {/* OVERVIEW TAB */}
-        {activeTab === 'overview' && (
+        <div className={activeTab === 'overview' ? 'block' : 'hidden'}>
           <div className="space-y-6">
             <div className="text-center mb-8">
               <h2 className="text-4xl font-bold uppercase text-slate-800">The Big Picture: 124 Years of Finance</h2>
@@ -498,10 +498,10 @@ export default function SpendingPage() {
               </div>
             </div>
           </div>
-        )}
+        </div>
 
         {/* REVENUE TAB */}
-        {activeTab === 'revenue' && (
+        <div className={activeTab === 'revenue' ? 'block' : 'hidden'}>
           <div className="space-y-6">
             <div className="text-center mb-8">
               <h2 className="text-4xl font-bold uppercase text-slate-800">Federal Revenue: Who Pays?</h2>
@@ -526,10 +526,10 @@ export default function SpendingPage() {
               </div>
             </div>
           </div>
-        )}
+        </div>
 
         {/* SPENDING TAB */}
-        {activeTab === 'spending' && (
+        <div className={activeTab === 'spending' ? 'block' : 'hidden'}>
           <div className="space-y-6">
             <div className="text-center mb-8">
               <h2 className="text-4xl font-bold uppercase text-slate-800">Federal Spending by Category</h2>
@@ -585,10 +585,10 @@ export default function SpendingPage() {
               </div>
             </div>
           </div>
-        )}
+        </div>
 
         {/* AGENCY TAB */}
-        {activeTab === 'agency' && (
+        <div className={activeTab === 'agency' ? 'block' : 'hidden'}>
           <div className="space-y-6">
             <div className="text-center mb-8">
               <h2 className="text-4xl font-bold uppercase text-slate-800">Spending by Agency</h2>
@@ -612,10 +612,10 @@ export default function SpendingPage() {
               <p className="text-xs text-slate-400 mt-2 text-center">Data Source: Table 5.2 (Budget Authority)</p>
             </div>
           </div>
-        )}
+        </div>
 
         {/* DEBT TAB */}
-        {activeTab === 'debt' && (
+        <div className={activeTab === 'debt' ? 'block' : 'hidden'}>
           <div className="space-y-6">
             <div className="text-center mb-8">
               <h2 className="text-4xl font-bold uppercase text-slate-800">The National Debt</h2>
@@ -641,10 +641,10 @@ export default function SpendingPage() {
               </div>
             </div>
           </div>
-        )}
+        </div>
 
         {/* STRUCTURE TAB */}
-        {activeTab === 'structure' && (
+        <div className={activeTab === 'structure' ? 'block' : 'hidden'}>
           <div className="space-y-6">
             <div className="text-center mb-8">
               <h2 className="text-4xl font-bold uppercase text-slate-800">Structural Rigidity</h2>
@@ -672,7 +672,7 @@ export default function SpendingPage() {
               </div>
             </div>
           </div>
-        )}
+        </div>
 
       </main>
 
