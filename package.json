@@ -10,8 +10,9 @@
   },
   "dependencies": {
     "@types/nodemailer": "^7.0.4",
+    "@vnedyalk0v/react19-simple-maps": "^1.2.1",
     "chart.js": "^4.5.1",
-    "next": "16.0.3",
+    "next": "^16.1.0",
     "nodemailer": "^7.0.11",
     "react": "19.2.0",
     "react-dom": "19.2.0"
