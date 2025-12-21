@@ -19,9 +19,9 @@ export default function Amendment21() {
         <div className="bg-white rounded-lg shadow-md p-8 mb-6">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Text</h2>
           <div className="prose prose-lg max-w-none text-gray-700 italic space-y-4">
-            <p>Section 1. Repeals the Eighteenth Amendment.</p>
-            <p>Section 2. Allows states to regulate alcohol importation.</p>
-            <p>Section 3. Ratification details.</p>
+            <p><strong>Section 1.</strong> "The eighteenth article of amendment to the Constitution of the United States is hereby repealed."</p>
+            <p><strong>Section 2.</strong> "The transportation or importation into any State, Territory, or Possession of the United States for delivery or use therein of intoxicating liquors, in violation of the laws thereof, is hereby prohibited."</p>
+            <p><strong>Section 3.</strong> "This article shall be inoperative unless it shall have been ratified as an amendment to the Constitution by conventions in the several States, as provided in the Constitution, within seven years from the date of the submission hereof to the States by the Congress."</p>
           </div>
         </div>
 

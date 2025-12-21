@@ -19,9 +19,16 @@ export default function Amendment23() {
         <div className="bg-white rounded-lg shadow-md p-8 mb-6">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Text</h2>
           <div className="prose prose-lg max-w-none text-gray-700 italic">
+            <p className="mb-4">
+              <strong>Section 1.</strong> "The District constituting the seat of Government of the United States shall appoint in 
+              such manner as Congress may direct: A number of electors of President and Vice President equal to the whole number of 
+              Senators and Representatives in Congress to which the District would be entitled if it were a State, but in no event 
+              more than the least populous State; they shall be in addition to those appointed by the States, but they shall be 
+              considered, for the purposes of the election of President and Vice President, to be electors appointed by a State; and 
+              they shall meet in the District and perform such duties as provided by the twelfth article of amendment."
+            </p>
             <p>
-              Gives the District of Columbia electors for President and Vice-President as if it 
-              were a state (but no more than the least populous state).
+              <strong>Section 2.</strong> "The Congress shall have power to enforce this article by appropriate legislation."
             </p>
           </div>
         </div>

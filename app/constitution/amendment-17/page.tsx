@@ -23,9 +23,15 @@ export default function Amendment17Page() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-lg shadow-lg border-l-4 border-[#1A3A5C] mb-8">
             <h2 className="text-2xl font-bold mb-4 text-[#0F2C47]">Text</h2>
+            <p className="text-lg text-gray-800 italic leading-relaxed mb-4">
+              "The Senate of the United States shall be composed of two Senators from each State, elected by the people thereof, 
+              for six years; and each Senator shall have one vote. The electors in each State shall have the qualifications 
+              requisite for electors of the most numerous branch of the State legislatures."
+            </p>
             <p className="text-lg text-gray-800 italic leading-relaxed">
-              Establishes direct election of U.S. Senators by the people of each State; provides for vacancies by 
-              special election or temporary appointments as state law directs.
+              "When vacancies happen in the representation of any State in the Senate, the executive authority of such State shall 
+              issue writs of election to fill such vacancies: Provided, That the legislature of any State may empower the executive 
+              thereof to make temporary appointments until the people fill the vacancies by election as the legislature may direct."
             </p>
           </div>
 

@@ -19,9 +19,12 @@ export default function Amendment26() {
         <div className="bg-white rounded-lg shadow-md p-8 mb-6">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Text</h2>
           <div className="prose prose-lg max-w-none text-gray-700 italic">
+            <p className="mb-4">
+              <strong>Section 1.</strong> "The right of citizens of the United States, who are eighteen years of age or older, 
+              to vote shall not be denied or abridged by the United States or by any State on account of age."
+            </p>
             <p>
-              "The right of citizens of the United States, who are eighteen years of age or older, 
-              to vote shall not be denied or abridged... on account of age." Congress may enforce.
+              <strong>Section 2.</strong> "The Congress shall have power to enforce this article by appropriate legislation."
             </p>
           </div>
         </div>
