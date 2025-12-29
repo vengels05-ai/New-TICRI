@@ -70,22 +70,26 @@ export default function UsStateMap() {
       </h2>
       <p className="text-gray-600 text-center mb-8">Click any state to view its constitution</p>
 
-      {hoveredState && (
-        <div className="text-center mb-4 h-8">
-          <p className="text-xl text-[#C41E3A] font-bold animate-pulse">
+      {/* Fixed height container to prevent layout shift */}
+      <div className="text-center mb-4 h-10 flex items-center justify-center">
+        {hoveredState && (
+          <p className="text-xl text-[#C41E3A] font-bold">
             {stateNames[hoveredState]}
           </p>
-        </div>
-      )}
+        )}
+      </div>
 
-      <div className="flex justify-center">
-        <USAMap
-          customStates={customizeStates()}
-          defaultState={{
-            fill: '#0F2C47',
-            stroke: '#FFFFFF',
-          }}
-        />
+      {/* Fixed container to prevent map shake */}
+      <div className="flex justify-center w-full">
+        <div className="w-full max-w-4xl">
+          <USAMap
+            customStates={customizeStates()}
+            defaultState={{
+              fill: '#0F2C47',
+              stroke: '#FFFFFF',
+            }}
+          />
+        </div>
       </div>
 
       <p className="text-center text-sm text-gray-500 mt-6">
