@@ -1,86 +1,57 @@
 'use client';
 
-import { ComposableMap, Geographies, Geography } from '@vnedyalk0v/react19-simple-maps';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { usStates } from '@/lib/usStates';
 
-const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
-
-interface UsStateMapProps {
-  onStateClick?: (stateAbbreviation: string) => void;
-}
-
-export default function UsStateMap({ onStateClick }: UsStateMapProps) {
+export default function UsStateMap() {
   const router = useRouter();
   const [hoveredState, setHoveredState] = useState<string | null>(null);
 
-  const handleStateClick = (geo: any) => {
-    const stateName = geo.properties.name;
-    const slug = stateName.toLowerCase().replace(/\s+/g, '-');
-    
-    if (onStateClick) {
-      onStateClick(geo.id);
-    } else {
-      router.push(`/state-constitutions/${slug}`);
-    }
+  const handleStateClick = (slug: string) => {
+    router.push(`/state-constitutions/${slug}`);
   };
 
+  // Simple grid-based state selector as fallback
   return (
-    <div className="w-full max-w-5xl mx-auto" style={{ minHeight: '500px' }}>
-      <ComposableMap 
-        projection="geoAlbersUsa"
-        projectionConfig={{
-          scale: 1000
-        }}
-        width={800}
-        height={500}
-      >
-        <Geographies geography={geoUrl}>
-          {({ geographies }) =>
-            geographies.map((geo) => {
-              const isHovered = hoveredState === geo.id;
-              
-              return (
-                <Geography
-                  key={geo.rsmKey}
-                  geography={geo}
-                  onMouseEnter={() => setHoveredState(geo.id)}
-                  onMouseLeave={() => setHoveredState(null)}
-                  onClick={() => handleStateClick(geo)}
-                  style={{
-                    default: {
-                      fill: isHovered ? '#1A3A5C' : '#0F2C47',
-                      stroke: '#FFFFFF',
-                      strokeWidth: 0.75,
-                      outline: 'none',
-                      cursor: 'pointer',
-                    },
-                    hover: {
-                      fill: '#1A3A5C',
-                      stroke: '#FFFFFF',
-                      strokeWidth: 0.75,
-                      outline: 'none',
-                      cursor: 'pointer',
-                    },
-                    pressed: {
-                      fill: '#C41E3A',
-                      stroke: '#FFFFFF',
-                      strokeWidth: 0.75,
-                      outline: 'none',
-                    },
-                  }}
-                />
-              );
-            })
-          }
-        </Geographies>
-      </ComposableMap>
-      
-      {hoveredState && (
-        <div className="text-center mt-4 text-lg font-semibold text-[#0F2C47]">
-          Click to view constitution
+    <div className="w-full max-w-6xl mx-auto">
+      <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-lg border-2 border-blue-200">
+        <div className="text-center mb-6">
+          <h3 className="text-2xl font-bold text-[#0F2C47] mb-2">Interactive State Map</h3>
+          <p className="text-gray-600">Click on any state to view its constitution</p>
         </div>
-      )}
+        
+        {/* Grid of states organized roughly geographically */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+          {usStates.map((state) => {
+            const isHovered = hoveredState === state.slug;
+            return (
+              <button
+                key={state.abbreviation}
+                onClick={() => handleStateClick(state.slug)}
+                onMouseEnter={() => setHoveredState(state.slug)}
+                onMouseLeave={() => setHoveredState(null)}
+                className={`
+                  px-4 py-3 rounded-lg font-bold text-sm transition-all
+                  ${isHovered 
+                    ? 'bg-[#C41E3A] text-white scale-105 shadow-lg' 
+                    : 'bg-[#0F2C47] text-white hover:bg-[#1A3A5C]'
+                  }
+                `}
+              >
+                <div className="text-xs opacity-75">{state.name}</div>
+                <div className="text-lg">{state.abbreviation}</div>
+              </button>
+            );
+          })}
+        </div>
+        
+        {hoveredState && (
+          <div className="text-center mt-6 text-lg font-semibold text-[#0F2C47] animate-pulse">
+            Click to view {usStates.find(s => s.slug === hoveredState)?.name} Constitution
+          </div>
+        )}
+      </div>
     </div>
   );
 }
