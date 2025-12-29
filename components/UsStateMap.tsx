@@ -26,8 +26,15 @@ export default function UsStateMap({ onStateClick }: UsStateMapProps) {
   };
 
   return (
-    <div className="w-full max-w-5xl mx-auto">
-      <ComposableMap projection="geoAlbersUsa">
+    <div className="w-full max-w-5xl mx-auto" style={{ minHeight: '500px' }}>
+      <ComposableMap 
+        projection="geoAlbersUsa"
+        projectionConfig={{
+          scale: 1000
+        }}
+        width={800}
+        height={500}
+      >
         <Geographies geography={geoUrl}>
           {({ geographies }) =>
             geographies.map((geo) => {
