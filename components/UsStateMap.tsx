@@ -1,56 +1,92 @@
 'use client';
 
+import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
-import { usStates } from '@/lib/usStates';
+import { ComposableMap, Geographies, Geography } from 'react-simple-maps';
+
+const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
+
+// Map state FIPS codes to slugs
+const stateSlugMap: { [key: string]: string } = {
+  "01": "alabama", "02": "alaska", "04": "arizona", "05": "arkansas", "06": "california",
+  "08": "colorado", "09": "connecticut", "10": "delaware", "12": "florida", "13": "georgia",
+  "15": "hawaii", "16": "idaho", "17": "illinois", "18": "indiana", "19": "iowa",
+  "20": "kansas", "21": "kentucky", "22": "louisiana", "23": "maine", "24": "maryland",
+  "25": "massachusetts", "26": "michigan", "27": "minnesota", "28": "mississippi", "29": "missouri",
+  "30": "montana", "31": "nebraska", "32": "nevada", "33": "new-hampshire", "34": "new-jersey",
+  "35": "new-mexico", "36": "new-york", "37": "north-carolina", "38": "north-dakota", "39": "ohio",
+  "40": "oklahoma", "41": "oregon", "42": "pennsylvania", "44": "rhode-island", "45": "south-carolina",
+  "46": "south-dakota", "47": "tennessee", "48": "texas", "49": "utah", "50": "vermont",
+  "51": "virginia", "53": "washington", "54": "west-virginia", "55": "wisconsin", "56": "wyoming"
+};
 
 export default function UsStateMap() {
   const router = useRouter();
   const [hoveredState, setHoveredState] = useState<string | null>(null);
 
-  const handleStateClick = (slug: string) => {
-    router.push(`/state-constitutions/${slug}`);
+  const handleStateClick = (geo: any) => {
+    const stateSlug = stateSlugMap[geo.id];
+    if (stateSlug) {
+      router.push(`/state-constitutions/${stateSlug}`);
+    }
   };
 
-  // Simple grid-based state selector as fallback
   return (
-    <div className="w-full max-w-6xl mx-auto">
-      <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-8 rounded-lg border-2 border-blue-200">
-        <div className="text-center mb-6">
-          <h3 className="text-2xl font-bold text-[#0F2C47] mb-2">Interactive State Map</h3>
-          <p className="text-gray-600">Click on any state to view its constitution</p>
-        </div>
-        
-        {/* Grid of states organized roughly geographically */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-          {usStates.map((state) => {
-            const isHovered = hoveredState === state.slug;
-            return (
-              <button
-                key={state.abbreviation}
-                onClick={() => handleStateClick(state.slug)}
-                onMouseEnter={() => setHoveredState(state.slug)}
-                onMouseLeave={() => setHoveredState(null)}
-                className={`
-                  px-4 py-3 rounded-lg font-bold text-sm transition-all
-                  ${isHovered 
-                    ? 'bg-[#C41E3A] text-white scale-105 shadow-lg' 
-                    : 'bg-[#0F2C47] text-white hover:bg-[#1A3A5C]'
-                  }
-                `}
-              >
-                <div className="text-xs opacity-75">{state.name}</div>
-                <div className="text-lg">{state.abbreviation}</div>
-              </button>
-            );
-          })}
-        </div>
-        
+    <div className="w-full bg-white rounded-lg shadow-lg p-8">
+      <h2 className="text-2xl font-bold text-[#0F2C47] mb-6 text-center">
+        Interactive State Map
+      </h2>
+      
+      {/* Animated message showing hovered state */}
+      <div className="h-8 mb-4 text-center">
         {hoveredState && (
-          <div className="text-center mt-6 text-lg font-semibold text-[#0F2C47] animate-pulse">
-            Click to view {usStates.find(s => s.slug === hoveredState)?.name} Constitution
-          </div>
+          <p className="text-lg text-[#C41E3A] font-semibold">
+            Click to view {hoveredState}
+          </p>
         )}
+      </div>
+
+      {/* SVG Map */}
+      <div className="flex justify-center">
+        <ComposableMap
+          projection="geoAlbersUsa"
+          style={{ width: '100%', height: 'auto', maxWidth: '900px' }}
+        >
+          <Geographies geography={geoUrl}>
+            {({ geographies }) =>
+              geographies.map((geo) => (
+                <Geography
+                  key={geo.rsmKey}
+                  geography={geo}
+                  onClick={() => handleStateClick(geo)}
+                  onMouseEnter={() => setHoveredState(geo.properties.name)}
+                  onMouseLeave={() => setHoveredState(null)}
+                  style={{
+                    default: {
+                      fill: '#0F2C47',
+                      stroke: '#FFFFFF',
+                      strokeWidth: 0.75,
+                      outline: 'none',
+                    },
+                    hover: {
+                      fill: '#C41E3A',
+                      stroke: '#FFFFFF',
+                      strokeWidth: 0.75,
+                      outline: 'none',
+                      cursor: 'pointer',
+                    },
+                    pressed: {
+                      fill: '#8B1428',
+                      stroke: '#FFFFFF',
+                      strokeWidth: 0.75,
+                      outline: 'none',
+                    },
+                  }}
+                />
+              ))
+            }
+          </Geographies>
+        </ComposableMap>
       </div>
     </div>
   );
