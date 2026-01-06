@@ -17,6 +17,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "TICRI - The Informed Constitutional Republic Initiative",
   description: "Plain-English explainers of the Constitution, rights, federalism, state power, funding, and party history.",
+  icons: {
+    icon: '/TICRI.png',
+    apple: '/TICRI.png',
+  },
 };
 
 export default function RootLayout({
