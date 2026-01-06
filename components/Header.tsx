@@ -9,8 +9,8 @@ export default function Header() {
 
   return (
     <header className="bg-[#0F2C47] text-white sticky top-0 z-50 shadow-lg">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+      <nav className="w-full px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-20 max-w-full">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="relative w-12 h-12 sm:w-14 sm:h-14 transition-transform group-hover:scale-105">
