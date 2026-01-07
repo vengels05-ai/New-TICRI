@@ -18,8 +18,11 @@ export const metadata: Metadata = {
   title: "TICRI - The Informed Constitutional Republic Initiative",
   description: "Plain-English explainers of the Constitution, rights, federalism, state power, funding, and party history.",
   icons: {
-    icon: '/TICRI.png',
-    apple: '/TICRI.png',
+    icon: [
+      { url: '/icon-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/icon-32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/apple-icon.png',
   },
 };
 
