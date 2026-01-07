@@ -74,8 +74,8 @@ export default function Header() {
             <Link href="/spending" className="hover:text-[#C41E3A] transition-colors text-sm lg:text-base">
               Spending
             </Link>
-            <Link href="/535" className="hover:text-[#C41E3A] transition-colors text-sm lg:text-base">
-              535
+            <Link href="/535" className="hover:text-[#C41E3A] transition-colors text-sm lg:text-base font-bold bg-[#C41E3A] text-white px-3 py-1 rounded">
+              Project 535
             </Link>
             <Link href="/contact" className="hover:text-[#C41E3A] transition-colors text-sm lg:text-base">
               Contact
@@ -222,10 +222,10 @@ export default function Header() {
             </Link>
             <Link
               href="/535"
-              className="block px-3 py-2 rounded-md hover:bg-[#1A3A5C] transition-colors"
+              className="block px-3 py-2 rounded-md bg-[#C41E3A] hover:bg-[#A01828] transition-colors font-bold"
               onClick={() => setMobileMenuOpen(false)}
             >
-              535
+              Project 535
             </Link>
             <Link
               href="/contact"

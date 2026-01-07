@@ -94,11 +94,11 @@ export default function HomePage() {
       color: 'from-cyan-50 to-cyan-100 border-cyan-600'
     },
     {
-      title: '535',
+      title: 'Project 535',
       description: 'How Congress works: the House, Senate, 17th Amendment, filibuster, and sub-committees.',
       icon: '🏛️',
       href: '/535',
-      color: 'from-slate-50 to-slate-100 border-slate-700'
+      color: 'from-red-50 to-red-100 border-[#C41E3A]'
     },
     {
       title: 'Truth & Law',
