@@ -24,6 +24,28 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-icon.png',
   },
+  openGraph: {
+    title: "TICRI - The Informed Constitutional Republic Initiative",
+    description: "Plain-English explainers of the Constitution, rights, federalism, state power, funding, and party history.",
+    url: 'https://ticri.org',
+    siteName: 'TICRI',
+    images: [
+      {
+        url: '/TICRI.png',
+        width: 1200,
+        height: 630,
+        alt: 'TICRI Logo',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'TICRI - The Informed Constitutional Republic Initiative',
+    description: 'Plain-English explainers of the Constitution, rights, federalism, state power, funding, and party history.',
+    images: ['/TICRI.png'],
+  },
 };
 
 export default function RootLayout({
