@@ -114,6 +114,24 @@ export default function StateConstitutionsPage() {
                 <li>Every state except Nebraska has a bicameral legislature (two chambers)</li>
               </ul>
             </div>
+
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-400 rounded-lg shadow-lg p-6">
+              <h3 className="text-xl font-bold text-[#1A3A5C] mb-3">📚 Constitutional Text Resource</h3>
+              <p className="leading-relaxed mb-4">
+                For access to the full, current text of all 50 state constitutions, we recommend visiting 
+                <strong> 50 Constitutions</strong>, maintained by the State Democracy Research Initiative at 
+                the University of Wisconsin Law School. This comprehensive database provides searchable constitutional 
+                texts and detailed historical information.
+              </p>
+              <a 
+                href="https://50constitutions.org" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-block bg-[#0F2C47] text-white px-6 py-3 rounded-lg font-bold hover:bg-[#C41E3A] transition-colors shadow-md"
+              >
+                Visit 50constitutions.org →
+              </a>
+            </div>
           </div>
         </div>
       </section>

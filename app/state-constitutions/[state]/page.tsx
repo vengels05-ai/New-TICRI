@@ -53,28 +53,35 @@ export default function StateConstitutionPage({ params }: { params: { state: str
             </div>
           </div>
 
-          {/* Constitution Content Placeholder */}
+          {/* Constitution Content */}
           <div className="space-y-8">
-            <div className="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded">
-              <div className="flex items-start">
-                <div className="text-3xl mr-4">🚧</div>
-                <div>
-                  <h3 className="text-lg font-bold text-yellow-800 mb-2">Content Coming Soon</h3>
-                  <p className="text-yellow-700">
-                    We&apos;re currently building comprehensive content for each state&apos;s constitution, including:
+            {/* Primary Resource Link */}
+            <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-400 rounded-lg shadow-lg p-8">
+              <div className="flex items-start gap-4">
+                <div className="text-5xl">�</div>
+                <div className="flex-1">
+                  <h2 className="text-2xl font-bold text-[#0F2C47] mb-3">Read the Full Constitution</h2>
+                  <p className="text-gray-700 leading-relaxed mb-4">
+                    Access the complete, current text of the {stateInfo.name} Constitution through the 
+                    comprehensive 50 Constitutions database maintained by the State Democracy Research Initiative 
+                    at the University of Wisconsin Law School.
                   </p>
-                  <ul className="list-disc list-inside mt-2 text-yellow-700 space-y-1">
-                    <li>Full constitutional text</li>
-                    <li>Historical context and major amendments</li>
-                    <li>Key provisions and unique features</li>
-                    <li>Structure of state government</li>
-                    <li>Bill of rights and individual protections</li>
-                  </ul>
+                  <a 
+                    href={`https://50constitutions.org/constitutions/${params.state}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block bg-[#0F2C47] text-white px-6 py-3 rounded-lg font-bold hover:bg-[#C41E3A] transition-colors shadow-md"
+                  >
+                    View {stateInfo.name} Constitution →
+                  </a>
+                  <p className="text-sm text-gray-600 mt-3">
+                    Source: <a href="https://50constitutions.org" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">50constitutions.org</a>
+                  </p>
                 </div>
               </div>
             </div>
 
-            {/* Placeholder Sections */}
+            {/* Overview Section */}
             <div className="bg-white rounded-lg shadow-lg p-8 border-l-4 border-[#1A3A5C]">
               <h2 className="text-3xl font-bold text-[#0F2C47] mb-4">Overview</h2>
               <p className="text-gray-700 leading-relaxed">
