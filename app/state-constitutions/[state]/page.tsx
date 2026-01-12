@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getStateBySlug, usStates } from '@/lib/usStates';
+import { getStateConstitution, hasConstitutionData } from '@/lib/stateConstitutions';
 
 export async function generateStaticParams() {
   return usStates.map((state) => ({
@@ -10,6 +11,8 @@ export async function generateStaticParams() {
 
 export default function StateConstitutionPage({ params }: { params: { state: string } }) {
   const stateInfo = getStateBySlug(params.state);
+  const constitution = getStateConstitution(params.state);
+  const hasData = hasConstitutionData(params.state);
 
   if (!stateInfo) {
     notFound();
