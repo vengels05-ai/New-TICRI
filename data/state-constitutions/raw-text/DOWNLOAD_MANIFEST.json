@@ -1,0 +1,517 @@
+{
+  "createdAt": "2026-01-12T17:10:57.598Z",
+  "totalStates": 50,
+  "instructions": [
+    "Manual download process:",
+    "1. Visit each state URL listed below",
+    "2. Copy the full constitution text",
+    "3. Save as [state-abbreviation]-raw.txt in this directory",
+    "4. Mark state as \"downloaded\" in the manifest",
+    "",
+    "For HTML sources: Copy visible text from browser",
+    "For PDF sources: Download PDF, copy text (or use pdf2text)",
+    "",
+    "We will format the text into JSON structure in a separate step"
+  ],
+  "states": {
+    "AL": {
+      "name": "Alabama",
+      "abbreviation": "AL",
+      "url": "http://alisondb.legislature.state.al.us/alison/CodeOfAlabama/Constitution/1901/CA-245731.htm",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "AL-raw.txt",
+      "downloadedAt": null
+    },
+    "AK": {
+      "name": "Alaska",
+      "abbreviation": "AK",
+      "url": "http://www.legis.state.ak.us/basis/folioproxy.asp?url=http://wwwjnu01.legis.state.ak.us/cgi-bin/folioisa.dll/acontxt/query=*/doc/{t750}",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "AK-raw.txt",
+      "downloadedAt": null
+    },
+    "AZ": {
+      "name": "Arizona",
+      "abbreviation": "AZ",
+      "url": "https://azleg.gov/const/",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "AZ-raw.txt",
+      "downloadedAt": null
+    },
+    "AR": {
+      "name": "Arkansas",
+      "abbreviation": "AR",
+      "url": "https://www.arkleg.state.ar.us/Bills/Document?type=pdf&source=static&file=ARConstitution1874.pdf",
+      "type": "pdf",
+      "note": "",
+      "downloaded": false,
+      "filename": "AR-raw.txt",
+      "downloadedAt": null
+    },
+    "CA": {
+      "name": "California",
+      "abbreviation": "CA",
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displayexpandedbranch.xhtml?lawCode=CONS",
+      "type": "html",
+      "note": "Multi-page - need to fetch each article separately",
+      "downloaded": false,
+      "filename": "CA-raw.txt",
+      "downloadedAt": null
+    },
+    "CO": {
+      "name": "Colorado",
+      "abbreviation": "CO",
+      "url": "https://leg.colorado.gov/colorado-constitution",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "CO-raw.txt",
+      "downloadedAt": null
+    },
+    "CT": {
+      "name": "Connecticut",
+      "abbreviation": "CT",
+      "url": "https://www.cga.ct.gov/current/pub/chap_000.htm",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "CT-raw.txt",
+      "downloadedAt": null
+    },
+    "DE": {
+      "name": "Delaware",
+      "abbreviation": "DE",
+      "url": "https://delcode.delaware.gov/constitution/",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "DE-raw.txt",
+      "downloadedAt": null
+    },
+    "FL": {
+      "name": "Florida",
+      "abbreviation": "FL",
+      "url": "http://www.leg.state.fl.us/Statutes/index.cfm?Mode=Constitution&Submenu=3&Tab=statutes",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "FL-raw.txt",
+      "downloadedAt": null
+    },
+    "GA": {
+      "name": "Georgia",
+      "abbreviation": "GA",
+      "url": "https://www.legis.ga.gov/document/constitution/",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "GA-raw.txt",
+      "downloadedAt": null
+    },
+    "HI": {
+      "name": "Hawaii",
+      "abbreviation": "HI",
+      "url": "https://www.capitol.hawaii.gov/hrscurrent/Vol01_Ch0001-0042F/00-Hawaii_Constitution/",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "HI-raw.txt",
+      "downloadedAt": null
+    },
+    "ID": {
+      "name": "Idaho",
+      "abbreviation": "ID",
+      "url": "https://legislature.idaho.gov/statutesrules/idconst/",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "ID-raw.txt",
+      "downloadedAt": null
+    },
+    "IL": {
+      "name": "Illinois",
+      "abbreviation": "IL",
+      "url": "https://www.ilga.gov/commission/lrb/conmain.htm",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "IL-raw.txt",
+      "downloadedAt": null
+    },
+    "IN": {
+      "name": "Indiana",
+      "abbreviation": "IN",
+      "url": "http://iga.in.gov/legislative/laws/constitution/",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "IN-raw.txt",
+      "downloadedAt": null
+    },
+    "IA": {
+      "name": "Iowa",
+      "abbreviation": "IA",
+      "url": "https://www.legis.iowa.gov/law/iowaConstitution",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "IA-raw.txt",
+      "downloadedAt": null
+    },
+    "KS": {
+      "name": "Kansas",
+      "abbreviation": "KS",
+      "url": "http://www.kslegislature.org/li/b2021_22/statute/constitution/",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "KS-raw.txt",
+      "downloadedAt": null
+    },
+    "KY": {
+      "name": "Kentucky",
+      "abbreviation": "KY",
+      "url": "https://legislature.ky.gov/Law/constitution/Pages/default.aspx",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "KY-raw.txt",
+      "downloadedAt": null
+    },
+    "LA": {
+      "name": "Louisiana",
+      "abbreviation": "LA",
+      "url": "https://senate.la.gov/Documents/Constitution/",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "LA-raw.txt",
+      "downloadedAt": null
+    },
+    "ME": {
+      "name": "Maine",
+      "abbreviation": "ME",
+      "url": "https://legislature.maine.gov/legis/const/",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "ME-raw.txt",
+      "downloadedAt": null
+    },
+    "MD": {
+      "name": "Maryland",
+      "abbreviation": "MD",
+      "url": "https://mgaleg.maryland.gov/mgawebsite/Laws/Constitution",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "MD-raw.txt",
+      "downloadedAt": null
+    },
+    "MA": {
+      "name": "Massachusetts",
+      "abbreviation": "MA",
+      "url": "https://malegislature.gov/Laws/Constitution",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "MA-raw.txt",
+      "downloadedAt": null
+    },
+    "MI": {
+      "name": "Michigan",
+      "abbreviation": "MI",
+      "url": "http://www.legislature.mi.gov/documents/publications/Constitution.pdf",
+      "type": "pdf",
+      "note": "",
+      "downloaded": false,
+      "filename": "MI-raw.txt",
+      "downloadedAt": null
+    },
+    "MN": {
+      "name": "Minnesota",
+      "abbreviation": "MN",
+      "url": "https://www.revisor.mn.gov/constitution/",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "MN-raw.txt",
+      "downloadedAt": null
+    },
+    "MS": {
+      "name": "Mississippi",
+      "abbreviation": "MS",
+      "url": "https://law.justia.com/constitution/mississippi/",
+      "note": "Check if there is an official MS source",
+      "downloaded": false,
+      "filename": "MS-raw.txt",
+      "downloadedAt": null
+    },
+    "MO": {
+      "name": "Missouri",
+      "abbreviation": "MO",
+      "url": "https://www.senate.mo.gov/missouri-constitution/",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "MO-raw.txt",
+      "downloadedAt": null
+    },
+    "MT": {
+      "name": "Montana",
+      "abbreviation": "MT",
+      "url": "https://leg.mt.gov/bills/mca/Constitution/index.html",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "MT-raw.txt",
+      "downloadedAt": null
+    },
+    "NE": {
+      "name": "Nebraska",
+      "abbreviation": "NE",
+      "url": "https://nebraskalegislature.gov/laws/browse-constitution.php",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "NE-raw.txt",
+      "downloadedAt": null
+    },
+    "NV": {
+      "name": "Nevada",
+      "abbreviation": "NV",
+      "url": "https://www.leg.state.nv.us/Const/NvConst.html",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "NV-raw.txt",
+      "downloadedAt": null
+    },
+    "NH": {
+      "name": "New Hampshire",
+      "abbreviation": "NH",
+      "url": "http://www.gencourt.state.nh.us/rsa/html/NHTOC/NHTOC-CONST-00.htm",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "NH-raw.txt",
+      "downloadedAt": null
+    },
+    "NJ": {
+      "name": "New Jersey",
+      "abbreviation": "NJ",
+      "url": "https://www.njleg.state.nj.us/constitution",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "NJ-raw.txt",
+      "downloadedAt": null
+    },
+    "NM": {
+      "name": "New Mexico",
+      "abbreviation": "NM",
+      "url": "https://nmonesource.com/nmos/nmcon/en/nav.do",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "NM-raw.txt",
+      "downloadedAt": null
+    },
+    "NY": {
+      "name": "New York",
+      "abbreviation": "NY",
+      "url": "https://www.nysenate.gov/legislation/constitution",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "NY-raw.txt",
+      "downloadedAt": null
+    },
+    "NC": {
+      "name": "North Carolina",
+      "abbreviation": "NC",
+      "url": "https://www.ncleg.gov/Laws/Constitution",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "NC-raw.txt",
+      "downloadedAt": null
+    },
+    "ND": {
+      "name": "North Dakota",
+      "abbreviation": "ND",
+      "url": "https://www.legis.nd.gov/constitution",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "ND-raw.txt",
+      "downloadedAt": null
+    },
+    "OH": {
+      "name": "Ohio",
+      "abbreviation": "OH",
+      "url": "https://codes.ohio.gov/ohio-constitution",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "OH-raw.txt",
+      "downloadedAt": null
+    },
+    "OK": {
+      "name": "Oklahoma",
+      "abbreviation": "OK",
+      "url": "http://www.oklegislature.gov/cf/LawsAndRulesOfGovernment/OKConstitution.cfm",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "OK-raw.txt",
+      "downloadedAt": null
+    },
+    "OR": {
+      "name": "Oregon",
+      "abbreviation": "OR",
+      "url": "https://www.oregonlegislature.gov/bills_laws/Pages/OrConst.aspx",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "OR-raw.txt",
+      "downloadedAt": null
+    },
+    "PA": {
+      "name": "Pennsylvania",
+      "abbreviation": "PA",
+      "url": "https://www.legis.state.pa.us/cfdocs/legis/LI/consCheck.cfm?txtType=HTM&ttl=00",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "PA-raw.txt",
+      "downloadedAt": null
+    },
+    "RI": {
+      "name": "Rhode Island",
+      "abbreviation": "RI",
+      "url": "http://webserver.rilegislature.gov/RiConstitution/",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "RI-raw.txt",
+      "downloadedAt": null
+    },
+    "SC": {
+      "name": "South Carolina",
+      "abbreviation": "SC",
+      "url": "https://www.scstatehouse.gov/scconstitution/scconst.php",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "SC-raw.txt",
+      "downloadedAt": null
+    },
+    "SD": {
+      "name": "South Dakota",
+      "abbreviation": "SD",
+      "url": "https://sdlegislature.gov/Statutes/Constitution",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "SD-raw.txt",
+      "downloadedAt": null
+    },
+    "TN": {
+      "name": "Tennessee",
+      "abbreviation": "TN",
+      "url": "https://www.tn.gov/content/dam/tn/stateoftn/documents/TNConstitution.pdf",
+      "type": "pdf",
+      "note": "",
+      "downloaded": false,
+      "filename": "TN-raw.txt",
+      "downloadedAt": null
+    },
+    "TX": {
+      "name": "Texas",
+      "abbreviation": "TX",
+      "url": "https://statutes.capitol.texas.gov/Index.aspx",
+      "type": "html",
+      "note": "Constitution listed under statutes",
+      "downloaded": false,
+      "filename": "TX-raw.txt",
+      "downloadedAt": null
+    },
+    "UT": {
+      "name": "Utah",
+      "abbreviation": "UT",
+      "url": "https://le.utah.gov/xcode/constitution.html",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "UT-raw.txt",
+      "downloadedAt": null
+    },
+    "VT": {
+      "name": "Vermont",
+      "abbreviation": "VT",
+      "url": "https://legislature.vermont.gov/statutes/constitution",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "VT-raw.txt",
+      "downloadedAt": null
+    },
+    "VA": {
+      "name": "Virginia",
+      "abbreviation": "VA",
+      "url": "https://law.lis.virginia.gov/constitution",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "VA-raw.txt",
+      "downloadedAt": null
+    },
+    "WA": {
+      "name": "Washington",
+      "abbreviation": "WA",
+      "url": "https://leg.wa.gov/CodeReviser/Pages/WAConstitution.aspx",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "WA-raw.txt",
+      "downloadedAt": null
+    },
+    "WV": {
+      "name": "West Virginia",
+      "abbreviation": "WV",
+      "url": "http://www.wvlegislature.gov/WVCODE/WV_CON.cfm",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "WV-raw.txt",
+      "downloadedAt": null
+    },
+    "WI": {
+      "name": "Wisconsin",
+      "abbreviation": "WI",
+      "url": "https://docs.legis.wisconsin.gov/constitution",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "WI-raw.txt",
+      "downloadedAt": null
+    },
+    "WY": {
+      "name": "Wyoming",
+      "abbreviation": "WY",
+      "url": "https://www.wyoleg.gov/LegislatureStaff/LawLibrary/WyomingConstitution",
+      "type": "html",
+      "note": "",
+      "downloaded": false,
+      "filename": "WY-raw.txt",
+      "downloadedAt": null
+    }
+  }
+}
