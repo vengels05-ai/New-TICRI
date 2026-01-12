@@ -58,31 +58,83 @@ export default function StateConstitutionPage({ params }: { params: { state: str
 
           {/* Constitution Content */}
           <div className="space-y-8">
-            {/* Primary Resource Link */}
-            <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-400 rounded-lg shadow-lg p-8">
-              <div className="flex items-start gap-4">
-                <div className="text-5xl">�</div>
-                <div className="flex-1">
-                  <h2 className="text-2xl font-bold text-[#0F2C47] mb-3">Read the Full Constitution</h2>
-                  <p className="text-gray-700 leading-relaxed mb-4">
-                    Access the complete, current text of the {stateInfo.name} Constitution through the 
-                    comprehensive 50 Constitutions database maintained by the State Democracy Research Initiative 
-                    at the University of Wisconsin Law School.
+            {/* Display full constitution text if available */}
+            {hasData && constitution ? (
+              <div className="bg-white rounded-lg shadow-lg p-8 border-l-4 border-[#0F2C47]">
+                <h2 className="text-3xl font-bold text-[#0F2C47] mb-6">Constitution Text</h2>
+                
+                {/* Preamble */}
+                {constitution.preamble && (
+                  <div className="mb-8 bg-blue-50 p-6 rounded-lg border-l-4 border-blue-600">
+                    <h3 className="text-2xl font-bold text-[#1A3A5C] mb-4">Preamble</h3>
+                    <p className="text-gray-800 leading-relaxed italic text-lg">{constitution.preamble}</p>
+                  </div>
+                )}
+
+                {/* Articles */}
+                {constitution.articles && constitution.articles.map((article) => (
+                  <div key={article.number} className="mb-12 bg-white p-6 rounded-lg border border-gray-200">
+                    <h3 className="text-2xl font-bold text-[#0F2C47] mb-6 border-b-2 border-[#C41E3A] pb-2">
+                      Article {article.number}: {article.title}
+                    </h3>
+                    
+                    {/* Sections */}
+                    {article.sections && article.sections.map((section) => (
+                      <div key={section.number} className="mb-6 last:mb-0">
+                        <h4 className="text-lg font-bold text-[#1A3A5C] mb-2">
+                          Section {section.number}
+                          {section.title && `: ${section.title}`}
+                        </h4>
+                        <p className="text-gray-700 leading-relaxed whitespace-pre-wrap">
+                          {section.text}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+
+                {/* Source Attribution */}
+                <div className="mt-8 p-4 bg-gray-100 rounded-lg text-sm text-gray-600">
+                  <p>
+                    <strong>Source:</strong> {constitution.source}
+                    {constitution.sourceUrl && (
+                      <> | <a href={constitution.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                        View Original
+                      </a></>
+                    )}
                   </p>
-                  <a 
-                    href={`https://50constitutions.org/constitutions/${params.state}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block bg-[#0F2C47] text-white px-6 py-3 rounded-lg font-bold hover:bg-[#C41E3A] transition-colors shadow-md"
-                  >
-                    View {stateInfo.name} Constitution →
-                  </a>
-                  <p className="text-sm text-gray-600 mt-3">
-                    Source: <a href="https://50constitutions.org" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">50constitutions.org</a>
+                  <p className="mt-1">
+                    <strong>Last Updated:</strong> {constitution.lastUpdated}
                   </p>
                 </div>
               </div>
-            </div>
+            ) : (
+              /* Primary Resource Link - only show if no local data */
+              <div className="bg-gradient-to-br from-blue-50 to-blue-100 border-2 border-blue-400 rounded-lg shadow-lg p-8">
+                <div className="flex items-start gap-4">
+                  <div className="text-5xl">📜</div>
+                  <div className="flex-1">
+                    <h2 className="text-2xl font-bold text-[#0F2C47] mb-3">Read the Full Constitution</h2>
+                    <p className="text-gray-700 leading-relaxed mb-4">
+                      Access the complete, current text of the {stateInfo.name} Constitution through the 
+                      comprehensive 50 Constitutions database maintained by the State Democracy Research Initiative 
+                      at the University of Wisconsin Law School.
+                    </p>
+                    <a 
+                      href={`https://50constitutions.org/constitutions/${params.state}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block bg-[#0F2C47] text-white px-6 py-3 rounded-lg font-bold hover:bg-[#C41E3A] transition-colors shadow-md"
+                    >
+                      View {stateInfo.name} Constitution →
+                    </a>
+                    <p className="text-sm text-gray-600 mt-3">
+                      Source: <a href="https://50constitutions.org" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">50constitutions.org</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Overview Section */}
             <div className="bg-white rounded-lg shadow-lg p-8 border-l-4 border-[#1A3A5C]">
