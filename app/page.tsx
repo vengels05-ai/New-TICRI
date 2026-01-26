@@ -252,7 +252,7 @@ export default function HomePage() {
                 rel="noopener noreferrer"
                 className="text-lg font-semibold text-[#C41E3A] hover:text-[#9B1829] transition-colors"
               >
-                535 Project
+                Project 535
               </a>
               <p className="text-gray-700 mt-2">
                 For more information about civic engagement efforts, see www.535project.org
