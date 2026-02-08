@@ -53,60 +53,63 @@ export default function Header() {
             {/* More Info Dropdown */}
             <div 
               className="relative"
-              onMouseEnter={() => setOpenDropdown('more')}
-              onMouseLeave={() => setOpenDropdown(null)}
             >
-              <button className="hover:text-[#C41E3A] transition-colors text-sm lg:text-base font-semibold cursor-pointer">
+              <button 
+                className="hover:text-[#C41E3A] transition-colors text-sm lg:text-base font-semibold cursor-pointer"
+                onMouseEnter={() => setOpenDropdown('more')}
+              >
                 More Info
               </button>
               {openDropdown === 'more' && (
                 <div 
-                  className="absolute right-0 mt-2 w-56 bg-white text-gray-800 rounded-lg shadow-xl py-2"
+                  className="absolute right-0 top-full pt-1"
                   onMouseEnter={() => setOpenDropdown('more')}
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
-                  <Link href="/framework" className="block px-4 py-2 hover:bg-gray-100">
-                    Framework
-                  </Link>
-                  <Link href="/rights" className="block px-4 py-2 hover:bg-gray-100">
-                    Rights
-                  </Link>
-                  <Link href="/federalism" className="block px-4 py-2 hover:bg-gray-100">
-                    Federalism
-                  </Link>
-                  <Link href="/state-powers" className="block px-4 py-2 hover:bg-gray-100">
-                    State Powers
-                  </Link>
-                  <Link href="/state-constitutions" className="block px-4 py-2 hover:bg-gray-100">
-                    State Constitutions
-                  </Link>
-                  <Link href="/federal-funding" className="block px-4 py-2 hover:bg-gray-100">
-                    Federal Funding
-                  </Link>
-                  <Link href="/taxes" className="block px-4 py-2 hover:bg-gray-100">
-                    Taxes
-                  </Link>
-                  <Link href="/voting" className="block px-4 py-2 hover:bg-gray-100">
-                    Voting
-                  </Link>
-                  <Link href="/parties" className="block px-4 py-2 hover:bg-gray-100">
-                    Parties & Policy
-                  </Link>
-                  <Link href="/spending" className="block px-4 py-2 hover:bg-gray-100">
-                    Government Spending
-                  </Link>
-                  <Link href="/535" className="block px-4 py-2 hover:bg-gray-100 font-bold text-[#C41E3A]">
-                    Project 535
-                  </Link>
-                  <Link href="/truth-and-law" className="block px-4 py-2 hover:bg-gray-100">
-                    Truth and Law
-                  </Link>
-                  <Link href="/about" className="block px-4 py-2 hover:bg-gray-100">
-                    About
-                  </Link>
-                  <Link href="/contact" className="block px-4 py-2 hover:bg-gray-100">
-                    Contact
-                  </Link>
+                  <div className="w-56 bg-white text-gray-800 rounded-lg shadow-xl py-2">
+                    <Link href="/framework" className="block px-4 py-2 hover:bg-gray-100">
+                      Framework
+                    </Link>
+                    <Link href="/rights" className="block px-4 py-2 hover:bg-gray-100">
+                      Rights
+                    </Link>
+                    <Link href="/federalism" className="block px-4 py-2 hover:bg-gray-100">
+                      Federalism
+                    </Link>
+                    <Link href="/state-powers" className="block px-4 py-2 hover:bg-gray-100">
+                      State Powers
+                    </Link>
+                    <Link href="/state-constitutions" className="block px-4 py-2 hover:bg-gray-100">
+                      State Constitutions
+                    </Link>
+                    <Link href="/federal-funding" className="block px-4 py-2 hover:bg-gray-100">
+                      Federal Funding
+                    </Link>
+                    <Link href="/taxes" className="block px-4 py-2 hover:bg-gray-100">
+                      Taxes
+                    </Link>
+                    <Link href="/voting" className="block px-4 py-2 hover:bg-gray-100">
+                      Voting
+                    </Link>
+                    <Link href="/parties" className="block px-4 py-2 hover:bg-gray-100">
+                      Parties & Policy
+                    </Link>
+                    <Link href="/spending" className="block px-4 py-2 hover:bg-gray-100">
+                      Government Spending
+                    </Link>
+                    <Link href="/535" className="block px-4 py-2 hover:bg-gray-100 font-bold text-[#C41E3A]">
+                      Project 535
+                    </Link>
+                    <Link href="/truth-and-law" className="block px-4 py-2 hover:bg-gray-100">
+                      Truth and Law
+                    </Link>
+                    <Link href="/about" className="block px-4 py-2 hover:bg-gray-100">
+                      About
+                    </Link>
+                    <Link href="/contact" className="block px-4 py-2 hover:bg-gray-100">
+                      Contact
+                    </Link>
+                  </div>
                 </div>
               )}
             </div>
