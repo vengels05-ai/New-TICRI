@@ -1,10 +1,113 @@
 import Link from 'next/link';
-import { TOPICS } from '@/config/nav';
-import { ArrowRight } from 'lucide-react';
 
 export default function HomePage() {
-  // Only show ready topics on homepage
-  const featuredTopics = TOPICS.filter(t => t.status === 'ready');
+  const sections = [
+    {
+      title: 'The Constitution',
+      description: 'Read the Preamble, Articles, and all 27 Amendments in plain English.',
+      icon: '📜',
+      href: '/constitution',
+      color: 'from-blue-50 to-blue-100 border-[#1A3A5C]'
+    },
+    {
+      title: 'Your Rights',
+      description: 'Individual liberties and constitutional protections explained simply.',
+      icon: '⚖️',
+      href: '/rights',
+      color: 'from-red-50 to-red-100 border-[#C41E3A]'
+    },
+    {
+      title: 'Acts of Congress',
+      description: 'Major federal legislation that shaped rights, powers, and policy.',
+      icon: '📋',
+      href: '/acts',
+      color: 'from-indigo-50 to-indigo-100 border-indigo-600'
+    },
+    {
+      title: 'Constitutional Framework',
+      description: 'Literal interpretation of rights, powers, and checks & balances.',
+      icon: '🏛️',
+      href: '/framework',
+      color: 'from-slate-50 to-slate-100 border-slate-700'
+    },
+    {
+      title: 'Supreme Court Cases',
+      description: 'Landmark decisions that shaped American law and society.',
+      icon: '⚖️',
+      href: '/cases',
+      color: 'from-purple-50 to-purple-100 border-purple-600'
+    },
+    {
+      title: 'Federalism',
+      description: 'How power was supposed to be divided vs. how it works today.',
+      icon: '🗳️',
+      href: '/federalism',
+      color: 'from-green-50 to-green-100 border-green-600'
+    },
+    {
+      title: 'State Powers',
+      description: 'What states can and can\'t do under the Constitution.',
+      icon: '🏢',
+      href: '/state-powers',
+      color: 'from-orange-50 to-orange-100 border-orange-600'
+    },
+    {
+      title: 'State Constitutions',
+      description: 'Explore the fundamental governing documents of all 50 states.',
+      icon: '🗺️',
+      href: '/state-constitutions',
+      color: 'from-teal-50 to-teal-100 border-teal-600'
+    },
+    {
+      title: 'Federal Funding',
+      description: 'How federal money works and its impact on state autonomy.',
+      icon: '💰',
+      href: '/federal-funding',
+      color: 'from-yellow-50 to-yellow-100 border-yellow-600'
+    },
+    {
+      title: 'Taxes',
+      description: 'The evolution of federal taxation from 1900 to present day.',
+      icon: '💸',
+      href: '/taxes',
+      color: 'from-emerald-50 to-emerald-100 border-emerald-600'
+    },
+    {
+      title: 'Voting',
+      description: 'The functional effect of a citizen\'s vote in our system.',
+      icon: '🗳️',
+      href: '/voting',
+      color: 'from-indigo-50 to-indigo-100 border-indigo-600'
+    },
+    {
+      title: 'Parties & Policy',
+      description: 'Where America\'s two major political parties came from and how they changed.',
+      icon: '🏛️',
+      href: '/parties',
+      color: 'from-purple-50 to-purple-100 border-purple-700'
+    },
+    {
+      title: 'Government Spending',
+      description: '124 years of federal budget data: receipts, outlays, and debt (1900-2024).',
+      icon: '📊',
+      href: '/spending',
+      color: 'from-cyan-50 to-cyan-100 border-cyan-600'
+    },
+    {
+      title: 'Project 535',
+      description: 'How Congress works: the House, Senate, 17th Amendment, filibuster, and sub-committees.',
+      icon: '🏛️',
+      href: '/535',
+      color: 'from-red-50 to-red-100 border-[#C41E3A]'
+    },
+    {
+      title: 'Truth & Law',
+      description: 'Legal standards and truth-finding in the American justice system.',
+      icon: '⚡',
+      href: '/truth-and-law',
+      color: 'from-pink-50 to-pink-100 border-pink-600'
+    }
+  ];
 
   return (
     <div className="bg-white">
@@ -41,44 +144,30 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Featured Topics Grid */}
+      {/* Topics Grid */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#0F2C47]">
-              Topics
-            </h2>
-            <Link
-              href="/topics"
-              className="inline-flex items-center gap-2 text-[#C41E3A] hover:text-[#9B1829] font-semibold transition-colors"
-            >
-              View All
-              <ArrowRight className="h-5 w-5" />
-            </Link>
-          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-[#0F2C47]">
+            Explore Topics
+          </h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredTopics.map((topic, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {sections.map((section, index) => (
               <Link
                 key={index}
-                href={topic.href}
-                className="bg-white p-6 rounded-lg shadow-md border-l-4 border-[#C41E3A] hover:shadow-xl transition-all transform hover:-translate-y-1"
+                href={section.href}
+                className={`bg-gradient-to-br ${section.color} p-8 rounded-lg shadow-lg border-t-4 hover:shadow-xl transition-all transform hover:-translate-y-1`}
               >
+                <div className="text-5xl mb-4">{section.icon}</div>
                 <h3 className="text-2xl font-bold mb-3 text-[#0F2C47]">
-                  {topic.title}
+                  {section.title}
                 </h3>
                 <p className="text-gray-800">
-                  {topic.description}
+                  {section.description}
                 </p>
               </Link>
             ))}
           </div>
-
-          {featuredTopics.length === 0 && (
-            <div className="text-center py-12">
-              <p className="text-gray-500 text-lg">Topics coming soon.</p>
-            </div>
-          )}
         </div>
       </section>
 
@@ -103,16 +192,16 @@ export default function HomePage() {
               <p className="text-gray-200">Decisions that shaped American law and society.</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-3 text-[#DC2F47]">Federalism & State Powers</h3>
-              <p className="text-gray-200">How federalism was supposed to work vs. how it works today.</p>
+              <h3 className="text-xl font-bold mb-3 text-[#DC2F47]">Federalism</h3>
+              <p className="text-gray-200">How Federalism was supposed to work vs. how it works today.</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-3 text-[#DC2F47]">Federal Legislation</h3>
-              <p className="text-gray-200">Major acts of Congress that shaped rights, powers, and policy.</p>
+              <h3 className="text-xl font-bold mb-3 text-[#DC2F47]">State Powers & Federal Overreach</h3>
+              <p className="text-gray-200">What states can do and where federal power has expanded.</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
-              <h3 className="text-xl font-bold mb-3 text-[#DC2F47]">Government Data & Resources</h3>
-              <p className="text-gray-200">Budget data, voting systems, and how Congress works.</p>
+              <h3 className="text-xl font-bold mb-3 text-[#DC2F47]">The Role of Federal Funding</h3>
+              <p className="text-gray-200">How federal money works and its impact on state autonomy.</p>
             </div>
           </div>
         </div>
@@ -140,9 +229,9 @@ export default function HomePage() {
       <section className="py-12 bg-gray-50 border-t border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold mb-6 text-[#0F2C47] text-center">
-            Useful Resources
+            Useful Links
           </h2>
-          <div className="grid md:grid-cols-2 gap-4">
+          <div className="space-y-4">
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
               <a 
                 href="https://www.usafacts.org" 
@@ -166,7 +255,7 @@ export default function HomePage() {
                 Project 535
               </a>
               <p className="text-gray-700 mt-2">
-                Civic engagement and information about how Congress works.
+                For more information about civic engagement efforts, see www.535project.org
               </p>
             </div>
           </div>
