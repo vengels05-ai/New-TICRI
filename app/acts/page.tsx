@@ -1,89 +1,90 @@
 import Link from 'next/link';
 import actsData from './acts-by-category.json';
+import { Landmark, Scale, Vote, Sprout, HardHat, Shield, ShoppingCart, Heart, Cpu, Globe, User, Gavel, FileText } from 'lucide-react';
 
 export default function ActsPage() {
   const timelines = [
     {
       title: 'Finance & Banking Timeline',
       description: 'Federal Reserve Act, Glass-Steagall, Dodd-Frank, and the evolution of financial regulation',
-      icon: '🏦',
+      icon: Landmark,
       href: '/acts/financial-system-timeline',
       color: 'from-green-50 to-green-100 border-green-600'
     },
     {
       title: 'Civil Rights Timeline',
       description: 'From the Civil Rights Act of 1964 to the Americans with Disabilities Act',
-      icon: '⚖️',
+      icon: Scale,
       href: '/acts/civil-rights-timeline',
       color: 'from-blue-50 to-blue-100 border-blue-600'
     },
     {
       title: 'Voting Rights Timeline',
       description: 'Voting Rights Act, National Voter Registration Act, and election law evolution',
-      icon: '🗳️',
+      icon: Vote,
       href: '/acts/voting-rights-timeline',
       color: 'from-purple-50 to-purple-100 border-purple-600'
     },
     {
       title: 'Environmental Law Timeline',
       description: 'Clean Air Act, Clean Water Act, CERCLA, and environmental protection',
-      icon: '🌱',
+      icon: Sprout,
       href: '/acts/environmental-law-timeline',
       color: 'from-emerald-50 to-emerald-100 border-emerald-600'
     },
     {
       title: 'Labor & Employment Timeline',
       description: 'Fair Labor Standards, NLRA, OSHA, and workplace rights',
-      icon: '👷',
+      icon: HardHat,
       href: '/acts/labor-employment-timeline',
       color: 'from-orange-50 to-orange-100 border-orange-600'
     },
     {
       title: 'Defense & Security Timeline',
       description: 'War Powers Resolution, PATRIOT Act, and national security legislation',
-      icon: '🛡️',
+      icon: Shield,
       href: '/acts/defense-security-timeline',
       color: 'from-red-50 to-red-100 border-red-600'
     },
     {
       title: 'Consumer & Commerce Timeline',
       description: 'Truth in Lending, Consumer Product Safety, and commerce regulation',
-      icon: '🛒',
+      icon: ShoppingCart,
       href: '/acts/consumer-commerce-timeline',
       color: 'from-yellow-50 to-yellow-100 border-yellow-600'
     },
     {
       title: 'Healthcare & Social Policy Timeline',
       description: 'Social Security Act, Medicare, Medicaid, ACA, and social safety net',
-      icon: '🏥',
+      icon: Heart,
       href: '/acts/healthcare-social-timeline',
       color: 'from-pink-50 to-pink-100 border-pink-600'
     },
     {
       title: 'Criminal Justice & Due Process Timeline',
       description: 'Controlled Substances Act, Crime Control Acts, and criminal law',
-      icon: '⚖️',
+      icon: Gavel,
       href: '/acts/criminal-justice-timeline',
       color: 'from-indigo-50 to-indigo-100 border-indigo-600'
     },
     {
       title: 'Technology & Privacy Timeline',
       description: 'ECPA, CFAA, Section 230, and digital age legislation',
-      icon: '💻',
+      icon: Cpu,
       href: '/acts/technology-privacy-timeline',
       color: 'from-cyan-50 to-cyan-100 border-cyan-600'
     },
     {
       title: 'Immigration Timeline',
       description: 'Immigration and Nationality Act, IRCA, and border policy',
-      icon: '🌎',
+      icon: Globe,
       href: '/acts/immigration-timeline',
       color: 'from-teal-50 to-teal-100 border-teal-600'
     },
     {
       title: 'Administrative Law Timeline',
       description: 'APA, regulatory framework, and the administrative state',
-      icon: '📋',
+      icon: FileText,
       href: '/acts/administrative-law-timeline',
       color: 'from-slate-50 to-slate-100 border-slate-600'
     }
@@ -247,25 +248,28 @@ export default function ActsPage() {
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {timelines.map((timeline) => (
-              <Link
-                key={timeline.href}
-                href={timeline.href}
-                className={`block bg-gradient-to-br ${timeline.color} rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-2 p-6`}
-              >
-                <div className="flex items-start space-x-4">
-                  <div className="text-4xl">{timeline.icon}</div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
-                      {timeline.title}
-                    </h3>
-                    <p className="text-gray-700 text-sm">
-                      {timeline.description}
-                    </p>
+            {timelines.map((timeline) => {
+              const IconComponent = timeline.icon;
+              return (
+                <Link
+                  key={timeline.href}
+                  href={timeline.href}
+                  className={`block bg-gradient-to-br ${timeline.color} rounded-lg shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 border-2 p-6`}
+                >
+                  <div className="flex items-start space-x-4">
+                    <IconComponent className="w-10 h-10" />
+                    <div className="flex-1">
+                      <h3 className="text-xl font-bold text-gray-900 mb-2">
+                        {timeline.title}
+                      </h3>
+                      <p className="text-gray-700 text-sm">
+                        {timeline.description}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            ))}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>

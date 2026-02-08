@@ -1,11 +1,12 @@
 import Link from 'next/link';
+import { Landmark, Building2, Scale, Map, FileEdit, Zap, Target } from 'lucide-react';
 
 export default function ArticlesPage() {
   const articles = [
     {
       number: 'I',
       title: 'The Legislative Branch',
-      emoji: '🏛️',
+      icon: Landmark,
       subtitle: 'Congress: The Power to Make Laws',
       description: 'All federal lawmaking authority, including the power to tax, regulate interstate commerce, declare war, and establish federal courts. Divided into House of Representatives and Senate with specific powers and limitations.',
       keyPowers: 'Taxation, interstate commerce regulation, war declarations, federal court creation, impeachment',
@@ -15,7 +16,7 @@ export default function ArticlesPage() {
     {
       number: 'II',
       title: 'The Executive Branch',
-      emoji: '🏢',
+      icon: Building2,
       subtitle: 'The President: The Power to Execute Laws',
       description: 'Presidential powers including command of armed forces, treaty-making, appointments, and faithful execution of laws. Establishes Electoral College system and impeachment process.',
       keyPowers: 'Commander-in-Chief, treaty negotiations, federal appointments, law enforcement',
@@ -25,7 +26,7 @@ export default function ArticlesPage() {
     {
       number: 'III',
       title: 'The Judicial Branch',
-      emoji: '⚖️',
+      icon: Scale,
       subtitle: 'Federal Courts: The Power to Interpret Laws',
       description: 'Federal judiciary structure, judicial independence, and constitutional protections. Establishes Supreme Court and defines federal court jurisdiction over constitutional questions and interstate disputes.',
       keyPowers: 'Constitutional interpretation, federal law adjudication, interstate dispute resolution',
@@ -35,7 +36,7 @@ export default function ArticlesPage() {
     {
       number: 'IV',
       title: 'Interstate Relations',
-      emoji: '🗺️',
+      icon: Map,
       subtitle: 'States Working Together: Federalism in Action',
       description: 'How states interact with each other and requirements for mutual recognition. Includes Full Faith and Credit Clause, extradition procedures, and federal guarantee of republican government.',
       keyPrinciples: 'Full Faith and Credit, interstate privileges and immunities, state admission process',
@@ -45,7 +46,7 @@ export default function ArticlesPage() {
     {
       number: 'V',
       title: 'Amendment Process',
-      emoji: '📝',
+      icon: FileEdit,
       subtitle: 'Constitutional Change: How to Modify the Constitution',
       description: 'The deliberately difficult process for amending the Constitution. Requires broad consensus through multiple pathways for both proposing and ratifying constitutional changes.',
       proposalMethods: 'Congressional 2/3 vote OR Constitutional Convention',
@@ -55,7 +56,7 @@ export default function ArticlesPage() {
     {
       number: 'VI',
       title: 'Federal Supremacy',
-      emoji: '⚡',
+      icon: Zap,
       subtitle: 'Supreme Law of the Land: Federal vs State Authority',
       description: 'The Supremacy Clause establishing federal constitutional law as supreme, oath requirements for all officials, and prohibition on religious tests for public office.',
       corePrinciple: 'Federal law supreme when constitutional',
@@ -65,7 +66,7 @@ export default function ArticlesPage() {
     {
       number: 'VII',
       title: 'Ratification',
-      emoji: '🎯',
+      icon: Target,
       subtitle: 'Constitutional Birth: How the Constitution Became Law',
       description: 'The historical process by which the Constitution replaced the Articles of Confederation, requiring only nine states for ratification through popular conventions.',
       requirements: '9 of 13 state ratifications through popular conventions',
@@ -93,22 +94,26 @@ export default function ArticlesPage() {
         <h2 className="text-3xl font-bold text-gray-900 mb-12">Navigate by Article</h2>
         
         <div className="space-y-8">
-          {articles.map((article, index) => (
-            <Link 
-              key={article.number}
-              href={article.href}
-              className="block bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow p-8 border-l-4 border-blue-600"
-            >
-              <div className="flex items-start gap-6">
-                <div className="text-6xl flex-shrink-0">{article.emoji}</div>
-                <div className="flex-1">
-                  <div className="flex items-baseline gap-3 mb-2">
-                    <h3 className="text-2xl font-bold text-gray-900">
-                      Article {article.number} — {article.title}
-                    </h3>
+          {articles.map((article, index) => {
+            const IconComponent = article.icon;
+            return (
+              <Link 
+                key={article.number}
+                href={article.href}
+                className="block bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow p-8 border-l-4 border-blue-600"
+              >
+                <div className="flex items-start gap-6">
+                  <div className="flex-shrink-0">
+                    <IconComponent className="w-16 h-16 text-blue-600" />
                   </div>
-                  <p className="text-lg font-semibold text-blue-600 mb-4">{article.subtitle}</p>
-                  <p className="text-gray-700 mb-4 leading-relaxed">{article.description}</p>
+                  <div className="flex-1">
+                    <div className="flex items-baseline gap-3 mb-2">
+                      <h3 className="text-2xl font-bold text-gray-900">
+                        Article {article.number} — {article.title}
+                      </h3>
+                    </div>
+                    <p className="text-lg font-semibold text-blue-600 mb-4">{article.subtitle}</p>
+                    <p className="text-gray-700 mb-4 leading-relaxed">{article.description}</p>
                   
                   <div className="grid md:grid-cols-2 gap-4 text-sm">
                     {article.keyPowers && (
@@ -169,7 +174,8 @@ export default function ArticlesPage() {
                 </div>
               </div>
             </Link>
-          ))}
+            );
+          })}
         </div>
 
         {/* Understanding Section */}

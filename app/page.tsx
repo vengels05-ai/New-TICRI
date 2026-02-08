@@ -1,109 +1,110 @@
 import Link from 'next/link';
+import { ScrollText, Scale, FileText, Landmark, Gavel, Vote, Building2, Map, DollarSign, Coins, BadgeCheck, Building, BarChart3, Users, ShieldCheck } from 'lucide-react';
 
 export default function HomePage() {
   const sections = [
     {
       title: 'The Constitution',
       description: 'Read the Preamble, Articles, and all 27 Amendments in plain English.',
-      icon: '📜',
+      icon: ScrollText,
       href: '/constitution',
       color: 'from-blue-50 to-blue-100 border-[#1A3A5C]'
     },
     {
       title: 'Your Rights',
       description: 'Individual liberties and constitutional protections explained simply.',
-      icon: '⚖️',
+      icon: Scale,
       href: '/rights',
       color: 'from-red-50 to-red-100 border-[#C41E3A]'
     },
     {
       title: 'Acts of Congress',
       description: 'Major federal legislation that shaped rights, powers, and policy.',
-      icon: '📋',
+      icon: FileText,
       href: '/acts',
       color: 'from-indigo-50 to-indigo-100 border-indigo-600'
     },
     {
       title: 'Constitutional Framework',
       description: 'Literal interpretation of rights, powers, and checks & balances.',
-      icon: '🏛️',
+      icon: Landmark,
       href: '/framework',
       color: 'from-slate-50 to-slate-100 border-slate-700'
     },
     {
       title: 'Supreme Court Cases',
       description: 'Landmark decisions that shaped American law and society.',
-      icon: '⚖️',
+      icon: Gavel,
       href: '/cases',
       color: 'from-purple-50 to-purple-100 border-purple-600'
     },
     {
       title: 'Federalism',
       description: 'How power was supposed to be divided vs. how it works today.',
-      icon: '🗳️',
+      icon: Vote,
       href: '/federalism',
       color: 'from-green-50 to-green-100 border-green-600'
     },
     {
       title: 'State Powers',
       description: 'What states can and can\'t do under the Constitution.',
-      icon: '🏢',
+      icon: Building2,
       href: '/state-powers',
       color: 'from-orange-50 to-orange-100 border-orange-600'
     },
     {
       title: 'State Constitutions',
       description: 'Explore the fundamental governing documents of all 50 states.',
-      icon: '🗺️',
+      icon: Map,
       href: '/state-constitutions',
       color: 'from-teal-50 to-teal-100 border-teal-600'
     },
     {
       title: 'Federal Funding',
       description: 'How federal money works and its impact on state autonomy.',
-      icon: '💰',
+      icon: DollarSign,
       href: '/federal-funding',
       color: 'from-yellow-50 to-yellow-100 border-yellow-600'
     },
     {
       title: 'Taxes',
       description: 'The evolution of federal taxation from 1900 to present day.',
-      icon: '💸',
+      icon: Coins,
       href: '/taxes',
       color: 'from-emerald-50 to-emerald-100 border-emerald-600'
     },
     {
       title: 'Voting',
       description: 'The functional effect of a citizen\'s vote in our system.',
-      icon: '🗳️',
+      icon: BadgeCheck,
       href: '/voting',
       color: 'from-indigo-50 to-indigo-100 border-indigo-600'
     },
     {
       title: 'Parties & Policy',
       description: 'Where America\'s two major political parties came from and how they changed.',
-      icon: '🏛️',
+      icon: Users,
       href: '/parties',
       color: 'from-purple-50 to-purple-100 border-purple-700'
     },
     {
       title: 'Government Spending',
       description: '124 years of federal budget data: receipts, outlays, and debt (1900-2024).',
-      icon: '📊',
+      icon: BarChart3,
       href: '/spending',
       color: 'from-cyan-50 to-cyan-100 border-cyan-600'
     },
     {
       title: 'Project 535',
       description: 'How Congress works: the House, Senate, 17th Amendment, filibuster, and sub-committees.',
-      icon: '🏛️',
+      icon: Building,
       href: '/535',
       color: 'from-red-50 to-red-100 border-[#C41E3A]'
     },
     {
       title: 'Truth & Law',
       description: 'Legal standards and truth-finding in the American justice system.',
-      icon: '⚡',
+      icon: ShieldCheck,
       href: '/truth-and-law',
       color: 'from-pink-50 to-pink-100 border-pink-600'
     }
@@ -152,21 +153,26 @@ export default function HomePage() {
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {sections.map((section, index) => (
-              <Link
-                key={index}
-                href={section.href}
-                className={`bg-gradient-to-br ${section.color} p-8 rounded-lg shadow-lg border-t-4 hover:shadow-xl transition-all transform hover:-translate-y-1`}
-              >
-                <div className="text-5xl mb-4">{section.icon}</div>
-                <h3 className="text-2xl font-bold mb-3 text-[#0F2C47]">
-                  {section.title}
-                </h3>
-                <p className="text-gray-800">
-                  {section.description}
-                </p>
-              </Link>
-            ))}
+            {sections.map((section, index) => {
+              const IconComponent = section.icon;
+              return (
+                <Link
+                  key={index}
+                  href={section.href}
+                  className={`bg-gradient-to-br ${section.color} p-8 rounded-lg shadow-lg border-t-4 hover:shadow-xl transition-all transform hover:-translate-y-1`}
+                >
+                  <div className="mb-4">
+                    <IconComponent className="w-12 h-12 text-[#0F2C47]" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3 text-[#0F2C47]">
+                    {section.title}
+                  </h3>
+                  <p className="text-gray-800">
+                    {section.description}
+                  </p>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
