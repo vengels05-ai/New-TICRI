@@ -52,15 +52,19 @@ export default function Header() {
 
             {/* More Info Dropdown */}
             <div 
-              className="relative group"
+              className="relative"
               onMouseEnter={() => setOpenDropdown('more')}
               onMouseLeave={() => setOpenDropdown(null)}
             >
-              <button className="hover:text-[#C41E3A] transition-colors text-sm lg:text-base font-semibold">
+              <button className="hover:text-[#C41E3A] transition-colors text-sm lg:text-base font-semibold cursor-pointer">
                 More Info
               </button>
               {openDropdown === 'more' && (
-                <div className="absolute right-0 mt-2 w-56 bg-white text-gray-800 rounded-lg shadow-xl py-2">
+                <div 
+                  className="absolute right-0 mt-2 w-56 bg-white text-gray-800 rounded-lg shadow-xl py-2"
+                  onMouseEnter={() => setOpenDropdown('more')}
+                  onMouseLeave={() => setOpenDropdown(null)}
+                >
                   <Link href="/framework" className="block px-4 py-2 hover:bg-gray-100">
                     Framework
                   </Link>
