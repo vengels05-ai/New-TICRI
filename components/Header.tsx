@@ -177,6 +177,101 @@ export default function Header() {
             >
               Cases
             </Link>
+            
+            <div className="border-t border-[#1A3A5C] my-2"></div>
+            <div className="px-3 py-2 text-xs font-semibold text-gray-300">MORE INFO</div>
+            
+            <Link
+              href="/framework"
+              className="block px-3 py-2 rounded-md hover:bg-[#1A3A5C] transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Framework
+            </Link>
+            <Link
+              href="/rights"
+              className="block px-3 py-2 rounded-md hover:bg-[#1A3A5C] transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Rights
+            </Link>
+            <Link
+              href="/federalism"
+              className="block px-3 py-2 rounded-md hover:bg-[#1A3A5C] transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Federalism
+            </Link>
+            <Link
+              href="/state-powers"
+              className="block px-3 py-2 rounded-md hover:bg-[#1A3A5C] transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              State Powers
+            </Link>
+            <Link
+              href="/state-constitutions"
+              className="block px-3 py-2 rounded-md hover:bg-[#1A3A5C] transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              State Constitutions
+            </Link>
+            <Link
+              href="/federal-funding"
+              className="block px-3 py-2 rounded-md hover:bg-[#1A3A5C] transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Federal Funding
+            </Link>
+            <Link
+              href="/taxes"
+              className="block px-3 py-2 rounded-md hover:bg-[#1A3A5C] transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Taxes
+            </Link>
+            <Link
+              href="/voting"
+              className="block px-3 py-2 rounded-md hover:bg-[#1A3A5C] transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Voting
+            </Link>
+            <Link
+              href="/parties"
+              className="block px-3 py-2 rounded-md hover:bg-[#1A3A5C] transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Parties & Policy
+            </Link>
+            <Link
+              href="/spending"
+              className="block px-3 py-2 rounded-md hover:bg-[#1A3A5C] transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Government Spending
+            </Link>
+            <Link
+              href="/535"
+              className="block px-3 py-2 rounded-md bg-[#C41E3A] hover:bg-[#A01828] transition-colors font-bold"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Project 535
+            </Link>
+            <Link
+              href="/truth-and-law"
+              className="block px-3 py-2 rounded-md hover:bg-[#1A3A5C] transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Truth and Law
+            </Link>
+            <Link
+              href="/about"
+              className="block px-3 py-2 rounded-md hover:bg-[#1A3A5C] transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              About
+            </Link>
             <Link
               href="/contact"
               className="block px-3 py-2 rounded-md hover:bg-[#1A3A5C] transition-colors"
