@@ -1,4 +1,4 @@
-import type { D1Database } from '@cloudflare/workers-types';
+import type { D1Database } from './cf-types';
 import type { Env } from './types';
 
 export function getDb(env: Env): D1Database {

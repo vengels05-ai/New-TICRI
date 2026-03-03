@@ -1,4 +1,4 @@
-import type { ExecutionContext, ScheduledController } from '@cloudflare/workers-types';
+import type { ExecutionContext, ScheduledController } from './cf-types';
 import { assertRequiredEnv, getLimits, parseBoolean } from './config';
 import { handleCorsPreflight, rejectIfDisallowedOrigin, withCors } from './cors';
 import { getDb } from './db';

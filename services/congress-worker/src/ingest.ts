@@ -1,4 +1,4 @@
-import type { D1Database } from '@cloudflare/workers-types';
+import type { D1Database } from './cf-types';
 import { getDb } from './db';
 import type { Env } from './types';
 import { CongressApiClient, type CongressBillAction, type CongressBillSummary } from './upstreamClient';
