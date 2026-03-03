@@ -1,5 +1,7 @@
 'use client';
 
+import { Suspense } from 'react';
+import { useSearchParams } from 'next/navigation';
 import CongressScannerBillPageClient from '@/components/congress-scanner/CongressScannerBillPageClient';
 
 interface BillParams {
@@ -8,27 +10,21 @@ interface BillParams {
   number: string;
 }
 
-const EMPTY_PARAMS: BillParams = {
-  congress: '',
-  type: '',
-  number: '',
-};
-
 export default function CongressScannerBillPage() {
-  const params = readBillParamsFromWindow();
-
-  return <CongressScannerBillPageClient params={params} />;
+  return (
+    <Suspense fallback={<CongressScannerBillPageClient params={{ congress: '', type: '', number: '' }} />}>
+      <BillPageContent />
+    </Suspense>
+  );
 }
 
-function readBillParamsFromWindow(): BillParams {
-  if (typeof window === 'undefined') {
-    return EMPTY_PARAMS;
-  }
-
-  const urlParams = new URLSearchParams(window.location.search);
-  return {
-    congress: urlParams.get('congress') ?? '',
-    type: urlParams.get('type') ?? '',
-    number: urlParams.get('number') ?? '',
+function BillPageContent() {
+  const searchParams = useSearchParams();
+  const params: BillParams = {
+    congress: searchParams.get('congress') ?? '',
+    type: searchParams.get('type') ?? '',
+    number: searchParams.get('number') ?? '',
   };
+
+  return <CongressScannerBillPageClient params={params} />;
 }

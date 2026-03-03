@@ -1,7 +1,7 @@
 import type { D1Database } from './cf-types';
 import { getDb } from './db';
 import type { Env } from './types';
-import { CongressApiClient, type CongressBillAction, type CongressBillSummary } from './upstreamClient';
+import { CongressApiClient, type CongressBillAction, type CongressBillDetail, type CongressBillSummary } from './upstreamClient';
 
 interface IngestTotals {
   fetchedBills: number;
@@ -205,20 +205,51 @@ async function ingestBillCollection(
   let skippedActions = 0;
 
   for (const bill of bills) {
-    const upserted = await upsertBillRecord(db, bill, options.congress);
-    if (!upserted) {
+    const identifiers = parseBillIdentity(bill, options.congress);
+    if (!identifiers) {
       log('warn', 'worker.ingest.bill_skipped_missing_identifiers', { congress: options.congress });
+      continue;
+    }
+
+    let detail: CongressBillDetail | null = null;
+    try {
+      detail = await client.getBillDetail({
+        congress: identifiers.congress,
+        billType: identifiers.billType,
+        billNumber: identifiers.billNumber,
+      });
+    } catch (error) {
+      log('warn', 'worker.ingest.bill_detail_fetch_failed', {
+        congress: identifiers.congress,
+        billType: identifiers.billType,
+        billNumber: identifiers.billNumber,
+        message: error instanceof Error ? error.message : String(error),
+      });
+    }
+
+    const upserted = await upsertBillRecord(db, bill, detail, options.congress);
+    if (!upserted) {
       continue;
     }
 
     upsertedBills += 1;
 
-    const actions = await client.getAllBillActions({
-      congress: upserted.congress,
-      billType: upserted.billType,
-      billNumber: upserted.billNumber,
-      limit: 250,
-    }, options.maxActionPages);
+    let actions: CongressBillAction[] = [];
+    try {
+      actions = await client.getAllBillActions({
+        congress: upserted.congress,
+        billType: upserted.billType,
+        billNumber: upserted.billNumber,
+        limit: 250,
+      }, options.maxActionPages);
+    } catch (error) {
+      log('warn', 'worker.ingest.bill_actions_fetch_failed', {
+        congress: upserted.congress,
+        billType: upserted.billType,
+        billNumber: upserted.billNumber,
+        message: error instanceof Error ? error.message : String(error),
+      });
+    }
 
     const actionResult = await upsertActionRecords(db, upserted.id, actions);
     upsertedActions += actionResult.insertedOrUpdated;
@@ -228,21 +259,27 @@ async function ingestBillCollection(
   return { upsertedBills, upsertedActions, skippedActions };
 }
 
-async function upsertBillRecord(db: D1Database, bill: CongressBillSummary, fallbackCongress: number) {
-  const congress = Number.parseInt(String(bill.congress ?? fallbackCongress), 10);
-  const billType = (bill.type ?? '').toLowerCase();
-  const billNumber = maybeBillNumber(bill.number);
-
-  if (!Number.isFinite(congress) || !billType || !billNumber) {
+async function upsertBillRecord(
+  db: D1Database,
+  bill: CongressBillSummary,
+  detail: CongressBillDetail | null,
+  fallbackCongress: number,
+) {
+  const identity = parseBillIdentity(detail ?? bill, fallbackCongress);
+  if (!identity) {
     return null;
   }
 
-  const sponsorName = composeFullName(bill.sponsor);
+  const congress = identity.congress;
+  const billType = identity.billType;
+  const billNumber = identity.billNumber;
+  const normalized = detail ?? bill;
+  const sponsorName = composePrimarySponsorName(normalized);
   const memberNames = sponsorName ? [sponsorName] : [];
   const memberNamesJson = JSON.stringify(memberNames);
   const memberNamesText = memberNames.join(' ');
   const billIdDisplay = `${billType.toUpperCase()} ${billNumber}`;
-  const rawUpstream = JSON.stringify(bill ?? {});
+  const rawUpstream = JSON.stringify(detail ?? bill ?? {});
 
   await db.prepare(`
     INSERT INTO bills (
@@ -280,12 +317,12 @@ async function upsertBillRecord(db: D1Database, bill: CongressBillSummary, fallb
     billType,
     billNumber,
     billIdDisplay,
-    bill.title ?? 'Untitled Bill',
+    normalized.title ?? 'Untitled Bill',
     null,
-    toIsoDate(bill.introducedDate),
-    toIsoDate(bill.latestAction?.actionDate),
-    bill.latestAction?.text ?? null,
-    bill.originChamber ?? null,
+    toIsoDate(normalized.introducedDate),
+    toIsoDate(normalized.latestAction?.actionDate),
+    normalized.latestAction?.text ?? null,
+    normalized.originChamber ?? null,
     sponsorName,
     memberNamesJson,
     memberNamesText,
@@ -316,6 +353,7 @@ async function upsertActionRecords(db: D1Database, billId: number, actions: Cong
   let skipped = 0;
   let latestActionDate = null;
   let latestActionText = null;
+  let earliestActionDate = null;
 
   for (let index = 0; index < actions.length; index += 1) {
     const action = actions[index];
@@ -360,15 +398,22 @@ async function upsertActionRecords(db: D1Database, billId: number, actions: Cong
       latestActionText = action.text ?? '[missing action text]';
     }
 
+    if (earliestActionDate === null || actionDate < earliestActionDate) {
+      earliestActionDate = actionDate;
+    }
+
     insertedOrUpdated += 1;
   }
 
   if (latestActionDate) {
     await db.prepare(`
       UPDATE bills
-      SET latest_action_date = ?, latest_action_text = ?, updated_at = CURRENT_TIMESTAMP
+      SET latest_action_date = ?,
+          latest_action_text = ?,
+          introduced_date = COALESCE(introduced_date, ?),
+          updated_at = CURRENT_TIMESTAMP
       WHERE id = ?
-    `).bind(latestActionDate, latestActionText, billId).run();
+    `).bind(latestActionDate, latestActionText, earliestActionDate, billId).run();
   }
 
   return { insertedOrUpdated, skipped };
@@ -433,10 +478,30 @@ function parseActionSource(action: CongressBillAction): string | null {
   return action.sourceSystem?.name ?? action.sourceSystem?.code ?? null;
 }
 
+function composePrimarySponsorName(entity: { sponsor?: CongressBillSummary['sponsor']; sponsors?: Array<CongressBillSummary['sponsor']> }): string | null {
+  const primary = entity.sponsors?.find(Boolean) ?? entity.sponsor;
+  return composeFullName(primary);
+}
+
 function composeFullName(entity: CongressBillSummary['sponsor']): string | null {
   const fromFields = [entity?.firstName, entity?.lastName].filter(Boolean).join(' ').trim();
   const normalized = entity?.fullName ?? fromFields;
   return normalized || null;
+}
+
+function parseBillIdentity(
+  bill: Pick<CongressBillSummary, 'congress' | 'type' | 'number'>,
+  fallbackCongress: number,
+): { congress: number; billType: string; billNumber: number } | null {
+  const congress = Number.parseInt(String(bill.congress ?? fallbackCongress), 10);
+  const billType = (bill.type ?? '').toLowerCase();
+  const billNumber = maybeBillNumber(bill.number);
+
+  if (!Number.isFinite(congress) || !billType || !billNumber) {
+    return null;
+  }
+
+  return { congress, billType, billNumber };
 }
 
 function maybeBillNumber(value: string | undefined): number | null {

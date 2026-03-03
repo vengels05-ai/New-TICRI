@@ -25,6 +25,21 @@ export interface CongressBillSummary {
   };
 }
 
+export interface CongressBillDetail {
+  congress?: number;
+  number?: string;
+  type?: string;
+  title?: string;
+  introducedDate?: string;
+  originChamber?: string;
+  latestAction?: {
+    actionDate?: string;
+    text?: string;
+  };
+  sponsor?: CongressBillSummary['sponsor'];
+  sponsors?: Array<CongressBillSummary['sponsor']>;
+}
+
 export interface CongressBillAction {
   actionDate?: string;
   actionTime?: string;
@@ -116,6 +131,29 @@ export class CongressApiClient {
     }
 
     return items;
+  }
+
+  async getBillDetail(params: {
+    congress: number;
+    billType: string;
+    billNumber: number;
+  }): Promise<CongressBillDetail | null> {
+    const data = await this.getJson<Record<string, unknown>>(
+      `/bill/${params.congress}/${params.billType}/${params.billNumber}`,
+    );
+
+    const singular = data.bill;
+    if (singular && typeof singular === 'object') {
+      return singular as CongressBillDetail;
+    }
+
+    const plural = data.bills;
+    if (Array.isArray(plural) && plural.length > 0) {
+      const first = plural[0];
+      return first && typeof first === 'object' ? (first as CongressBillDetail) : null;
+    }
+
+    return null;
   }
 
   private async getPaginated<T>(
