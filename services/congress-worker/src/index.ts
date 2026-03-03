@@ -2,7 +2,7 @@ import type { ExecutionContext, ScheduledController } from './cf-types';
 import { assertRequiredEnv, getLimits, parseBoolean } from './config';
 import { handleCorsPreflight, rejectIfDisallowedOrigin, withCors } from './cors';
 import { getDb } from './db';
-import { getBackfillState, ingestRecentBills, runBackfillBatch } from './ingest';
+import { getBackfillStateForWindow, ingestRecentBills, runBackfillBatch } from './ingest';
 import { CongressRepository } from './repository';
 import { errorBody, json } from './response';
 import type { Env } from './types';
@@ -201,12 +201,15 @@ async function handleAdminBackfill(request: Request, env: Env): Promise<Response
 
   const reset = ['1', 'true', 'yes', 'on'].includes((url.searchParams.get('reset') ?? '').toLowerCase());
   const maxActionPages = parsePositiveInt(url.searchParams.get('maxActionPages'), parsePositiveInt(env.CONGRESS_INGEST_MAX_ACTION_PAGES ?? '25', 25));
+  const windowDaysRaw = url.searchParams.get('windowDays');
+  const windowDays = windowDaysRaw ? parsePositiveInt(windowDaysRaw, 0) : null;
 
   const state = await runBackfillBatch(env, {
     congress,
     maxPages,
     maxActionPages,
     reset,
+    windowDays,
   });
 
   return json(200, {
@@ -231,10 +234,13 @@ async function handleAdminBackfillStatus(request: Request, env: Env): Promise<Re
     }), cacheHeaders('private, no-store'));
   }
 
-  const state = await getBackfillState(env, congress);
+  const windowDaysRaw = url.searchParams.get('windowDays');
+  const windowDays = windowDaysRaw ? parsePositiveInt(windowDaysRaw, 0) : null;
+  const state = await getBackfillStateForWindow(env, congress, windowDays);
   return json(200, {
     data: {
       congress,
+      windowDays,
       state,
     },
   }, cacheHeaders('private, no-store'));

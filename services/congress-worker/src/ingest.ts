@@ -18,6 +18,9 @@ interface BackfillState {
   processedBills: number;
   done: boolean;
   updatedAt: string;
+  windowDays: number | null;
+  fromDate: string | null;
+  toDate: string | null;
 }
 
 const BACKFILL_KEY_PREFIX = 'backfill:';
@@ -72,12 +75,17 @@ export async function runBackfillBatch(env: Env, input: {
   maxPages: number;
   reset?: boolean;
   maxActionPages?: number;
+  windowDays?: number | null;
 }): Promise<BackfillState> {
   const db = getDb(env);
   const client = new CongressApiClient(env);
   const maxActionPages = input.maxActionPages ?? parsePositiveInt(env.CONGRESS_INGEST_MAX_ACTION_PAGES, 25);
+  const pageSize = Math.min(50, parsePositiveInt(env.CONGRESS_BACKFILL_PAGE_SIZE, 20));
+  const backfillWindow = input.windowDays && input.windowDays > 0
+    ? parseWindowDates(input.windowDays, new Date())
+    : null;
 
-  const key = `${BACKFILL_KEY_PREFIX}${input.congress}`;
+  const key = createBackfillKey(input.congress, input.windowDays ?? null);
   if (input.reset) {
     await clearCheckpoint(db, key);
   }
@@ -89,6 +97,9 @@ export async function runBackfillBatch(env: Env, input: {
     processedBills: 0,
     done: false,
     updatedAt: new Date().toISOString(),
+    windowDays: input.windowDays ?? null,
+    fromDate: backfillWindow?.fromDate ?? null,
+    toDate: backfillWindow?.toDate ?? null,
   };
 
   if (state.done) {
@@ -104,8 +115,10 @@ export async function runBackfillBatch(env: Env, input: {
     const page = await client.getBillsPage({
       congress: input.congress,
       offset,
-      limit: 250,
+      limit: pageSize,
       sort: 'updateDate+desc',
+      fromDateTime: backfillWindow?.fromDateTime,
+      toDateTime: backfillWindow?.toDateTime,
     });
 
     if (page.items.length === 0) {
@@ -136,6 +149,9 @@ export async function runBackfillBatch(env: Env, input: {
       processedBills,
       done: false,
       updatedAt: new Date().toISOString(),
+      windowDays: input.windowDays ?? null,
+      fromDate: backfillWindow?.fromDate ?? null,
+      toDate: backfillWindow?.toDate ?? null,
     });
   }
 
@@ -146,6 +162,9 @@ export async function runBackfillBatch(env: Env, input: {
     processedBills,
     done,
     updatedAt: new Date().toISOString(),
+    windowDays: input.windowDays ?? null,
+    fromDate: backfillWindow?.fromDate ?? null,
+    toDate: backfillWindow?.toDate ?? null,
   };
 
   await saveCheckpoint(db, key, nextState);
@@ -154,7 +173,15 @@ export async function runBackfillBatch(env: Env, input: {
 }
 
 export async function getBackfillState(env: Env, congress: number): Promise<BackfillState | null> {
-  return getCheckpoint(getDb(env), `${BACKFILL_KEY_PREFIX}${congress}`);
+  return getBackfillStateForWindow(env, congress, null);
+}
+
+export async function getBackfillStateForWindow(
+  env: Env,
+  congress: number,
+  windowDays: number | null,
+): Promise<BackfillState | null> {
+  return getCheckpoint(getDb(env), createBackfillKey(congress, windowDays));
 }
 
 async function collectBills(
@@ -571,6 +598,12 @@ function parseNextOffset(nextUrl: string | null | undefined): number | null {
   } catch {
     return null;
   }
+}
+
+function createBackfillKey(congress: number, windowDays: number | null): string {
+  return windowDays && windowDays > 0
+    ? `${BACKFILL_KEY_PREFIX}${congress}:window:${windowDays}`
+    : `${BACKFILL_KEY_PREFIX}${congress}`;
 }
 
 function asString(value: string | number | undefined): string | undefined {

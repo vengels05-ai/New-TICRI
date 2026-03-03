@@ -210,34 +210,44 @@ export class CongressApiClient {
   }
 
   private async fetchJson<T>(url: URL, cacheKey: string, cached: CacheEntry<T> | undefined, now: number): Promise<T> {
-    const headers = new Headers({ Accept: 'application/json' });
-    if (cached?.etag) {
-      headers.set('If-None-Match', cached.etag);
+    const maxAttempts = 3;
+
+    for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+      const headers = new Headers({ Accept: 'application/json' });
+      if (cached?.etag) {
+        headers.set('If-None-Match', cached.etag);
+      }
+      if (cached?.lastModified) {
+        headers.set('If-Modified-Since', cached.lastModified);
+      }
+
+      await this.waitForRateAndThrottle();
+
+      const response = await fetch(url.toString(), {
+        method: 'GET',
+        headers,
+      });
+
+      if (response.status === 304 && cached) {
+        this.refreshCache(cacheKey, cached, response.headers, now);
+        return cached.data;
+      }
+
+      if (!response.ok) {
+        const body = await response.text();
+        if (attempt < maxAttempts && isRetriableStatus(response.status)) {
+          await sleep(attempt * 750);
+          continue;
+        }
+        throw new Error(`Congress API error ${response.status}: ${body.slice(0, 300)}`);
+      }
+
+      const payload = (await response.json()) as T;
+      this.storeCache(cacheKey, payload, response.headers, now);
+      return payload;
     }
-    if (cached?.lastModified) {
-      headers.set('If-Modified-Since', cached.lastModified);
-    }
 
-    await this.waitForRateAndThrottle();
-
-    const response = await fetch(url.toString(), {
-      method: 'GET',
-      headers,
-    });
-
-    if (response.status === 304 && cached) {
-      this.refreshCache(cacheKey, cached, response.headers, now);
-      return cached.data;
-    }
-
-    if (!response.ok) {
-      const body = await response.text();
-      throw new Error(`Congress API error ${response.status}: ${body.slice(0, 300)}`);
-    }
-
-    const payload = (await response.json()) as T;
-    this.storeCache(cacheKey, payload, response.headers, now);
-    return payload;
+    throw new Error('Congress API request failed after retries.');
   }
 
   private buildUrl(pathOrUrl: string, query?: Record<string, string | number | undefined>): URL {
@@ -332,6 +342,10 @@ export class CongressApiClient {
 
 function ensureTrailingSlash(value: string): string {
   return value.endsWith('/') ? value : `${value}/`;
+}
+
+function isRetriableStatus(status: number): boolean {
+  return status === 408 || status === 409 || status === 425 || status === 429 || status >= 500;
 }
 
 function parseCacheControl(value: string | null): CacheControl {
