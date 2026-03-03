@@ -76,6 +76,7 @@ export interface ParsedSearchResult {
 export interface ParsedBillResult {
   bill?: unknown;
   statusCard?: unknown;
+  textVersions?: unknown[];
 }
 
 export interface ParsedActionsResult {

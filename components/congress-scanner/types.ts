@@ -78,6 +78,14 @@ export interface CongressBillResponse {
       memberNames: string[];
     };
     statusCard: CongressStatusCard;
+    textVersions: Array<{
+      date: string | null;
+      type: string | null;
+      formats: Array<{
+        type: string | null;
+        url: string | null;
+      }>;
+    }>;
   };
 }
 

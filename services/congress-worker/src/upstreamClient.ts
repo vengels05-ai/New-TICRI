@@ -52,6 +52,17 @@ export interface CongressBillAction {
   };
 }
 
+export interface CongressBillTextFormat {
+  type: string | null;
+  url: string | null;
+}
+
+export interface CongressBillTextVersion {
+  date: string | null;
+  type: string | null;
+  formats: CongressBillTextFormat[];
+}
+
 interface PaginatedResult<TItem> {
   items: TItem[];
   pagination: CongressApiPagination;
@@ -154,6 +165,31 @@ export class CongressApiClient {
     }
 
     return null;
+  }
+
+  async getBillTextVersions(params: {
+    congress: number;
+    billType: string;
+    billNumber: number;
+    limit?: number;
+  }): Promise<CongressBillTextVersion[]> {
+    const data = await this.getJson<Record<string, unknown>>(
+      `/bill/${params.congress}/${params.billType}/${params.billNumber}/text`,
+      { limit: params.limit ?? 20 },
+    );
+
+    const rawItems = Array.isArray(data.textVersions)
+      ? data.textVersions
+      : Array.isArray(data.texts)
+        ? data.texts
+        : Array.isArray(data.text)
+          ? data.text
+          : [];
+
+    return rawItems
+      .filter((item): item is Record<string, unknown> => Boolean(item) && typeof item === 'object')
+      .map((item) => normalizeBillTextVersion(item))
+      .filter((item): item is CongressBillTextVersion => Boolean(item));
   }
 
   private async getPaginated<T>(
@@ -338,6 +374,70 @@ export class CongressApiClient {
       expiresAt: computeExpiresAt(now, headers, cc, this.fallbackCacheTtlMs) ?? cached.expiresAt,
     });
   }
+}
+
+function normalizeBillTextVersion(item: Record<string, unknown>): CongressBillTextVersion | null {
+  const formats = normalizeBillTextFormats(item);
+  const normalized: CongressBillTextVersion = {
+    date: readTextVersionDate(item),
+    type: readTextVersionType(item),
+    formats,
+  };
+
+  if (!normalized.date && !normalized.type && normalized.formats.length === 0) {
+    return null;
+  }
+
+  return normalized;
+}
+
+function normalizeBillTextFormats(item: Record<string, unknown>): CongressBillTextFormat[] {
+  const nested = Array.isArray(item.formats)
+    ? item.formats
+    : Array.isArray(item.textFormats)
+      ? item.textFormats
+      : Array.isArray(item.files)
+        ? item.files
+        : [];
+
+  const formats = nested
+    .filter((format): format is Record<string, unknown> => Boolean(format) && typeof format === 'object')
+    .map((format) => ({
+      type: readFirstString(format.type, format.name, format.label),
+      url: readFirstString(format.url, format.link, format.href),
+    }))
+    .filter((format) => Boolean(format.url));
+
+  if (formats.length > 0) {
+    return formats;
+  }
+
+  const flattened: CongressBillTextFormat[] = [
+    { type: 'Formatted Text', url: readFirstString(item.formattedText, item.htmlUrl, item.htmUrl) },
+    { type: 'PDF', url: readFirstString(item.pdf, item.pdfUrl) },
+    { type: 'Formatted XML', url: readFirstString(item.xml, item.xmlUrl, item.uslm) },
+    { type: 'Plain Text', url: readFirstString(item.txt, item.textUrl) },
+  ];
+
+  return flattened.filter((format): format is CongressBillTextFormat => Boolean(format.url));
+}
+
+function readTextVersionDate(item: Record<string, unknown>): string | null {
+  return readFirstString(item.date, item.updateDate, item.dateIssued, item.issueDate);
+}
+
+function readTextVersionType(item: Record<string, unknown>): string | null {
+  return readFirstString(item.type, item.versionName, item.textVersionName, item.versionCode, item.textVersionCode);
+}
+
+function readFirstString(...values: unknown[]): string | null {
+  for (const value of values) {
+    if (typeof value === 'string' && value.trim().length > 0) {
+      return value.trim();
+    }
+  }
+
+  return null;
 }
 
 function ensureTrailingSlash(value: string): string {

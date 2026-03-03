@@ -6,6 +6,7 @@ import { getBackfillStateForWindow, ingestRecentBills, runBackfillBatch } from '
 import { CongressRepository } from './repository';
 import { errorBody, json } from './response';
 import type { Env } from './types';
+import { CongressApiClient } from './upstreamClient';
 import { parseBillPath, parseSearchParams } from './validation';
 
 function toPathSegments(pathname: string): string[] {
@@ -379,7 +380,29 @@ export default {
           return response;
         }
 
-        const response = withCors(request, env, json(200, { data: result }, cacheHeaders('public, max-age=300, stale-while-revalidate=900')));
+        let textVersions: unknown[] = [];
+        try {
+          const client = new CongressApiClient(env);
+          textVersions = await client.getBillTextVersions({
+            congress: parsed.value.congress,
+            billType: parsed.value.type,
+            billNumber: parsed.value.number,
+          });
+        } catch (error) {
+          console.warn(JSON.stringify({
+            level: 'warn',
+            event: 'worker.bill_text.fetch_failed',
+            ts: new Date().toISOString(),
+            route: url.pathname,
+            message: error instanceof Error ? error.message : String(error),
+          }));
+        }
+
+        const response = withCors(
+          request,
+          env,
+          json(200, { data: { ...result, textVersions } }, cacheHeaders('public, max-age=300, stale-while-revalidate=900')),
+        );
         logRequest(request, env, { route: url.pathname, status: response.status, durationMs: Date.now() - startedAt });
         return response;
       }

@@ -25,6 +25,7 @@ export default function CongressScannerBillDetail({ billData, actionsData, error
 
   const { bill, statusCard } = billData;
   const orderedActions = [...actionsData.actions].sort(compareTimelineActions);
+  const orderedTextVersions = [...(billData.textVersions ?? [])].sort(compareTextVersionsDesc);
 
   return (
     <div className="min-h-screen bg-[linear-gradient(180deg,#eef4f9_0%,#f7f2e8_100%)] pb-20">
@@ -102,6 +103,67 @@ export default function CongressScannerBillDetail({ billData, actionsData, error
               </ol>
             )}
           </section>
+
+          <section className="rounded-[30px] border border-[#0F2C47]/10 bg-white/92 p-7 shadow-[0_18px_50px_rgba(15,44,71,0.08)]">
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <h2 className="text-2xl font-bold text-[#0F2C47]">Bill text</h2>
+                <p className="mt-1 text-sm text-slate-600">Official Congress.gov text versions and formats, when available.</p>
+              </div>
+              <p className="text-sm text-slate-600">{orderedTextVersions.length} version{orderedTextVersions.length === 1 ? '' : 's'}</p>
+            </div>
+
+            {orderedTextVersions.length === 0 ? (
+              <div className="mt-6 rounded-3xl border border-dashed border-[#0F2C47]/20 bg-[#F9FBFD] p-6 text-slate-600">
+                No official text versions are available for this bill yet.
+              </div>
+            ) : (
+              <ol className="mt-6 space-y-4">
+                {orderedTextVersions.map((version, index) => (
+                  <li
+                    key={`${version.date ?? 'unknown'}-${version.type ?? 'unknown'}-${index}`}
+                    className="rounded-3xl border border-[#0F2C47]/10 bg-[#FBFCFE] p-5"
+                  >
+                    <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+                      <div>
+                        <p className="text-sm font-semibold uppercase tracking-[0.12em] text-[#C41E3A]">
+                          {formatDate(version.date)}
+                        </p>
+                        <p className="mt-2 text-lg font-semibold text-[#0F2C47]">
+                          {version.type ?? 'Official text version'}
+                        </p>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {version.formats.length === 0 ? (
+                          <span className="rounded-full border border-[#0F2C47]/10 bg-white px-4 py-2 text-sm text-slate-600">
+                            No direct formats listed
+                          </span>
+                        ) : (
+                          version.formats.map((format, formatIndex) => {
+                            if (!format.url) {
+                              return null;
+                            }
+
+                            return (
+                              <a
+                                key={`${format.type ?? 'format'}-${formatIndex}`}
+                                href={format.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex rounded-full border border-[#0F2C47]/15 bg-white px-4 py-2 text-sm font-semibold text-[#0F2C47] transition hover:bg-[#F7F3EA] focus:outline-none focus:ring-2 focus:ring-[#0F2C47] focus:ring-offset-2"
+                              >
+                                {format.type ?? 'View'}
+                              </a>
+                            );
+                          })
+                        )}
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            )}
+          </section>
         </div>
 
         <aside className="space-y-8 self-start">
@@ -147,7 +209,15 @@ function formatDate(value: string | null) {
     return 'Unknown';
   }
 
-  return new Date(`${value}T00:00:00Z`).toLocaleDateString('en-US', {
+  const normalized = /^\d{4}-\d{2}-\d{2}$/.test(value)
+    ? `${value}T00:00:00Z`
+    : value;
+  const parsed = new Date(normalized);
+  if (Number.isNaN(parsed.getTime())) {
+    return value;
+  }
+
+  return parsed.toLocaleDateString('en-US', {
     month: 'short',
     day: 'numeric',
     year: 'numeric',
@@ -196,4 +266,17 @@ function compareNullableAsc(left: string | null, right: string | null) {
   }
 
   return left.localeCompare(right);
+}
+
+function compareTextVersionsDesc(
+  left: CongressBillResponse['data']['textVersions'][number],
+  right: CongressBillResponse['data']['textVersions'][number],
+) {
+  const leftDate = left.date ?? '';
+  const rightDate = right.date ?? '';
+  if (leftDate === rightDate) {
+    return (left.type ?? '').localeCompare(right.type ?? '');
+  }
+
+  return leftDate > rightDate ? -1 : 1;
 }
