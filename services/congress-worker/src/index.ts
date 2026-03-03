@@ -36,6 +36,70 @@ function parsePositiveInt(value: string | null, fallback: number): number {
   return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback;
 }
 
+function asRecord(value: unknown): Record<string, unknown> | null {
+  return value && typeof value === 'object' ? value as Record<string, unknown> : null;
+}
+
+function asNonEmptyString(value: unknown): string | null {
+  return typeof value === 'string' && value.trim().length > 0 ? value.trim() : null;
+}
+
+function earliestTextVersionDate(textVersions: unknown[]): string | null {
+  let earliest: string | null = null;
+
+  for (const item of textVersions) {
+    const record = asRecord(item);
+    const dateValue = asNonEmptyString(record?.date);
+    if (!dateValue) {
+      continue;
+    }
+
+    const parsed = Date.parse(dateValue);
+    if (Number.isNaN(parsed)) {
+      continue;
+    }
+
+    const normalized = new Date(parsed).toISOString().slice(0, 10);
+    if (earliest === null || normalized < earliest) {
+      earliest = normalized;
+    }
+  }
+
+  return earliest;
+}
+
+function applyBillDetailEnrichment(
+  result: { bill?: unknown; statusCard?: unknown },
+  enrichment: { introducedDate?: string | null; sponsorName?: string | null },
+) {
+  const bill = asRecord(result.bill);
+  const statusCard = asRecord(result.statusCard);
+
+  if (enrichment.introducedDate) {
+    if (!asNonEmptyString(bill?.introducedDate) && bill) {
+      bill.introducedDate = enrichment.introducedDate;
+    }
+
+    if (!asNonEmptyString(statusCard?.introducedDate) && statusCard) {
+      statusCard.introducedDate = enrichment.introducedDate;
+    }
+  }
+
+  if (enrichment.sponsorName) {
+    if (!asNonEmptyString(bill?.sponsorName) && bill) {
+      bill.sponsorName = enrichment.sponsorName;
+    }
+
+    if (bill && (!Array.isArray(bill.memberNames) || bill.memberNames.length === 0)) {
+      bill.memberNames = [enrichment.sponsorName];
+    }
+
+    if (!asNonEmptyString(statusCard?.sponsorName) && statusCard) {
+      statusCard.sponsorName = enrichment.sponsorName;
+    }
+  }
+}
+
 interface RateLimitBucket {
   count: number;
   resetAt: number;
@@ -381,6 +445,7 @@ export default {
         }
 
         let textVersions: unknown[] = [];
+        let sponsorName: string | null = null;
         try {
           const client = new CongressApiClient(env);
           textVersions = await client.getBillTextVersions({
@@ -388,6 +453,20 @@ export default {
             billType: parsed.value.type,
             billNumber: parsed.value.number,
           });
+
+          const bill = asRecord(result.bill);
+          if (!asNonEmptyString(bill?.sponsorName)) {
+            const sponsors = await client.getBillSponsors({
+              congress: parsed.value.congress,
+              billType: parsed.value.type,
+              billNumber: parsed.value.number,
+            });
+            const primary = sponsors.find((sponsor) => asNonEmptyString(sponsor.fullName) || asNonEmptyString(sponsor.firstName) || asNonEmptyString(sponsor.lastName));
+            if (primary) {
+              const fallbackName = [primary.firstName, primary.lastName].filter(Boolean).join(' ').trim();
+              sponsorName = asNonEmptyString(primary.fullName) ?? (fallbackName || null);
+            }
+          }
         } catch (error) {
           console.warn(JSON.stringify({
             level: 'warn',
@@ -397,6 +476,11 @@ export default {
             message: error instanceof Error ? error.message : String(error),
           }));
         }
+
+        applyBillDetailEnrichment(result, {
+          introducedDate: earliestTextVersionDate(textVersions),
+          sponsorName,
+        });
 
         const response = withCors(
           request,

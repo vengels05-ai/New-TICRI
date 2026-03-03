@@ -36,8 +36,15 @@ export interface CongressBillDetail {
     actionDate?: string;
     text?: string;
   };
-  sponsor?: CongressBillSummary['sponsor'];
-  sponsors?: Array<CongressBillSummary['sponsor']>;
+  sponsor?: CongressBillSponsor;
+  sponsors?: Array<CongressBillSponsor>;
+}
+
+export interface CongressBillSponsor {
+  bioguideId?: string | null;
+  firstName?: string | null;
+  lastName?: string | null;
+  fullName?: string | null;
 }
 
 export interface CongressBillAction {
@@ -165,6 +172,35 @@ export class CongressApiClient {
     }
 
     return null;
+  }
+
+  async getBillSponsors(params: {
+    congress: number;
+    billType: string;
+    billNumber: number;
+    limit?: number;
+  }): Promise<CongressBillSponsor[]> {
+    const data = await this.getJson<Record<string, unknown>>(
+      `/bill/${params.congress}/${params.billType}/${params.billNumber}/sponsors`,
+      { limit: params.limit ?? 20 },
+    );
+
+    const rawItems = Array.isArray(data.sponsors)
+      ? data.sponsors
+      : Array.isArray(data.members)
+        ? data.members
+        : Array.isArray(data.member)
+          ? data.member
+          : [];
+
+    return rawItems
+      .filter((item): item is Record<string, unknown> => Boolean(item) && typeof item === 'object')
+      .map((item) => ({
+        bioguideId: readFirstString(item.bioguideId, item.memberId),
+        firstName: readFirstString(item.firstName, item.givenName),
+        lastName: readFirstString(item.lastName, item.familyName),
+        fullName: readFirstString(item.fullName, item.name),
+      }));
   }
 
   async getBillTextVersions(params: {

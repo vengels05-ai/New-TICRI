@@ -1,7 +1,14 @@
 import type { D1Database } from './cf-types';
 import { getDb } from './db';
 import type { Env } from './types';
-import { CongressApiClient, type CongressBillAction, type CongressBillDetail, type CongressBillSummary } from './upstreamClient';
+import {
+  CongressApiClient,
+  type CongressBillAction,
+  type CongressBillDetail,
+  type CongressBillSponsor,
+  type CongressBillSummary,
+  type CongressBillTextVersion,
+} from './upstreamClient';
 
 interface IngestTotals {
   fetchedBills: number;
@@ -254,7 +261,46 @@ async function ingestBillCollection(
       });
     }
 
-    const upserted = await upsertBillRecord(db, bill, detail, options.congress);
+    let sponsors: CongressBillSponsor[] = [];
+    if (!composePrimarySponsorName(detail ?? bill)) {
+      try {
+        sponsors = await client.getBillSponsors({
+          congress: identifiers.congress,
+          billType: identifiers.billType,
+          billNumber: identifiers.billNumber,
+        });
+      } catch (error) {
+        log('warn', 'worker.ingest.bill_sponsors_fetch_failed', {
+          congress: identifiers.congress,
+          billType: identifiers.billType,
+          billNumber: identifiers.billNumber,
+          message: error instanceof Error ? error.message : String(error),
+        });
+      }
+    }
+
+    let textVersions: CongressBillTextVersion[] = [];
+    if (!toIsoDate(detail?.introducedDate ?? bill.introducedDate)) {
+      try {
+        textVersions = await client.getBillTextVersions({
+          congress: identifiers.congress,
+          billType: identifiers.billType,
+          billNumber: identifiers.billNumber,
+        });
+      } catch (error) {
+        log('warn', 'worker.ingest.bill_text_versions_fetch_failed', {
+          congress: identifiers.congress,
+          billType: identifiers.billType,
+          billNumber: identifiers.billNumber,
+          message: error instanceof Error ? error.message : String(error),
+        });
+      }
+    }
+
+    const upserted = await upsertBillRecord(db, bill, detail, options.congress, {
+      sponsors,
+      textVersions,
+    });
     if (!upserted) {
       continue;
     }
@@ -291,6 +337,10 @@ async function upsertBillRecord(
   bill: CongressBillSummary,
   detail: CongressBillDetail | null,
   fallbackCongress: number,
+  enrichment: {
+    sponsors: CongressBillSponsor[];
+    textVersions: CongressBillTextVersion[];
+  },
 ) {
   const identity = parseBillIdentity(detail ?? bill, fallbackCongress);
   if (!identity) {
@@ -300,7 +350,7 @@ async function upsertBillRecord(
   const congress = identity.congress;
   const billType = identity.billType;
   const billNumber = identity.billNumber;
-  const normalized = detail ?? bill;
+  const normalized = mergeBillSources(bill, detail, enrichment);
   const sponsorName = composePrimarySponsorName(normalized);
   const memberNames = sponsorName ? [sponsorName] : [];
   const memberNamesJson = JSON.stringify(memberNames);
@@ -330,13 +380,19 @@ async function upsertBillRecord(
       bill_id_display = excluded.bill_id_display,
       title = excluded.title,
       summary = excluded.summary,
-      introduced_date = excluded.introduced_date,
-      latest_action_date = excluded.latest_action_date,
-      latest_action_text = excluded.latest_action_text,
-      origin_chamber = excluded.origin_chamber,
-      sponsor_name = excluded.sponsor_name,
-      member_names_json = excluded.member_names_json,
-      member_names_text = excluded.member_names_text,
+      introduced_date = COALESCE(excluded.introduced_date, bills.introduced_date),
+      latest_action_date = COALESCE(excluded.latest_action_date, bills.latest_action_date),
+      latest_action_text = COALESCE(excluded.latest_action_text, bills.latest_action_text),
+      origin_chamber = COALESCE(excluded.origin_chamber, bills.origin_chamber),
+      sponsor_name = COALESCE(excluded.sponsor_name, bills.sponsor_name),
+      member_names_json = CASE
+        WHEN excluded.member_names_text <> '' THEN excluded.member_names_json
+        ELSE bills.member_names_json
+      END,
+      member_names_text = CASE
+        WHEN excluded.member_names_text <> '' THEN excluded.member_names_text
+        ELSE bills.member_names_text
+      END,
       raw_upstream = excluded.raw_upstream,
       updated_at = CURRENT_TIMESTAMP
   `).bind(
@@ -505,15 +561,103 @@ function parseActionSource(action: CongressBillAction): string | null {
   return action.sourceSystem?.name ?? action.sourceSystem?.code ?? null;
 }
 
-function composePrimarySponsorName(entity: { sponsor?: CongressBillSummary['sponsor']; sponsors?: Array<CongressBillSummary['sponsor']> }): string | null {
+function composePrimarySponsorName(entity: {
+  sponsor?: CongressBillSummary['sponsor'] | CongressBillSponsor;
+  sponsors?: Array<CongressBillSummary['sponsor'] | CongressBillSponsor>;
+}): string | null {
   const primary = entity.sponsors?.find(Boolean) ?? entity.sponsor;
   return composeFullName(primary);
 }
 
-function composeFullName(entity: CongressBillSummary['sponsor']): string | null {
+function composeFullName(entity: CongressBillSummary['sponsor'] | CongressBillSponsor | undefined): string | null {
   const fromFields = [entity?.firstName, entity?.lastName].filter(Boolean).join(' ').trim();
   const normalized = entity?.fullName ?? fromFields;
   return normalized || null;
+}
+
+function mergeBillSources(
+  bill: CongressBillSummary,
+  detail: CongressBillDetail | null,
+  enrichment: {
+    sponsors: CongressBillSponsor[];
+    textVersions: CongressBillTextVersion[];
+  },
+): CongressBillDetail {
+  const summarySponsors = runtimeSponsorsFromUnknown(bill);
+  const detailSponsors = detail?.sponsors?.filter(Boolean) ?? [];
+  const primarySponsor = detail?.sponsor
+    ?? detailSponsors.find((sponsor) => Boolean(composeFullName(sponsor)))
+    ?? bill.sponsor
+    ?? summarySponsors.find((sponsor) => Boolean(composeFullName(sponsor)))
+    ?? enrichment.sponsors.find((sponsor) => Boolean(composeFullName(sponsor)));
+  const sponsors = detailSponsors.length > 0
+    ? detailSponsors
+    : summarySponsors.length > 0
+      ? summarySponsors
+      : bill.sponsor
+      ? [bill.sponsor]
+      : enrichment.sponsors;
+  const introducedDate = firstNonEmptyDate(
+    detail?.introducedDate,
+    bill.introducedDate,
+    earliestTextVersionDate(enrichment.textVersions),
+  );
+  const latestAction = detail?.latestAction ?? bill.latestAction;
+
+  return {
+    congress: detail?.congress ?? bill.congress,
+    number: detail?.number ?? bill.number,
+    type: detail?.type ?? bill.type,
+    title: detail?.title ?? bill.title,
+    introducedDate,
+    originChamber: detail?.originChamber ?? bill.originChamber,
+    latestAction,
+    sponsor: primarySponsor,
+    sponsors,
+  };
+}
+
+function runtimeSponsorsFromUnknown(value: unknown): CongressBillSponsor[] {
+  if (!value || typeof value !== 'object') {
+    return [];
+  }
+
+  const record = value as Record<string, unknown>;
+  const candidates = Array.isArray(record.sponsors)
+    ? record.sponsors
+    : Array.isArray(record.sponsor)
+      ? record.sponsor
+      : [];
+
+  return candidates.filter((candidate): candidate is CongressBillSponsor => Boolean(candidate) && typeof candidate === 'object');
+}
+
+function earliestTextVersionDate(textVersions: CongressBillTextVersion[]): string | null {
+  let earliest: string | null = null;
+
+  for (const version of textVersions) {
+    const normalized = toIsoDate(version.date ?? undefined);
+    if (!normalized) {
+      continue;
+    }
+
+    if (earliest === null || normalized < earliest) {
+      earliest = normalized;
+    }
+  }
+
+  return earliest;
+}
+
+function firstNonEmptyDate(...values: Array<string | undefined | null>): string | undefined {
+  for (const value of values) {
+    const normalized = toIsoDate(value ?? undefined);
+    if (normalized) {
+      return normalized;
+    }
+  }
+
+  return undefined;
 }
 
 function parseBillIdentity(
