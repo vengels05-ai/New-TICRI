@@ -8,7 +8,7 @@ interface Props {
 }
 
 export default function CongressScannerBillDetail({ billData, actionsData, error }: Props) {
-  if (error || !billData || !actionsData) {
+  if (error || !billData || !actionsData || !billData.bill || !billData.statusCard) {
     return (
       <div className="min-h-screen bg-[linear-gradient(180deg,#eef4f9_0%,#f7f2e8_100%)] px-4 py-10 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-5xl rounded-[32px] border border-red-200 bg-white/90 p-10 shadow-[0_18px_50px_rgba(15,44,71,0.08)]">

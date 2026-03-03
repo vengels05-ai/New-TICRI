@@ -1,4 +1,5 @@
 import type { D1Database } from './cf-types';
+import { buildStatusCard } from './statusCard';
 import type { BillPathParams, ParsedActionsResult, ParsedBillResult, ParsedSearchResult, SearchParams } from './types';
 
 interface BillRow {
@@ -163,8 +164,25 @@ export class CongressRepository {
       return {};
     }
 
+    const actions = await this.db.prepare(`
+      SELECT action_date, action_time, action_text, chamber, source
+      FROM bill_actions
+      WHERE bill_id = ?
+      ORDER BY action_date DESC, sequence DESC, id DESC
+    `).bind(row.id).all<ActionRow>();
+
+    const bill = mapBillRow(row);
+    const normalizedActions = (actions.results ?? []).map((action) => ({
+      actionDate: action.action_date,
+      actionTime: action.action_time,
+      actionText: action.action_text,
+      chamber: action.chamber,
+      source: action.source,
+    }));
+
     return {
-      bill: mapBillRow(row),
+      bill,
+      statusCard: buildStatusCard(bill, normalizedActions),
     };
   }
 
