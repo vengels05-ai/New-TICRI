@@ -9,10 +9,15 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function StateConstitutionPage({ params }: { params: { state: string } }) {
-  const stateInfo = getStateBySlug(params.state);
-  const constitution = getStateConstitution(params.state);
-  const hasData = hasConstitutionData(params.state);
+export default async function StateConstitutionPage({
+  params,
+}: {
+  params: Promise<{ state: string }>;
+}) {
+  const { state } = await params;
+  const stateInfo = getStateBySlug(state);
+  const constitution = getStateConstitution(state);
+  const hasData = hasConstitutionData(state);
 
   if (!stateInfo) {
     notFound();
@@ -121,7 +126,7 @@ export default function StateConstitutionPage({ params }: { params: { state: str
                       at the University of Wisconsin Law School.
                     </p>
                     <a 
-                      href={`https://50constitutions.org/constitutions/${params.state}`}
+                      href={`https://50constitutions.org/constitutions/${state}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-block bg-[#0F2C47] text-white px-6 py-3 rounded-lg font-bold hover:bg-[#C41E3A] transition-colors shadow-md"

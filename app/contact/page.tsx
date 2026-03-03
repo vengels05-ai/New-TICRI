@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+const CONTACT_API_URL = process.env.NEXT_PUBLIC_CONTACT_API_URL ?? '';
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     subject: '',
@@ -29,7 +31,12 @@ export default function ContactPage() {
     setSubmitStatus('idle');
 
     try {
-      const response = await fetch('/api/contact', {
+      if (!CONTACT_API_URL) {
+        setSubmitStatus('error');
+        return;
+      }
+
+      const response = await fetch(CONTACT_API_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -37,20 +44,14 @@ export default function ContactPage() {
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
-      console.log('Response status:', response.status);
-      console.log('Response data:', data);
-
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({ subject: '', message: '', email: '' });
         setWordCount(0);
       } else {
-        console.error('Error response:', data);
         setSubmitStatus('error');
       }
-    } catch (error) {
-      console.error('Error submitting form:', error);
+    } catch {
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -159,6 +160,11 @@ export default function ContactPage() {
                 <p className="text-red-800 font-semibold">
                   ✗ There was an error sending your message. Please try again later.
                 </p>
+                {!CONTACT_API_URL ? (
+                  <p className="text-red-700 text-sm mt-2">
+                    Contact form backend is not configured. Set <code>NEXT_PUBLIC_CONTACT_API_URL</code>.
+                  </p>
+                ) : null}
               </div>
             )}
           </form>

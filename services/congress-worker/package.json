@@ -1,0 +1,19 @@
+{
+  "name": "@ticri/congress-worker",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "typecheck": "tsc --noEmit",
+    "db:d1:migrate": "wrangler d1 migrations apply ticri-congress --local",
+    "db:d1:migrate:remote": "wrangler d1 migrations apply ticri-congress --remote",
+    "db:d1:seed": "wrangler d1 execute ticri-congress --local --file ./seeds/0001_local_seed.sql"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260219.0",
+    "typescript": "^5.9.2",
+    "wrangler": "^4.35.0"
+  }
+}

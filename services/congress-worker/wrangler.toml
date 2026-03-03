@@ -1,0 +1,43 @@
+name = "ticri-congress-worker"
+main = "src/index.ts"
+compatibility_date = "2026-02-27"
+compatibility_flags = ["nodejs_compat"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "ticri-congress"
+database_id = "7fef3f80-0792-41fa-a433-a3d53e3e794e"
+migrations_dir = "migrations"
+
+[vars]
+MAX_DATE_RANGE_DAYS = "366"
+MAX_KEYWORD_LENGTH = "200"
+SEARCH_DEFAULT_LIMIT = "20"
+SEARCH_MAX_LIMIT = "100"
+CONGRESS_API_BASE_URL = "https://api.congress.gov/v3"
+CONGRESS_API_THROTTLE_MS = "250"
+CONGRESS_API_MAX_REQUESTS_PER_MINUTE = "120"
+CONGRESS_UPSTREAM_CACHE_TTL_MS = "300000"
+CONGRESS_INGEST_ENABLED = "true"
+CONGRESS_INGEST_CONGRESS = "119"
+CONGRESS_INGEST_WINDOW_DAYS = "7"
+CONGRESS_INGEST_MAX_PAGES = "5"
+CONGRESS_INGEST_MAX_ACTION_PAGES = "1"
+CONGRESS_INGEST_MAX_BILLS_PER_RUN = "20"
+CONGRESS_BACKFILL_ENABLED = "false"
+CONGRESS_BACKFILL_ALLOW_PRODUCTION = "false"
+CONGRESS_BACKFILL_MAX_PAGES_PER_RUN = "10"
+APP_ENV = "production"
+CONGRESS_REQUEST_LOGGING_ENABLED = "false"
+CONGRESS_REQUEST_LOG_INCLUDE_QUERY = "false"
+CONGRESS_SEARCH_RATE_LIMIT_ENABLED = "true"
+CONGRESS_SEARCH_RATE_LIMIT_WINDOW_MS = "60000"
+CONGRESS_SEARCH_RATE_LIMIT_MAX = "30"
+CORS_ALLOWED_ORIGINS = "https://ticri.org,https://www.ticri.org"
+
+# Required secrets:
+# wrangler secret put CONGRESS_API_KEY
+# wrangler secret put CONGRESS_ADMIN_TOKEN
+
+[triggers]
+crons = ["*/30 * * * *"]

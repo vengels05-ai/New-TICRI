@@ -18,7 +18,7 @@ Since you're using `ticri2025@gmail.com`, you need to create an App Password:
 
 ## 2. Update Environment Variables
 
-Edit the `.env.local` file in the root of the project:
+Create or update an untracked local environment file in the project root, for example `.env.local` (ignored by git):
 
 ```env
 EMAIL_USER=ticri2025@gmail.com
@@ -47,4 +47,4 @@ You also need to add these environment variables in Cloudflare:
 
 ## Security Note
 
-The `.env.local` file is already in `.gitignore` and will NOT be committed to GitHub. This keeps your email credentials secure.
+Local environment files such as `.env.local` are ignored by git in this repo. Keep real credentials only in local untracked env files or your deployment platform's secret manager.

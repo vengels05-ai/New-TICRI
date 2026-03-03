@@ -24,18 +24,32 @@ export interface StateConstitution {
   articles: ConstitutionArticle[];
 }
 
-export function getStateConstitution(stateSlug: string): StateConstitution | null {
+function normalizeStateSlug(stateSlug: string | null | undefined): string | null {
+  const normalized = stateSlug?.trim().toLowerCase();
+  return normalized && normalized.length > 0 ? normalized : null;
+}
+
+export function getStateConstitution(stateSlug: string | null | undefined): StateConstitution | null {
+  const normalizedSlug = normalizeStateSlug(stateSlug);
+  if (!normalizedSlug) {
+    return null;
+  }
+
   try {
-    const filePath = path.join(process.cwd(), 'data', 'state-constitutions', `${stateSlug}.json`);
+    const filePath = path.join(process.cwd(), 'data', 'state-constitutions', `${normalizedSlug}.json`);
+    if (!fs.existsSync(filePath)) {
+      return null;
+    }
+
     const fileContent = fs.readFileSync(filePath, 'utf-8');
     return JSON.parse(fileContent);
   } catch (error) {
-    console.error(`Error loading constitution for ${stateSlug}:`, error);
+    console.error(`Error loading constitution for ${normalizedSlug}:`, error);
     return null;
   }
 }
 
-export function hasConstitutionData(stateSlug: string): boolean {
+export function hasConstitutionData(stateSlug: string | null | undefined): boolean {
   try {
     const constitution = getStateConstitution(stateSlug);
     return constitution !== null && constitution.articles.length > 0;
