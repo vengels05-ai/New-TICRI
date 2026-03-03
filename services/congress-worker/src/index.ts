@@ -215,7 +215,11 @@ function requireAdminAuth(request: Request, env: Env): Response | null {
   return null;
 }
 
-function ensureBackfillAllowed(env: Env): Response | null {
+function ensureBackfillAllowed(env: Env, options: { operatorMode: boolean }): Response | null {
+  if (options.operatorMode) {
+    return null;
+  }
+
   const backfillEnabled = parseBoolean(env.CONGRESS_BACKFILL_ENABLED, false);
   if (!backfillEnabled) {
     return json(403, errorBody('backfill_disabled', 'Backfill is disabled.'), cacheHeaders('private, no-store'));
@@ -236,12 +240,13 @@ async function handleAdminBackfill(request: Request, env: Env): Promise<Response
     return auth;
   }
 
-  const guardrail = ensureBackfillAllowed(env);
+  const url = new URL(request.url);
+  const operatorMode = url.searchParams.get('mode') === 'operator';
+  const guardrail = ensureBackfillAllowed(env, { operatorMode });
   if (guardrail) {
     return guardrail;
   }
 
-  const url = new URL(request.url);
   const congress = parsePositiveInt(url.searchParams.get('congress'), 0);
   if (congress <= 0) {
     return json(400, errorBody('invalid_query', 'congress must be a positive integer.', {
@@ -281,6 +286,7 @@ async function handleAdminBackfill(request: Request, env: Env): Promise<Response
     data: {
       ...state,
       maxPagesProcessedThisRun: maxPages,
+      operatorMode,
     },
   }, cacheHeaders('private, no-store'));
 }
