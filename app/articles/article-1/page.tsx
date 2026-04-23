@@ -178,13 +178,16 @@ export default function Article1Page() {
             <h4 className="text-lg font-semibold text-blue-600 mb-2">� Exact Constitutional Text (Key Excerpts)</h4>
             <div className="space-y-3">
               <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
-                "The House of Representatives shall be composed of Members chosen every second Year by the People of the several States..."
+                "The House of Representatives shall be composed of Members chosen every second Year by the People of the several States, and the Electors in each State shall have the Qualifications requisite for Electors of the most numerous Branch of the State Legislature."
               </p>
               <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
                 "No Person shall be a Representative who shall not have attained to the Age of twenty five Years, and been seven Years a Citizen of the United States..."
               </p>
               <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
-                "Representatives and direct Taxes shall be apportioned among the several States... according to their respective Numbers..."
+                "Representatives and direct Taxes shall be apportioned among the several States which may be included within this Union, according to their respective Numbers, which shall be determined by adding to the whole Number of free Persons, including those bound to Service for a Term of Years, and excluding Indians not taxed, three fifths of all other Persons. The actual Enumeration shall be made within three Years after the first Meeting of the Congress of the United States, and within every subsequent Term of ten Years, in such Manner as they shall by Law direct. The Number of Representatives shall not exceed one for every thirty Thousand, but each State shall have at Least one Representative; and until such enumeration shall be made, the State of New Hampshire shall be entitled to chuse three, Massachusetts eight, Rhode Island and Providence Plantations one, Connecticut five, New-York six, New Jersey four, Pennsylvania eight, Delaware one, Maryland six, Virginia ten, North Carolina five, South Carolina five, and Georgia three."
+              </p>
+              <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
+                When vacancies happen in the Representation from any State, the Executive Authority thereof shall issue Writs of Election to fill such Vacancies.
               </p>
               <p className="text-gray-700 italic bg-gray-50 p-4 rounded">
                 "The House of Representatives shall chuse their Speaker and other Officers; and shall have the sole Power of Impeachment."
@@ -198,7 +201,10 @@ export default function Article1Page() {
               The House of Representatives is one part of Congress. Its members are elected every two years by voters in 
               each state. To serve, a person must be at least 25 years old, a U.S. citizen for at least seven years, and 
               live in the state they represent. Seats are divided among states by population using a census every 10 years. 
-              The House chooses its Speaker and has the sole power to impeach federal officials.
+              The House chooses its Speaker and has the sole power to impeach federal officials. The States determine voter 
+              qualifications for House (and now also Senate following the ratification of the 17th Amendment)elections, 
+              but they must allow anyone who can vote for the most numerous branch of the state legislature to also vote 
+              for the House representatives and Senate following the 17th Amendment.
             </p>
           </div>
 
@@ -237,8 +243,8 @@ export default function Article1Page() {
           <div className="mb-6">
             <h4 className="text-lg font-semibold text-blue-600 mb-2">❌ What It Does NOT Say</h4>
             <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
-              <li>Does NOT specify total number of Representatives (currently 435 by law)</li>
-              <li>Does NOT require Representatives to live in their specific district (only the state)</li>
+              <li>Does NOT specify total number of Representatives (currently 435 by law, The Permanent Apportionment Act of 1929)</li>
+              <li>Does NOT require Representatives to live in their specific district (only the state), and certain states used to run one at large district prior to the passing of Uniform Congressional District Act of 1967</li>
               <li>Does NOT mandate term limits for House members</li>
               <li>Does NOT allow House to convict in impeachment (Senate has sole power to try)</li>
             </ul>
@@ -554,6 +560,7 @@ export default function Article1Page() {
               <li>It does not give the President any election authority for Congress</li>
               <li>It does not specify how districts must be drawn (single-member districts came later by statute)</li>
               <li>It does not give Congress power to cancel federal elections</li>
+              <li>It does not give Congress power to set voter qualifications (states determine this)</li>
               <li>It does not give states power to refuse or delay elections</li>
               <li>It does not define who can vote (later amendments do that)</li>
             </ul>
