@@ -148,7 +148,7 @@ function matchArticleHeading(line, lines, index = 0) {
     };
   }
 
-  match = clean.match(/^(SCHEDULE|Schedule|AMENDMENTS TO THE CONSTITUTION|APPENDIX\.?.*)$/);
+  match = clean.match(/^(SCHEDULE|Schedule|AMENDMENTS TO THE CONSTITUTION|APPENDIX\.?.*)\.?$/i);
   if (match) {
     return {
       number: '',
@@ -187,7 +187,7 @@ function matchSectionHeading(line) {
     };
   }
 
-  match = clean.match(/^Section\s+([A-Za-z0-9.-]+[a-z]?)\s+\.\.\.\s*(.*)$/i);
+  match = clean.match(/^Section\s+([A-Za-z0-9.-]+[a-z]?)\s*\.\s*(.*)$/i);
   if (match) {
     return {
       number: match[1].replace(/\.$/, ''),
@@ -294,7 +294,18 @@ function parseArticles(text) {
     }];
   }
 
-  return splitByMatches(lines, matches)
+  const blocks = [];
+  if (matches[0].lineIndex > 0) {
+    blocks.push({
+      number: '',
+      title: 'Full Text',
+      contentLines: lines.slice(0, matches[0].lineIndex),
+    });
+  }
+
+  blocks.push(...splitByMatches(lines, matches));
+
+  return blocks
     .map((article) => ({
       number: article.number || '',
       title: article.title || 'Untitled',
@@ -442,4 +453,24 @@ function main() {
   }
 }
 
-main();
+if (require.main === module) {
+  main();
+}
+
+module.exports = {
+  readStates,
+  normalizeText,
+  getCompiledDate,
+  splitStateBlocks,
+  stripMarkdownHeading,
+  isLikelyArticleHeading,
+  isLikelySectionHeading,
+  readFollowingTitle,
+  matchArticleHeading,
+  matchSectionHeading,
+  splitByMatches,
+  parseSections,
+  parseArticles,
+  extractPreamble,
+  buildConstitution,
+};
