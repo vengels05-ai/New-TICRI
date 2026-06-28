@@ -18,6 +18,7 @@
     "db:verify:migrations": "node scripts/db/verify-migrations.mjs",
     "db:verify:indexes": "node scripts/db/verify-congress-indexes.mjs",
     "db:explain:congress": "node scripts/db/explain-congress-queries.mjs",
+    "state-constitutions:import": "node scripts/import-state-constitutions-from-md.js --write",
     "congress:ingest": "node scripts/congress/ingest-recent-bills.mjs",
     "congress:verify:real-ingest": "node scripts/congress/verify-real-ingest.mjs",
     "congress:ingest:runner": "bash scripts/congress/run-ingest-cron.sh",

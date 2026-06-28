@@ -2,9 +2,632 @@
   "state": "Illinois",
   "slug": "illinois",
   "abbreviation": "IL",
-  "lastUpdated": "2026-01-12T16:56:00.067Z",
-  "source": "Official State Legislature Website",
+  "lastUpdated": "June 28, 2026",
+  "source": "Imported from all_50_state_constitutions_FINAL.md",
   "sourceUrl": "",
-  "preamble": "",
-  "articles": []
+  "preamble": "We, the People of the State of Illinois - grateful to Almighty God for the civil, political and religious liberty which He has permitted us to enjoy and seeking His blessing upon our endeavors - in order to provide for the health, safety and welfare of the people; maintain a representative and orderly government; eliminate poverty and inequality; assure legal, social and economic justice; provide opportunity for the fullest development of the individual; insure domestic tranquility; provide for the common defense; and secure the blessings of freedom and liberty to ourselves and our posterity - do ordain and establish this Constitution for the State of Illinois.",
+  "articles": [
+    {
+      "number": "1",
+      "title": "BILL OF RIGHTS",
+      "sections": [
+        {
+          "number": "1",
+          "title": "INHERENT AND INALIENABLE RIGHTS",
+          "text": "All men are by nature free and independent and have\ncertain inherent and inalienable rights among which are life,\nliberty and the pursuit of happiness. To secure these rights\nand the protection of property, governments are instituted\namong men, deriving their just powers from the consent of the\ngoverned.\n(Source: Illinois Constitution)"
+        },
+        {
+          "number": "2",
+          "title": "DUE PROCESS AND EQUAL PROTECTION",
+          "text": "No person shall be deprived of life, liberty or property\nwithout due process of law nor be denied the equal protection\nof the laws.\n(Source: Illinois Constitution)"
+        },
+        {
+          "number": "3",
+          "title": "RELIGIOUS FREEDOM",
+          "text": "The free exercise and enjoyment of religious profession\nand worship, without discrimination, shall forever be\nguaranteed, and no person shall be denied any civil or\npolitical right, privilege or capacity, on account of his\nreligious opinions; but the liberty of conscience hereby\nsecured shall not be construed to dispense with oaths or\naffirmations, excuse acts of licentiousness, or justify\npractices inconsistent with the peace or safety of the State.\nNo person shall be required to attend or support any ministry\nor place of worship against his consent, nor shall any\npreference be given by law to any religious denomination or\nmode of worship."
+        },
+        {
+          "number": "4",
+          "title": "FREEDOM OF SPEECH",
+          "text": "All persons may speak, write and publish freely, being\nresponsible for the abuse of that liberty. In trials for\nlibel, both civil and criminal, the truth, when published\nwith good motives and for justifiable ends, shall be a\nsufficient defense.\n(Source: Illinois Constitution.)"
+        },
+        {
+          "number": "5",
+          "title": "RIGHT TO ASSEMBLE AND PETITION",
+          "text": "The people have the right to assemble in a peaceable\nmanner, to consult for the common good, to make known their\nopinions to their representatives and to apply for redress of\ngrievances.\n(Source: Illinois Constitution.)"
+        },
+        {
+          "number": "6",
+          "title": "SEARCHES, SEIZURES, PRIVACY AND INTERCEPTIONS",
+          "text": "The people shall have the right to be secure in their\npersons, houses, papers and other possessions against\nunreasonable searches, seizures, invasions of privacy or\ninterceptions of communications by eavesdropping devices or\nother means. No warrant shall issue without probable cause,\nsupported by affidavit particularly describing the place to\nbe searched and the persons or things to be seized.\n(Source: Illinois Constitution.)"
+        },
+        {
+          "number": "7",
+          "title": "INDICTMENT AND PRELIMINARY HEARING",
+          "text": "No person shall be held to answer for a criminal offense\nunless on indictment of a grand jury, except in cases in\nwhich the punishment is by fine or by imprisonment other than\nin the penitentiary, in cases of impeachment, and in cases\narising in the militia when in actual service in time of war\nor public danger. The General Assembly by law may abolish the\ngrand jury or further limit its use.\nNo person shall be held to answer for a crime punishable\nby death or by imprisonment in the penitentiary unless either\nthe initial charge has been brought by indictment of a grand\njury or the person has been given a prompt preliminary\nhearing to establish probable cause.\n(Source: Illinois Constitution.)"
+        },
+        {
+          "number": "8",
+          "title": "RIGHTS AFTER INDICTMENT",
+          "text": "In criminal prosecutions, the accused shall have the\nright to appear and defend in person and by counsel; to\ndemand the nature and cause of the accusation and have a copy\nthereof; to be confronted with the witnesses against him or\nher and to have process to compel the attendance of witnesses\nin his or her behalf; and to have a speedy public trial by an\nimpartial jury of the county in which the offense is alleged\nto have been committed.\n(Source: Amendment adopted at general election November 8,\n1994.)"
+        },
+        {
+          "number": "8.1",
+          "title": "CRIME VICTIM'S RIGHTS.",
+          "text": "(Source: Amendment adopted at general election November 3, 1992.)"
+        },
+        {
+          "number": "9",
+          "title": "BAIL AND HABEAS CORPUS",
+          "text": "All persons shall be bailable by sufficient sureties,\nexcept for the following offenses where the proof is evident\nor the presumption great: capital offenses; offenses for\nwhich a sentence of life imprisonment may be imposed as a\nconsequence of conviction; and felony offenses for which a\nsentence of imprisonment, without conditional and revocable\nrelease, shall be imposed by law as a consequence of\nconviction, when the court, after a hearing, determines that\nrelease of the offender would pose a real and present threat\nto the physical safety of any person. The privilege of the\nwrit of habeas corpus shall not be suspended except in cases\nof rebellion or invasion when the public safety may require\nit.\nAny costs accruing to a unit of local government as a\nresult of the denial of bail pursuant to the 1986 Amendment\nto this Section shall be reimbursed by the State to the unit\nof local government.\n(Source: Amendment adopted at general election November 4,\n1986.)"
+        },
+        {
+          "number": "10",
+          "title": "SELF-INCRIMINATION AND DOUBLE JEOPARDY",
+          "text": "No person shall be compelled in a criminal case to give\nevidence against himself nor be twice put in jeopardy for the\nsame offense.\n(Source: Illinois Constitution.)"
+        },
+        {
+          "number": "11",
+          "title": "LIMITATION OF PENALTIES AFTER CONVICTION",
+          "text": "All penalties shall be determined both according to the\nseriousness of the offense and with the objective of\nrestoring the offender to useful citizenship. No conviction\nshall work corruption of blood or forfeiture of estate. No\nperson shall be transported out of the State for an offense\ncommitted within the State.\n(Source: Illinois Constitution.)"
+        },
+        {
+          "number": "12",
+          "title": "RIGHT TO REMEDY AND JUSTICE",
+          "text": "Every person shall find a certain remedy in the laws for\nall injuries and wrongs which he receives to his person,\nprivacy, property or reputation. He shall obtain justice by\nlaw, freely, completely, and promptly.\n(Source: Illinois Constitution.)"
+        },
+        {
+          "number": "13",
+          "title": "TRIAL BY JURY",
+          "text": "The right of trial by jury as heretofore enjoyed shall\nremain inviolate.\n(Source: Illinois Constitution.)"
+        },
+        {
+          "number": "14",
+          "title": "IMPRISONMENT FOR DEBT",
+          "text": "No person shall be imprisoned for debt unless he refuses\nto deliver up his estate for the benefit of his creditors as\nprovided by law or unless there is a strong presumption of\nfraud. No person shall be imprisoned for failure to pay a\nfine in a criminal case unless he has been afforded adequate\ntime to make payment, in installments if necessary, and has\nwillfully failed to make payment.\n(Source: Illinois Constitution.)"
+        },
+        {
+          "number": "15",
+          "title": "RIGHT OF EMINENT DOMAIN",
+          "text": "Private property shall not be taken or damaged for public\nuse without just compensation as provided by law. Such\ncompensation shall be determined by a jury as provided by\nlaw.\n(Source: Illinois Constitution.)"
+        },
+        {
+          "number": "16",
+          "title": "EX POST FACTO LAWS AND IMPAIRING CONTRACTS",
+          "text": "No ex post facto law, or law impairing the obligation of\ncontracts of or making an irrevocable grant of special\nprivileges or immunities, shall be passed.\n(Source: Illinois Constitution.)"
+        },
+        {
+          "number": "17",
+          "title": "NO DISCRIMINATION IN EMPLOYMENT AND THE SALE OR RENTAL OF PROPERTY",
+          "text": "All persons shall have the right to be free from\ndiscrimination on the basis of race, color, creed, national\nancestry and sex in the hiring and promotion practices of any\nemployer or in the sale or rental of property.\nThese rights are enforceable without action by the\nGeneral Assembly, but the General Assembly by law may\nestablish reasonable exemptions relating to these rights and\nprovide additional remedies for their violation.\n(Source: Illinois Constitution.)"
+        },
+        {
+          "number": "18",
+          "title": "NO DISCRIMINATION ON THE BASIS OF SEX",
+          "text": "The equal protection of the laws shall not be denied or\nabridged on account of sex by the State or its units of local\ngovernment and school districts.\n(Source: Illinois Constitution.)"
+        },
+        {
+          "number": "19",
+          "title": "NO DISCRIMINATION AGAINST THE HANDICAPPED",
+          "text": "All persons with a physical or mental handicap shall be\nfree from discrimination in the sale or rental of property\nand shall be free from discrimination unrelated to ability in\nthe hiring and promotion practices of any employer.\n(Source: Illinois Constitution.)"
+        },
+        {
+          "number": "20",
+          "title": "INDIVIDUAL DIGNITY",
+          "text": "To promote individual dignity, communications that\nportray criminality, depravity or lack of virtue in, or that\nincite violence, hatred, abuse or hostility toward, a person\nor group of persons by reason of or by reference to\nreligious, racial, ethnic, national or regional affiliation\nare condemned.\n(Source: Illinois Constitution.)"
+        },
+        {
+          "number": "21",
+          "title": "QUARTERING OF SOLDIERS",
+          "text": "No soldier in time of peace shall be quartered in a house\nwithout the consent of the owner; nor in time of war except\nas provided by law.shall not take over a house without the knowing of the owner.\n(Source: Illinois Constitution.)"
+        },
+        {
+          "number": "22",
+          "title": "RIGHT TO ARMS",
+          "text": "Subject only to the police power, the right of the\nindividual citizen to keep and bear arms shall not be\ninfringed.\n(Source: Illinois Constitution.)"
+        },
+        {
+          "number": "23",
+          "title": "FUNDAMENTAL PRINCIPLES",
+          "text": "A frequent recurrence to the fundamental principles of\ncivil government is necessary to preserve the blessings of\nliberty. These blessings cannot endure unless the people\nrecognize their corresponding individual obligations and\nresponsibilities.\n(Source: Illinois Constitution.)"
+        },
+        {
+          "number": "24",
+          "title": "RIGHTS RETAINED",
+          "text": "The enumeration in this Constitution of certain rights\nshall not be construed to deny or disparage others retained\nby the individual citizens of the State.\n(Source: Illinois Constitution.)"
+        }
+      ]
+    },
+    {
+      "number": "II",
+      "title": "THE POWERS OF THE STATE",
+      "sections": [
+        {
+          "number": "1",
+          "title": "SEPARATION OF POWERS",
+          "text": "The legislative, executive and judicial branches are\nseparate. No branch shall exercise powers properly belonging\nto another.\n(Source: Illinois Constitution.)"
+        },
+        {
+          "number": "2",
+          "title": "POWERS OF GOVERNMENT",
+          "text": "The enumeration in this Constitution of specified powers\nand functions shall not be construed as a limitation of\npowers of state government.\n(Source: Illinois Constitution.)"
+        }
+      ]
+    },
+    {
+      "number": "III",
+      "title": "SUFFRAGE AND ELECTIONS",
+      "sections": [
+        {
+          "number": "1",
+          "title": "VOTING QUALIFICATIONS",
+          "text": "Every United States citizen who has attained the age of\n18 or any other voting age required by the United States for\nvoting in State elections and who has been a permanent\nresident of this State for at least 30 days next preceding\nany election shall have the right to vote at such election.\nThe General Assembly by law may establish registration\nrequirements and require permanent residence in an election\ndistrict not to exceed thirty days prior to an election. The\nGeneral Assembly by law may establish shorter residence\nrequirements for voting for President and Vice-President of\nthe United States.\n(Source: Amendment adopted at general election November 8,\n1988.)"
+        },
+        {
+          "number": "2",
+          "title": "VOTING DISQUALIFICATIONS",
+          "text": "A person convicted of a felony, or otherwise under\nsentence in a correctional institution or jail, shall lose\nthe right to vote, which right shall be restored not later\nthan upon completion of his sentence.\n(Source: Illinois Constitution.)"
+        },
+        {
+          "number": "3",
+          "title": "ELECTIONS",
+          "text": "All elections shall be free and equal.\n(Source: Illinois Constitution.)"
+        },
+        {
+          "number": "4",
+          "title": "ELECTION LAWS",
+          "text": "The General Assembly by law shall define permanent\nresidence for voting purposes, insure secrecy of voting and\nthe integrity of the election process, and facilitate\nregistration and voting by all qualified persons. Laws\ngoverning voter registration and conduct of elections shall\nbe general and uniform.\n(Source: Illinois Constitution.)"
+        },
+        {
+          "number": "5",
+          "title": "BOARD OF ELECTIONS",
+          "text": "A State Board of Elections shall have general supervision\nover the administration of the registration and election laws\nthroughout the State. The General Assembly by law shall\ndetermine the size, manner of selection and compensation of\nthe Board. No political party shall have a majority of\nmembers of the Board.\n(Source: Illinois Constitution.)"
+        },
+        {
+          "number": "6",
+          "title": "GENERAL ELECTION",
+          "text": "As used in all articles of this Constitution except"
+        }
+      ]
+    },
+    {
+      "number": "VII",
+      "title": ", \"general election\" means the biennial election",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Full Text",
+          "text": "at which members of the General Assembly are elected. Such\nelection shall be held on the Tuesday following the first\nMonday of November in even-numbered years or on such other\nday as provided by law.\n(Source: Illinois Constitution.)"
+        }
+      ]
+    },
+    {
+      "number": "IV",
+      "title": "THE LEGISLATURE",
+      "sections": [
+        {
+          "number": "1",
+          "title": "LEGISLATURE - POWER AND STRUCTURE",
+          "text": "The legislative power is vested in a General Assembly consisting of a Senate and a House of Representatives, elected by the electors from 59 Legislative Districts and 118 Representative Districts. (Source: Amendment adopted at general election November 4, 1980.)"
+        },
+        {
+          "number": "4",
+          "title": "ELECTION",
+          "text": "Members of the General Assembly shall be elected at the general election in even-numbered years. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "10",
+          "title": "EFFECTIVE DATE OF LAWS",
+          "text": "The General Assembly shall provide by law for a uniform effective date for laws passed prior to June 1 of a calendar year. The General Assembly may provide for a different effective date in any law passed prior to June 1. A bill passed after May 31 shall not become effective prior to June 1 of the next calendar year unless the General Assembly by the vote of three-fifths of the members elected to each house provides for an earlier effective date. (Source: Amendment adopted at general election November 8, 1994.)"
+        },
+        {
+          "number": "11",
+          "title": "COMPENSATION AND ALLOWANCES",
+          "text": "A member shall receive a salary and allowances as provided by law, but changes in the salary of a member shall not take effect during the term for which he has been elected. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "12",
+          "title": "LEGISLATIVE IMMUNITY",
+          "text": "Except in cases of treason, felony or breach of peace, a member shall be privileged from arrest going to, during, and returning from sessions of the General Assembly. A member shall not be held to answer before any other tribunal for any speech or debate, written or oral, in either house. These immunities shall apply to committee and legislative commission proceedings. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "13",
+          "title": "SPECIAL LEGISLATION",
+          "text": "The General Assembly shall pass no special or local law when a general law is or can be made applicable. Whether a general law is or can be made applicable shall be a matter for judicial determination. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "14",
+          "title": "IMPEACHMENT",
+          "text": "The House of Representatives has the sole power to conduct legislative investigations to determine the existence of cause for impeachment and, by the vote of a majority of the members elected, to impeach Executive and Judicial officers. Impeachments shall be tried by the Senate. When sitting for that purpose, Senators shall be upon oath, or affirmation, to do justice according to law. If the Governor is tried, the Chief Justice of the Supreme Court shall preside. No person shall be convicted without the concurrence of two-thirds of the Senators elected. Judgment shall not extend beyond removal from office and disqualification to hold any public office of this State. An impeached officer, whether convicted or acquitted, shall be liable to prosecution, trial, judgment and punishment according to law. (Source: Illinois Constitution.)"
+        }
+      ]
+    },
+    {
+      "number": "V",
+      "title": "THE EXECUTIVE",
+      "sections": [
+        {
+          "number": "1",
+          "title": "OFFICERS",
+          "text": "The Executive Branch shall include a Governor, Lieutenant Governor, Attorney General, Secretary of State, Comptroller and Treasurer elected by the electors of the State. They shall keep the public records and maintain a residence at the seat of government during their terms of office. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "2",
+          "title": "TERMS",
+          "text": "These elected officers of the Executive Branch shall hold office for four years beginning on the second Monday of January after their election and, except in the case of the Lieutenant Governor, until their successors are qualified. They shall be elected at the general election in 1978 and every four years thereafter. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "3",
+          "title": "ELIGIBILITY",
+          "text": "To be eligible to hold the office of Governor, Lieutenant Governor, Attorney General, Secretary of State, Comptroller or Treasurer, a person must be a United States citizen, at least 25 years old, and a resident of this State for the three years preceding his election. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "4",
+          "title": "JOINT ELECTION",
+          "text": "In the general election for Governor and Lieutenant Governor, one vote shall be cast jointly for the candidates nominated by the same political party or petition. The General Assembly may provide by law for the joint nomination of candidates for Governor and Lieutenant Governor. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "5",
+          "title": "CANVASS – CONTESTS",
+          "text": "The election returns for executive offices shall be sealed and transmitted to the Secretary of State, or other person or body provided by law, who shall examine and consolidate the returns. The person having the highest number of votes for an office shall be declared elected. If two or more persons have an equal and the highest number of votes for an office, they shall draw lots to determine which of them shall be declared elected. Election contests shall be decided by the courts in a manner provided by law. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "7",
+          "title": "VACANCIES IN OTHER ELECTIVE OFFICES",
+          "text": "If the Attorney General, Secretary of State, Comptroller or Treasurer fails to qualify or if his office becomes vacant, the Governor shall fill the office by appointment. The appointee shall hold office until the elected officer qualifies or until a successor is elected and qualified as may be provided by law and shall not be subject to removal by the Governor. If the Lieutenant Governor fails to qualify or if his office becomes vacant, it shall remain vacant until the end of the term. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "8",
+          "title": "GOVERNOR - SUPREME EXECUTIVE POWER",
+          "text": "The Governor shall have the supreme executive power, and shall be responsible for the faithful execution of the laws. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "10",
+          "title": "GOVERNOR – REMOVALS",
+          "text": "The Governor may remove for incompetence, neglect of duty, or malfeasance in office any officer who may be appointed by the Governor. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "11",
+          "title": "GOVERNOR - AGENCY REORGANIZATION",
+          "text": "The Governor, by Executive Order, may reassign functions among or reorganize executive agencies which are directly responsible to him. If such a reassignment or reorganization would contravene a statute, the Executive Order shall be delivered to the General Assembly. If the General Assembly is in annual session and if the Executive Order is delivered on or before April 1, the General Assembly shall consider the Executive Order at that annual session. If the General Assembly is not in annual session or if the Executive Order is delivered after April 1, the General Assembly shall consider the Executive Order at its next annual session, in which case the Executive Order shall be deemed to have been delivered on the first day of that annual session. Such an Executive Order shall not become effective if, within 60 calendar days after its delivery to the General Assembly, either house disapproves the Executive Order by the record vote of a majority of the members elected. An Executive Order not so disapproved shall become effective by its terms but not less than 60 calendar days after its delivery to the General Assembly. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "12",
+          "title": "GOVERNOR – PARDONS",
+          "text": "The Governor may grant reprieves, commutations and pardons, after conviction, for all offenses on such terms as he thinks proper. The manner of applying therefore may be regulated by law. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "13",
+          "title": "GOVERNOR - LEGISLATIVE MESSAGES",
+          "text": "The Governor, at the beginning of each annual session of the General Assembly and at the close of his term of office, shall report to the General Assembly on the condition of the State and recommend such measures as he deems desirable. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "14",
+          "title": "LIEUTENANT GOVERNOR – DUTIES",
+          "text": "The Lieutenant Governor shall perform the duties and exercise the powers in the Executive Branch that may be delegated to him by the Governor and that may be prescribed by law. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "15",
+          "title": "ATTORNEY GENERAL – DUTIES",
+          "text": "The Attorney General shall be the legal officer of the State, and shall have the duties and powers that may be prescribed by law. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "16",
+          "title": "SECRETARY OF STATE – DUTIES",
+          "text": "The Secretary of State shall maintain the official records of the acts of the General Assembly and such official records of the Executive Branch as provided by law. Such official records shall be available for inspection by the public. He shall keep the Great Seal of the State of Illinois and perform other duties that may be prescribed by law. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "17",
+          "title": "COMPTROLLER – DUTIES",
+          "text": "The Comptroller, in accordance with law, shall maintain the State's central fiscal accounts, and order payments into and out of the funds held by the Treasurer. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "18",
+          "title": "TREASURER – DUTIES",
+          "text": "The Treasurer, in accordance with law, shall be responsible for the safekeeping and investment of monies and securities deposited with him, and for their disbursement upon order of the Comptroller. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "19",
+          "title": "RECORDS – REPORTS",
+          "text": "All officers of the Executive Branch shall keep accounts and shall make such reports as may be required by law. They shall provide the Governor with information relating to their respective offices, either in writing under oath, or otherwise, as the Governor may require. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "20",
+          "title": "BOND",
+          "text": "Civil officers of the Executive Branch may be required by law to give reasonable bond or other security for the faithful performance of their duties. If any officer is in default of such a requirement, his office shall be deemed vacant. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "21",
+          "title": "COMPENSATION",
+          "text": "Officers of the Executive Branch shall be paid salaries established by law and shall receive no other compensation for their services. Changes in the salaries of these officers elected or appointed for stated terms shall not take effect during the stated terms. (Source: Illinois Constitution.)"
+        }
+      ]
+    },
+    {
+      "number": "VI",
+      "title": "THE JUDICIARY",
+      "sections": [
+        {
+          "number": "1",
+          "title": "COURTS",
+          "text": "The judicial power is vested in a Supreme Court, an Appellate Court and Circuit Courts. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "2",
+          "title": "JUDICIAL DISTRICTS",
+          "text": "The State is divided into five Judicial Districts for the selection of Supreme and Appellate Court Judges. The First Judicial District consists of Cook County. The remainder of the State shall be divided by law into four Judicial Districts of substantially equal population, each of which shall be compact and composed of contiguous counties. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "3",
+          "title": "SUPREME COURT – ORGANIZATION",
+          "text": "The Supreme Court shall consist of seven Judges. Three shall be selected from the First Judicial District and one from each of the other Judicial Districts. Four Judges constitute a quorum and the concurrence of four is necessary for a decision. Supreme Court Judges shall select a Chief Justice from their number to serve for a term of three years. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "5",
+          "title": "APPELLATE COURT – ORGANIZATION",
+          "text": "The number of Appellate Judges to be selected from each Judicial District shall be provided by law. The Supreme Court shall prescribe by rule the number of Appellate divisions in each Judicial District. Each Appellate division shall have at least three Judges. Assignments to divisions shall be made by the Supreme Court. A majority of a division constitutes a quorum and the concurrence of a majority of the division is necessary for a decision. There shall be at least one division in each Judicial District and each division shall sit at times and places prescribed by rules of the Supreme Court. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "6",
+          "title": "APPELLATE COURT – JURISDICTION",
+          "text": "Appeals from final judgments of a Circuit Court are a matter of right to the Appellate Court in the Judicial District in which the Circuit Court is located except in cases appealable directly to the Supreme Court and except that after a trial on the merits in a criminal case, there shall be no appeal from a judgment of acquittal. The Supreme Court may provide by rule for appeals to the Appellate Court from other than final judgments of Circuit Courts. The Appellate Court may exercise original jurisdiction when necessary to the complete determination of any case on review. The Appellate Court shall have such powers of direct review of administrative action as provided by law. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "8",
+          "title": "ASSOCIATE JUDGES",
+          "text": "Each Circuit Court shall have such number of Associate Judges as provided by law. Associate Judges shall be appointed by the Circuit Judges in each circuit as the Supreme Court shall provide by rule. In the First Judicial District, unless otherwise provided by law, at least one-fourth of the Associate Judges shall be appointed from, and reside, outside Chicago. The Supreme Court shall provide by rule for matters to be assigned to Associate Judges. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "9",
+          "title": "CIRCUIT COURTS – JURISDICTION",
+          "text": "Circuit Courts shall have original jurisdiction of all justiciable matters except when the Supreme Court has original and exclusive jurisdiction relating to redistricting of the General Assembly and to the ability of the Governor to serve or resume office. Circuit Courts shall have such power to review administrative action as provided by law. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "10",
+          "title": "TERMS OF OFFICE",
+          "text": "The terms of office of Supreme and Appellate Court Judges shall be ten years; of Circuit Judges, six years; and of Associate Judges, four years. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "11",
+          "title": "ELIGIBILITY FOR OFFICE",
+          "text": "No person shall be eligible to be a Judge or Associate Judge unless he is a United States citizen, a licensed attorney-at-law of this State, and a resident of the unit which selects him. No change in the boundaries of a unit shall affect the tenure in office of a Judge or Associate Judge incumbent at the time of such change. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "14",
+          "title": "JUDICIAL SALARIES AND EXPENSES - FEE OFFICERS ELIMINATED",
+          "text": "Judges shall receive salaries provided by law which shall not be diminished to take effect during their terms of office. All salaries and such expenses as may be provided by law shall be paid by the State, except that Appellate, Circuit and Associate Judges shall receive such additional compensation from counties within their district or circuit as may be provided by law. There shall be no fee officers in the judicial system. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "16",
+          "title": "ADMINISTRATION",
+          "text": "General administrative and supervisory authority over all courts is vested in the Supreme Court and shall be exercised by the Chief Justice in accordance with its rules. The Supreme Court shall appoint an administrative director and staff, who shall serve at its pleasure, to assist the Chief Justice in his duties. The Supreme Court may assign a Judge temporarily to any court and an Associate Judge to serve temporarily as an Associate Judge on any Circuit Court. The Supreme Court shall provide by rule for expeditious and inexpensive appeals. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "17",
+          "title": "JUDICIAL CONFERENCE",
+          "text": "The Supreme Court shall provide by rule for an annual judicial conference to consider the work of the courts and to suggest improvements in the administration of justice and shall report thereon annually in writing to the General Assembly not later than January 31. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "19",
+          "title": "STATE'S ATTORNEYS - SELECTION, SALARY",
+          "text": "A State's Attorney shall be elected in each county in 1972 and every fourth year thereafter for a four year term. One State's Attorney may be elected to serve two or more counties if the governing boards of such counties so provide and a majority of the electors of each county voting on the issue approve. A person shall not be eligible for the office of State's Attorney unless he is a United States citizen and a licensed attorney-at-law of this State. His salary shall be provided by law. (Source: Illinois Constitution.)"
+        }
+      ]
+    },
+    {
+      "number": "VII",
+      "title": "LOCAL GOVERNMENT",
+      "sections": [
+        {
+          "number": "1",
+          "title": "MUNICIPALITIES AND UNITS OF LOCAL GOVERNMENT",
+          "text": "\"Municipalities\" means cities, villages and incorporated towns. \"Units of local government\" means counties, municipalities, townships, special districts, and units, designated as units of local government by law, which exercise limited governmental powers or powers in respect to limited governmental subjects, but does not include school districts. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "5",
+          "title": "TOWNSHIPS",
+          "text": "The General Assembly shall provide by law for the formation of townships in any county when approved by county-wide referendum. Townships may be consolidated or merged, and one or more townships may be dissolved or divided, when approved by referendum in each township affected. All townships in a county may be dissolved when approved by a referendum in the total area in which township officers are elected. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "7",
+          "title": "COUNTIES AND MUNICIPALITIES OTHER THAN HOME RULE UNITS",
+          "text": "Counties and municipalities which are not home rule units shall have only powers granted to them by law and the powers (1) to make local improvements by special assessment and to exercise this power jointly with other counties and municipalities, and other classes of units of local government having that power on the effective date of this Constitution unless that power is subsequently denied by law to any such other units of local government; (2) by referendum, to adopt, alter or repeal their forms of government provided by law; (3) in the case of municipalities, to provide by referendum for their officers, manner of selection and terms of office; (4) in the case of counties, to provide for their officers, manner of selection and terms of office as provided in Section 4 of this Article; (5) to incur debt except as limited by law and except that debt payable from ad valorem property tax receipts shall mature within 40 years from the time it is incurred; and (6) to levy or impose additional taxes upon areas within their boundaries in the manner provided by law for the provision of special services to those areas and for the payment of debt incurred in order to provide those special services. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "8",
+          "title": "POWERS AND OFFICERS OF SCHOOL DISTRICTS AND UNITS OF LOCAL GOVERNMENT OTHER THAN COUNTIES AND MUNICIPALITIES",
+          "text": "Townships, school districts, special districts and units, designated by law as units of local government, which exercise limited governmental powers or powers in respect to limited governmental subjects shall have only powers granted by law. No law shall grant the power (1) to any of the foregoing units to incur debt payable from ad valorem property tax receipts maturing more than 40 years from the time it is incurred, or (2) to make improvements by special assessments to any of the foregoing classes of units which do not have that power on the effective date of this Constitution. The General Assembly shall provide by law for the selection of officers of the foregoing units, but the officers shall not be appointed by any person in the Judicial Branch. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "12",
+          "title": "IMPLEMENTATION OF GOVERNMENTAL CHANGES",
+          "text": "The General Assembly shall provide by law for the transfer of assets, powers and functions, and for the payment of outstanding debt in connection with the formation, consolidation, merger, division, dissolution and change in the boundaries of units of local government. (Source: Illinois Constitution.)"
+        }
+      ]
+    },
+    {
+      "number": "VIII",
+      "title": "FINANCE",
+      "sections": [
+        {
+          "number": "4",
+          "title": "SYSTEMS OF ACCOUNTING, AUDITING AND REPORTING",
+          "text": "The General Assembly by law shall provide systems of accounting, auditing and reporting of the obligation, receipt and use of public funds. These systems shall be used by all units of local government and school districts. (Source: Illinois Constitution.)"
+        }
+      ]
+    },
+    {
+      "number": "IX",
+      "title": "REVENUE",
+      "sections": [
+        {
+          "number": "1",
+          "title": "STATE REVENUE POWER",
+          "text": "The General Assembly has the exclusive power to raise revenue by law except as limited or otherwise provided in this Constitution. The power of taxation shall not be surrendered, suspended, or contracted away. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "2",
+          "title": "NON-PROPERTY TAXES - CLASSIFICATION, EXEMPTIONS, DEDUCTIONS, ALLOWANCES AND CREDITS",
+          "text": "In any law classifying the subjects or objects of non-property taxes or fees, the classes shall be reasonable and the subjects and objects within each class shall be taxed uniformly. Exemptions, deductions, credits, refunds and other allowances shall be reasonable. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "6",
+          "title": "EXEMPTIONS FROM PROPERTY TAXATION",
+          "text": "The General Assembly by law may exempt from taxation only the property of the State, units of local government and school districts and property used exclusively for agricultural and horticultural societies, and for school, religious, cemetery and charitable purposes. The General Assembly by law may grant homestead exemptions or rent credits. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "7",
+          "title": "OVERLAPPING TAXING DISTRICTS",
+          "text": "The General Assembly may provide by law for fair apportionment of the burden of taxation of property situated in taxing districts that lie in more than one county. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "10",
+          "title": "REVENUE ARTICLE NOT LIMITED",
+          "text": "This Article is not qualified or limited by the provisions of Article VII of this Constitution concerning the size of the majorities in the General Assembly necessary to deny or limit the power to tax granted to units of local government. (Source: Illinois Constitution.)"
+        }
+      ]
+    },
+    {
+      "number": "X",
+      "title": "EDUCATION",
+      "sections": [
+        {
+          "number": "1",
+          "title": "GOAL - FREE SCHOOLS",
+          "text": "A fundamental goal of the People of the State is the educational development of all persons to the limits of their capacities.\nThe State shall provide for an efficient system of high quality public educational institutions and services. Education in public schools through the secondary level shall be free. There may be such other free education as the General Assembly provides by law.\nThe State has the primary responsibility for financing the system of public education. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "3",
+          "title": "PUBLIC FUNDS FOR SECTARIAN PURPOSES FORBIDDEN",
+          "text": "Neither the General Assembly nor any county, city, town, township, school district, or other public corporation, shall ever make any appropriation or pay from any public fund whatever, anything in aid of any church or sectarian purpose, or to help support or sustain any school, academy, seminary, college, university, or other literary or scientific institution, controlled by any church or sectarian denomination whatever; nor shall any grant or donation of land, money, or other personal property ever be made by the State, or any such public corporation, to any church, or for any sectarian purpose. (Source: Illinois Constitution.)"
+        }
+      ]
+    },
+    {
+      "number": "XI",
+      "title": "ENVIRONMENT",
+      "sections": [
+        {
+          "number": "1",
+          "title": "PUBLIC POLICY - LEGISLATIVE RESPONSIBILITY",
+          "text": "The public policy of the State and the duty of each person is to provide and maintain a healthful environment for the benefit of this and future generations. The General Assembly shall provide by law for the implementation and enforcement of this public policy. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "2",
+          "title": "RIGHTS OF INDIVIDUALS",
+          "text": "Each person has the right to a healthful environment. Each person may enforce this right against any party, governmental or private, through appropriate legal proceedings subject to reasonable limitation and regulation as the General Assembly may provide by law. (Source: Illinois Constitution.)"
+        }
+      ]
+    },
+    {
+      "number": "XII",
+      "title": "MILITIA",
+      "sections": [
+        {
+          "number": "1",
+          "title": "MEMBERSHIP",
+          "text": "The State militia consists of all able-bodied persons residing in the State except those exempted by law. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "2",
+          "title": "SUBORDINATION OF MILITARY POWER",
+          "text": "The military shall be in strict subordination to the civil power. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "3",
+          "title": "ORGANIZATION, EQUIPMENT AND DISCIPLINE",
+          "text": "The General Assembly shall provide by law for the organization, equipment and discipline of the militia in conformity with the laws governing the armed forces of the United States. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "5",
+          "title": "PRIVILEGE FROM ARREST",
+          "text": "Except in cases of treason, felony or breach of peace, persons going to, returning from or on militia duty are privileged from arrest. (Source: Illinois Constitution.)"
+        }
+      ]
+    },
+    {
+      "number": "XIII",
+      "title": "GENERAL PROVISIONS",
+      "sections": [
+        {
+          "number": "1",
+          "title": "DISQUALIFICATION FOR PUBLIC OFFICE",
+          "text": "A person convicted of a felony, bribery, perjury or other infamous crime shall be ineligible to hold an office created by this Constitution. Eligibility may be restored as provided by law. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "2",
+          "title": "STATEMENT OF ECONOMIC INTERESTS",
+          "text": "All candidates for or holders of state offices and all members of a Commission or Board created by this Constitution shall file a verified statement of their economic interests, as provided by law. The General Assembly by law may impose a similar requirement upon candidates for, or holders of, offices in units of local government and school districts. Statements shall be filed annually with the Secretary of State and shall be available for inspection by the public. The General Assembly by law shall prescribe a reasonable time for filing the statement. Failure to file a statement within the time prescribed shall result in ineligibility for, or forfeiture of, office. This Section shall not be construed as limiting the authority of any branch of government to establish and enforce ethical standards for that branch. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "3",
+          "title": "OATH OR AFFIRMATION OF OFFICE",
+          "text": "Each prospective holder of a State office or other State position created by this Constitution, before taking office, shall take and subscribe to the following oath or affirmation:\n\"I do solemnly swear (affirm) that I will support the Constitution of the United States, and the Constitution of the State of Illinois, and that I will faithfully discharge the duties of the office of .... to the best of my ability.\" (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "4",
+          "title": "SOVEREIGN IMMUNITY ABOLISHED",
+          "text": "Except as the General Assembly may provide by law, sovereign immunity in this State is abolished. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "5",
+          "title": "PENSION AND RETIREMENT RIGHTS",
+          "text": "Membership in any pension or retirement system of the State, any unit of local government or school district, or any agency or instrumentality thereof, shall be an enforceable contractual relationship, the benefits of which shall not be diminished or impaired. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "6",
+          "title": "CORPORATIONS",
+          "text": "Corporate charters shall be granted, amended, dissolved, or extended only pursuant to general laws. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "7",
+          "title": "PUBLIC TRANSPORTATION",
+          "text": "Public transportation is an essential public purpose for which public funds may be expended. The General Assembly by law may provide for, aid, and assist public transportation, including the granting of public funds or credit to any corporation or public authority authorized to provide public transportation within the State. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "8",
+          "title": "BRANCH BANKING",
+          "text": "Branch banking shall be authorized only by law approved by three-fifths of the members voting on the question or a majority of the members elected, whichever is greater, in each house of the General Assembly. (Source: Illinois Constitution.)"
+        }
+      ]
+    },
+    {
+      "number": "XIV",
+      "title": "CONSTITUTIONAL REVISION",
+      "sections": [
+        {
+          "number": "3",
+          "title": "CONSTITUTIONAL INITIATIVE FOR LEGISLATIVE ARTICLE",
+          "text": "Amendments to Article IV of this Constitution may be proposed by a petition signed by a number of electors equal in number to at least eight percent of the total votes cast for candidates for Governor in the preceding gubernatorial election. Amendments shall be limited to structural and procedural subjects contained in Article IV. A petition shall contain the text of the proposed amendment and the date of the general election at which the proposed amendment is to be submitted, shall have been signed by the petitioning electors not more than twenty-four months preceding that general election and shall be filed with the Secretary of State at least six months before that general election. The procedure for determining the validity and sufficiency of a petition shall be provided by law. If the petition is valid and sufficient, the proposed amendment shall be submitted to the electors at that general election and shall become effective if approved by either three-fifths of those voting on the amendment or a majority of those voting in the election. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "4",
+          "title": "AMENDMENTS TO THE CONSTITUTION OF THE UNITED STATES",
+          "text": "The affirmative vote of three-fifths of the members elected to each house of the General Assembly shall be required to request Congress to call a Federal Constitutional Convention, to ratify a proposed amendment to the Constitution of the United States, or to call a State Convention to ratify a proposed amendment to the Constitution of the United States. The General Assembly shall not take action on any proposed amendment to the Constitution of the United States submitted for ratification by legislatures unless a majority of the members of the General Assembly shall have been elected after the proposed amendment has been submitted for ratification. The requirements of this Section shall govern to the extent that they are not inconsistent with requirements established by the United States. (Source: Illinois Constitution.)\n\n### TRANSITION SCHEDULE\n\nThe following Schedule Provisions shall remain part of this Constitution until their terms have been executed. Once each year the Attorney General shall review the following provisions and certify to the Secretary of State which, if any, have been executed. Any provisions so certified shall thereafter be removed from the Schedule and no longer published as part of this Constitution."
+        },
+        {
+          "number": "2",
+          "title": "PROSPECTIVE OPERATION OF BILL OF RIGHTS",
+          "text": "Any rights, procedural or substantive, created for the first time by Article I shall be prospective and not retroactive. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "6",
+          "title": "AUTHORIZED BONDS",
+          "text": "Nothing in Section 9 of Article IX shall be construed to limit or impair the power to issue bonds or other evidences of indebtedness authorized but unissued on the effective date of this Constitution. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "8",
+          "title": "CUMULATIVE VOTING FOR DIRECTORS",
+          "text": "Shareholders of all corporations heretofore organized under any law of this State which requires cumulative voting of shares for corporate directors shall retain their right to vote cumulatively for such directors. (Source: Illinois Constitution.)"
+        },
+        {
+          "number": "9",
+          "title": "GENERAL TRANSITION",
+          "text": "The rights and duties of all public bodies shall remain as if this Constitution had not been adopted with the exception of such changes as are contained in this Constitution. All laws, ordinances, regulations and rules of court not contrary to, or inconsistent with, the provisions of this Constitution shall remain in force, until they shall expire by their own limitation or shall be altered or repealed pursuant to this Constitution. The validity of all public and private bonds, debts and contracts, and of all suits, actions and rights of action, shall continue as if no change had taken place. All officers filling any office by election or appointment shall continue to exercise the duties thereof, until their offices shall have been abolished or their successors selected and qualified in accordance with this Constitution or laws enacted pursuant thereto. (Source: Illinois Constitution.)"
+        }
+      ]
+    }
+  ],
+  "rawText": "### PREAMBLE\n\nWe, the People of the State of Illinois - grateful to Almighty God for the civil, political and religious liberty which He has permitted us to enjoy and seeking His blessing upon our endeavors - in order to provide for the health, safety and welfare of the people; maintain a representative and orderly government; eliminate poverty and inequality; assure legal, social and economic justice; provide opportunity for the fullest development of the individual; insure domestic tranquility; provide for the common defense; and secure the blessings of freedom and liberty to ourselves and our posterity - do ordain and establish this Constitution for the State of Illinois.\n\n### ARTICLE 1: BILL OF RIGHTS\n\n#### SECTION 1. INHERENT AND INALIENABLE RIGHTS\n\nAll men are by nature free and independent and have\ncertain inherent and inalienable rights among which are life,\nliberty and the pursuit of happiness. To secure these rights\nand the protection of property, governments are instituted\namong men, deriving their just powers from the consent of the\ngoverned.\n(Source: Illinois Constitution)\n\n#### SECTION 2. DUE PROCESS AND EQUAL PROTECTION\n\nNo person shall be deprived of life, liberty or property\nwithout due process of law nor be denied the equal protection\nof the laws.\n(Source: Illinois Constitution)\n\n#### SECTION 3. RELIGIOUS FREEDOM\n\nThe free exercise and enjoyment of religious profession\nand worship, without discrimination, shall forever be\nguaranteed, and no person shall be denied any civil or\npolitical right, privilege or capacity, on account of his\nreligious opinions; but the liberty of conscience hereby\nsecured shall not be construed to dispense with oaths or\naffirmations, excuse acts of licentiousness, or justify\npractices inconsistent with the peace or safety of the State.\nNo person shall be required to attend or support any ministry\nor place of worship against his consent, nor shall any\npreference be given by law to any religious denomination or\nmode of worship.\n\n#### SECTION 4. FREEDOM OF SPEECH\n\nAll persons may speak, write and publish freely, being\nresponsible for the abuse of that liberty. In trials for\nlibel, both civil and criminal, the truth, when published\nwith good motives and for justifiable ends, shall be a\nsufficient defense.\n(Source: Illinois Constitution.)\n\n#### SECTION 5. RIGHT TO ASSEMBLE AND PETITION\n\nThe people have the right to assemble in a peaceable\nmanner, to consult for the common good, to make known their\nopinions to their representatives and to apply for redress of\ngrievances.\n(Source: Illinois Constitution.)\n\n#### SECTION 6. SEARCHES, SEIZURES, PRIVACY AND INTERCEPTIONS\n\nThe people shall have the right to be secure in their\npersons, houses, papers and other possessions against\nunreasonable searches, seizures, invasions of privacy or\ninterceptions of communications by eavesdropping devices or\nother means. No warrant shall issue without probable cause,\nsupported by affidavit particularly describing the place to\nbe searched and the persons or things to be seized.\n(Source: Illinois Constitution.)\n\n#### SECTION 7. INDICTMENT AND PRELIMINARY HEARING\n\nNo person shall be held to answer for a criminal offense\nunless on indictment of a grand jury, except in cases in\nwhich the punishment is by fine or by imprisonment other than\nin the penitentiary, in cases of impeachment, and in cases\narising in the militia when in actual service in time of war\nor public danger. The General Assembly by law may abolish the\ngrand jury or further limit its use.\nNo person shall be held to answer for a crime punishable\nby death or by imprisonment in the penitentiary unless either\nthe initial charge has been brought by indictment of a grand\njury or the person has been given a prompt preliminary\nhearing to establish probable cause.\n(Source: Illinois Constitution.)\n\n#### SECTION 8. RIGHTS AFTER INDICTMENT\n\nIn criminal prosecutions, the accused shall have the\nright to appear and defend in person and by counsel; to\ndemand the nature and cause of the accusation and have a copy\nthereof; to be confronted with the witnesses against him or\nher and to have process to compel the attendance of witnesses\nin his or her behalf; and to have a speedy public trial by an\nimpartial jury of the county in which the offense is alleged\nto have been committed.\n(Source: Amendment adopted at general election November 8,\n1994.)\n\n#### SECTION 8.1. CRIME VICTIM'S RIGHTS.\n\n(Source: Amendment adopted at general election November 3, 1992.)\n\n#### SECTION 9. BAIL AND HABEAS CORPUS\n\nAll persons shall be bailable by sufficient sureties,\nexcept for the following offenses where the proof is evident\nor the presumption great: capital offenses; offenses for\nwhich a sentence of life imprisonment may be imposed as a\nconsequence of conviction; and felony offenses for which a\nsentence of imprisonment, without conditional and revocable\nrelease, shall be imposed by law as a consequence of\nconviction, when the court, after a hearing, determines that\nrelease of the offender would pose a real and present threat\nto the physical safety of any person. The privilege of the\nwrit of habeas corpus shall not be suspended except in cases\nof rebellion or invasion when the public safety may require\nit.\nAny costs accruing to a unit of local government as a\nresult of the denial of bail pursuant to the 1986 Amendment\nto this Section shall be reimbursed by the State to the unit\nof local government.\n(Source: Amendment adopted at general election November 4,\n1986.)\n\n#### SECTION 10. SELF-INCRIMINATION AND DOUBLE JEOPARDY\n\nNo person shall be compelled in a criminal case to give\nevidence against himself nor be twice put in jeopardy for the\nsame offense.\n(Source: Illinois Constitution.)\n\n#### SECTION 11. LIMITATION OF PENALTIES AFTER CONVICTION\n\nAll penalties shall be determined both according to the\nseriousness of the offense and with the objective of\nrestoring the offender to useful citizenship. No conviction\nshall work corruption of blood or forfeiture of estate. No\nperson shall be transported out of the State for an offense\ncommitted within the State.\n(Source: Illinois Constitution.)\n\n#### SECTION 12. RIGHT TO REMEDY AND JUSTICE\n\nEvery person shall find a certain remedy in the laws for\nall injuries and wrongs which he receives to his person,\nprivacy, property or reputation. He shall obtain justice by\nlaw, freely, completely, and promptly.\n(Source: Illinois Constitution.)\n\n#### SECTION 13. TRIAL BY JURY\n\nThe right of trial by jury as heretofore enjoyed shall\nremain inviolate.\n(Source: Illinois Constitution.)\n\n#### SECTION 14. IMPRISONMENT FOR DEBT\n\nNo person shall be imprisoned for debt unless he refuses\nto deliver up his estate for the benefit of his creditors as\nprovided by law or unless there is a strong presumption of\nfraud. No person shall be imprisoned for failure to pay a\nfine in a criminal case unless he has been afforded adequate\ntime to make payment, in installments if necessary, and has\nwillfully failed to make payment.\n(Source: Illinois Constitution.)\n\n#### SECTION 15. RIGHT OF EMINENT DOMAIN\n\nPrivate property shall not be taken or damaged for public\nuse without just compensation as provided by law. Such\ncompensation shall be determined by a jury as provided by\nlaw.\n(Source: Illinois Constitution.)\n\n#### SECTION 16. EX POST FACTO LAWS AND IMPAIRING CONTRACTS\n\nNo ex post facto law, or law impairing the obligation of\ncontracts of or making an irrevocable grant of special\nprivileges or immunities, shall be passed.\n(Source: Illinois Constitution.)\n\n#### SECTION 17. NO DISCRIMINATION IN EMPLOYMENT AND THE SALE OR RENTAL OF PROPERTY\n\nAll persons shall have the right to be free from\ndiscrimination on the basis of race, color, creed, national\nancestry and sex in the hiring and promotion practices of any\nemployer or in the sale or rental of property.\nThese rights are enforceable without action by the\nGeneral Assembly, but the General Assembly by law may\nestablish reasonable exemptions relating to these rights and\nprovide additional remedies for their violation.\n(Source: Illinois Constitution.)\n\n#### SECTION 18. NO DISCRIMINATION ON THE BASIS OF SEX\n\nThe equal protection of the laws shall not be denied or\nabridged on account of sex by the State or its units of local\ngovernment and school districts.\n(Source: Illinois Constitution.)\n\n#### SECTION 19. NO DISCRIMINATION AGAINST THE HANDICAPPED\n\nAll persons with a physical or mental handicap shall be\nfree from discrimination in the sale or rental of property\nand shall be free from discrimination unrelated to ability in\nthe hiring and promotion practices of any employer.\n(Source: Illinois Constitution.)\n\n#### SECTION 20. INDIVIDUAL DIGNITY\n\nTo promote individual dignity, communications that\nportray criminality, depravity or lack of virtue in, or that\nincite violence, hatred, abuse or hostility toward, a person\nor group of persons by reason of or by reference to\nreligious, racial, ethnic, national or regional affiliation\nare condemned.\n(Source: Illinois Constitution.)\n\n#### SECTION 21. QUARTERING OF SOLDIERS\n\nNo soldier in time of peace shall be quartered in a house\nwithout the consent of the owner; nor in time of war except\nas provided by law.shall not take over a house without the knowing of the owner.\n(Source: Illinois Constitution.)\n\n#### SECTION 22. RIGHT TO ARMS\n\nSubject only to the police power, the right of the\nindividual citizen to keep and bear arms shall not be\ninfringed.\n(Source: Illinois Constitution.)\n\n#### SECTION 23. FUNDAMENTAL PRINCIPLES\n\nA frequent recurrence to the fundamental principles of\ncivil government is necessary to preserve the blessings of\nliberty. These blessings cannot endure unless the people\nrecognize their corresponding individual obligations and\nresponsibilities.\n(Source: Illinois Constitution.)\n\n#### SECTION 24. RIGHTS RETAINED\n\nThe enumeration in this Constitution of certain rights\nshall not be construed to deny or disparage others retained\nby the individual citizens of the State.\n(Source: Illinois Constitution.)\n\n### ARTICLE II: THE POWERS OF THE STATE\n\n#### SECTION 1. SEPARATION OF POWERS\n\nThe legislative, executive and judicial branches are\nseparate. No branch shall exercise powers properly belonging\nto another.\n(Source: Illinois Constitution.)\n\n#### SECTION 2. POWERS OF GOVERNMENT\n\nThe enumeration in this Constitution of specified powers\nand functions shall not be construed as a limitation of\npowers of state government.\n(Source: Illinois Constitution.)\n\n### ARTICLE III: SUFFRAGE AND ELECTIONS\n\n#### SECTION 1. VOTING QUALIFICATIONS\n\nEvery United States citizen who has attained the age of\n18 or any other voting age required by the United States for\nvoting in State elections and who has been a permanent\nresident of this State for at least 30 days next preceding\nany election shall have the right to vote at such election.\nThe General Assembly by law may establish registration\nrequirements and require permanent residence in an election\ndistrict not to exceed thirty days prior to an election. The\nGeneral Assembly by law may establish shorter residence\nrequirements for voting for President and Vice-President of\nthe United States.\n(Source: Amendment adopted at general election November 8,\n1988.)\n\n#### SECTION 2. VOTING DISQUALIFICATIONS\n\nA person convicted of a felony, or otherwise under\nsentence in a correctional institution or jail, shall lose\nthe right to vote, which right shall be restored not later\nthan upon completion of his sentence.\n(Source: Illinois Constitution.)\n\n#### SECTION 3. ELECTIONS\n\nAll elections shall be free and equal.\n(Source: Illinois Constitution.)\n\n#### SECTION 4. ELECTION LAWS\n\nThe General Assembly by law shall define permanent\nresidence for voting purposes, insure secrecy of voting and\nthe integrity of the election process, and facilitate\nregistration and voting by all qualified persons. Laws\ngoverning voter registration and conduct of elections shall\nbe general and uniform.\n(Source: Illinois Constitution.)\n\n#### SECTION 5. BOARD OF ELECTIONS\n\nA State Board of Elections shall have general supervision\nover the administration of the registration and election laws\nthroughout the State. The General Assembly by law shall\ndetermine the size, manner of selection and compensation of\nthe Board. No political party shall have a majority of\nmembers of the Board.\n(Source: Illinois Constitution.)\n\n#### SECTION 6. GENERAL ELECTION\n\nAs used in all articles of this Constitution except\nArticle VII, \"general election\" means the biennial election\nat which members of the General Assembly are elected. Such\nelection shall be held on the Tuesday following the first\nMonday of November in even-numbered years or on such other\nday as provided by law.\n(Source: Illinois Constitution.)\n\n### ARTICLE IV: THE LEGISLATURE\n\n#### SECTION 1. LEGISLATURE - POWER AND STRUCTURE\n\nThe legislative power is vested in a General Assembly consisting of a Senate and a House of Representatives, elected by the electors from 59 Legislative Districts and 118 Representative Districts. (Source: Amendment adopted at general election November 4, 1980.)\n\n#### SECTION 2. LEGISLATIVE COMPOSITION\n\n#### SECTION 3. LEGISLATIVE REDISTRICTING\n\n#### SECTION 4. ELECTION\n\nMembers of the General Assembly shall be elected at the general election in even-numbered years. (Source: Illinois Constitution.)\n\n#### SECTION 5. SESSIONS\n\n#### SECTION 6. ORGANIZATION\n\n#### SECTION 7. TRANSACTION OF BUSINESS\n\n#### SECTION 8. PASSAGE OF BILLS\n\n#### SECTION 9. VETO PROCEDURE\n\n#### SECTION 10. EFFECTIVE DATE OF LAWS\n\nThe General Assembly shall provide by law for a uniform effective date for laws passed prior to June 1 of a calendar year. The General Assembly may provide for a different effective date in any law passed prior to June 1. A bill passed after May 31 shall not become effective prior to June 1 of the next calendar year unless the General Assembly by the vote of three-fifths of the members elected to each house provides for an earlier effective date. (Source: Amendment adopted at general election November 8, 1994.)\n\n#### SECTION 11. COMPENSATION AND ALLOWANCES\n\nA member shall receive a salary and allowances as provided by law, but changes in the salary of a member shall not take effect during the term for which he has been elected. (Source: Illinois Constitution.)\n\n#### SECTION 12. LEGISLATIVE IMMUNITY\n\nExcept in cases of treason, felony or breach of peace, a member shall be privileged from arrest going to, during, and returning from sessions of the General Assembly. A member shall not be held to answer before any other tribunal for any speech or debate, written or oral, in either house. These immunities shall apply to committee and legislative commission proceedings. (Source: Illinois Constitution.)\n\n#### SECTION 13. SPECIAL LEGISLATION\n\nThe General Assembly shall pass no special or local law when a general law is or can be made applicable. Whether a general law is or can be made applicable shall be a matter for judicial determination. (Source: Illinois Constitution.)\n\n#### SECTION 14. IMPEACHMENT\n\nThe House of Representatives has the sole power to conduct legislative investigations to determine the existence of cause for impeachment and, by the vote of a majority of the members elected, to impeach Executive and Judicial officers. Impeachments shall be tried by the Senate. When sitting for that purpose, Senators shall be upon oath, or affirmation, to do justice according to law. If the Governor is tried, the Chief Justice of the Supreme Court shall preside. No person shall be convicted without the concurrence of two-thirds of the Senators elected. Judgment shall not extend beyond removal from office and disqualification to hold any public office of this State. An impeached officer, whether convicted or acquitted, shall be liable to prosecution, trial, judgment and punishment according to law. (Source: Illinois Constitution.)\n\n#### SECTION 15. ADJOURNMENT\n\n### ARTICLE V: THE EXECUTIVE\n\n#### SECTION 1. OFFICERS\n\nThe Executive Branch shall include a Governor, Lieutenant Governor, Attorney General, Secretary of State, Comptroller and Treasurer elected by the electors of the State. They shall keep the public records and maintain a residence at the seat of government during their terms of office. (Source: Illinois Constitution.)\n\n#### SECTION 2. TERMS\n\nThese elected officers of the Executive Branch shall hold office for four years beginning on the second Monday of January after their election and, except in the case of the Lieutenant Governor, until their successors are qualified. They shall be elected at the general election in 1978 and every four years thereafter. (Source: Illinois Constitution.)\n\n#### SECTION 3. ELIGIBILITY\n\nTo be eligible to hold the office of Governor, Lieutenant Governor, Attorney General, Secretary of State, Comptroller or Treasurer, a person must be a United States citizen, at least 25 years old, and a resident of this State for the three years preceding his election. (Source: Illinois Constitution.)\n\n#### SECTION 4. JOINT ELECTION\n\nIn the general election for Governor and Lieutenant Governor, one vote shall be cast jointly for the candidates nominated by the same political party or petition. The General Assembly may provide by law for the joint nomination of candidates for Governor and Lieutenant Governor. (Source: Illinois Constitution.)\n\n#### SECTION 5. CANVASS – CONTESTS\n\nThe election returns for executive offices shall be sealed and transmitted to the Secretary of State, or other person or body provided by law, who shall examine and consolidate the returns. The person having the highest number of votes for an office shall be declared elected. If two or more persons have an equal and the highest number of votes for an office, they shall draw lots to determine which of them shall be declared elected. Election contests shall be decided by the courts in a manner provided by law. (Source: Illinois Constitution.)\n\n#### SECTION 6. GUBERNATORIAL SUCCESSION\n\n#### SECTION 7. VACANCIES IN OTHER ELECTIVE OFFICES\n\nIf the Attorney General, Secretary of State, Comptroller or Treasurer fails to qualify or if his office becomes vacant, the Governor shall fill the office by appointment. The appointee shall hold office until the elected officer qualifies or until a successor is elected and qualified as may be provided by law and shall not be subject to removal by the Governor. If the Lieutenant Governor fails to qualify or if his office becomes vacant, it shall remain vacant until the end of the term. (Source: Illinois Constitution.)\n\n#### SECTION 8. GOVERNOR - SUPREME EXECUTIVE POWER\n\nThe Governor shall have the supreme executive power, and shall be responsible for the faithful execution of the laws. (Source: Illinois Constitution.)\n\n#### SECTION 9. GOVERNOR - APPOINTING POWER\n\n#### SECTION 10. GOVERNOR – REMOVALS\n\nThe Governor may remove for incompetence, neglect of duty, or malfeasance in office any officer who may be appointed by the Governor. (Source: Illinois Constitution.)\n\n#### SECTION 11. GOVERNOR - AGENCY REORGANIZATION\n\nThe Governor, by Executive Order, may reassign functions among or reorganize executive agencies which are directly responsible to him. If such a reassignment or reorganization would contravene a statute, the Executive Order shall be delivered to the General Assembly. If the General Assembly is in annual session and if the Executive Order is delivered on or before April 1, the General Assembly shall consider the Executive Order at that annual session. If the General Assembly is not in annual session or if the Executive Order is delivered after April 1, the General Assembly shall consider the Executive Order at its next annual session, in which case the Executive Order shall be deemed to have been delivered on the first day of that annual session. Such an Executive Order shall not become effective if, within 60 calendar days after its delivery to the General Assembly, either house disapproves the Executive Order by the record vote of a majority of the members elected. An Executive Order not so disapproved shall become effective by its terms but not less than 60 calendar days after its delivery to the General Assembly. (Source: Illinois Constitution.)\n\n#### SECTION 12. GOVERNOR – PARDONS\n\nThe Governor may grant reprieves, commutations and pardons, after conviction, for all offenses on such terms as he thinks proper. The manner of applying therefore may be regulated by law. (Source: Illinois Constitution.)\n\n#### SECTION 13. GOVERNOR - LEGISLATIVE MESSAGES\n\nThe Governor, at the beginning of each annual session of the General Assembly and at the close of his term of office, shall report to the General Assembly on the condition of the State and recommend such measures as he deems desirable. (Source: Illinois Constitution.)\n\n#### SECTION 14. LIEUTENANT GOVERNOR – DUTIES\n\nThe Lieutenant Governor shall perform the duties and exercise the powers in the Executive Branch that may be delegated to him by the Governor and that may be prescribed by law. (Source: Illinois Constitution.)\n\n#### SECTION 15. ATTORNEY GENERAL – DUTIES\n\nThe Attorney General shall be the legal officer of the State, and shall have the duties and powers that may be prescribed by law. (Source: Illinois Constitution.)\n\n#### SECTION 16. SECRETARY OF STATE – DUTIES\n\nThe Secretary of State shall maintain the official records of the acts of the General Assembly and such official records of the Executive Branch as provided by law. Such official records shall be available for inspection by the public. He shall keep the Great Seal of the State of Illinois and perform other duties that may be prescribed by law. (Source: Illinois Constitution.)\n\n#### SECTION 17. COMPTROLLER – DUTIES\n\nThe Comptroller, in accordance with law, shall maintain the State's central fiscal accounts, and order payments into and out of the funds held by the Treasurer. (Source: Illinois Constitution.)\n\n#### SECTION 18. TREASURER – DUTIES\n\nThe Treasurer, in accordance with law, shall be responsible for the safekeeping and investment of monies and securities deposited with him, and for their disbursement upon order of the Comptroller. (Source: Illinois Constitution.)\n\n#### SECTION 19. RECORDS – REPORTS\n\nAll officers of the Executive Branch shall keep accounts and shall make such reports as may be required by law. They shall provide the Governor with information relating to their respective offices, either in writing under oath, or otherwise, as the Governor may require. (Source: Illinois Constitution.)\n\n#### SECTION 20. BOND\n\nCivil officers of the Executive Branch may be required by law to give reasonable bond or other security for the faithful performance of their duties. If any officer is in default of such a requirement, his office shall be deemed vacant. (Source: Illinois Constitution.)\n\n#### SECTION 21. COMPENSATION\n\nOfficers of the Executive Branch shall be paid salaries established by law and shall receive no other compensation for their services. Changes in the salaries of these officers elected or appointed for stated terms shall not take effect during the stated terms. (Source: Illinois Constitution.)\n\n### ARTICLE VI: THE JUDICIARY\n\n#### SECTION 1. COURTS\n\nThe judicial power is vested in a Supreme Court, an Appellate Court and Circuit Courts. (Source: Illinois Constitution.)\n\n#### SECTION 2. JUDICIAL DISTRICTS\n\nThe State is divided into five Judicial Districts for the selection of Supreme and Appellate Court Judges. The First Judicial District consists of Cook County. The remainder of the State shall be divided by law into four Judicial Districts of substantially equal population, each of which shall be compact and composed of contiguous counties. (Source: Illinois Constitution.)\n\n#### SECTION 3. SUPREME COURT – ORGANIZATION\n\nThe Supreme Court shall consist of seven Judges. Three shall be selected from the First Judicial District and one from each of the other Judicial Districts. Four Judges constitute a quorum and the concurrence of four is necessary for a decision. Supreme Court Judges shall select a Chief Justice from their number to serve for a term of three years. (Source: Illinois Constitution.)\n\n#### SECTION 4. SUPREME COURT – JURISDICTION\n\n#### SECTION 5. APPELLATE COURT – ORGANIZATION\n\nThe number of Appellate Judges to be selected from each Judicial District shall be provided by law. The Supreme Court shall prescribe by rule the number of Appellate divisions in each Judicial District. Each Appellate division shall have at least three Judges. Assignments to divisions shall be made by the Supreme Court. A majority of a division constitutes a quorum and the concurrence of a majority of the division is necessary for a decision. There shall be at least one division in each Judicial District and each division shall sit at times and places prescribed by rules of the Supreme Court. (Source: Illinois Constitution.)\n\n#### SECTION 6. APPELLATE COURT – JURISDICTION\n\nAppeals from final judgments of a Circuit Court are a matter of right to the Appellate Court in the Judicial District in which the Circuit Court is located except in cases appealable directly to the Supreme Court and except that after a trial on the merits in a criminal case, there shall be no appeal from a judgment of acquittal. The Supreme Court may provide by rule for appeals to the Appellate Court from other than final judgments of Circuit Courts. The Appellate Court may exercise original jurisdiction when necessary to the complete determination of any case on review. The Appellate Court shall have such powers of direct review of administrative action as provided by law. (Source: Illinois Constitution.)\n\n#### SECTION 7. JUDICIAL CIRCUITS\n\n#### SECTION 8. ASSOCIATE JUDGES\n\nEach Circuit Court shall have such number of Associate Judges as provided by law. Associate Judges shall be appointed by the Circuit Judges in each circuit as the Supreme Court shall provide by rule. In the First Judicial District, unless otherwise provided by law, at least one-fourth of the Associate Judges shall be appointed from, and reside, outside Chicago. The Supreme Court shall provide by rule for matters to be assigned to Associate Judges. (Source: Illinois Constitution.)\n\n#### SECTION 9. CIRCUIT COURTS – JURISDICTION\n\nCircuit Courts shall have original jurisdiction of all justiciable matters except when the Supreme Court has original and exclusive jurisdiction relating to redistricting of the General Assembly and to the ability of the Governor to serve or resume office. Circuit Courts shall have such power to review administrative action as provided by law. (Source: Illinois Constitution.)\n\n#### SECTION 10. TERMS OF OFFICE\n\nThe terms of office of Supreme and Appellate Court Judges shall be ten years; of Circuit Judges, six years; and of Associate Judges, four years. (Source: Illinois Constitution.)\n\n#### SECTION 11. ELIGIBILITY FOR OFFICE\n\nNo person shall be eligible to be a Judge or Associate Judge unless he is a United States citizen, a licensed attorney-at-law of this State, and a resident of the unit which selects him. No change in the boundaries of a unit shall affect the tenure in office of a Judge or Associate Judge incumbent at the time of such change. (Source: Illinois Constitution.)\n\n#### SECTION 12. ELECTION AND RETENTION\n\n#### SECTION 13. PROHIBITED ACTIVITIES\n\n#### SECTION 14. JUDICIAL SALARIES AND EXPENSES - FEE OFFICERS ELIMINATED\n\nJudges shall receive salaries provided by law which shall not be diminished to take effect during their terms of office. All salaries and such expenses as may be provided by law shall be paid by the State, except that Appellate, Circuit and Associate Judges shall receive such additional compensation from counties within their district or circuit as may be provided by law. There shall be no fee officers in the judicial system. (Source: Illinois Constitution.)\n\n#### SECTION 15. RETIREMENT – DISCIPLINE\n\n#### SECTION 16. ADMINISTRATION\n\nGeneral administrative and supervisory authority over all courts is vested in the Supreme Court and shall be exercised by the Chief Justice in accordance with its rules. The Supreme Court shall appoint an administrative director and staff, who shall serve at its pleasure, to assist the Chief Justice in his duties. The Supreme Court may assign a Judge temporarily to any court and an Associate Judge to serve temporarily as an Associate Judge on any Circuit Court. The Supreme Court shall provide by rule for expeditious and inexpensive appeals. (Source: Illinois Constitution.)\n\n#### SECTION 17. JUDICIAL CONFERENCE\n\nThe Supreme Court shall provide by rule for an annual judicial conference to consider the work of the courts and to suggest improvements in the administration of justice and shall report thereon annually in writing to the General Assembly not later than January 31. (Source: Illinois Constitution.)\n\n#### SECTION 18. CLERKS OF COURTS\n\n#### SECTION 19. STATE'S ATTORNEYS - SELECTION, SALARY\n\nA State's Attorney shall be elected in each county in 1972 and every fourth year thereafter for a four year term. One State's Attorney may be elected to serve two or more counties if the governing boards of such counties so provide and a majority of the electors of each county voting on the issue approve. A person shall not be eligible for the office of State's Attorney unless he is a United States citizen and a licensed attorney-at-law of this State. His salary shall be provided by law. (Source: Illinois Constitution.)\n\n### ARTICLE VII: LOCAL GOVERNMENT\n\n#### SECTION 1. MUNICIPALITIES AND UNITS OF LOCAL GOVERNMENT\n\n\"Municipalities\" means cities, villages and incorporated towns. \"Units of local government\" means counties, municipalities, townships, special districts, and units, designated as units of local government by law, which exercise limited governmental powers or powers in respect to limited governmental subjects, but does not include school districts. (Source: Illinois Constitution.)\n\n#### SECTION 2. COUNTY TERRITORY, BOUNDARIES AND SEATS\n\n#### SECTION 3. COUNTY BOARDS\n\n#### SECTION 4. COUNTY OFFICERS\n\n#### SECTION 5. TOWNSHIPS\n\nThe General Assembly shall provide by law for the formation of townships in any county when approved by county-wide referendum. Townships may be consolidated or merged, and one or more townships may be dissolved or divided, when approved by referendum in each township affected. All townships in a county may be dissolved when approved by a referendum in the total area in which township officers are elected. (Source: Illinois Constitution.)\n\n#### SECTION 6. POWERS OF HOME RULE UNITS\n\n#### SECTION 7. COUNTIES AND MUNICIPALITIES OTHER THAN HOME RULE UNITS\n\nCounties and municipalities which are not home rule units shall have only powers granted to them by law and the powers (1) to make local improvements by special assessment and to exercise this power jointly with other counties and municipalities, and other classes of units of local government having that power on the effective date of this Constitution unless that power is subsequently denied by law to any such other units of local government; (2) by referendum, to adopt, alter or repeal their forms of government provided by law; (3) in the case of municipalities, to provide by referendum for their officers, manner of selection and terms of office; (4) in the case of counties, to provide for their officers, manner of selection and terms of office as provided in Section 4 of this Article; (5) to incur debt except as limited by law and except that debt payable from ad valorem property tax receipts shall mature within 40 years from the time it is incurred; and (6) to levy or impose additional taxes upon areas within their boundaries in the manner provided by law for the provision of special services to those areas and for the payment of debt incurred in order to provide those special services. (Source: Illinois Constitution.)\n\n#### SECTION 8. POWERS AND OFFICERS OF SCHOOL DISTRICTS AND UNITS OF LOCAL GOVERNMENT OTHER THAN COUNTIES AND MUNICIPALITIES\n\nTownships, school districts, special districts and units, designated by law as units of local government, which exercise limited governmental powers or powers in respect to limited governmental subjects shall have only powers granted by law. No law shall grant the power (1) to any of the foregoing units to incur debt payable from ad valorem property tax receipts maturing more than 40 years from the time it is incurred, or (2) to make improvements by special assessments to any of the foregoing classes of units which do not have that power on the effective date of this Constitution. The General Assembly shall provide by law for the selection of officers of the foregoing units, but the officers shall not be appointed by any person in the Judicial Branch. (Source: Illinois Constitution.)\n\n#### SECTION 9. SALARIES AND FEES\n\n#### SECTION 10. INTERGOVERNMENTAL COOPERATION\n\n#### SECTION 11. INITIATIVE AND REFERENDUM\n\n#### SECTION 12. IMPLEMENTATION OF GOVERNMENTAL CHANGES\n\nThe General Assembly shall provide by law for the transfer of assets, powers and functions, and for the payment of outstanding debt in connection with the formation, consolidation, merger, division, dissolution and change in the boundaries of units of local government. (Source: Illinois Constitution.)\n\n### ARTICLE VIII: FINANCE\n\n#### SECTION 1. GENERAL PROVISIONS\n\n#### SECTION 2. STATE FINANCE\n\n#### SECTION 3. STATE AUDIT AND AUDITOR GENERAL\n\n#### SECTION 4. SYSTEMS OF ACCOUNTING, AUDITING AND REPORTING\n\nThe General Assembly by law shall provide systems of accounting, auditing and reporting of the obligation, receipt and use of public funds. These systems shall be used by all units of local government and school districts. (Source: Illinois Constitution.)\n\n### ARTICLE IX: REVENUE\n\n#### SECTION 1. STATE REVENUE POWER\n\nThe General Assembly has the exclusive power to raise revenue by law except as limited or otherwise provided in this Constitution. The power of taxation shall not be surrendered, suspended, or contracted away. (Source: Illinois Constitution.)\n\n#### SECTION 2. NON-PROPERTY TAXES - CLASSIFICATION, EXEMPTIONS, DEDUCTIONS, ALLOWANCES AND CREDITS\n\nIn any law classifying the subjects or objects of non-property taxes or fees, the classes shall be reasonable and the subjects and objects within each class shall be taxed uniformly. Exemptions, deductions, credits, refunds and other allowances shall be reasonable. (Source: Illinois Constitution.)\n\n#### SECTION 3. LIMITATIONS ON INCOME TAXATION\n\n#### SECTION 4. REAL PROPERTY TAXATION\n\n#### SECTION 5. PERSONAL PROPERTY TAXATION\n\n#### SECTION 6. EXEMPTIONS FROM PROPERTY TAXATION\n\nThe General Assembly by law may exempt from taxation only the property of the State, units of local government and school districts and property used exclusively for agricultural and horticultural societies, and for school, religious, cemetery and charitable purposes. The General Assembly by law may grant homestead exemptions or rent credits. (Source: Illinois Constitution.)\n\n#### SECTION 7. OVERLAPPING TAXING DISTRICTS\n\nThe General Assembly may provide by law for fair apportionment of the burden of taxation of property situated in taxing districts that lie in more than one county. (Source: Illinois Constitution.)\n\n#### SECTION 8. TAX SALES\n\n#### SECTION 9. STATE DEBT\n\n#### SECTION 10. REVENUE ARTICLE NOT LIMITED\n\nThis Article is not qualified or limited by the provisions of Article VII of this Constitution concerning the size of the majorities in the General Assembly necessary to deny or limit the power to tax granted to units of local government. (Source: Illinois Constitution.)\n\n### ARTICLE X: EDUCATION\n\n#### SECTION 1. GOAL - FREE SCHOOLS\n\nA fundamental goal of the People of the State is the educational development of all persons to the limits of their capacities.\nThe State shall provide for an efficient system of high quality public educational institutions and services. Education in public schools through the secondary level shall be free. There may be such other free education as the General Assembly provides by law.\nThe State has the primary responsibility for financing the system of public education. (Source: Illinois Constitution.)\n\n#### SECTION 2. STATE BOARD OF EDUCATION - CHIEF STATE EDUCATIONAL OFFICER\n\n#### SECTION 3. PUBLIC FUNDS FOR SECTARIAN PURPOSES FORBIDDEN\n\nNeither the General Assembly nor any county, city, town, township, school district, or other public corporation, shall ever make any appropriation or pay from any public fund whatever, anything in aid of any church or sectarian purpose, or to help support or sustain any school, academy, seminary, college, university, or other literary or scientific institution, controlled by any church or sectarian denomination whatever; nor shall any grant or donation of land, money, or other personal property ever be made by the State, or any such public corporation, to any church, or for any sectarian purpose. (Source: Illinois Constitution.)\n\n### ARTICLE XI: ENVIRONMENT\n\n#### SECTION 1. PUBLIC POLICY - LEGISLATIVE RESPONSIBILITY\n\nThe public policy of the State and the duty of each person is to provide and maintain a healthful environment for the benefit of this and future generations. The General Assembly shall provide by law for the implementation and enforcement of this public policy. (Source: Illinois Constitution.)\n\n#### SECTION 2. RIGHTS OF INDIVIDUALS\n\nEach person has the right to a healthful environment. Each person may enforce this right against any party, governmental or private, through appropriate legal proceedings subject to reasonable limitation and regulation as the General Assembly may provide by law. (Source: Illinois Constitution.)\n\n### ARTICLE XII: MILITIA\n\n#### SECTION 1. MEMBERSHIP\n\nThe State militia consists of all able-bodied persons residing in the State except those exempted by law. (Source: Illinois Constitution.)\n\n#### SECTION 2. SUBORDINATION OF MILITARY POWER\n\nThe military shall be in strict subordination to the civil power. (Source: Illinois Constitution.)\n\n#### SECTION 3. ORGANIZATION, EQUIPMENT AND DISCIPLINE\n\nThe General Assembly shall provide by law for the organization, equipment and discipline of the militia in conformity with the laws governing the armed forces of the United States. (Source: Illinois Constitution.)\n\n#### SECTION 4. COMMANDER-IN-CHIEF AND OFFICERS\n\n#### SECTION 5. PRIVILEGE FROM ARREST\n\nExcept in cases of treason, felony or breach of peace, persons going to, returning from or on militia duty are privileged from arrest. (Source: Illinois Constitution.)\n\n### ARTICLE XIII: GENERAL PROVISIONS\n\n#### SECTION 1. DISQUALIFICATION FOR PUBLIC OFFICE\n\nA person convicted of a felony, bribery, perjury or other infamous crime shall be ineligible to hold an office created by this Constitution. Eligibility may be restored as provided by law. (Source: Illinois Constitution.)\n\n#### SECTION 2. STATEMENT OF ECONOMIC INTERESTS\n\nAll candidates for or holders of state offices and all members of a Commission or Board created by this Constitution shall file a verified statement of their economic interests, as provided by law. The General Assembly by law may impose a similar requirement upon candidates for, or holders of, offices in units of local government and school districts. Statements shall be filed annually with the Secretary of State and shall be available for inspection by the public. The General Assembly by law shall prescribe a reasonable time for filing the statement. Failure to file a statement within the time prescribed shall result in ineligibility for, or forfeiture of, office. This Section shall not be construed as limiting the authority of any branch of government to establish and enforce ethical standards for that branch. (Source: Illinois Constitution.)\n\n#### SECTION 3. OATH OR AFFIRMATION OF OFFICE\n\nEach prospective holder of a State office or other State position created by this Constitution, before taking office, shall take and subscribe to the following oath or affirmation:\n\"I do solemnly swear (affirm) that I will support the Constitution of the United States, and the Constitution of the State of Illinois, and that I will faithfully discharge the duties of the office of .... to the best of my ability.\" (Source: Illinois Constitution.)\n\n#### SECTION 4. SOVEREIGN IMMUNITY ABOLISHED\n\nExcept as the General Assembly may provide by law, sovereign immunity in this State is abolished. (Source: Illinois Constitution.)\n\n#### SECTION 5. PENSION AND RETIREMENT RIGHTS\n\nMembership in any pension or retirement system of the State, any unit of local government or school district, or any agency or instrumentality thereof, shall be an enforceable contractual relationship, the benefits of which shall not be diminished or impaired. (Source: Illinois Constitution.)\n\n#### SECTION 6. CORPORATIONS\n\nCorporate charters shall be granted, amended, dissolved, or extended only pursuant to general laws. (Source: Illinois Constitution.)\n\n#### SECTION 7. PUBLIC TRANSPORTATION\n\nPublic transportation is an essential public purpose for which public funds may be expended. The General Assembly by law may provide for, aid, and assist public transportation, including the granting of public funds or credit to any corporation or public authority authorized to provide public transportation within the State. (Source: Illinois Constitution.)\n\n#### SECTION 8. BRANCH BANKING\n\nBranch banking shall be authorized only by law approved by three-fifths of the members voting on the question or a majority of the members elected, whichever is greater, in each house of the General Assembly. (Source: Illinois Constitution.)\n\n### ARTICLE XIV: CONSTITUTIONAL REVISION\n\n#### SECTION 1. CONSTITUTIONAL CONVENTION\n\n#### SECTION 2. AMENDMENTS BY GENERAL ASSEMBLY\n\n#### SECTION 3. CONSTITUTIONAL INITIATIVE FOR LEGISLATIVE ARTICLE\n\nAmendments to Article IV of this Constitution may be proposed by a petition signed by a number of electors equal in number to at least eight percent of the total votes cast for candidates for Governor in the preceding gubernatorial election. Amendments shall be limited to structural and procedural subjects contained in Article IV. A petition shall contain the text of the proposed amendment and the date of the general election at which the proposed amendment is to be submitted, shall have been signed by the petitioning electors not more than twenty-four months preceding that general election and shall be filed with the Secretary of State at least six months before that general election. The procedure for determining the validity and sufficiency of a petition shall be provided by law. If the petition is valid and sufficient, the proposed amendment shall be submitted to the electors at that general election and shall become effective if approved by either three-fifths of those voting on the amendment or a majority of those voting in the election. (Source: Illinois Constitution.)\n\n#### SECTION 4. AMENDMENTS TO THE CONSTITUTION OF THE UNITED STATES\n\nThe affirmative vote of three-fifths of the members elected to each house of the General Assembly shall be required to request Congress to call a Federal Constitutional Convention, to ratify a proposed amendment to the Constitution of the United States, or to call a State Convention to ratify a proposed amendment to the Constitution of the United States. The General Assembly shall not take action on any proposed amendment to the Constitution of the United States submitted for ratification by legislatures unless a majority of the members of the General Assembly shall have been elected after the proposed amendment has been submitted for ratification. The requirements of this Section shall govern to the extent that they are not inconsistent with requirements established by the United States. (Source: Illinois Constitution.)\n\n### TRANSITION SCHEDULE\n\nThe following Schedule Provisions shall remain part of this Constitution until their terms have been executed. Once each year the Attorney General shall review the following provisions and certify to the Secretary of State which, if any, have been executed. Any provisions so certified shall thereafter be removed from the Schedule and no longer published as part of this Constitution.\nSection 1. (Removed)\nSection 2. Prospective Operation of Bill of Rights.\nSection 3. (Removed)\nSection 4. Judicial Offices.\nSection 5. Local Government.\nSection 6. Authorized Bonds.\nSection 7. (Removed)\nSection 8. Cumulative Voting for Directors.\nSection 9. General Transition.\nSection 10. (Removed) (Source: Illinois Constitution.)\n\n#### SECTION 2. PROSPECTIVE OPERATION OF BILL OF RIGHTS\n\nAny rights, procedural or substantive, created for the first time by Article I shall be prospective and not retroactive. (Source: Illinois Constitution.)\n\n#### SECTION 4. JUDICIAL OFFICES\n\n#### SECTION 5. LOCAL GOVERNMENT\n\n#### SECTION 6. AUTHORIZED BONDS\n\nNothing in Section 9 of Article IX shall be construed to limit or impair the power to issue bonds or other evidences of indebtedness authorized but unissued on the effective date of this Constitution. (Source: Illinois Constitution.)\n\n#### SECTION 8. CUMULATIVE VOTING FOR DIRECTORS\n\nShareholders of all corporations heretofore organized under any law of this State which requires cumulative voting of shares for corporate directors shall retain their right to vote cumulatively for such directors. (Source: Illinois Constitution.)\n\n#### SECTION 9. GENERAL TRANSITION\n\nThe rights and duties of all public bodies shall remain as if this Constitution had not been adopted with the exception of such changes as are contained in this Constitution. All laws, ordinances, regulations and rules of court not contrary to, or inconsistent with, the provisions of this Constitution shall remain in force, until they shall expire by their own limitation or shall be altered or repealed pursuant to this Constitution. The validity of all public and private bonds, debts and contracts, and of all suits, actions and rights of action, shall continue as if no change had taken place. All officers filling any office by election or appointment shall continue to exercise the duties thereof, until their offices shall have been abolished or their successors selected and qualified in accordance with this Constitution or laws enacted pursuant thereto. (Source: Illinois Constitution.)",
+  "importWarnings": []
 }

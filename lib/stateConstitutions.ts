@@ -2,13 +2,13 @@ import fs from 'fs';
 import path from 'path';
 
 export interface ConstitutionSection {
-  number: number;
+  number: string;
   title: string;
   text: string;
 }
 
 export interface ConstitutionArticle {
-  number: number;
+  number: string;
   title: string;
   sections: ConstitutionSection[];
 }
@@ -22,6 +22,8 @@ export interface StateConstitution {
   sourceUrl: string;
   preamble: string;
   articles: ConstitutionArticle[];
+  rawText?: string;
+  importWarnings?: string[];
 }
 
 function normalizeStateSlug(stateSlug: string | null | undefined): string | null {

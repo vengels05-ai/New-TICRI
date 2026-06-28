@@ -3,6 +3,22 @@ import { notFound } from 'next/navigation';
 import { getStateBySlug, usStates } from '@/lib/usStates';
 import { getStateConstitution, hasConstitutionData } from '@/lib/stateConstitutions';
 
+function formatArticleHeading(article: { number: string; title: string }) {
+  if (!article.number) {
+    return article.title;
+  }
+
+  return article.title ? `Article ${article.number}: ${article.title}` : `Article ${article.number}`;
+}
+
+function formatSectionHeading(section: { number: string; title: string }) {
+  if (!section.number) {
+    return section.title;
+  }
+
+  return section.title ? `Section ${section.number}: ${section.title}` : `Section ${section.number}`;
+}
+
 export async function generateStaticParams() {
   return usStates.map((state) => ({
     state: state.slug,
@@ -77,18 +93,17 @@ export default async function StateConstitutionPage({
                 )}
 
                 {/* Articles */}
-                {constitution.articles && constitution.articles.map((article) => (
-                  <div key={article.number} className="mb-12 bg-white p-6 rounded-lg border border-gray-200">
+                {constitution.articles && constitution.articles.map((article, articleIndex) => (
+                  <div key={`${article.number}-${article.title}-${articleIndex}`} className="mb-12 bg-white p-6 rounded-lg border border-gray-200">
                     <h3 className="text-2xl font-bold text-[#0F2C47] mb-6 border-b-2 border-[#C41E3A] pb-2">
-                      Article {article.number}: {article.title}
+                      {formatArticleHeading(article)}
                     </h3>
                     
                     {/* Sections */}
-                    {article.sections && article.sections.map((section) => (
-                      <div key={section.number} className="mb-6 last:mb-0">
+                    {article.sections && article.sections.map((section, sectionIndex) => (
+                      <div key={`${section.number}-${section.title}-${sectionIndex}`} className="mb-6 last:mb-0">
                         <h4 className="text-lg font-bold text-[#1A3A5C] mb-2">
-                          Section {section.number}
-                          {section.title && `: ${section.title}`}
+                          {formatSectionHeading(section)}
                         </h4>
                         <p className="text-gray-700 leading-relaxed whitespace-pre-wrap">
                           {section.text}

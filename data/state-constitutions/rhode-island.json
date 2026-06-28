@@ -2,9 +2,466 @@
   "state": "Rhode Island",
   "slug": "rhode-island",
   "abbreviation": "RI",
-  "lastUpdated": "2026-01-12T16:56:00.069Z",
-  "source": "Official State Legislature Website",
+  "lastUpdated": "June 28, 2026",
+  "source": "Imported from all_50_state_constitutions_FINAL.md",
   "sourceUrl": "",
-  "preamble": "",
-  "articles": []
+  "preamble": "We, the people of the State of Rhode Island , grateful to Almighty\nGod for the civil and religious liberty which\nHe hath so long permitted us to enjoy, and looking to Him for a blessing upon our endeavors to secure and to transmit the same, unimpaired, to succeeding generations, do ordain and establish this Constitution of government.",
+  "articles": [
+    {
+      "number": "I",
+      "title": "Untitled",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Right to make and",
+          "text": "alter Constitution — Constitution\nobligatory upon all.\n\nIn the\nwords of the Father of his Country, we\ndeclare that ‘‘the basis of our political systems is the right of the people to make and alter their constitutions of government; but that the constitution which at any time exists, till changed by an\nexplicit and authentic act of the whole\npeople, is sacredly obligatory upon all.’’"
+        },
+        {
+          "number": "2",
+          "title": "Laws for good of whole — Burdens to be equally distributed — Due process — Equal protection — Discrimination — No right to abortion granted.",
+          "text": "All free governments are instituted for the protection, safety, and happiness of the people. All laws, therefore, should be made for the good\nof the whole; and the burdens of the state ought to be fairly distributed among its citizens. No\nperson shall be deprived of life, liberty or\nproperty without due process of law, nor shall any person be denied\nequal protection of the laws. No otherwise qualified person shall, solely\nby reason of race, gender or handicap be subject to discrimination by the state, its agents or any person or entity doing business with the state. Nothing in\nthis section shall be construed to grant or secure any right relating to abortion or the funding thereof ."
+        },
+        {
+          "number": "3",
+          "title": "Freedom of religion.",
+          "text": "Whereas\nAlmighty God hath created the mind free; and all attempts to influence it by temporal punishments or burdens, or by civil incapacitations,\ntend to beget habits of hypocrisy and meanness; and whereas a principal object of our venerable ancestors, in their migration to this country and their settlement of this state, was, as they expressed it, to hold forth a lively experiment that a flourishing civil state may stand and be best maintained with full liberty in religious concernments; we, therefore, declare that no person shall be compelled to frequent or to support any religious worship, place, or\nministry\nwhat ever, except in fulfillment of such\nperson’s voluntary contract; nor\nenforced, restrained, molested, or burdened in body or goods; nor disqualified from holding any office; nor otherwise suffer on account of such person’s religious belief; and that every person shall be free to\nworship God according to the dictates of such person’s conscience, and to profess and by argument to maintain\nsuch person’s opinion in matters of\nreligion; and that the same shall in no wise diminish, enlarge, or affect the civil capacity of any person."
+        },
+        {
+          "number": "4",
+          "title": "Slavery prohibited.",
+          "text": "Slavery\nshall not be permitted in this state."
+        },
+        {
+          "number": "5",
+          "title": "Entitlement to",
+          "text": "remedies for injuries and wrongs —\nRight to justice.\n\nEvery person within this state ought to find a certain remedy, by having recourse to the laws, for all injuries or wrongs which may be received in one’s person, property, or character. Every person ought to obtain right and justice freely, and without purchase, completely and without denial; promptly and without\ndelay; conformably to the laws."
+        },
+        {
+          "number": "6",
+          "title": "Search and seizure.",
+          "text": "The right of the people to be secure in their persons, papers and\npossessions, against unreasonable searches and seizures, shall not be violated; and no warrant shall issue,\nbut on complaint in writing, upon\nprobable cause, supported by oath or affirmation, and describing as nearly as may be, the place to be\nsearched and the persons or things to\nbe seized."
+        },
+        {
+          "number": "7",
+          "title": "Requirement of presentment",
+          "text": "or indictment — Information by\nattorney-general — Grand juries — Double jeopardy."
+        },
+        {
+          "number": "8",
+          "title": "Bail, fines and punishments.",
+          "text": "Excessive\nbail shall not be required, nor excessive fines imposed, nor cruel punishments inflicted; and all punishments ought to\nbe proportioned to the offense."
+        },
+        {
+          "number": "10",
+          "title": "Rights of accused persons in criminal proceedings.",
+          "text": "In all\ncriminal prosecutions, accused persons shall enjoy the right to a speedy and public trial, by an impartial jury; to be informed of the\nnature and cause of the accusation, to be confronted with the witnesses against them, to have compulsory\nprocess for obtaining them in their favor, to have the assistance of counsel\nin their defense, and shall be at\nliberty to speak for themselves; nor shall they be deprived of life, liberty, or property, unless by the judgment of their peers, or the law of the land."
+        },
+        {
+          "number": "11",
+          "title": "Relief of debtors from prison.",
+          "text": "The person of a debtor, when there is not strong presumption of fraud, ought not to\nbe continued in prison, after such person shall have delivered up property for the benefit of said person’s\ncreditors, in such manner as shall be\nprescribed by law."
+        },
+        {
+          "number": "12",
+          "title": "Ex post facto laws —",
+          "text": "Laws impairing obligation of\ncontract.\n\nNo ex post facto law, or law impairing the obligation of contracts,\nshall be passed."
+        },
+        {
+          "number": "13",
+          "title": "Self-crimination.",
+          "text": "No person\nin a court of common law shall be compelled to give self-criminating evidence."
+        },
+        {
+          "number": "14",
+          "title": "Presumption of",
+          "text": "innocence — Securing accused persons.\n\nEvery\nperson being presumed innocent, until pronounced guilty by the law, no act of\nseverity which is not necessary to secure an accused person shall be permitted."
+        },
+        {
+          "number": "16",
+          "title": "Compensation for taking of private property for public use — Regulation of fishery rights and shore privileges not public taking.",
+          "text": "Private property shall not be taken for public uses, without just compensation. The powers of the state and of its municipalities to regulate and control the use of land and waters in the furtherance of the preservation, regeneration, and restoration of the natural environment, and in furtherance of the protection of the rights of the\npeople to enjoy and freely exercise\nthe rights of fishery and the privileges of the shore, as those rights and duties are set forth in Section 17, shall be an\nexercise of the police powers of the state, shall be liberally construed, and shall not be deemed to be\na public use of private property."
+        },
+        {
+          "number": "18",
+          "title": "Subordination of",
+          "text": "military to civil authority — Martial law.\n\nThe\nmilitary shall be held in strict subordination to the civil author ity. And the law martial shall be used and exercised in such cases only as occasion shall necessarily require."
+        },
+        {
+          "number": "19",
+          "title": "Quartering of soldiers.",
+          "text": "No soldier\nshall be quartered in any house in time of peace, without the consent of the owner; nor, in time of war, but in manner to be\nprescribed by law."
+        },
+        {
+          "number": "20",
+          "title": "Freedom of press.",
+          "text": "The\nliberty of the press being essential to the security of freedom in a state, any person may publish\nsentiments on any subject, being\nresponsible for the abuse of that liberty; and in all trials for libel, both civil and criminal, the truth,\nunless published from malicious motives,\nshall be sufficient defense to the person charged."
+        },
+        {
+          "number": "21",
+          "title": "Right to assemble —",
+          "text": "Redress of grievances — Freedom of speech.\n\nThe citizens have a right in a peaceable manner to assemble for their\ncommon good, and to apply to those invested with the powers of government, for redress of grievances, or for other purposes, by petition, address, or remonstrance. No law abridging the freedom of speech shall be enacted."
+        },
+        {
+          "number": "22",
+          "title": "Right to bear arms.",
+          "text": "The right\nof the people to keep and bear arms shall not be infringed."
+        },
+        {
+          "number": "23",
+          "title": "Rights of victims of crime.",
+          "text": "A victim\nof crime shall, as a matter of right, be treated by agents of the state with dignity, respect and sensitivity during all phases of the criminal justice process. Such person\nshall be entitled to receive, from\nthe perpetrator of the crime, financial compensation for any injury or loss caused by the perpetrator of the crime, and shall receive such other\ncompensation as the state may provide. Before sentencing, a victim\nshall have the right to address the court regarding the impact which the perpetrator’s conduct has had upon the victim."
+        },
+        {
+          "number": "24",
+          "title": "Rights not enumerated",
+          "text": "— State rights not dependent on\nfederal rights.\n\nThe enumeration of the foregoing rights shall not be construed to impair or deny others retained by the people. The rights guaranteed by this\nConstitution are not dependent on those guaranteed by the Constitution of the United States."
+        }
+      ]
+    },
+    {
+      "number": "III",
+      "title": "Untitled",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Qualified electors.",
+          "text": "No person\nshall hold any civil office unless\nthat person be a qualified elector\nfor such office."
+        },
+        {
+          "number": "2",
+          "title": "Disqualification upon",
+          "text": "conviction or plea of nolo contendere\n— Requalification following sentence,\nprobation or parole.\n\nAn elector shall be disqualified as a candidate for elective or appointive state or local office or from holding such office if such elector has been convicted of or plead nolo\ncontendere to a felony or if such elector\nhas been convicted or plead nolo contendere to a misdemeanor resulting in a jail sentence of six months or more, either suspended or to be served. Such elector shall not, once so convicted, attain or return to any office until three years after the date of completion of such sentence and of probation or parole."
+        },
+        {
+          "number": "3",
+          "title": "Oath of general officers.",
+          "text": "All\ngeneral officers shall take the following engagement before they act in their respective offices, to\nwit: You being by the free vote of the electors of this state of Rhode Island , elected unto the place of do solemnly swear (or, affirm) to be true and faithful unto\nthis state, and to support the Constitution of this state and of the United States; that you will\nfaithfully and impartially\ndischarge all the duties of your aforesaid office to the best of your abilities,\naccording to law: So help you God. [Or: This\naffirmation you make and give upon the peril of the penalty of perjury.]"
+        },
+        {
+          "number": "5",
+          "title": "Administration of oaths.",
+          "text": "The oath\nor affirmation shall be administered to the governor, lieutenant governor, senators, and representatives by the\nsecretary of state, or, in the absence of the secretary of\nstate by the attorney- general. The secretary of state, attorney-general, and general treasurer shall be engaged by the\ngovernor, or by a justice of the supreme court ."
+        },
+        {
+          "number": "6",
+          "title": "Holding of offices under other governments — Senators and representatives not to hold",
+          "text": "other appointed offices under state government.\n\nNo senator\nor representative shall, during the time for which he or she was elected, be appointed to any state office, board, commission or other state or quasi-public entity\nexercising executive power under the\nlaws of this state, and no person holding any executive office or serving as a member of any board, commission or other state or quasi-public entity exercising executive\npower under the laws of this state shall be\na member of the senate or the house of representatives during his or her\ncontinuance in such office."
+        },
+        {
+          "number": "7",
+          "title": "Ethical conduct.",
+          "text": "The people\nof the State of Rhode Island believe that public officials and employees must adhere to the highest standards of ethical conduct, respect the public trust and the rights of all persons, be\nopen, accountable and responsive,\navoid the appearance of impropriety and not use\ntheir position for private gain or advantage. Such persons shall hold their positions during good behavior."
+        }
+      ]
+    },
+    {
+      "number": "IV",
+      "title": "Untitled",
+      "sections": [
+        {
+          "number": "2",
+          "title": "Election by plurality.",
+          "text": "In all elections held by the people for state, city, town, ward or district officers, the person or\ncandidate receiving the largest number of votes\ncast shall be declared elected."
+        },
+        {
+          "number": "3",
+          "title": "Filling vacancy caused",
+          "text": "by death, removal, refusal to serve,\nor incapacity of elected officers — Election when no candidate receives plurality."
+        },
+        {
+          "number": "6",
+          "title": "Elections in grand",
+          "text": "committee — Majority vote — Term of elected official."
+        },
+        {
+          "number": "7",
+          "title": "Elections in grand",
+          "text": "committee — Quorum — Permitted activities.\n\nA quorum of the grand committee shall consist of a majority of all the members of the senate and a majority of all the members of\nthe house of representatives duly assembled pursuant to an invitation from one of said bodies which has been accepted by the other, and the acceptance of which has been communicated by message to the body in which such\ninvitation originated, and each house shall be attended by its secretaries and clerks. No act or business of any kind shall be done in grand\ncommittee other than that which is distinctly specified in the invitation by virtue of which such grand\ncommittee is assembled, except to take a\nrecess or to dissolve; provided, that the grand committee may appoint a subcommittee of its own members to count\nany ballots delivered to it and\nreport the result of such count."
+        },
+        {
+          "number": "10",
+          "title": "Limitations on",
+          "text": "campaign contributions — Public\nfinancing of campaign expenditures of general offi cers."
+        }
+      ]
+    },
+    {
+      "number": "V",
+      "title": "Untitled",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Full Text",
+          "text": "OF THE DISTRIBUTION OF POWERS\nThe powers\nof the government shall be distributed into three separate and distinct departments: the legislative, executive\nand judicial."
+        }
+      ]
+    },
+    {
+      "number": "VI",
+      "title": "Untitled",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Constitution supreme law of the state.",
+          "text": "Senators and representatives shall receive the same health insurance benefits as full-time state employees."
+        },
+        {
+          "number": "4",
+          "title": "Restriction on general",
+          "text": "assembly members’ activities as counsel.\n\nEach house shall be the judge of the elections and qualifications of its\nmembers; and a majority shall constitute a quorum to do business; but a smaller number may adjourn from day\nto day, and may compel the attendance of absent members in such manner, and under such penalties, as may be prescribed by such house or by law. The organization of the two houses may be\nregulated by law, subject to the limitations contained in this Constitution."
+        },
+        {
+          "number": "7",
+          "title": "Rules of houses — Contempt.",
+          "text": "Each house may determine its rules of proceeding, punish contempts , punish its members for disorderly\nbehavior, and, with the concurrence\nof two-thirds, expel a member; but not a second time for the same cause."
+        },
+        {
+          "number": "8",
+          "title": "House journals.",
+          "text": "Each house shall keep a journal of its proceedings. The yeas and nays of the members of either house shall,\nat the desire of one-fifth of those\npresent, be entered on the journal."
+        },
+        {
+          "number": "9",
+          "title": "Adjournment of houses.",
+          "text": "Neither house shall, during a session, without the consent of the other, adjourn for more than two days, nor to any other place\nthan that in which it may be sitting."
+        },
+        {
+          "number": "22",
+          "title": "Restriction of gambling.",
+          "text": "No act\nexpanding the types or locations of gambling which are permitted within the state or within any city or town\ntherein or expanding municipalities in which a particular form of gambling is authorized shall take effect until it has been approved by the majority of those electors voting in a\nstatewide referendum and by the majority\nof those electors voting in said referendum in the municipality in which the proposed\ngambling would be allowed and, having been so approved in said referendum in any city or town on or after November 4, 2014, the location where the gambling is\npermitted in any city or town shall not\nbe changed within said city or town without approval of the majority of those electors voting on said proposed\nchange in a referendum in said city\nor town.\nThe\nsecretary of state shall certify the results of the statewide referendum and the local board of canvassers of the\ncity or town where the gambling is to be allowed shall certify the results of the local referendum to the secretary of state."
+        }
+      ]
+    },
+    {
+      "number": "VII",
+      "title": "Untitled",
+      "sections": [
+        {
+          "number": "2",
+          "title": "Officers — Presiding member during organization.",
+          "text": "The house of representatives shall have authority to elect its speaker, clerks, and other officers. The senior member from the City of Newport,\nif any be present, shall preside in the organization of the house ."
+        }
+      ]
+    },
+    {
+      "number": "VIII",
+      "title": "Untitled",
+      "sections": [
+        {
+          "number": "2",
+          "title": "Lieutenant governor to",
+          "text": "be presiding officer until 2003.\n\nThe lieutenant governor shall preside in the senate and in grand\ncommittee until 2003. Commencing in 2003, the senate shall elect its president, who shall preside in the\nsenate and in grand committee, as\nwell as its secretary and other officers from among its members and shall elect its clerks. The senior member from the city of Newport, if any\nbe present, shall preside in the organization of the senate."
+        }
+      ]
+    },
+    {
+      "number": "IX",
+      "title": "OF THE EXECUTIVE POWER",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Power vested in governor.",
+          "text": "The chief\nexecutive power of this state shall be vested in a governor, who, together with a lieutenant governor, shall be elected by the people."
+        },
+        {
+          "number": "2",
+          "title": "Faithful execution of laws.",
+          "text": "The\ngovernor shall take care that the laws be faithfully executed."
+        },
+        {
+          "number": "3",
+          "title": "Captain general and commander in chief of military and navy.",
+          "text": "The\ngovernor shall be captain general and commander in chief of the military and naval forces of this\nstate, except when they shall be called\ninto the service of the United States."
+        },
+        {
+          "number": "7",
+          "title": "Convening of special",
+          "text": "sessions of the general assem bly."
+        },
+        {
+          "number": "8",
+          "title": "Commissions.",
+          "text": "All commissions shall be in the name and by authority of the State of Rhode Island ; shall be sealed with the state seal, signed by the governor, and\nattested by the secretary."
+        },
+        {
+          "number": "9",
+          "title": "Vacancy in office of governor.",
+          "text": "If the office of the governor shall be vacant by\nreason of death, resignation, impeachment or inability to serve, the lieutenant governor shall fill the office of governor, and exercise the\npowers and authority appertaining thereto, until a governor is qualified to act, or until the office is filled at the next election."
+        },
+        {
+          "number": "10",
+          "title": "Vacancies in both offices of governor and lieutenant",
+          "text": "governor.\n\nIf the offices of governor and lieutenant\ngovernor be both vacant by reason of death, resignation, impeachment, or inability to serve, the speaker of the house of representatives shall in like manner fill the office of governor during such vacancy."
+        },
+        {
+          "number": "11",
+          "title": "Compensation of governor and lieutenant governor.",
+          "text": "The\ncompensation of the governor and lieutenant governor shall be established by law, and shall not be diminished during the term for\nwhich they are elected."
+        },
+        {
+          "number": "12",
+          "title": "Powers and duties of secretary, attorney-general, and general treasurer.",
+          "text": "The duties\nand powers of the secretary, attorney-general\nand general treasurer shall be the\nsame under this Constitution as are now\nestablished, or as from time to time may be prescribed by law."
+        },
+        {
+          "number": "16",
+          "title": "Limitation on state",
+          "text": "spending.\n\n(a) No appropriation, supplemental appropriation or budget act shall cause the aggregate\nstate general revenue appropriations enacted in any given fiscal year to exceed ninety-seven percent (97%) of the estimated state general revenues for\nsuch fiscal year from all sources,\nincluding estimated unencumbered general revenues to the new fiscal year remaining at the end of the\nprevious fiscal year. Estimated unencumbered general revenues are calculated by taking the estimated\ngeneral revenue cash balance at the end of the fiscal year less estimated revenue anticipation bonds or notes, estimated general revenue encumbrances, estimated continuing\ngeneral revenue appropriations and the\namount of the budget reserve account at the end of said fiscal year.\n(b) The amount between the applicable percentage in (a) and one\nhundred percent (100%) of the estimated state general revenue for any fiscal year as estimated in accordance with subsection (a) of this section\nshall be appropriated in any given fiscal year into the budget reserve account; provided, however, that no such payment will be made which would increase the total of the budget reserve account to more than five\npercent (5%) of only the estimated state general revenues as set by subsection (a) of this section. In the\nevent that the payment to be made\ninto the budget reserve account would increase the amount in said\naccount to more than five percent (5%) of estimated state general revenues that said amount shall be transferred to the Rhode Island\nCapital Plan fund to be used solely for funding capital projects.\n(c) Within forty-five (45) days after the close of any fiscal year, all unencumbered general revenue in the\nyear end surplus account from the\nsaid fiscal year shall be transferred to the general fund."
+        }
+      ]
+    },
+    {
+      "number": "X",
+      "title": "Untitled",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Power vested in court.",
+          "text": "The\njudicial power of this state shall be vested in one supreme court,"
+        },
+        {
+          "number": "2",
+          "title": "Jurisdiction of",
+          "text": "supreme and inferior courts — Quorum\nof supreme court .\n\nThe supreme court shall have final revisory and appellate jurisdiction upon all questions of law and equity. It shall have power to issue prerogative writs,\nand shall also have such other jurisdiction as may, from time to time, be\nprescribed by law. A majority of its\njudges shall always be necessary to\nconstitute a quorum. The inferior courts shall\nhave such jurisdiction as may, from\ntime to time, be prescribed by law."
+        },
+        {
+          "number": "5",
+          "title": "Tenure of supreme court justices.",
+          "text": "Justices\nof the supreme court shall hold office during good behavior."
+        },
+        {
+          "number": "6",
+          "title": "Judges of supreme court — Compensation.",
+          "text": "The judges of the supreme court shall receive a compensation for their services, which shall not be diminished during their continuance in office."
+        },
+        {
+          "number": "7",
+          "title": "Wardens and",
+          "text": "justices of the peace."
+        }
+      ]
+    },
+    {
+      "number": "XI",
+      "title": "Untitled",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Power to impeach —",
+          "text": "Procedure — Suspension from office impeachment."
+        },
+        {
+          "number": "2",
+          "title": "Trial of impeachments.",
+          "text": "All\nimpeachments shall be tried by the senate; and when sitting for that purpose, they shall be under\noath or affirmation. No person shall\nbe convicted except by vote of two-thirds of the members elected. When the governor is impeached, the chief or presiding justice of the supreme court , for the time being,\nshall preside, with a casting vote in all preliminary questions."
+        },
+        {
+          "number": "3",
+          "title": "Officers subject to impeachment — Grounds and effect of conviction.",
+          "text": "The governor and all other executive and judicial officers shall be liable to impeachment. The governor or any other executive officer shall be removed from office if, upon impeachment, such officer shall be found incapacitated or guilty of the\ncommission of a felony or crime of moral\nturpitude, misfeasance or malfeasance in office. Judges shall be removed\nif, upon impeachment, they shall be found incapacitated or guilty of the commission of a felony or crime of moral turpitude, misfeasance or malfeasance in office or violation of the canons of judicial ethics. Judgment of incapacity or guilt in a case of impeachment shall not extend further than\nto removal from office. The person convicted shall, nevertheless, be\nliable to indictment, trial and punishment,\naccording to laws."
+        }
+      ]
+    },
+    {
+      "number": "XII",
+      "title": "Untitled",
+      "sections": [
+        {
+          "number": "2",
+          "title": "Perpetual school fund.",
+          "text": "The money\nwhich now is or which may hereafter be appropriated by law for the establishment of a permanent fund for the support of public\nschools, shall be securely invested and remain a perpetual fund for that purpose."
+        },
+        {
+          "number": "4",
+          "title": "Implementation of",
+          "text": "article — Diversion of funds prohibited."
+        }
+      ]
+    },
+    {
+      "number": "XIII",
+      "title": "Untitled",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Intent of article.",
+          "text": "It is the\nintention of this article to grant and confirm to the people of every city and town in this state the right of self government in all local matters."
+        },
+        {
+          "number": "3",
+          "title": "Local legislative bodies.",
+          "text": "Notwithstanding\nanything contained in this article, every city and town shall have a legislative body composed of one or two branches elected by vote of its qualified electors."
+        },
+        {
+          "number": "6",
+          "title": "Charter commissions.",
+          "text": "Every city and town shall have the power to adopt a charter in the following manner: Whenever a petition for the adoption of a charter signed by fifteen percent of the qualified electors of a city, or in a town by fifteen percent, but not less than one\nhundred in number, of those persons qualified to vote on any proposition to impose a tax or for the expenditure of money shall be filed\nwith the legislative body of any city\nor town the same shall be referred forthwith to the canvassing authority which shall within ten days after its receipt determine the sufficiency thereof and certify the results to the legislative body of said city or town. Within sixty days thereafter the legislative body of a city shall submit to its qualified electors\nand the legislative body of a town shall\nsubmit to the electors of said town qualified to vote upon a proposition to impose a tax or for the expenditure of money the following question: ‘‘Shall a commission be\nappointed to frame a charter?’’ and the legislative\nbody of any city or town shall provide by ordinance or resolution a method for the nomination and election of a charter commission to frame a charter consisting in a city of\nnine qualified electors and in a town of\nnine electors of said town qualified to vote upon a proposition to impose a tax or for the expenditure of money who shall be elected at large without party or political designation\nand who shall be listed alphabetically on\nthe ballot used for said election. Such ordinance or resolution shall provide for the submission of the question and the election of the charter commission at the same time. Upon approval of the\nquestion submitted the nine candidates who individually receive the greater number of\nvotes shall be declared elected and shall constitute the charter commission."
+        },
+        {
+          "number": "7",
+          "title": "Adoption of charters.",
+          "text": "Within one\nyear from the date of the election of the charter commission the charter framed by the commission shall be submitted to the legislative body of the city or town which body shall provide for publication of said charter and\nshall provide for the submission of said\ncharter to the electors of a city or town qualified to vote for general state officers at the general election next succeeding thirty days from the date of the submission of the charter by the charter commission. If said\ncharter is approved by a majority of said electors voting thereon, it shall\nbecome effective upon the date fixed therein."
+        },
+        {
+          "number": "8",
+          "title": "Amendments to charters.",
+          "text": "The\nlegislative body of any city or town may propose amendments to a charter which amendments shall be submitted for approval in the\nsame manner as provided in this article for the adoption of a charter\nexcept that the same may be submitted at a special election, and provided further that in the case of a\ntown, amendments concerning a\nproposition to impose a tax or for the expenditure of money, shall be submitted at a special or regular\nfinancial town meeting."
+        },
+        {
+          "number": "9",
+          "title": "Filing of charter",
+          "text": "petitions to bicameral legislative\nbodies.\n\nWhenever the legislative body of any city or town consists of more than one branch, a\npetition for the adoption of a charter as provided in this article may be filed with either branch of said\nlegislative body."
+        },
+        {
+          "number": "10",
+          "title": "Charter certificates",
+          "text": "— Signing — Recordation — Deposit —\nJudicial notice.\n\nDuplicate certificates shall be made setting forth the charter adopted and any amendments approved and the same shall be signed by a majority of the canvassing authority;\none of such certified copies shall be deposited in the office of the secretary of state and the other after\nhaving been recorded in the records of the city or town shall be deposited among the archives of the said city or town and all courts shall take judicial notice thereof."
+        },
+        {
+          "number": "11",
+          "title": "Judicial powers",
+          "text": "unaffected by article.\n\nThe\njudicial powers of the state shall not be diminished by the provisions of this article."
+        }
+      ]
+    },
+    {
+      "number": "XIV",
+      "title": "Untitled",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Procedure for",
+          "text": "proposing and approving amendments."
+        }
+      ]
+    },
+    {
+      "number": "XV",
+      "title": "Untitled",
+      "sections": [
+        {
+          "number": "1",
+          "title": "Rights and duties of",
+          "text": "public bodies unaffected —\nContinuation of laws, ordinances, regulations and rules.\n\nThe rights and duties of all public bodies shall remain as if this\nConstitution had not been adopted with the exception of such changes as are contained in this\nConstitution. All laws, ordinances, regulations\nand rules of court not contrary to, or inconsistent with, the provisions of this Constitution shall remain in force, until they shall\nexpire by their own limitation or\nshall be altered or repealed pursuant to this Constitution."
+        },
+        {
+          "number": "2",
+          "title": "Validity of bonds, debts, contracts,",
+          "text": "suits, actions, and rights of\nactions continued.\n\nThe validity\nof all public and private bonds, debts and contracts, and of all suits, actions, and rights of action, shall continue\nas if no change had taken place."
+        },
+        {
+          "number": "3",
+          "title": "Continuation of office holders.",
+          "text": "All\nofficers filling any office by election or appointment shall continue the duties thereof, until the\nend of the terms to which they were\nappointed or elected, and until their offices shall have been abolished or their successors elected and qualified in accordance with this Constitution or laws enacted pursuant thereto."
+        },
+        {
+          "number": "4",
+          "title": "Implementing",
+          "text": "legislation for Article III, Sections 7"
+        }
+      ]
+    }
+  ],
+  "rawText": "## CONSTITUTION OF THE STATE OF RHODE ISLAND\n\n### PREAMBLE\n\nWe, the people of the State of Rhode Island , grateful to Almighty\nGod for the civil and religious liberty which\nHe hath so long permitted us to enjoy, and looking to Him for a blessing upon our endeavors to secure and to transmit the same, unimpaired, to succeeding generations, do ordain and establish this Constitution of government.\n\n### ARTICLE I\n\nDECLARATION OF CERTAIN CONSTITUTIONAL RIGHTS AND PRINCIPLES\nIn order\neffectually to secure the religious and political freedom established by our venerated ancestors, and to preserve\nthe same for our posterity, we do declare that the\nessential and unquestionable rights and principles hereinafter mentioned shall be established, maintained, and preserved, and shall be of paramount obligation in all legislative, judicial and executive proceedings.\n\n#### Section 1. Right to make and\nalter Constitution — Constitution\nobligatory upon all.\n\nIn the\nwords of the Father of his Country, we\ndeclare that ‘‘the basis of our political systems is the right of the people to make and alter their constitutions of government; but that the constitution which at any time exists, till changed by an\nexplicit and authentic act of the whole\npeople, is sacredly obligatory upon all.’’\n\n#### Section 2. Laws for good of whole — Burdens to be equally distributed — Due process — Equal protection — Discrimination — No right to abortion granted.\n\nAll free governments are instituted for the protection, safety, and happiness of the people. All laws, therefore, should be made for the good\nof the whole; and the burdens of the state ought to be fairly distributed among its citizens. No\nperson shall be deprived of life, liberty or\nproperty without due process of law, nor shall any person be denied\nequal protection of the laws. No otherwise qualified person shall, solely\nby reason of race, gender or handicap be subject to discrimination by the state, its agents or any person or entity doing business with the state. Nothing in\nthis section shall be construed to grant or secure any right relating to abortion or the funding thereof .\n\n#### Section 3. Freedom of religion.\n\nWhereas\nAlmighty God hath created the mind free; and all attempts to influence it by temporal punishments or burdens, or by civil incapacitations,\ntend to beget habits of hypocrisy and meanness; and whereas a principal object of our venerable ancestors, in their migration to this country and their settlement of this state, was, as they expressed it, to hold forth a lively experiment that a flourishing civil state may stand and be best maintained with full liberty in religious concernments; we, therefore, declare that no person shall be compelled to frequent or to support any religious worship, place, or\nministry\nwhat ever, except in fulfillment of such\nperson’s voluntary contract; nor\nenforced, restrained, molested, or burdened in body or goods; nor disqualified from holding any office; nor otherwise suffer on account of such person’s religious belief; and that every person shall be free to\nworship God according to the dictates of such person’s conscience, and to profess and by argument to maintain\nsuch person’s opinion in matters of\nreligion; and that the same shall in no wise diminish, enlarge, or affect the civil capacity of any person.\n\n#### Section 4. Slavery prohibited.\n\nSlavery\nshall not be permitted in this state.\n\n#### Section 5. Entitlement to\nremedies for injuries and wrongs —\nRight to justice.\n\nEvery person within this state ought to find a certain remedy, by having recourse to the laws, for all injuries or wrongs which may be received in one’s person, property, or character. Every person ought to obtain right and justice freely, and without purchase, completely and without denial; promptly and without\ndelay; conformably to the laws.\n\n#### Section 6. Search and seizure.\n\nThe right of the people to be secure in their persons, papers and\npossessions, against unreasonable searches and seizures, shall not be violated; and no warrant shall issue,\nbut on complaint in writing, upon\nprobable cause, supported by oath or affirmation, and describing as nearly as may be, the place to be\nsearched and the persons or things to\nbe seized.\n\n#### Section 7. Requirement of presentment\nor indictment — Information by\nattorney-general — Grand juries — Double jeopardy.\n\n#### Section 8. Bail, fines and punishments.\n\nExcessive\nbail shall not be required, nor excessive fines imposed, nor cruel punishments inflicted; and all punishments ought to\nbe proportioned to the offense.\n\n#### Section 9. Right to bail — Habeas corpus.\n\n#### Section 10. Rights of accused persons in criminal proceedings.\n\nIn all\ncriminal prosecutions, accused persons shall enjoy the right to a speedy and public trial, by an impartial jury; to be informed of the\nnature and cause of the accusation, to be confronted with the witnesses against them, to have compulsory\nprocess for obtaining them in their favor, to have the assistance of counsel\nin their defense, and shall be at\nliberty to speak for themselves; nor shall they be deprived of life, liberty, or property, unless by the judgment of their peers, or the law of the land.\n\n#### Section 11. Relief of debtors from prison.\n\nThe person of a debtor, when there is not strong presumption of fraud, ought not to\nbe continued in prison, after such person shall have delivered up property for the benefit of said person’s\ncreditors, in such manner as shall be\nprescribed by law.\n\n#### Section 12. Ex post facto laws —\nLaws impairing obligation of\ncontract.\n\nNo ex post facto law, or law impairing the obligation of contracts,\nshall be passed.\n\n#### Section 13. Self-crimination.\n\nNo person\nin a court of common law shall be compelled to give self-criminating evidence.\n\n#### Section 14. Presumption of\ninnocence — Securing accused persons.\n\nEvery\nperson being presumed innocent, until pronounced guilty by the law, no act of\nseverity which is not necessary to secure an accused person shall be permitted.\n\n#### Section 15. Trial by jury.\n\n#### Section 16. Compensation for taking of private property for public use — Regulation of fishery rights and shore privileges not public taking.\n\nPrivate property shall not be taken for public uses, without just compensation. The powers of the state and of its municipalities to regulate and control the use of land and waters in the furtherance of the preservation, regeneration, and restoration of the natural environment, and in furtherance of the protection of the rights of the\npeople to enjoy and freely exercise\nthe rights of fishery and the privileges of the shore, as those rights and duties are set forth in Section 17, shall be an\nexercise of the police powers of the state, shall be liberally construed, and shall not be deemed to be\na public use of private property.\n\n#### Section 17. Fishery rights — Shore privileges — Preservation of natural resources.\n\n#### Section 18. Subordination of\nmilitary to civil authority — Martial law.\n\nThe\nmilitary shall be held in strict subordination to the civil author ity. And the law martial shall be used and exercised in such cases only as occasion shall necessarily require.\n\n#### Section 19. Quartering of soldiers.\n\nNo soldier\nshall be quartered in any house in time of peace, without the consent of the owner; nor, in time of war, but in manner to be\nprescribed by law.\n\n#### Section 20. Freedom of press.\n\nThe\nliberty of the press being essential to the security of freedom in a state, any person may publish\nsentiments on any subject, being\nresponsible for the abuse of that liberty; and in all trials for libel, both civil and criminal, the truth,\nunless published from malicious motives,\nshall be sufficient defense to the person charged.\n\n#### Section 21. Right to assemble —\nRedress of grievances — Freedom of speech.\n\nThe citizens have a right in a peaceable manner to assemble for their\ncommon good, and to apply to those invested with the powers of government, for redress of grievances, or for other purposes, by petition, address, or remonstrance. No law abridging the freedom of speech shall be enacted.\n\n#### Section 22. Right to bear arms.\n\nThe right\nof the people to keep and bear arms shall not be infringed.\n\n#### Section 23. Rights of victims of crime.\n\nA victim\nof crime shall, as a matter of right, be treated by agents of the state with dignity, respect and sensitivity during all phases of the criminal justice process. Such person\nshall be entitled to receive, from\nthe perpetrator of the crime, financial compensation for any injury or loss caused by the perpetrator of the crime, and shall receive such other\ncompensation as the state may provide. Before sentencing, a victim\nshall have the right to address the court regarding the impact which the perpetrator’s conduct has had upon the victim.\n\n#### Section 24. Rights not enumerated\n— State rights not dependent on\nfederal rights.\n\nThe enumeration of the foregoing rights shall not be construed to impair or deny others retained by the people. The rights guaranteed by this\nConstitution are not dependent on those guaranteed by the Constitution of the United States.\n\n### ARTICLE II\n\n### OF SUFFRAGE\n\n#### Section 1. Persons entitled to vote.\n\n#### Section 2. Nomination of candidates — Voter registration — Absentee voting — Conduct of elections — Resi dency.\n\n### ARTICLE III\n\nOF QUALIFICATION FOR OFFICE\n\n#### Section 1. Qualified electors.\n\nNo person\nshall hold any civil office unless\nthat person be a qualified elector\nfor such office.\n\n#### Section 2. Disqualification upon\nconviction or plea of nolo contendere\n— Requalification following sentence,\nprobation or parole.\n\nAn elector shall be disqualified as a candidate for elective or appointive state or local office or from holding such office if such elector has been convicted of or plead nolo\ncontendere to a felony or if such elector\nhas been convicted or plead nolo contendere to a misdemeanor resulting in a jail sentence of six months or more, either suspended or to be served. Such elector shall not, once so convicted, attain or return to any office until three years after the date of completion of such sentence and of probation or parole.\n\n#### Section 3. Oath of general officers.\n\nAll\ngeneral officers shall take the following engagement before they act in their respective offices, to\nwit: You being by the free vote of the electors of this state of Rhode Island , elected unto the place of do solemnly swear (or, affirm) to be true and faithful unto\nthis state, and to support the Constitution of this state and of the United States; that you will\nfaithfully and impartially\ndischarge all the duties of your aforesaid office to the best of your abilities,\naccording to law: So help you God. [Or: This\naffirmation you make and give upon the peril of the penalty of perjury.]\n\n#### Section 5. Administration of oaths.\n\nThe oath\nor affirmation shall be administered to the governor, lieutenant governor, senators, and representatives by the\nsecretary of state, or, in the absence of the secretary of\nstate by the attorney- general. The secretary of state, attorney-general, and general treasurer shall be engaged by the\ngovernor, or by a justice of the supreme court .\n\n#### Section 6. Holding of offices under other governments — Senators and representatives not to hold\nother appointed offices under state government.\n\nNo senator\nor representative shall, during the time for which he or she was elected, be appointed to any state office, board, commission or other state or quasi-public entity\nexercising executive power under the\nlaws of this state, and no person holding any executive office or serving as a member of any board, commission or other state or quasi-public entity exercising executive\npower under the laws of this state shall be\na member of the senate or the house of representatives during his or her\ncontinuance in such office.\n\n#### Section 7. Ethical conduct.\n\nThe people\nof the State of Rhode Island believe that public officials and employees must adhere to the highest standards of ethical conduct, respect the public trust and the rights of all persons, be\nopen, accountable and responsive,\navoid the appearance of impropriety and not use\ntheir position for private gain or advantage. Such persons shall hold their positions during good behavior.\n\n#### Section 8. Ethics commission — Code of ethics.\n\n### ARTICLE IV\n\nOF ELECTIONS AND CAMPAIGN FINANCE\nThe\ngovernor, lieutenant governor, secretary of state, attorney general and general treasurer shall be elected on the Tuesday after the first Monday in November, quadrennially commencing A.D. 1994, and every four (4) years thereafter, and shall severally hold their offices, subject to recall as provided for herein, for four (4) years from the first Tuesday of January next succeeding their election\nand until their successors are\nelected and qualified. No person shall serve consecutively in the same general office for more than two (2) full terms, excluding any partial term of less than two (2) years\npreviously served.\nRecall is authorized in the case of a general officer who has been indicted or informed against for a felony, convicted of a misdemeanor, or against whom a finding of probable cause of violation of the code of ethics has\nbeen made by the ethics commission. Recall shall not, however be instituted at any time during the first six (6)\nmonths or the last year of an\nindividual’s term of office.\nSuch a recall may be instituted by filing with the state board of elections an application for issuance of a recall petition against said general officer which is signed by duly qualified electors equal to three percent (3%) of the total number of votes cast at the last preceding\ngeneral election for that office. If,\nupon verification, the application is\ndetermined to contain signatures of the required number of electors, the state board of elections\nshall issue a recall petition for circulation\namongst the electors of the state. Within ninety (90) days of issuance, recall petitions containing the\nsignatures of duly qualified electors\nconstituting fifteen percent (15%) of the total number of votes cast in the last preceding general election for\nsaid office must be filed with the state board of elections.\nThe\nsignatures to the application and to the recall petition need not all be on one (1) sheet of paper, but each such application and petition must contain an identical\nstatement naming the person to be recalled,\nthe general office held by said\nperson, and the grounds for such recall\nset forth in a statement of one hundred (100) words or less approved by the board of elections. Each signatory\nmust set forth his or her signature as it appears on the voting list, the date of signing, and his or her place of residence. The person witnessing the signatures of each\nelector on said petition must sign a statement under oath on said sheet\nattesting that the signatures thereon are genuine and were signed in his or her presence.\n\n#### Section 2. Election by plurality.\n\nIn all elections held by the people for state, city, town, ward or district officers, the person or\ncandidate receiving the largest number of votes\ncast shall be declared elected.\n\n#### Section 3. Filling vacancy caused\nby death, removal, refusal to serve,\nor incapacity of elected officers — Election when no candidate receives plurality.\n\n#### Section 4. Temporary appointment to fill vacancies in office of secretary of state, attorney-general, or general trea surer.\n\n#### Section 6. Elections in grand\ncommittee — Majority vote — Term of elected official.\n\n#### Section 7. Elections in grand\ncommittee — Quorum — Permitted activities.\n\nA quorum of the grand committee shall consist of a majority of all the members of the senate and a majority of all the members of\nthe house of representatives duly assembled pursuant to an invitation from one of said bodies which has been accepted by the other, and the acceptance of which has been communicated by message to the body in which such\ninvitation originated, and each house shall be attended by its secretaries and clerks. No act or business of any kind shall be done in grand\ncommittee other than that which is distinctly specified in the invitation by virtue of which such grand\ncommittee is assembled, except to take a\nrecess or to dissolve; provided, that the grand committee may appoint a subcommittee of its own members to count\nany ballots delivered to it and\nreport the result of such count.\n\n#### Section 8. Voter registration lists.\n\n#### Section 9. Reports of campaign contributions and expenses.\n\n#### Section 10. Limitations on\ncampaign contributions — Public\nfinancing of campaign expenditures of general offi cers.\n\n### ARTICLE V\n\nOF THE DISTRIBUTION OF POWERS\nThe powers\nof the government shall be distributed into three separate and distinct departments: the legislative, executive\nand judicial.\n\n### ARTICLE VI\n\nOF THE LEGISLATIVE POWER\n\n#### Section 1. Constitution supreme law of the state.\n\nSenators and representatives shall receive the same health insurance benefits as full-time state employees.\n\n#### Section 4. Restriction on general\nassembly members’ activities as counsel.\n\nEach house shall be the judge of the elections and qualifications of its\nmembers; and a majority shall constitute a quorum to do business; but a smaller number may adjourn from day\nto day, and may compel the attendance of absent members in such manner, and under such penalties, as may be prescribed by such house or by law. The organization of the two houses may be\nregulated by law, subject to the limitations contained in this Constitution.\n\n#### Section 7. Rules of houses — Contempt.\n\nEach house may determine its rules of proceeding, punish contempts , punish its members for disorderly\nbehavior, and, with the concurrence\nof two-thirds, expel a member; but not a second time for the same cause.\n\n#### Section 8. House journals.\n\nEach house shall keep a journal of its proceedings. The yeas and nays of the members of either house shall,\nat the desire of one-fifth of those\npresent, be entered on the journal.\n\n#### Section 9. Adjournment of houses.\n\nNeither house shall, during a session, without the consent of the other, adjourn for more than two days, nor to any other place\nthan that in which it may be sitting.\n\n#### Section 10. Continuation of previous powers. Repealed.\n\nSection 11. Vote required to pass local or private appropriations.\n\n#### Section 12. Property valuations for tax assessments.\n\n#### Section 13. Continuance in office until successors qualify.\n\n#### Section 14. General corporation laws.\n\n#### Section 15. Lotteries.\n\n#### Section 17. Borrowing in anticipation of receipts.\n\n#### Section 18. Redevelopment powers.\n\n#### Section 19. Taking of property for highways, streets, places, parks or parkways.\n\n#### Section 20. Local off-street parking facilities.\n\n#### Section 21. Emergency powers in case of enemy attack.\n\n#### Section 22. Restriction of gambling.\n\nNo act\nexpanding the types or locations of gambling which are permitted within the state or within any city or town\ntherein or expanding municipalities in which a particular form of gambling is authorized shall take effect until it has been approved by the majority of those electors voting in a\nstatewide referendum and by the majority\nof those electors voting in said referendum in the municipality in which the proposed\ngambling would be allowed and, having been so approved in said referendum in any city or town on or after November 4, 2014, the location where the gambling is\npermitted in any city or town shall not\nbe changed within said city or town without approval of the majority of those electors voting on said proposed\nchange in a referendum in said city\nor town.\nThe\nsecretary of state shall certify the results of the statewide referendum and the local board of canvassers of the\ncity or town where the gambling is to be allowed shall certify the results of the local referendum to the secretary of state.\n\n### ARTICLE VII\n\nOF THE HOUSE OF REPRESENTATIVES\n\n#### Section 1. Composition.\n\n#### Section 2. Officers — Presiding member during organization.\n\nThe house of representatives shall have authority to elect its speaker, clerks, and other officers. The senior member from the City of Newport,\nif any be present, shall preside in the organization of the house .\n\n### ARTICLE VIII\n\n### OF THE SENATE\n\n#### Section 2. Lieutenant governor to\nbe presiding officer until 2003.\n\nThe lieutenant governor shall preside in the senate and in grand\ncommittee until 2003. Commencing in 2003, the senate shall elect its president, who shall preside in the\nsenate and in grand committee, as\nwell as its secretary and other officers from among its members and shall elect its clerks. The senior member from the city of Newport, if any\nbe present, shall preside in the organization of the senate.\n\n#### Section 3. Repealed.\n\nSection 4. Repealed.\nARTICLE IX\nOF THE EXECUTIVE POWER\nSection 1. Power vested in governor.\nThe chief\nexecutive power of this state shall be vested in a governor, who, together with a lieutenant governor, shall be elected by the people.\n\n#### Section 2. Faithful execution of laws.\n\nThe\ngovernor shall take care that the laws be faithfully executed.\n\n#### Section 3. Captain general and commander in chief of military and navy.\n\nThe\ngovernor shall be captain general and commander in chief of the military and naval forces of this\nstate, except when they shall be called\ninto the service of the United States.\n\n#### Section 4. Reprieves.\n\n#### Section 5. Powers of appointment.\n\n#### Section 7. Convening of special\nsessions of the general assem bly.\n\n#### Section 8. Commissions.\n\nAll commissions shall be in the name and by authority of the State of Rhode Island ; shall be sealed with the state seal, signed by the governor, and\nattested by the secretary.\n\n#### Section 9. Vacancy in office of governor.\n\nIf the office of the governor shall be vacant by\nreason of death, resignation, impeachment or inability to serve, the lieutenant governor shall fill the office of governor, and exercise the\npowers and authority appertaining thereto, until a governor is qualified to act, or until the office is filled at the next election.\n\n#### Section 10. Vacancies in both offices of governor and lieutenant\ngovernor.\n\nIf the offices of governor and lieutenant\ngovernor be both vacant by reason of death, resignation, impeachment, or inability to serve, the speaker of the house of representatives shall in like manner fill the office of governor during such vacancy.\n\n#### Section 11. Compensation of governor and lieutenant governor.\n\nThe\ncompensation of the governor and lieutenant governor shall be established by law, and shall not be diminished during the term for\nwhich they are elected.\n\n#### Section 12. Powers and duties of secretary, attorney-general, and general treasurer.\n\nThe duties\nand powers of the secretary, attorney-general\nand general treasurer shall be the\nsame under this Constitution as are now\nestablished, or as from time to time may be prescribed by law.\n\n#### Section 13. Pardons.\n\n#### Section 15. State budget.\n\n#### Section 16. Limitation on state\nspending.\n\n(a) No appropriation, supplemental appropriation or budget act shall cause the aggregate\nstate general revenue appropriations enacted in any given fiscal year to exceed ninety-seven percent (97%) of the estimated state general revenues for\nsuch fiscal year from all sources,\nincluding estimated unencumbered general revenues to the new fiscal year remaining at the end of the\nprevious fiscal year. Estimated unencumbered general revenues are calculated by taking the estimated\ngeneral revenue cash balance at the end of the fiscal year less estimated revenue anticipation bonds or notes, estimated general revenue encumbrances, estimated continuing\ngeneral revenue appropriations and the\namount of the budget reserve account at the end of said fiscal year.\n(b) The amount between the applicable percentage in (a) and one\nhundred percent (100%) of the estimated state general revenue for any fiscal year as estimated in accordance with subsection (a) of this section\nshall be appropriated in any given fiscal year into the budget reserve account; provided, however, that no such payment will be made which would increase the total of the budget reserve account to more than five\npercent (5%) of only the estimated state general revenues as set by subsection (a) of this section. In the\nevent that the payment to be made\ninto the budget reserve account would increase the amount in said\naccount to more than five percent (5%) of estimated state general revenues that said amount shall be transferred to the Rhode Island\nCapital Plan fund to be used solely for funding capital projects.\n(c) Within forty-five (45) days after the close of any fiscal year, all unencumbered general revenue in the\nyear end surplus account from the\nsaid fiscal year shall be transferred to the general fund.\n\n#### Section 17. Budget reserve account.\n\n### ARTICLE X\n\nOF THE JUDICIAL POWER\n\n#### Section 1. Power vested in court.\n\nThe\njudicial power of this state shall be vested in one supreme court,\n\n#### Section 2. Jurisdiction of\nsupreme and inferior courts — Quorum\nof supreme court .\n\nThe supreme court shall have final revisory and appellate jurisdiction upon all questions of law and equity. It shall have power to issue prerogative writs,\nand shall also have such other jurisdiction as may, from time to time, be\nprescribed by law. A majority of its\njudges shall always be necessary to\nconstitute a quorum. The inferior courts shall\nhave such jurisdiction as may, from\ntime to time, be prescribed by law.\n\n#### Section 3. Advisory opinions by supreme court .\n\n#### Section 4. State court judges — Judicial selection.\n\n#### Section 5. Tenure of supreme court justices.\n\nJustices\nof the supreme court shall hold office during good behavior.\n\n#### Section 6. Judges of supreme court — Compensation.\n\nThe judges of the supreme court shall receive a compensation for their services, which shall not be diminished during their continuance in office.\n\n#### Section 7. Wardens and\njustices of the peace.\n\n### ARTICLE XI\n\nOF IMPEACHMENTS\n\n#### Section 1. Power to impeach —\nProcedure — Suspension from office impeachment.\n\n#### Section 2. Trial of impeachments.\n\nAll\nimpeachments shall be tried by the senate; and when sitting for that purpose, they shall be under\noath or affirmation. No person shall\nbe convicted except by vote of two-thirds of the members elected. When the governor is impeached, the chief or presiding justice of the supreme court , for the time being,\nshall preside, with a casting vote in all preliminary questions.\n\n#### Section 3. Officers subject to impeachment — Grounds and effect of conviction.\n\nThe governor and all other executive and judicial officers shall be liable to impeachment. The governor or any other executive officer shall be removed from office if, upon impeachment, such officer shall be found incapacitated or guilty of the\ncommission of a felony or crime of moral\nturpitude, misfeasance or malfeasance in office. Judges shall be removed\nif, upon impeachment, they shall be found incapacitated or guilty of the commission of a felony or crime of moral turpitude, misfeasance or malfeasance in office or violation of the canons of judicial ethics. Judgment of incapacity or guilt in a case of impeachment shall not extend further than\nto removal from office. The person convicted shall, nevertheless, be\nliable to indictment, trial and punishment,\naccording to laws.\n\n### ARTICLE XII\n\n### OF EDUCATION\n\n#### Section 2. Perpetual school fund.\n\nThe money\nwhich now is or which may hereafter be appropriated by law for the establishment of a permanent fund for the support of public\nschools, shall be securely invested and remain a perpetual fund for that purpose.\n\n#### Section 3. Donations.\n\n#### Section 4. Implementation of\narticle — Diversion of funds prohibited.\n\n### ARTICLE XIII\n\nHOME RULE FOR CITIES AND TOWNS\n\n#### Section 1. Intent of article.\n\nIt is the\nintention of this article to grant and confirm to the people of every city and town in this state the right of self government in all local matters.\n\n#### Section 2. Local legislative powers.\n\n#### Section 3. Local legislative bodies.\n\nNotwithstanding\nanything contained in this article, every city and town shall have a legislative body composed of one or two branches elected by vote of its qualified electors.\n\n#### Section 5. Local taxing and borrowing powers.\n\n#### Section 6. Charter commissions.\n\nEvery city and town shall have the power to adopt a charter in the following manner: Whenever a petition for the adoption of a charter signed by fifteen percent of the qualified electors of a city, or in a town by fifteen percent, but not less than one\nhundred in number, of those persons qualified to vote on any proposition to impose a tax or for the expenditure of money shall be filed\nwith the legislative body of any city\nor town the same shall be referred forthwith to the canvassing authority which shall within ten days after its receipt determine the sufficiency thereof and certify the results to the legislative body of said city or town. Within sixty days thereafter the legislative body of a city shall submit to its qualified electors\nand the legislative body of a town shall\nsubmit to the electors of said town qualified to vote upon a proposition to impose a tax or for the expenditure of money the following question: ‘‘Shall a commission be\nappointed to frame a charter?’’ and the legislative\nbody of any city or town shall provide by ordinance or resolution a method for the nomination and election of a charter commission to frame a charter consisting in a city of\nnine qualified electors and in a town of\nnine electors of said town qualified to vote upon a proposition to impose a tax or for the expenditure of money who shall be elected at large without party or political designation\nand who shall be listed alphabetically on\nthe ballot used for said election. Such ordinance or resolution shall provide for the submission of the question and the election of the charter commission at the same time. Upon approval of the\nquestion submitted the nine candidates who individually receive the greater number of\nvotes shall be declared elected and shall constitute the charter commission.\n\n#### Section 7. Adoption of charters.\n\nWithin one\nyear from the date of the election of the charter commission the charter framed by the commission shall be submitted to the legislative body of the city or town which body shall provide for publication of said charter and\nshall provide for the submission of said\ncharter to the electors of a city or town qualified to vote for general state officers at the general election next succeeding thirty days from the date of the submission of the charter by the charter commission. If said\ncharter is approved by a majority of said electors voting thereon, it shall\nbecome effective upon the date fixed therein.\n\n#### Section 8. Amendments to charters.\n\nThe\nlegislative body of any city or town may propose amendments to a charter which amendments shall be submitted for approval in the\nsame manner as provided in this article for the adoption of a charter\nexcept that the same may be submitted at a special election, and provided further that in the case of a\ntown, amendments concerning a\nproposition to impose a tax or for the expenditure of money, shall be submitted at a special or regular\nfinancial town meeting.\n\n#### Section 9. Filing of charter\npetitions to bicameral legislative\nbodies.\n\nWhenever the legislative body of any city or town consists of more than one branch, a\npetition for the adoption of a charter as provided in this article may be filed with either branch of said\nlegislative body.\n\n#### Section 10. Charter certificates\n— Signing — Recordation — Deposit —\nJudicial notice.\n\nDuplicate certificates shall be made setting forth the charter adopted and any amendments approved and the same shall be signed by a majority of the canvassing authority;\none of such certified copies shall be deposited in the office of the secretary of state and the other after\nhaving been recorded in the records of the city or town shall be deposited among the archives of the said city or town and all courts shall take judicial notice thereof.\n\n#### Section 11. Judicial powers\nunaffected by article.\n\nThe\njudicial powers of the state shall not be diminished by the provisions of this article.\n\n### ARTICLE XIV\n\nCONSTITUTIONAL AMENDMENTS AND REVISIONS\n\n#### Section 1. Procedure for\nproposing and approving amendments.\n\n#### Section 2. Constitutional conventions.\n\n### ARTICLE XV\n\n### GENERAL TRANSITION\n\n#### Section 1. Rights and duties of\npublic bodies unaffected —\nContinuation of laws, ordinances, regulations and rules.\n\nThe rights and duties of all public bodies shall remain as if this\nConstitution had not been adopted with the exception of such changes as are contained in this\nConstitution. All laws, ordinances, regulations\nand rules of court not contrary to, or inconsistent with, the provisions of this Constitution shall remain in force, until they shall\nexpire by their own limitation or\nshall be altered or repealed pursuant to this Constitution.\n\n#### Section 2. Validity of bonds, debts, contracts,\nsuits, actions, and rights of\nactions continued.\n\nThe validity\nof all public and private bonds, debts and contracts, and of all suits, actions, and rights of action, shall continue\nas if no change had taken place.\n\n#### Section 3. Continuation of office holders.\n\nAll\nofficers filling any office by election or appointment shall continue the duties thereof, until the\nend of the terms to which they were\nappointed or elected, and until their offices shall have been abolished or their successors elected and qualified in accordance with this Constitution or laws enacted pursuant thereto.\n\n#### Section 4. Implementing\nlegislation for Article III, Sections 7\nand 8, and Article IV, Section 10.",
+  "importWarnings": []
 }
