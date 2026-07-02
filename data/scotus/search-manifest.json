@@ -1,0 +1,12 @@
+{
+  "totalCases": 494501,
+  "chunkSize": 100000,
+  "chunks": [
+    "search-chunk-0000.json",
+    "search-chunk-0001.json",
+    "search-chunk-0002.json",
+    "search-chunk-0003.json",
+    "search-chunk-0004.json"
+  ],
+  "generated": "2026-07-02T18:17:41.412Z"
+}

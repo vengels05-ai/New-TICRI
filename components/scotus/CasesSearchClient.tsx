@@ -26,6 +26,12 @@ interface SearchIndexEntry {
   k?: string[];
 }
 
+interface SearchManifest {
+  totalCases: number;
+  chunkSize: number;
+  chunks: string[];
+}
+
 interface Props {
   buckets: Array<{ slug: string; label: string }>;
 }
@@ -47,12 +53,24 @@ export default function CasesSearchClient({ buckets }: Props) {
 
     async function loadSearchIndex() {
       try {
-        const response = await fetch('/scotus/search-index.json');
-        if (!response.ok) {
-          throw new Error(`Failed to load search index: ${response.status}`);
+        const manifestResponse = await fetch('/scotus/search-manifest.json');
+        if (!manifestResponse.ok) {
+          throw new Error(`Failed to load search manifest: ${manifestResponse.status}`);
         }
 
-        const raw = (await response.json()) as SearchIndexEntry[];
+        const manifest = (await manifestResponse.json()) as SearchManifest;
+        const chunkPayloads = await Promise.all(
+          manifest.chunks.map(async (chunkFile) => {
+            const chunkResponse = await fetch(`/scotus/search-chunks/${chunkFile}`);
+            if (!chunkResponse.ok) {
+              throw new Error(`Failed to load search chunk ${chunkFile}: ${chunkResponse.status}`);
+            }
+
+            return (await chunkResponse.json()) as SearchIndexEntry[];
+          })
+        );
+
+        const raw = chunkPayloads.flat();
         if (!isActive) {
           return;
         }
