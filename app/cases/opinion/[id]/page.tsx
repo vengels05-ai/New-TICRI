@@ -10,10 +10,9 @@ interface Props {
   params: { id: string };
 }
 
-// Generate static paths for all cases with opinion text
-export async function generateStaticParams() {
-  const ids = getAllCaseIds();
-  return ids.map(id => ({ id: String(id) }));
+export function generateStaticParams() {
+  const ids = getAllCaseIds().slice(0, 200);
+  return ids.map((id) => ({ id: String(id) }));
 }
 
 export async function generateMetadata({ params }: Props) {
