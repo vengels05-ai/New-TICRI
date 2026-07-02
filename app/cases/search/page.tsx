@@ -2,8 +2,8 @@
 // TICRI Supreme Court Cases -- Search & Browse
 // Powered by TheSource SCOTUS data (494,501 cases)
 
-import { Scale, Search, TrendingUp, Clock, BookOpen } from 'lucide-react';
-import { getCasesIndex, getRecentCases, getNotableCases, formatVotes, directionColor } from '@/lib/scotus';
+import { Scale, TrendingUp, Clock, BookOpen } from 'lucide-react';
+import { getCasesIndex, getRecentCases, getNotableCases, getScotusBuckets, formatVotes, directionColor } from '@/lib/scotus';
 import type { CaseIndex } from '@/lib/scotus';
 import CasesSearchClient from '@/components/scotus/CasesSearchClient';
 
@@ -15,8 +15,8 @@ export const metadata = {
 export default function CasesSearchPage() {
   const recent = getRecentCases(12);
   const notable = getNotableCases(12);
-  const index = getCasesIndex();
-  const totalCases = index.length;
+  const totalCases = getCasesIndex().length;
+  const buckets = getScotusBuckets();
 
   return (
     <div className="bg-white">
@@ -39,7 +39,7 @@ export default function CasesSearchPage() {
       {/* Search */}
       <section className="py-8 bg-gray-50 border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <CasesSearchClient cases={index} />
+          <CasesSearchClient buckets={buckets} />
         </div>
       </section>
 

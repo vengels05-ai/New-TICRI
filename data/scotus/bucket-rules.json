@@ -1,0 +1,90 @@
+[
+  {
+    "slug": "civil-rights",
+    "label": "Civil Rights",
+    "keywords": [
+      "civil rights", "equal protection", "segregation", "discrimination", "voting", "marriage", "privacy",
+      "abortion", "roe", "dobbs", "obergefell", "affirmative action", "title vii", "title ix", "race", "sex"
+    ]
+  },
+  {
+    "slug": "criminal-justice",
+    "label": "Criminal Justice",
+    "keywords": [
+      "criminal", "miranda", "habeas", "search", "seizure", "sentence", "death penalty", "fourth amendment",
+      "fifth amendment", "sixth amendment", "eighth amendment", "double jeopardy", "due process"
+    ]
+  },
+  {
+    "slug": "first-amendment",
+    "label": "First Amendment",
+    "keywords": [
+      "speech", "press", "religion", "establishment", "free exercise", "assembly", "petition",
+      "first amendment", "obscenity", "libel", "defamation"
+    ]
+  },
+  {
+    "slug": "executive-power",
+    "label": "Executive Power",
+    "keywords": [
+      "president", "executive", "immunity", "commander in chief", "nixon", "trump", "emergency", "administrative"
+    ]
+  },
+  {
+    "slug": "federalism",
+    "label": "Federalism",
+    "keywords": [
+      "federalism", "state", "federal", "commerce clause", "tenth amendment", "preemption", "sovereign immunity"
+    ]
+  },
+  {
+    "slug": "separation-of-powers",
+    "label": "Separation of Powers",
+    "keywords": [
+      "separation of powers", "congress", "senate", "house", "appointments clause", "nondelegation",
+      "judicial review", "veto"
+    ]
+  },
+  {
+    "slug": "economic-rights",
+    "label": "Economic & Property Rights",
+    "keywords": [
+      "property", "takings", "contract clause", "commerce", "tax", "antitrust", "lochner", "business", "eminent domain"
+    ]
+  },
+  {
+    "slug": "healthcare-law",
+    "label": "Healthcare Law",
+    "keywords": [
+      "health", "medical", "medicaid", "medicare", "affordable care", "hospital", "hipaa", "mifepristone"
+    ]
+  },
+  {
+    "slug": "military-service",
+    "label": "Military Service",
+    "keywords": [
+      "military", "veteran", "service member", "draft", "conscription", "uniform code", "court-martial"
+    ]
+  },
+  {
+    "slug": "wartime-powers",
+    "label": "Wartime Powers",
+    "keywords": [
+      "war", "enemy", "detention", "combatant", "aumf", "wartime", "martial law", "korematsu", "milligan"
+    ]
+  },
+  {
+    "slug": "parental-rights",
+    "label": "Parental Rights",
+    "keywords": [
+      "parent", "child", "school", "education", "custody", "homeschool", "family", "yoder", "meyer", "pierce"
+    ]
+  },
+  {
+    "slug": "foundational",
+    "label": "Constitutional Foundations",
+    "keywords": [
+      "marbury", "mcculloch", "gibbons", "chisholm", "cohens", "judicial review", "constitutionality"
+    ]
+  }
+]

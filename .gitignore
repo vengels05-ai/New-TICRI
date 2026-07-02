@@ -41,3 +41,4 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 data/scotus/cases-index.json
+public/scotus/

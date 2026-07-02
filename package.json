@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/scotus-sync-public-assets.js",
     "dev": "next dev",
+    "prebuild": "node scripts/scotus-sync-public-assets.js",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
@@ -31,7 +33,8 @@
     "smoke:local": "echo \"Terminal A: npm run db:d1:migrate && npm run db:d1:seed && npm run worker:dev\" && echo \"Terminal B env: export CONGRESS_API_BASE=http://127.0.0.1:8787 && export NEXT_PUBLIC_CONGRESS_API_BASE=http://127.0.0.1:8787\" && CONGRESS_API_BASE=http://127.0.0.1:8787 NEXT_PUBLIC_CONGRESS_API_BASE=http://127.0.0.1:8787 npm run lint:congress-scanner && CONGRESS_API_BASE=http://127.0.0.1:8787 NEXT_PUBLIC_CONGRESS_API_BASE=http://127.0.0.1:8787 npm run test:api-contract && CONGRESS_API_BASE=http://127.0.0.1:8787 NEXT_PUBLIC_CONGRESS_API_BASE=http://127.0.0.1:8787 npm run congress:worker:smoke && CONGRESS_API_BASE=http://127.0.0.1:8787 NEXT_PUBLIC_CONGRESS_API_BASE=http://127.0.0.1:8787 npm run test:e2e:smoke",
     "smoke:static": "echo \"Terminal A: cd /Users/vengels/ticri-nextjs/services/congress-worker && cp .dev.vars.example .dev.vars && npm run dev\" && echo \"Terminal B: export CONGRESS_API_BASE=${CONGRESS_API_BASE:-http://127.0.0.1:8787}\" && CONGRESS_API_BASE=${CONGRESS_API_BASE:-http://127.0.0.1:8787} npm run lint:congress-scanner && CONGRESS_API_BASE=${CONGRESS_API_BASE:-http://127.0.0.1:8787} npm run test && CONGRESS_API_BASE=${CONGRESS_API_BASE:-http://127.0.0.1:8787} npm run test:api-contract && CONGRESS_API_BASE=${CONGRESS_API_BASE:-http://127.0.0.1:8787} npm run test:e2e:smoke",
     "db:d1:migrate": "cd services/congress-worker && npm run db:d1:migrate",
-    "db:d1:seed": "cd services/congress-worker && npm run db:d1:seed"
+    "db:d1:seed": "cd services/congress-worker && npm run db:d1:seed",
+    "scotus:index:split": "node scripts/split-cases-index.js && node scripts/scotus-sync-public-assets.js"
   },
   "dependencies": {
     "@mirawision/usa-map-react": "^2.0.2",

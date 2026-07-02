@@ -4,7 +4,7 @@
 
 import { notFound } from 'next/navigation';
 import { Scale, FileText, Users, ChevronLeft, BookOpen, ExternalLink } from 'lucide-react';
-import { getCaseDetail, getAllCaseIds, formatVotes, directionColor } from '@/lib/scotus';
+import { getCaseDetail, getAllCaseIds, getScotusBuckets, formatVotes, directionColor } from '@/lib/scotus';
 
 interface Props {
   params: { id: string };
@@ -30,6 +30,8 @@ export default function CaseDetailPage({ params }: Props) {
   const detail = getCaseDetail(parseInt(params.id));
   if (!detail) notFound();
 
+  const bucketLabels = new Map(getScotusBuckets().map((bucket) => [bucket.slug, bucket.label]));
+
   const majority = detail.opinions.find(o => o.type === 'majority');
   const dissents = detail.opinions.filter(o => o.type === 'dissent');
   const concurrences = detail.opinions.filter(o => o.type === 'concurrence');
@@ -53,6 +55,11 @@ export default function CaseDetailPage({ params }: Props) {
                 {detail.year}
               </span>
             )}
+            {detail.bucketSlugs.map((slug) => (
+              <span key={slug} className="bg-gray-700 text-gray-100 px-3 py-1 rounded-full text-sm font-medium">
+                {bucketLabels.get(slug) ?? slug}
+              </span>
+            ))}
             {detail.direction && (
               <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                 detail.direction === 'Conservative' ? 'bg-red-200 text-red-900' :
