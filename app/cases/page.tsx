@@ -1,4 +1,4 @@
-import { Scale, Target, Landmark, Users, AlertCircle, MessageSquare, Flag, DollarSign, Heart, Shield, Sword, Star, BookOpen } from 'lucide-react';
+import { Scale, Target, Landmark, Users, AlertCircle, MessageSquare, Flag, DollarSign, Heart, Shield, Sword, Star, BookOpen, Search } from 'lucide-react';
 
 export default function CasesPage() {
   return (
@@ -21,6 +21,34 @@ export default function CasesPage() {
       {/* Main Content */}
       <section className="py-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* New SCOTUS Search Experience */}
+          <div className="bg-gradient-to-br from-gray-900 to-black text-white rounded-2xl p-8 mb-12 shadow-xl">
+            <div className="flex items-start gap-4">
+              <Search className="w-10 h-10 text-gray-200 flex-shrink-0" />
+              <div className="flex-1">
+                <h2 className="text-3xl font-bold mb-3">New: Search Supreme Court Cases</h2>
+                <p className="text-gray-200 leading-relaxed mb-6 max-w-3xl">
+                  Search and browse a large Supreme Court case index with docket details, vote breakdowns,
+                  direction labels, and direct links to opinion pages.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <a
+                    href="/cases/search"
+                    className="inline-flex items-center bg-white text-gray-900 px-5 py-3 rounded-lg font-bold hover:bg-gray-200 transition-colors"
+                  >
+                    Open Case Search
+                  </a>
+                  <a
+                    href="/cases"
+                    className="inline-flex items-center bg-gray-800 text-white px-5 py-3 rounded-lg font-medium border border-gray-600 hover:bg-gray-700 transition-colors"
+                  >
+                    Browse Categories Below
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
           
           {/* Quick Navigation */}
           <div className="flex items-center gap-3 mb-6">
