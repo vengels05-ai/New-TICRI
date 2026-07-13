@@ -7,11 +7,49 @@ TICRI deploys in two parts:
 - Cloudflare Pages serves the static Next.js export
 - Cloudflare Worker serves the Congress Scanner API
 
+TICRI also uses a TheSource Worker for SCOTUS, law, and congressional datasets.
+
+The current base URL is:
+
+- `https://thesource-worker.ticri2025.workers.dev`
+
 The frontend must call the Worker through:
 
 - `NEXT_PUBLIC_CONGRESS_API_BASE`
+- `NEXT_PUBLIC_THESOURCE_API_BASE`
 
 No Next.js `app/api/**` routes are used in production.
+
+## TheSource Worker D1 bindings
+
+The TheSource Worker is a single Worker with three D1 bindings:
+
+- `env.SCOTUS_DB` -> `thesource-scotus`
+- `env.CONGRESS_DB` -> `thesource-congress`
+- `env.LAW_DB` -> `thesource-law`
+
+If you maintain that Worker in another repository, ensure its `wrangler.toml` includes all three bindings and that each route uses the correct database binding.
+
+Example shape:
+
+```toml
+[[d1_databases]]
+binding = "SCOTUS_DB"
+database_name = "thesource-scotus"
+database_id = "<scotus-db-id>"
+
+[[d1_databases]]
+binding = "CONGRESS_DB"
+database_name = "thesource-congress"
+database_id = "<congress-db-id>"
+
+[[d1_databases]]
+binding = "LAW_DB"
+database_name = "thesource-law"
+database_id = "<law-db-id>"
+```
+
+This frontend repository only calls the Worker URL. It does not contain the TheSource Worker runtime code.
 
 ## Before you start
 
@@ -128,6 +166,11 @@ Your Pages site is static only. It must call the Worker directly.
 In the Cloudflare Pages project settings, add this environment variable:
 
 - `NEXT_PUBLIC_CONGRESS_API_BASE=https://api.ticri.org`
+- `NEXT_PUBLIC_THESOURCE_API_BASE=https://thesource-worker.ticri2025.workers.dev`
+
+Optional server-side override for Next.js SSR:
+
+- `THESOURCE_API_BASE=https://thesource-worker.ticri2025.workers.dev`
 
 If you are not using a custom domain yet, use the default `workers.dev` URL instead.
 

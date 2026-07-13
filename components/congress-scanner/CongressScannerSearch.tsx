@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { fetchCongressApiJson } from '@/lib/congress-scanner/browserApiClient';
+import { cleanDisplayText } from '@/lib/textClean';
 import type { CongressSearchResponse } from './types';
 
 interface SearchFormState {
@@ -283,7 +284,7 @@ export default function CongressScannerSearch() {
                       {item.snippet ? (
                         <div className="mt-5 rounded-2xl border border-[#C41E3A]/10 bg-[#FFF7F7] px-4 py-3 text-sm text-slate-700">
                           <p className="font-semibold text-[#C41E3A]">Keyword match</p>
-                          <p className="mt-2 leading-6" dangerouslySetInnerHTML={{ __html: item.snippet }} />
+                          <p className="mt-2 leading-6">{cleanDisplayText(item.snippet)}</p>
                         </div>
                       ) : null}
                     </article>

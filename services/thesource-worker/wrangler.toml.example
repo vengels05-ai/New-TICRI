@@ -1,0 +1,23 @@
+name = "thesource-worker"
+main = "src/index.ts"
+compatibility_date = "2026-07-13"
+compatibility_flags = ["nodejs_compat"]
+
+[[d1_databases]]
+binding = "SCOTUS_DB"
+database_name = "thesource-scotus"
+database_id = "cc9e8850-b7a4-4cda-b4d1-1c940a313cad"
+
+[[d1_databases]]
+binding = "CONGRESS_DB"
+database_name = "thesource-congress"
+database_id = "ecefe096-69d2-424c-8ad7-435c4df17e84"
+
+[[d1_databases]]
+binding = "LAW_DB"
+database_name = "thesource-law"
+database_id = "319912d1-4a1f-42da-a5f0-e1c53a234a57"
+
+[vars]
+# Comma-separated allow list. Use explicit origins in production.
+CORS_ALLOWED_ORIGINS = "https://ticri.org,https://www.ticri.org,http://127.0.0.1:3100"
