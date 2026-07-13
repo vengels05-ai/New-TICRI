@@ -1,150 +1,70 @@
 'use client';
+// components/scotus/CasesSearchClient.tsx
+// Searches TheSource Worker API on demand -- no local file loading
 
-import { useEffect, useMemo, useState } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import { Search } from 'lucide-react';
 
-interface SearchCase {
+interface CaseSummary {
   id: number;
-  caseName: string;
-  year: number | null;
-  docketNumber: string;
-  votesMajority: number | null;
-  votesMinority: number | null;
-  direction: string;
-  citationCount: number;
-  bucketSlugs: string[];
+  case_name: string;
+  date_filed: string | null;
+  scdb_decision_direction: string | null;
+  scdb_votes_majority: number | null;
+  scdb_votes_minority: number | null;
+  docket_number: string;
+  citation_count: number;
 }
 
-interface SearchIndexEntry {
-  id: number;
-  n?: string;
-  y?: number | null;
-  dn?: string | null;
-  v?: string | null;
-  d?: string | null;
-  c?: number;
-  k?: string[];
-}
+const API = (process.env.NEXT_PUBLIC_THESOURCE_API_BASE || 'https://thesource-worker.ticri2025.workers.dev').trim();
 
-interface SearchManifest {
-  totalCases: number;
-  chunkSize: number;
-  chunks: string[];
-}
-
-interface Props {
-  buckets: Array<{ slug: string; label: string }>;
-}
-
-export default function CasesSearchClient({ buckets }: Props) {
+export default function CasesSearchClient() {
   const [query, setQuery] = useState('');
-  const [activeBucket, setActiveBucket] = useState<string>('all');
-  const [cases, setCases] = useState<SearchCase[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [results, setResults] = useState<CaseSummary[]>([]);
+  const [total, setTotal] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const [searched, setSearched] = useState(false);
+  const searchTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const abortRef = useRef<AbortController | null>(null);
 
-  const bucketLabelMap = useMemo(() => {
-    const map = new Map<string, string>();
-    buckets.forEach((bucket) => map.set(bucket.slug, bucket.label));
-    return map;
-  }, [buckets]);
-
-  useEffect(() => {
-    let isActive = true;
-
-    async function loadSearchIndex() {
-      try {
-        const manifestResponse = await fetch('/scotus/search-manifest.json');
-        if (!manifestResponse.ok) {
-          throw new Error(`Failed to load search manifest: ${manifestResponse.status}`);
-        }
-
-        const manifest = (await manifestResponse.json()) as SearchManifest;
-        const chunkPayloads = await Promise.all(
-          manifest.chunks.map(async (chunkFile) => {
-            const chunkResponse = await fetch(`/scotus/search-chunks/${chunkFile}`);
-            if (!chunkResponse.ok) {
-              throw new Error(`Failed to load search chunk ${chunkFile}: ${chunkResponse.status}`);
-            }
-
-            return (await chunkResponse.json()) as SearchIndexEntry[];
-          })
-        );
-
-        const raw = chunkPayloads.flat();
-        if (!isActive) {
-          return;
-        }
-
-        const mapped = raw.map((entry) => {
-          const [majRaw, minRaw] = String(entry.v ?? '').split('-');
-          const maj = Number.parseInt(majRaw, 10);
-          const min = Number.parseInt(minRaw ?? '0', 10);
-          const direction = entry.d === 'C'
-            ? 'Conservative'
-            : entry.d === 'L'
-              ? 'Liberal'
-              : entry.d === 'U'
-                ? 'Unclear'
-                : '';
-
-          return {
-            id: entry.id,
-            caseName: entry.n ?? `Case ${entry.id}`,
-            year: entry.y ?? null,
-            docketNumber: entry.dn ?? '',
-            votesMajority: Number.isNaN(maj) ? null : maj,
-            votesMinority: Number.isNaN(min) ? null : min,
-            direction,
-            citationCount: entry.c ?? 0,
-            bucketSlugs: Array.isArray(entry.k) ? entry.k : [],
-          };
-        });
-
-        setCases(mapped);
-      } catch (error) {
-        console.error(error);
-      } finally {
-        if (isActive) {
-          setLoading(false);
-        }
-      }
+  const doSearch = useCallback(async (q: string) => {
+    if (!q.trim()) {
+      setResults([]);
+      setSearched(false);
+      setTotal(0);
+      return;
     }
 
-    loadSearchIndex();
+    // Cancel previous request
+    if (abortRef.current) abortRef.current.abort();
+    abortRef.current = new AbortController();
 
-    return () => {
-      isActive = false;
-    };
+    setLoading(true);
+    setSearched(true);
+
+    try {
+      const res = await fetch(
+        `${API}/api/cases/search?q=${encodeURIComponent(q)}&limit=30`,
+        { signal: abortRef.current.signal }
+      );
+      const data = await res.json() as { results: CaseSummary[]; total: number };
+      setResults(data.results || []);
+      setTotal(data.total || 0);
+    } catch (e) {
+      if ((e as Error).name !== 'AbortError') {
+        setResults([]);
+      }
+    } finally {
+      setLoading(false);
+    }
   }, []);
 
-  const results = useMemo(() => {
-    const q = query.toLowerCase().trim();
-    const tokens = q.length > 0 ? q.split(/\s+/).filter(Boolean) : [];
-
-    if (tokens.length === 0 && activeBucket === 'all') {
-      return [];
-    }
-
-    return cases
-      .filter((c) => {
-        if (activeBucket !== 'all' && !c.bucketSlugs.includes(activeBucket)) {
-          return false;
-        }
-
-        if (tokens.length === 0) {
-          return true;
-        }
-
-        const bucketText = c.bucketSlugs
-          .map((slug) => bucketLabelMap.get(slug) ?? slug)
-          .join(' ')
-          .toLowerCase();
-
-        const searchableText = `${c.caseName} ${c.docketNumber} ${bucketText}`.toLowerCase();
-        return tokens.every((token) => searchableText.includes(token));
-      })
-      .slice(0, 50);
-  }, [query, activeBucket, cases, bucketLabelMap]);
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value;
+    setQuery(val);
+    if (searchTimeoutRef.current) clearTimeout(searchTimeoutRef.current);
+    searchTimeoutRef.current = setTimeout(() => doSearch(val), 350);
+  };
 
   return (
     <div className="relative">
@@ -154,12 +74,12 @@ export default function CasesSearchClient({ buckets }: Props) {
           type="text"
           placeholder="Search by case name, party, or topic..."
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={handleChange}
           className="flex-1 outline-none text-gray-900 text-base placeholder-gray-400"
         />
         {query && (
           <button
-            onClick={() => setQuery('')}
+            onClick={() => { setQuery(''); setResults([]); setSearched(false); setTotal(0); }}
             className="text-gray-400 hover:text-gray-600 text-sm"
           >
             Clear
@@ -167,83 +87,52 @@ export default function CasesSearchClient({ buckets }: Props) {
         )}
       </div>
 
-      <div className="mt-3 flex flex-wrap gap-2">
-        <button
-          onClick={() => setActiveBucket('all')}
-          className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${
-            activeBucket === 'all'
-              ? 'bg-gray-900 text-white border-gray-900'
-              : 'bg-white text-gray-700 border-gray-300 hover:border-gray-500'
-          }`}
-        >
-          All Topics
-        </button>
-        {buckets.map((bucket) => (
-          <button
-            key={bucket.slug}
-            onClick={() => setActiveBucket(bucket.slug)}
-            className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors ${
-              activeBucket === bucket.slug
-                ? 'bg-gray-900 text-white border-gray-900'
-                : 'bg-white text-gray-700 border-gray-300 hover:border-gray-500'
-            }`}
-          >
-            {bucket.label}
-          </button>
-        ))}
-      </div>
-
-      {loading && (
-        <div className="mt-3 text-sm text-gray-500">Loading searchable case index...</div>
-      )}
-
-      {(query.trim() || activeBucket !== 'all') && !loading && (
+      {query.trim() && (
         <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-xl border border-gray-200 z-50 max-h-96 overflow-y-auto">
-          {results.length === 0 ? (
+          {loading ? (
+            <div className="p-4 text-gray-500 text-sm text-center">Searching...</div>
+          ) : results.length === 0 && searched ? (
             <div className="p-4 text-gray-500 text-sm text-center">
               No cases found for &quot;{query}&quot;
             </div>
           ) : (
             <>
-              <div className="px-4 py-2 text-xs text-gray-400 border-b border-gray-100">
-                {results.length} results
-              </div>
-              {results.map((c) => (
-                <a
-                  key={c.id}
-                  href={`/cases/opinion/${c.id}`}
-                  className="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 border-b border-gray-50 last:border-0"
-                >
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium text-gray-900 truncate">{c.caseName}</p>
-                    <p className="text-xs text-gray-400 mt-0.5">
-                      {c.year || '–'}
-                      {c.docketNumber ? ` • ${c.docketNumber}` : ''}
-                      {c.votesMajority ? ` • ${c.votesMajority}-${c.votesMinority ?? 0}` : ''}
-                    </p>
-                    {c.bucketSlugs.length > 0 && (
-                      <div className="mt-1 flex flex-wrap gap-1">
-                        {c.bucketSlugs.slice(0, 3).map((slug) => (
-                          <span key={slug} className="text-[10px] px-2 py-0.5 rounded bg-gray-100 text-gray-600">
-                            {bucketLabelMap.get(slug) ?? slug}
-                          </span>
-                        ))}
-                      </div>
+              {results.length > 0 && (
+                <div className="px-4 py-2 text-xs text-gray-400 border-b border-gray-100">
+                  {results.length} of {total.toLocaleString()} results
+                </div>
+              )}
+              {results.map(c => {
+                const year = c.date_filed ? new Date(c.date_filed).getFullYear() : null;
+                const votes = c.scdb_votes_majority != null
+                  ? `${c.scdb_votes_majority}-${c.scdb_votes_minority ?? 0}`
+                  : null;
+                const direction = c.scdb_decision_direction === '1' ? 'Conservative'
+                  : c.scdb_decision_direction === '2' ? 'Liberal' : null;
+                return (
+                  <a
+                    key={c.id}
+                    href={`/cases/opinion/?id=${c.id}`}
+                    className="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 border-b border-gray-50 last:border-0"
+                  >
+                    <div className="flex-1 min-w-0">
+                      <p className="text-sm font-medium text-gray-900 truncate">{c.case_name}</p>
+                      <p className="text-xs text-gray-400 mt-0.5">
+                        {year || '–'}
+                        {c.docket_number ? ` • ${c.docket_number}` : ''}
+                        {votes ? ` • ${votes}` : ''}
+                      </p>
+                    </div>
+                    {direction && (
+                      <span className={`text-xs px-2 py-0.5 rounded flex-shrink-0 mt-0.5 ${
+                        direction === 'Conservative' ? 'bg-red-100 text-red-700' : 'bg-blue-100 text-blue-700'
+                      }`}>
+                        {direction}
+                      </span>
                     )}
-                  </div>
-                  {c.direction && (
-                    <span className={`text-xs px-2 py-0.5 rounded flex-shrink-0 mt-0.5 ${
-                      c.direction === 'Conservative'
-                        ? 'bg-red-100 text-red-700'
-                        : c.direction === 'Liberal'
-                          ? 'bg-blue-100 text-blue-700'
-                          : 'bg-gray-100 text-gray-600'
-                    }`}>
-                      {c.direction}
-                    </span>
-                  )}
-                </a>
-              ))}
+                  </a>
+                );
+              })}
             </>
           )}
         </div>

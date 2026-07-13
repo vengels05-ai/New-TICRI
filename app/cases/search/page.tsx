@@ -1,22 +1,21 @@
 // app/cases/search/page.tsx
-// TICRI Supreme Court Cases -- Search & Browse
-// Powered by TheSource SCOTUS data (494,501 cases)
+// TICRI Supreme Court Cases -- powered by TheSource Worker API
 
 import { Scale, TrendingUp, Clock, BookOpen } from 'lucide-react';
-import { getCasesIndex, getRecentCases, getNotableCases, getScotusBuckets, formatVotes, directionColor } from '@/lib/scotus';
-import type { CaseIndex } from '@/lib/scotus';
+import { getRecentCases, getNotableCases, formatVotes, directionColor, directionLabel } from '@/lib/thesource';
+import type { CaseSummary } from '@/lib/thesource';
 import CasesSearchClient from '@/components/scotus/CasesSearchClient';
 
 export const metadata = {
   title: 'Supreme Court Cases | TICRI',
-  description: 'Search 494,000+ Supreme Court cases from 1789 to present. Read actual opinions, vote breakdowns, and plain-English explanations.',
+  description: 'Search 486,000+ Supreme Court cases from 1789 to present. Read actual opinions, vote breakdowns, and real legal history.',
 };
 
-export default function CasesSearchPage() {
-  const recent = getRecentCases(12);
-  const notable = getNotableCases(12);
-  const totalCases = getCasesIndex().length;
-  const buckets = getScotusBuckets();
+export default async function CasesSearchPage() {
+  const [recentData, notableData] = await Promise.all([
+    getRecentCases(12),
+    getNotableCases(12),
+  ]);
 
   return (
     <div className="bg-white">
@@ -28,10 +27,10 @@ export default function CasesSearchPage() {
             <h1 className="text-4xl md:text-5xl font-bold">Supreme Court Cases</h1>
           </div>
           <p className="text-xl text-gray-200 max-w-3xl mx-auto mb-4">
-            {totalCases.toLocaleString()} cases from 1789 to present — primary source opinions, vote breakdowns, and real legal history.
+            486,000+ cases from 1789 to present — primary source opinions, vote breakdowns, and real legal history.
           </p>
           <p className="text-gray-400 text-sm">
-            Source: CourtListener / Free Law Project bulk data
+            Source: CourtListener / Free Law Project • Powered by TheSource
           </p>
         </div>
       </section>
@@ -39,7 +38,7 @@ export default function CasesSearchPage() {
       {/* Search */}
       <section className="py-8 bg-gray-50 border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <CasesSearchClient buckets={buckets} />
+          <CasesSearchClient />
         </div>
       </section>
 
@@ -47,7 +46,7 @@ export default function CasesSearchPage() {
       <section className="py-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-          {/* Browse existing categories */}
+          {/* Browse categories */}
           <div className="mb-12">
             <div className="flex items-center gap-3 mb-6">
               <BookOpen className="w-7 h-7 text-gray-900" />
@@ -68,11 +67,8 @@ export default function CasesSearchPage() {
                 { label: 'Parental Rights', href: '/cases/parental-rights' },
                 { label: 'Wartime Powers', href: '/cases/wartime-powers' },
               ].map(cat => (
-                <a
-                  key={cat.href}
-                  href={cat.href}
-                  className="bg-white border border-gray-200 rounded-lg p-3 text-sm font-medium text-gray-700 hover:border-gray-800 hover:text-gray-900 transition-colors text-center shadow-sm"
-                >
+                <a key={cat.href} href={cat.href}
+                  className="bg-white border border-gray-200 rounded-lg p-3 text-sm font-medium text-gray-700 hover:border-gray-800 hover:text-gray-900 transition-colors text-center shadow-sm">
                   {cat.label}
                 </a>
               ))}
@@ -86,31 +82,26 @@ export default function CasesSearchPage() {
               <h2 className="text-2xl font-bold text-gray-900">Most Cited Cases</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {notable.map(c => (
-                <CaseCard key={c.id} case={c} />
-              ))}
+              {notableData.results.map(c => <CaseCard key={c.id} case={c} />)}
             </div>
           </div>
 
-          {/* Recent Decisions */}
+          {/* Recent */}
           <div className="mb-12">
             <div className="flex items-center gap-3 mb-6">
               <Clock className="w-7 h-7 text-gray-900" />
               <h2 className="text-2xl font-bold text-gray-900">Recent Decisions</h2>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {recent.map(c => (
-                <CaseCard key={c.id} case={c} />
-              ))}
+              {recentData.results.map(c => <CaseCard key={c.id} case={c} />)}
             </div>
           </div>
 
-          {/* Source note */}
           <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-lg">
             <p className="text-gray-800 flex items-start gap-2">
               <BookOpen className="w-5 h-5 mt-1 text-blue-600 flex-shrink-0" />
               <span>
-                <strong>Primary Source Data:</strong> Case data comes from CourtListener's public bulk dataset maintained by the Free Law Project. Opinion text covers 1999–2025. Earlier cases include metadata and vote records from the Supreme Court Database (SCDB).
+                <strong>Primary Source Data:</strong> Case data from CourtListener (Free Law Project) and the Supreme Court Database (SCDB). Served by TheSource -- an independent civic data repository.
               </span>
             </p>
           </div>
@@ -120,33 +111,28 @@ export default function CasesSearchPage() {
   );
 }
 
-function CaseCard({ case: c }: { case: CaseIndex }) {
-  const votes = formatVotes(c.votesMajority, c.votesMinority);
-  const year = c.year || '–';
+function CaseCard({ case: c }: { case: CaseSummary }) {
+  const votes = formatVotes(c.scdb_votes_majority, c.scdb_votes_minority);
+  const direction = directionLabel(c.scdb_decision_direction);
+  const year = c.date_filed ? new Date(c.date_filed).getFullYear() : null;
 
   return (
-    <a
-      href={`/cases/opinion/${c.id}`}
-      className="bg-white rounded-lg shadow-md p-5 hover:shadow-lg transition-shadow border border-gray-100 hover:border-gray-300 block"
-    >
+    <a href={`/cases/opinion/?id=${c.id}`}
+      className="bg-white rounded-lg shadow-md p-5 hover:shadow-lg transition-shadow border border-gray-100 hover:border-gray-300 block">
       <div className="flex items-start justify-between gap-2 mb-2">
-        <span className="text-xs font-bold text-gray-500 bg-gray-100 px-2 py-1 rounded">{year}</span>
-        {c.direction && (
-          <span className={`text-xs px-2 py-1 rounded font-medium ${directionColor(c.direction)}`}>
-            {c.direction}
+        <span className="text-xs font-bold text-gray-500 bg-gray-100 px-2 py-1 rounded">{year || '–'}</span>
+        {direction && (
+          <span className={`text-xs px-2 py-1 rounded font-medium ${directionColor(c.scdb_decision_direction)}`}>
+            {direction}
           </span>
         )}
       </div>
-      <h3 className="font-bold text-gray-900 text-sm leading-snug mb-2 line-clamp-2">
-        {c.caseName}
-      </h3>
+      <h3 className="font-bold text-gray-900 text-sm leading-snug mb-2 line-clamp-2">{c.case_name}</h3>
       <div className="flex items-center gap-3 text-xs text-gray-500">
         {votes && <span>Vote: {votes}</span>}
-        {c.citationCount > 0 && <span>{c.citationCount.toLocaleString()} citations</span>}
+        {c.citation_count > 0 && <span>{c.citation_count.toLocaleString()} citations</span>}
       </div>
-      {c.docketNumber && (
-        <p className="text-xs text-gray-400 mt-1">{c.docketNumber}</p>
-      )}
+      {c.docket_number && <p className="text-xs text-gray-400 mt-1">{c.docket_number}</p>}
     </a>
   );
 }

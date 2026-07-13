@@ -1,10 +1,9 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { AlertCircle, BookOpen, ChevronLeft, FileText, Scale } from 'lucide-react';
 import { directionColor, directionLabel, formatVotes, getCaseDetail } from '@/lib/thesource';
 import { cleanDisplayText } from '@/lib/textClean';
-import curatedMapping from '@/data/scotus/curated-mapping.json';
 import type { CaseDetail, Opinion } from '@/lib/thesource';
 
 interface Props {
@@ -87,10 +86,6 @@ export default function CaseDetailPageClient({ id }: Props) {
   const concurrenceOpinions = detail.opinions.filter((opinion) => opinion.type.toLowerCase() === 'concurrence');
   const dissentOpinions = detail.opinions.filter((opinion) => opinion.type.toLowerCase() === 'dissent');
 
-  const curatedCase = Object.values(curatedMapping).find((entry: any) => entry.id === detail.id) as
-    | { category: string; slug: string }
-    | undefined;
-
   return (
     <div className="bg-white">
       <section className="bg-gradient-to-br from-gray-800 to-gray-900 text-white py-16">
@@ -124,28 +119,6 @@ export default function CaseDetailPageClient({ id }: Props) {
 
       <section className="py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
-          {curatedCase ? (
-            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-600 p-6 rounded-lg shadow-sm">
-              <div className="flex items-start gap-4">
-                <div className="bg-blue-100 p-3 rounded-lg text-blue-800">
-                  <BookOpen className="w-6 h-6" />
-                </div>
-                <div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-1">Educational Summary Available</h3>
-                  <p className="text-gray-700 text-sm mb-4 leading-relaxed">
-                    We have a plain-English educational summary of this decision with context and practical impact.
-                  </p>
-                  <a
-                    href={`/cases/${curatedCase.category}/${curatedCase.slug}`}
-                    className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-bold transition-colors"
-                  >
-                    View Educational Summary
-                  </a>
-                </div>
-              </div>
-            </div>
-          ) : null}
-
           <div className="bg-gray-50 rounded-lg shadow-sm p-6">
             <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
               <Scale className="w-5 h-5" /> Fast Facts
@@ -184,7 +157,7 @@ export default function CaseDetailPageClient({ id }: Props) {
                 {detail.citations.map((citation) => (
                   <a
                     key={citation.cited_opinion_id}
-                    href={`/cases/opinion/${citation.cited_opinion_id}`}
+                    href={`/cases/opinion/?id=${citation.cited_opinion_id}`}
                     className="flex items-center justify-between p-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors group"
                   >
                     <span className="text-sm text-gray-800 group-hover:text-gray-900 font-medium">

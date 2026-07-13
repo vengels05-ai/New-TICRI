@@ -21,6 +21,10 @@ interface Env {
 
 type JsonBody = Record<string, unknown> | unknown[];
 
+interface WorkerHandler {
+  fetch(request: Request, env: Env): Promise<Response>;
+}
+
 function buildCorsHeaders(origin: string | null, env: Env): Headers {
   const headers = new Headers({
     'Access-Control-Allow-Methods': 'GET, OPTIONS',
@@ -95,7 +99,7 @@ function mapSubjectRows(rows: Array<{ subject?: string }>): string[] {
   return rows.map((row) => row.subject).filter((value): value is string => Boolean(value));
 }
 
-const worker: ExportedHandler<Env> = {
+const worker: WorkerHandler = {
   async fetch(request, env) {
     const requestId = crypto.randomUUID();
     const origin = request.headers.get('Origin');
