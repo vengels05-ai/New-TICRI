@@ -6,6 +6,8 @@ import { directionColor, directionLabel, formatVotes, getCaseDetail } from '@/li
 import { cleanDisplayText } from '@/lib/textClean';
 import type { CaseDetail, Opinion } from '@/lib/thesource';
 
+const OPINION_PREVIEW_LIMIT = 80_000;
+
 interface Props {
   id: string;
 }
@@ -82,9 +84,13 @@ export default function CaseDetailPageClient({ id }: Props) {
 
   const votes = formatVotes(detail.scdb_votes_majority, detail.scdb_votes_minority);
   const direction = directionLabel(detail.scdb_decision_direction);
-  const majorityOpinions = detail.opinions.filter((opinion) => opinion.type.toLowerCase() === 'majority');
-  const concurrenceOpinions = detail.opinions.filter((opinion) => opinion.type.toLowerCase() === 'concurrence');
-  const dissentOpinions = detail.opinions.filter((opinion) => opinion.type.toLowerCase() === 'dissent');
+  const opinions = detail.opinions ?? [];
+  const majorityOpinions = opinions.filter((opinion) => opinionType(opinion) === 'majority');
+  const concurrenceOpinions = opinions.filter((opinion) => opinionType(opinion) === 'concurrence');
+  const dissentOpinions = opinions.filter((opinion) => opinionType(opinion) === 'dissent');
+  const otherOpinions = opinions.filter(
+    (opinion) => !['majority', 'concurrence', 'dissent'].includes(opinionType(opinion))
+  );
 
   return (
     <div className="bg-white">
@@ -145,10 +151,31 @@ export default function CaseDetailPageClient({ id }: Props) {
           {dissentOpinions.length > 0 ? (
             <OpinionGroup title="Dissenting Opinion" opinions={dissentOpinions} tone="red" />
           ) : null}
+          {otherOpinions.length > 0 ? (
+            <OpinionGroup title="Opinion" opinions={otherOpinions} tone="neutral" />
+          ) : null}
+          {opinions.length === 0 ? (
+            <div className="bg-white rounded-lg shadow-md p-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-gray-300 pb-2 flex items-center gap-2">
+                <FileText className="w-5 h-5" /> Opinion Text
+              </h2>
+              <p className="text-sm leading-6 text-gray-700">
+                Full opinion text is not available for this case record yet. The metadata above is served from TheSource.
+              </p>
+              <a
+                href={courtListenerUrl(detail.id)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-flex text-sm font-semibold text-blue-700 hover:text-blue-900"
+              >
+                View this record on CourtListener
+              </a>
+            </div>
+          ) : null}
 
           {detail.procedural_history ? <TextSection title="Procedural History" text={detail.procedural_history} /> : null}
 
-          {detail.citations.length > 0 ? (
+          {(detail.citations?.length ?? 0) > 0 ? (
             <div className="bg-white rounded-lg shadow-md p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-gray-300 pb-2 flex items-center gap-2">
                 <BookOpen className="w-5 h-5" /> Cases Cited
@@ -229,21 +256,91 @@ function OpinionGroup({
       </h2>
 
       {opinions.map((opinion, index) => {
-        const cleanedText = cleanDisplayText(opinion.plain_text || opinion.html_with_citations || '');
+        const preparedOpinion = prepareOpinionText(opinion);
         return (
           <div key={opinion.id} className={index > 0 ? 'mt-6 pt-6 border-t border-gray-200' : ''}>
             <p className="text-gray-600 text-sm font-medium mb-3">
               {opinion.per_curiam ? 'Per Curiam' : opinion.author_str ? `By ${cleanDisplayText(opinion.author_str)}` : 'Author not listed'}
               {opinion.joined_by_str ? ` - joined by ${cleanDisplayText(opinion.joined_by_str)}` : ''}
             </p>
-            <div className={`${bgColor} rounded-lg p-4 max-h-96 overflow-y-auto`}>
-              <p className="text-gray-800 text-sm leading-relaxed whitespace-pre-wrap">{cleanedText || 'Opinion text unavailable.'}</p>
+            <div className={`${bgColor} rounded-lg p-5 max-h-[42rem] overflow-y-auto`}>
+              <OpinionTextView preparedOpinion={preparedOpinion} opinionId={opinion.id} />
             </div>
           </div>
         );
       })}
     </div>
   );
+}
+
+function OpinionTextView({
+  preparedOpinion,
+  opinionId,
+}: {
+  preparedOpinion: PreparedOpinion;
+  opinionId: number;
+}) {
+  if (!preparedOpinion.displayText) {
+    return <p className="text-gray-800 text-sm leading-relaxed">Opinion text unavailable.</p>;
+  }
+
+  return (
+    <>
+      {preparedOpinion.isHtml ? (
+        <div
+          className="opinion-html text-gray-800 text-sm leading-relaxed"
+          dangerouslySetInnerHTML={{ __html: preparedOpinion.displayText }}
+        />
+      ) : (
+        <p className="text-gray-800 text-sm leading-relaxed whitespace-pre-wrap">{preparedOpinion.displayText}</p>
+      )}
+      {preparedOpinion.truncated ? (
+        <div className="mt-5 rounded-md border border-blue-200 bg-white p-4 text-sm leading-6 text-gray-700">
+          This opinion is long, so TICRI is showing the first {OPINION_PREVIEW_LIMIT.toLocaleString()} characters here.
+          <a
+            href={courtListenerUrl(opinionId)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-1 font-semibold text-blue-700 hover:text-blue-900"
+          >
+            Continue on CourtListener
+          </a>
+          .
+        </div>
+      ) : null}
+    </>
+  );
+}
+
+interface PreparedOpinion {
+  displayText: string;
+  isHtml: boolean;
+  truncated: boolean;
+}
+
+function prepareOpinionText(opinion: Opinion): PreparedOpinion {
+  const html = opinion.html_with_citations?.trim();
+  const plain = opinion.plain_text?.trim();
+  const sourceText = html || plain || '';
+  const sourceIsHtml = Boolean(html && /<[a-z][\s\S]*>/i.test(html));
+  const truncated = sourceText.length > OPINION_PREVIEW_LIMIT;
+  const displayText = truncated && sourceIsHtml
+    ? cleanDisplayText(sourceText).slice(0, OPINION_PREVIEW_LIMIT)
+    : sourceText.slice(0, OPINION_PREVIEW_LIMIT);
+
+  return {
+    displayText: sourceIsHtml && !truncated ? displayText : cleanDisplayText(displayText),
+    isHtml: sourceIsHtml && !truncated,
+    truncated,
+  };
+}
+
+function opinionType(opinion: Opinion): string {
+  return opinion.type?.toLowerCase() ?? '';
+}
+
+function courtListenerUrl(id: number): string {
+  return `https://www.courtlistener.com/opinion/${id}/`;
 }
 
 function formatDate(value: string | null): string {

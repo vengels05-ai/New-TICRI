@@ -38,30 +38,31 @@ export interface CaseSummary {
 
 export interface Opinion {
   id: number;
-  type: string;
-  per_curiam: number;
-  author_str: string;
-  joined_by_str: string;
+  type: string | null;
+  per_curiam: number | null;
+  author_str: string | null;
+  joined_by_str: string | null;
   plain_text: string | null;
   html_with_citations: string | null;
   page_count: number | null;
 }
 
 export interface CaseDetail extends CaseSummary {
-  case_name_full: string;
-  docket_id: number;
-  scdb_id: string;
-  disposition: string;
-  posture: string;
+  case_name_full: string | null;
+  docket_id: number | null;
+  scdb_id: string | null;
+  disposition: string | null;
+  posture: string | null;
   syllabus: string | null;
   summary: string | null;
+  headnotes?: string | null;
   procedural_history: string | null;
   attorneys: string | null;
-  judges: string;
+  judges: string | null;
   date_argued: string | null;
   date_cert_granted: string | null;
-  jurisdiction_type: string;
-  nature_of_suit: string;
+  jurisdiction_type: string | null;
+  nature_of_suit: string | null;
   opinions: Opinion[];
   citations: { cited_opinion_id: number; case_name: string; date_filed: string | null }[];
 }
