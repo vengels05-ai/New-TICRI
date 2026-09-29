@@ -67,21 +67,27 @@ export interface CaseDetail extends CaseSummary {
 }
 
 export interface Bill {
+  id?: number;
   bill_id: string;
   congress_number: number;
   bill_type: string;
   bill_number: string;
   title: string;
   short_title: string | null;
-  sponsor_name: string;
-  sponsor_party: string;
-  sponsor_state: string;
+  sponsor_bioguide_id?: string | null;
+  sponsor_name: string | null;
+  sponsor_party: string | null;
+  sponsor_state: string | null;
   introduced_date: string | null;
   latest_action_date: string | null;
   latest_action_text: string | null;
   policy_area: string | null;
   origin_chamber: string;
+  update_date?: string | null;
+  constitutional_authority_text?: string | null;
   summary_text?: string | null;
+  summary_update_date?: string | null;
+  enriched?: number | null;
   subjects?: string[];
   cosponsors?: {
     bioguide_id: string;
@@ -105,9 +111,14 @@ export interface ExecutiveOrder {
   president: string;
   president_slug: string;
   signing_date: string | null;
+  publication_date?: string | null;
   citation: string | null;
   fr_url: string | null;
+  pdf_url?: string | null;
   full_text?: string | null;
+  disposition_notes?: string | null;
+  eo_notes?: string | null;
+  snippet?: string | null;
 }
 
 export interface UscodeSection {
@@ -118,7 +129,12 @@ export interface UscodeSection {
   section_number: string;
   heading: string;
   chapter: string | null;
+  subchapter?: string | null;
+  source_url?: string | null;
+  edition?: string | null;
+  effective_date?: string | null;
   full_text?: string | null;
+  snippet?: string | null;
 }
 
 export interface Member {

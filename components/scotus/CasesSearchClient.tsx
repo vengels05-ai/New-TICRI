@@ -4,19 +4,8 @@
 
 import { useState, useCallback, useRef } from 'react';
 import { Search } from 'lucide-react';
-
-interface CaseSummary {
-  id: number;
-  case_name: string;
-  date_filed: string | null;
-  scdb_decision_direction: string | null;
-  scdb_votes_majority: number | null;
-  scdb_votes_minority: number | null;
-  docket_number: string;
-  citation_count: number;
-}
-
-const API = (process.env.NEXT_PUBLIC_THESOURCE_API_BASE || 'https://thesource-worker.ticri2025.workers.dev').trim();
+import { searchCases } from '@/lib/thesource';
+import type { CaseSummary } from '@/lib/thesource';
 
 export default function CasesSearchClient() {
   const [query, setQuery] = useState('');
@@ -25,7 +14,7 @@ export default function CasesSearchClient() {
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
   const searchTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const abortRef = useRef<AbortController | null>(null);
+  const searchRunRef = useRef(0);
 
   const doSearch = useCallback(async (q: string) => {
     if (!q.trim()) {
@@ -35,27 +24,21 @@ export default function CasesSearchClient() {
       return;
     }
 
-    // Cancel previous request
-    if (abortRef.current) abortRef.current.abort();
-    abortRef.current = new AbortController();
+    const runId = searchRunRef.current + 1;
+    searchRunRef.current = runId;
 
     setLoading(true);
     setSearched(true);
 
     try {
-      const res = await fetch(
-        `${API}/api/cases/search?q=${encodeURIComponent(q)}&limit=30`,
-        { signal: abortRef.current.signal }
-      );
-      const data = await res.json() as { results: CaseSummary[]; total: number };
+      const data = await searchCases(q, 30);
+      if (searchRunRef.current !== runId) return;
       setResults(data.results || []);
       setTotal(data.total || 0);
-    } catch (e) {
-      if ((e as Error).name !== 'AbortError') {
-        setResults([]);
-      }
+    } catch {
+      if (searchRunRef.current === runId) setResults([]);
     } finally {
-      setLoading(false);
+      if (searchRunRef.current === runId) setLoading(false);
     }
   }, []);
 
