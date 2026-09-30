@@ -45,6 +45,7 @@ export interface Opinion {
   plain_text: string | null;
   html_with_citations: string | null;
   page_count: number | null;
+  r2_key?: string | null;
 }
 
 export interface CaseDetail extends CaseSummary {
@@ -63,6 +64,9 @@ export interface CaseDetail extends CaseSummary {
   date_cert_granted: string | null;
   jurisdiction_type: string | null;
   nature_of_suit: string | null;
+  r2_key?: string | null;
+  full_text?: string | null;
+  full_text_source?: string | null;
   opinions: Opinion[];
   citations: { cited_opinion_id: number; case_name: string; date_filed: string | null }[];
 }
@@ -86,6 +90,9 @@ export interface Bill {
   origin_chamber: string;
   update_date?: string | null;
   constitutional_authority_text?: string | null;
+  full_text?: string | null;
+  full_text_source?: string | null;
+  r2_key?: string | null;
   summary_text?: string | null;
   summary_update_date?: string | null;
   enriched?: number | null;
@@ -117,6 +124,8 @@ export interface ExecutiveOrder {
   fr_url: string | null;
   pdf_url?: string | null;
   full_text?: string | null;
+  full_text_source?: string | null;
+  r2_key?: string | null;
   disposition_notes?: string | null;
   eo_notes?: string | null;
   snippet?: string | null;
@@ -133,8 +142,12 @@ export interface UscodeSection {
   subchapter?: string | null;
   source_url?: string | null;
   edition?: string | null;
+  edition_year?: number | null;
   effective_date?: string | null;
   full_text?: string | null;
+  full_text_source?: string | null;
+  r2_key?: string | null;
+  notes_text?: string | null;
   snippet?: string | null;
 }
 

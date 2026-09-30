@@ -2,10 +2,11 @@
 
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
-import { AlertCircle, ArrowLeft, ExternalLink, Loader2 } from 'lucide-react';
+import { AlertCircle, ArrowLeft, Loader2 } from 'lucide-react';
 import { getBillDetail, getEODetail } from '@/lib/thesource';
 import type { Bill, ExecutiveOrder } from '@/lib/thesource';
 import { cleanDisplayText } from '@/lib/textClean';
+import PrimarySourceReader from '@/components/thesource/PrimarySourceReader';
 
 type Mode = 'executive-orders' | 'bills';
 
@@ -93,7 +94,8 @@ export default function LawDetailClient({ mode, id }: Props) {
 }
 
 function BillDetail({ bill }: { bill: Bill }) {
-  const summary = cleanDisplayText(bill.summary_text);
+  const readerText = bill.full_text || bill.summary_text || '';
+  const cosponsors = bill.cosponsors ?? [];
 
   return (
     <main className="min-h-screen bg-white pb-16">
@@ -108,10 +110,19 @@ function BillDetail({ bill }: { bill: Bill }) {
         {bill.origin_chamber ? <Meta label="Origin" value={bill.origin_chamber} /> : null}
         {bill.policy_area ? <Meta label="Policy Area" value={bill.policy_area} /> : null}
         {bill.latest_action_date ? <Meta label="Latest Action" value={formatDate(bill.latest_action_date)} /> : null}
+        {cosponsors.length ? <Meta label="Cosponsors" value={cosponsors.length.toLocaleString()} /> : null}
       </DetailHeader>
 
       <section className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
-        <Article title="Summary" emptyText="No summary is stored for this bill yet." text={summary} />
+        <PrimarySourceReader
+          title={bill.full_text ? 'Bill Text' : 'Bill Summary'}
+          text={readerText}
+          emptyText="No primary text is stored for this bill yet."
+          sourceLabel={bill.full_text ? 'GovInfo' : 'Congress.gov Summary'}
+          sourceDetail={bill.full_text_source === 'r2'
+            ? 'Loaded from TheSource R2 primary-source storage.'
+            : 'Loaded from TheSource bill metadata.'}
+        />
 
         {bill.latest_action_text ? (
           <Article title="Latest Action" text={cleanDisplayText(bill.latest_action_text)} />
@@ -133,14 +144,29 @@ function BillDetail({ bill }: { bill: Bill }) {
             </div>
           </article>
         ) : null}
+
+        {cosponsors.length ? (
+          <article className="mt-6 border border-[#0F2C47]/10 bg-white p-6 shadow-sm sm:p-8">
+            <h2 className="border-b border-[#0F2C47]/10 pb-3 text-2xl font-black text-[#0F2C47]">Cosponsors</h2>
+            <div className="mt-5 grid gap-2 sm:grid-cols-2">
+              {cosponsors.slice(0, 80).map((cosponsor) => (
+                <div key={`${cosponsor.bioguide_id}-${cosponsor.sponsorship_date || ''}`} className="border border-[#0F2C47]/10 px-3 py-2 text-sm text-[#29465f]">
+                  <span className="font-semibold text-[#0F2C47]">{cleanDisplayText(cosponsor.name)}</span>
+                  <span> {formatPartyState(cosponsor.party, cosponsor.state)}</span>
+                </div>
+              ))}
+            </div>
+            {cosponsors.length > 80 ? (
+              <p className="mt-4 text-sm text-slate-600">Showing 80 of {cosponsors.length.toLocaleString()} cosponsors.</p>
+            ) : null}
+          </article>
+        ) : null}
       </section>
     </main>
   );
 }
 
 function ExecutiveOrderDetail({ order }: { order: ExecutiveOrder }) {
-  const fullText = cleanDisplayText(order.full_text);
-
   return (
     <main className="min-h-screen bg-white pb-16">
       <DetailHeader
@@ -151,15 +177,26 @@ function ExecutiveOrderDetail({ order }: { order: ExecutiveOrder }) {
         description={`${cleanDisplayText(order.president)}${order.signing_date ? ` • Signed ${formatDate(order.signing_date)}` : ''}${order.citation ? ` • ${order.citation}` : ''}`}
       >
         <Meta label="Document" value={order.document_number} />
+        {order.president ? <Meta label="President" value={cleanDisplayText(order.president)} /> : null}
+        {order.signing_date ? <Meta label="Signed" value={formatDate(order.signing_date)} /> : null}
+        {order.citation ? <Meta label="Citation" value={order.citation} /> : null}
         {order.publication_date ? <Meta label="Published" value={formatDate(order.publication_date)} /> : null}
       </DetailHeader>
 
       <section className="mx-auto max-w-5xl px-4 py-10 sm:px-6 lg:px-8">
-        <div className="mb-6 flex flex-wrap gap-3">
-          {order.fr_url ? <SourceLink href={order.fr_url} label="Federal Register" /> : null}
-          {order.pdf_url ? <SourceLink href={order.pdf_url} label="PDF" /> : null}
-        </div>
-        <Article title="Full Text" emptyText="Full text is not stored for this executive order yet." text={fullText} />
+        <PrimarySourceReader
+          title="Executive Order Text"
+          text={order.full_text}
+          emptyText="Full text is not stored for this executive order yet."
+          sourceLabel="Federal Register"
+          sourceDetail={order.full_text_source === 'r2'
+            ? 'Loaded from TheSource R2 primary-source storage.'
+            : 'Loaded from TheSource executive order metadata.'}
+        />
+
+        {order.disposition_notes ? (
+          <Article title="Disposition Notes" text={cleanDisplayText(order.disposition_notes)} />
+        ) : null}
       </section>
     </main>
   );
@@ -217,26 +254,17 @@ function Meta({ label, value }: { label: string; value: string | number }) {
   );
 }
 
-function SourceLink({ href, label }: { href: string; label: string }) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-2 border border-[#0F2C47]/15 px-4 py-2 text-sm font-semibold text-[#0F2C47] hover:border-[#C41E3A] hover:text-[#C41E3A]"
-    >
-      {label}
-      <ExternalLink className="h-4 w-4" />
-    </a>
-  );
-}
-
 function parseExecutiveOrderId(value: string) {
   const parsed = Number.parseInt(value, 10);
   if (Number.isNaN(parsed)) {
     throw new Error('Invalid executive order ID.');
   }
   return parsed;
+}
+
+function formatPartyState(party?: string | null, state?: string | null) {
+  const parts = [party, state].filter(Boolean);
+  return parts.length ? `(${parts.join('-')})` : '';
 }
 
 function formatDate(value: string) {

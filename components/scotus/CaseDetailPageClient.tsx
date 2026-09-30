@@ -5,22 +5,35 @@ import { AlertCircle, BookOpen, ChevronLeft, FileText, Scale } from 'lucide-reac
 import { directionColor, directionLabel, formatVotes, getCaseDetail } from '@/lib/thesource';
 import { cleanDisplayText } from '@/lib/textClean';
 import type { CaseDetail, Opinion } from '@/lib/thesource';
-
-const OPINION_PREVIEW_LIMIT = 80_000;
+import PrimarySourceReader from '@/components/thesource/PrimarySourceReader';
 
 interface Props {
-  id: string;
+  id?: string;
+  detail?: CaseDetail;
 }
 
-export default function CaseDetailPageClient({ id }: Props) {
-  const [detail, setDetail] = useState<CaseDetail | null>(null);
-  const [loading, setLoading] = useState(true);
+export default function CaseDetailPageClient({ id, detail: initialDetail }: Props) {
+  const [detail, setDetail] = useState<CaseDetail | null>(initialDetail ?? null);
+  const [loading, setLoading] = useState(!initialDetail);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    if (initialDetail) {
+      setDetail(initialDetail);
+      setLoading(false);
+      setError(null);
+      return;
+    }
+
     let active = true;
 
     async function loadData() {
+      if (!id) {
+        setError('Missing case ID.');
+        setLoading(false);
+        return;
+      }
+
       const parsedId = Number.parseInt(id, 10);
       if (Number.isNaN(parsedId)) {
         setError('Invalid case ID.');
@@ -51,7 +64,7 @@ export default function CaseDetailPageClient({ id }: Props) {
     return () => {
       active = false;
     };
-  }, [id]);
+  }, [id, initialDetail]);
 
   if (loading) {
     return (
@@ -91,6 +104,10 @@ export default function CaseDetailPageClient({ id }: Props) {
   const otherOpinions = opinions.filter(
     (opinion) => !['majority', 'concurrence', 'dissent'].includes(opinionType(opinion))
   );
+  const sourceText = detail.full_text || '';
+  const sourceDetail = detail.full_text_source === 'r2'
+    ? 'Loaded from TheSource R2 primary-source storage.'
+    : 'Loaded from TheSource case metadata.';
 
   return (
     <div className="bg-white">
@@ -142,19 +159,28 @@ export default function CaseDetailPageClient({ id }: Props) {
           {detail.syllabus ? <TextSection title="Syllabus" text={detail.syllabus} /> : null}
           {!detail.syllabus && detail.summary ? <TextSection title="Summary" text={detail.summary} /> : null}
 
-          {majorityOpinions.length > 0 ? (
+          {sourceText ? (
+            <PrimarySourceReader
+              title="Full Opinion Text"
+              text={sourceText}
+              sourceLabel="CourtListener"
+              sourceDetail={sourceDetail}
+            />
+          ) : null}
+
+          {!sourceText && majorityOpinions.length > 0 ? (
             <OpinionGroup title="Majority Opinion" opinions={majorityOpinions} tone="neutral" />
           ) : null}
-          {concurrenceOpinions.length > 0 ? (
+          {!sourceText && concurrenceOpinions.length > 0 ? (
             <OpinionGroup title="Concurring Opinion" opinions={concurrenceOpinions} tone="blue" />
           ) : null}
-          {dissentOpinions.length > 0 ? (
+          {!sourceText && dissentOpinions.length > 0 ? (
             <OpinionGroup title="Dissenting Opinion" opinions={dissentOpinions} tone="red" />
           ) : null}
-          {otherOpinions.length > 0 ? (
+          {!sourceText && otherOpinions.length > 0 ? (
             <OpinionGroup title="Opinion" opinions={otherOpinions} tone="neutral" />
           ) : null}
-          {opinions.length === 0 ? (
+          {!sourceText && opinions.length === 0 ? (
             <div className="bg-white rounded-lg shadow-md p-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4 border-b-2 border-gray-300 pb-2 flex items-center gap-2">
                 <FileText className="w-5 h-5" /> Opinion Text
@@ -162,14 +188,6 @@ export default function CaseDetailPageClient({ id }: Props) {
               <p className="text-sm leading-6 text-gray-700">
                 Full opinion text is not available for this case record yet. The metadata above is served from TheSource.
               </p>
-              <a
-                href={courtListenerUrl(detail.id)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-flex text-sm font-semibold text-blue-700 hover:text-blue-900"
-              >
-                View this record on CourtListener
-              </a>
             </div>
           ) : null}
 
@@ -184,7 +202,7 @@ export default function CaseDetailPageClient({ id }: Props) {
                 {detail.citations.map((citation) => (
                   <a
                     key={citation.cited_opinion_id}
-                    href={`/cases/opinion/?id=${citation.cited_opinion_id}`}
+                    href={`/cases/opinion?id=${encodeURIComponent(String(citation.cited_opinion_id))}`}
                     className="flex items-center justify-between p-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition-colors group"
                   >
                     <span className="text-sm text-gray-800 group-hover:text-gray-900 font-medium">
@@ -203,7 +221,7 @@ export default function CaseDetailPageClient({ id }: Props) {
             <p className="text-gray-800 text-sm flex items-start gap-2">
               <BookOpen className="w-4 h-4 mt-0.5 text-blue-600 flex-shrink-0" />
               <span>
-                <strong>Primary Source:</strong> Opinion text from CourtListener (Free Law Project). Case metadata from the
+                <strong>Primary Source:</strong> Opinion text from CourtListener via TheSource. Case metadata from the
                 Supreme Court Database (SCDB).
               </span>
             </p>
@@ -263,7 +281,7 @@ function OpinionGroup({
               {opinion.per_curiam ? 'Per Curiam' : opinion.author_str ? `By ${cleanDisplayText(opinion.author_str)}` : 'Author not listed'}
               {opinion.joined_by_str ? ` - joined by ${cleanDisplayText(opinion.joined_by_str)}` : ''}
             </p>
-            <div className={`${bgColor} rounded-lg p-5 max-h-[42rem] overflow-y-auto`}>
+            <div className={`${bgColor} rounded-lg p-5`}>
               <OpinionTextView preparedOpinion={preparedOpinion} opinionId={opinion.id} />
             </div>
           </div>
@@ -285,37 +303,17 @@ function OpinionTextView({
   }
 
   return (
-    <>
-      {preparedOpinion.isHtml ? (
-        <div
-          className="opinion-html text-gray-800 text-sm leading-relaxed"
-          dangerouslySetInnerHTML={{ __html: preparedOpinion.displayText }}
-        />
-      ) : (
-        <p className="text-gray-800 text-sm leading-relaxed whitespace-pre-wrap">{preparedOpinion.displayText}</p>
-      )}
-      {preparedOpinion.truncated ? (
-        <div className="mt-5 rounded-md border border-blue-200 bg-white p-4 text-sm leading-6 text-gray-700">
-          This opinion is long, so TICRI is showing the first {OPINION_PREVIEW_LIMIT.toLocaleString()} characters here.
-          <a
-            href={courtListenerUrl(opinionId)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-1 font-semibold text-blue-700 hover:text-blue-900"
-          >
-            Continue on CourtListener
-          </a>
-          .
-        </div>
-      ) : null}
-    </>
+    <PrimarySourceReader
+      title={`Opinion ${opinionId}`}
+      text={preparedOpinion.displayText}
+      sourceLabel="CourtListener"
+      sourceDetail="Loaded from TheSource case opinion metadata."
+    />
   );
 }
 
 interface PreparedOpinion {
   displayText: string;
-  isHtml: boolean;
-  truncated: boolean;
 }
 
 function prepareOpinionText(opinion: Opinion): PreparedOpinion {
@@ -323,24 +321,14 @@ function prepareOpinionText(opinion: Opinion): PreparedOpinion {
   const plain = opinion.plain_text?.trim();
   const sourceText = html || plain || '';
   const sourceIsHtml = Boolean(html && /<[a-z][\s\S]*>/i.test(html));
-  const truncated = sourceText.length > OPINION_PREVIEW_LIMIT;
-  const displayText = truncated && sourceIsHtml
-    ? cleanDisplayText(sourceText).slice(0, OPINION_PREVIEW_LIMIT)
-    : sourceText.slice(0, OPINION_PREVIEW_LIMIT);
 
   return {
-    displayText: sourceIsHtml && !truncated ? displayText : cleanDisplayText(displayText),
-    isHtml: sourceIsHtml && !truncated,
-    truncated,
+    displayText: sourceIsHtml ? cleanDisplayText(sourceText) : sourceText,
   };
 }
 
 function opinionType(opinion: Opinion): string {
   return opinion.type?.toLowerCase() ?? '';
-}
-
-function courtListenerUrl(id: number): string {
-  return `https://www.courtlistener.com/opinion/${id}/`;
 }
 
 function formatDate(value: string | null): string {

@@ -117,7 +117,7 @@ function CaseCard({ case: c }: { case: CaseSummary }) {
   const year = c.date_filed ? new Date(c.date_filed).getFullYear() : null;
 
   return (
-    <a href={`/cases/opinion/?id=${c.id}`}
+    <a href={`/cases/opinion?id=${encodeURIComponent(String(c.id))}`}
       className="bg-white rounded-lg shadow-md p-5 hover:shadow-lg transition-shadow border border-gray-100 hover:border-gray-300 block">
       <div className="flex items-start justify-between gap-2 mb-2">
         <span className="text-xs font-bold text-gray-500 bg-gray-100 px-2 py-1 rounded">{year || '–'}</span>

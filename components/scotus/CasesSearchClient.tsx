@@ -95,7 +95,7 @@ export default function CasesSearchClient() {
                 return (
                   <a
                     key={c.id}
-                    href={`/cases/opinion/?id=${c.id}`}
+                    href={`/cases/opinion?id=${encodeURIComponent(String(c.id))}`}
                     className="flex items-start gap-3 px-4 py-3 hover:bg-gray-50 border-b border-gray-50 last:border-0"
                   >
                     <div className="flex-1 min-w-0">
