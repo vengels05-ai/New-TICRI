@@ -82,6 +82,9 @@ export default function Header() {
                     <Link href="/state-constitutions" className="block px-4 py-2 hover:bg-gray-100">
                       State Constitutions
                     </Link>
+                    <Link href="/us-code" className="block px-4 py-2 hover:bg-gray-100">
+                      U.S. Code
+                    </Link>
                     <Link href="/federal-funding" className="block px-4 py-2 hover:bg-gray-100">
                       Federal Funding
                     </Link>
@@ -221,6 +224,13 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               State Constitutions
+            </Link>
+            <Link
+              href="/us-code"
+              className="block px-3 py-2 rounded-md hover:bg-[#1A3A5C] transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              U.S. Code
             </Link>
             <Link
               href="/federal-funding"

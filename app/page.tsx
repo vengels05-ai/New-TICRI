@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { ScrollText, Scale, FileText, Landmark, Gavel, Vote, Building2, Map, DollarSign, Coins, BadgeCheck, Building, BarChart3, Users, ShieldCheck } from 'lucide-react';
+import { ScrollText, Scale, FileText, Landmark, Gavel, Vote, Building2, Map, DollarSign, Coins, BadgeCheck, Building, BarChart3, Users, ShieldCheck, BookOpen } from 'lucide-react';
 
 export default function HomePage() {
   const sections = [
@@ -23,6 +23,13 @@ export default function HomePage() {
       icon: FileText,
       href: '/acts',
       color: 'from-indigo-50 to-indigo-100 border-indigo-600'
+    },
+    {
+      title: 'U.S. Code',
+      description: 'Search and read federal statutory law directly inside TICRI.',
+      icon: BookOpen,
+      href: '/us-code',
+      color: 'from-sky-50 to-sky-100 border-sky-600'
     },
     {
       title: 'Constitutional Framework',
@@ -203,6 +210,10 @@ export default function HomePage() {
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
               <h3 className="text-xl font-bold mb-3 text-[#DC2F47]">Landmark Supreme Court Cases</h3>
               <p className="text-gray-200">Decisions that shaped American law and society.</p>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
+              <h3 className="text-xl font-bold mb-3 text-[#DC2F47]">The U.S. Code</h3>
+              <p className="text-gray-200">Federal statutes searchable and readable without leaving TICRI.</p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-lg">
               <h3 className="text-xl font-bold mb-3 text-[#DC2F47]">Federalism</h3>
