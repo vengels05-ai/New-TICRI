@@ -115,7 +115,7 @@ function SearchResultCard({ result, mode }: { result: Result; mode: Mode }) {
     const bill = result as Bill;
     return (
       <Link
-        href={`/truth-and-law/bills/bill?id=${encodeURIComponent(bill.bill_id)}`}
+        href={`/acts/bill?id=${encodeURIComponent(bill.bill_id)}`}
         className="block border border-[#0F2C47]/10 bg-white p-5 shadow-sm transition hover:border-[#C41E3A]/40 hover:shadow-md"
       >
         <div className="flex items-start justify-between gap-4">
@@ -138,7 +138,7 @@ function SearchResultCard({ result, mode }: { result: Result; mode: Mode }) {
   const order = result as ExecutiveOrder;
   return (
     <Link
-      href={`/truth-and-law/executive-orders/order?id=${order.id}`}
+      href={`/executive-orders/order?id=${order.id}`}
       className="block border border-[#0F2C47]/10 bg-white p-5 shadow-sm transition hover:border-[#C41E3A]/40 hover:shadow-md"
     >
       <div className="flex items-start justify-between gap-4">

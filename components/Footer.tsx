@@ -55,6 +55,16 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/acts" className="text-gray-300 hover:text-[#C41E3A] transition-colors">
+                  Acts
+                </Link>
+              </li>
+              <li>
+                <Link href="/executive-orders" className="text-gray-300 hover:text-[#C41E3A] transition-colors">
+                  Executive Orders
+                </Link>
+              </li>
+              <li>
                 <Link href="/voting" className="text-gray-300 hover:text-[#C41E3A] transition-colors">
                   Voting
                 </Link>
@@ -79,6 +89,11 @@ export default function Footer() {
               <li>
                 <Link href="/federal-funding" className="text-gray-300 hover:text-[#C41E3A] transition-colors">
                   Federal Funding
+                </Link>
+              </li>
+              <li>
+                <Link href="/truth-and-law" className="text-gray-300 hover:text-[#C41E3A] transition-colors">
+                  Truth & Law
                 </Link>
               </li>
 	              <li>

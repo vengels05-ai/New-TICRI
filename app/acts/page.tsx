@@ -1,6 +1,8 @@
 import Link from 'next/link';
+import { Suspense } from 'react';
 import actsData from './acts-by-category.json';
 import { Landmark, Scale, Vote, Sprout, HardHat, Shield, ShoppingCart, Heart, Cpu, Globe, User, Gavel, FileText } from 'lucide-react';
+import ActsBillSearchClient from './ActsBillSearchClient';
 
 export default function ActsPage() {
   const timelines = [
@@ -197,6 +199,24 @@ export default function ActsPage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Congressional Database Search */}
+      <section className="py-12 bg-gray-50 border-y border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-8 text-center">
+            <p className="mb-3 inline-flex border border-blue-200 bg-blue-50 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-blue-900">
+              Congressional Database
+            </p>
+            <h2 className="text-3xl font-bold text-gray-900">Search Congressional Bills</h2>
+            <p className="mx-auto mt-3 max-w-3xl text-gray-700">
+              Search the broader congressional bill database from TheSource by keyword and Congress number. Curated act explainers remain below.
+            </p>
+          </div>
+          <Suspense fallback={<div className="rounded-lg bg-white p-6 text-sm text-gray-700 shadow-md">Loading bill search...</div>}>
+            <ActsBillSearchClient />
+          </Suspense>
         </div>
       </section>
 

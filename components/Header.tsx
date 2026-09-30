@@ -46,6 +46,10 @@ export default function Header() {
               Acts
             </Link>
 
+            <Link href="/executive-orders" className="hover:text-[#C41E3A] transition-colors text-sm lg:text-base font-semibold">
+              Executive Orders
+            </Link>
+
             <Link href="/cases" className="hover:text-[#C41E3A] transition-colors text-sm lg:text-base font-semibold">
               Cases
             </Link>
@@ -178,6 +182,13 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Acts
+            </Link>
+            <Link
+              href="/executive-orders"
+              className="block px-3 py-2 rounded-md hover:bg-[#1A3A5C] transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Executive Orders
             </Link>
             <Link
               href="/cases"

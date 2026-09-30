@@ -13,9 +13,11 @@ type Mode = 'executive-orders' | 'bills';
 interface Props {
   mode: Mode;
   id: string;
+  backHref?: string;
+  backLabel?: string;
 }
 
-export default function LawDetailClient({ mode, id }: Props) {
+export default function LawDetailClient({ mode, id, backHref, backLabel }: Props) {
   const [record, setRecord] = useState<Bill | ExecutiveOrder | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -77,7 +79,7 @@ export default function LawDetailClient({ mode, id }: Props) {
           <AlertCircle className="mx-auto mb-4 h-12 w-12 text-red-600" />
           <h1 className="text-2xl font-black text-[#0F2C47]">Could Not Load Record</h1>
           <p className="mt-3 text-sm text-slate-600">{error || 'This source record is unavailable.'}</p>
-          <Link href={mode === 'bills' ? '/truth-and-law/bills' : '/truth-and-law/executive-orders'} className="mt-6 inline-flex items-center gap-2 bg-[#0F2C47] px-4 py-2 text-sm font-bold text-white">
+          <Link href={backHref || (mode === 'bills' ? '/acts' : '/executive-orders')} className="mt-6 inline-flex items-center gap-2 bg-[#0F2C47] px-4 py-2 text-sm font-bold text-white">
             <ArrowLeft className="h-4 w-4" />
             Back to Search
           </Link>
@@ -87,21 +89,21 @@ export default function LawDetailClient({ mode, id }: Props) {
   }
 
   if (mode === 'bills') {
-    return <BillDetail bill={record as Bill} />;
+    return <BillDetail bill={record as Bill} backHref={backHref} backLabel={backLabel} />;
   }
 
-  return <ExecutiveOrderDetail order={record as ExecutiveOrder} />;
+  return <ExecutiveOrderDetail order={record as ExecutiveOrder} backHref={backHref} backLabel={backLabel} />;
 }
 
-function BillDetail({ bill }: { bill: Bill }) {
+function BillDetail({ bill, backHref, backLabel }: { bill: Bill; backHref?: string; backLabel?: string }) {
   const readerText = bill.full_text || bill.summary_text || '';
   const cosponsors = bill.cosponsors ?? [];
 
   return (
     <main className="min-h-screen bg-white pb-16">
       <DetailHeader
-        backHref="/truth-and-law/bills"
-        backLabel="Bills Search"
+        backHref={backHref || '/acts'}
+        backLabel={backLabel || 'Bills Search'}
         kicker={`${bill.bill_type.toUpperCase()} ${bill.bill_number} • ${bill.congress_number}th Congress`}
         title={cleanDisplayText(bill.short_title || bill.title)}
         description={formatBillMeta(bill)}
@@ -166,12 +168,12 @@ function BillDetail({ bill }: { bill: Bill }) {
   );
 }
 
-function ExecutiveOrderDetail({ order }: { order: ExecutiveOrder }) {
+function ExecutiveOrderDetail({ order, backHref, backLabel }: { order: ExecutiveOrder; backHref?: string; backLabel?: string }) {
   return (
     <main className="min-h-screen bg-white pb-16">
       <DetailHeader
-        backHref="/truth-and-law/executive-orders"
-        backLabel="Executive Order Search"
+        backHref={backHref || '/executive-orders'}
+        backLabel={backLabel || 'Executive Order Search'}
         kicker={order.eo_number ? `Executive Order ${order.eo_number}` : order.document_number}
         title={cleanDisplayText(order.title)}
         description={`${cleanDisplayText(order.president)}${order.signing_date ? ` • Signed ${formatDate(order.signing_date)}` : ''}${order.citation ? ` • ${order.citation}` : ''}`}

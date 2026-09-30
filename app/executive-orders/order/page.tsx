@@ -6,7 +6,7 @@ import LawDetailClient from '@/components/thesource/LawDetailClient';
 
 export default function ExecutiveOrderPage() {
   return (
-    <Suspense fallback={<LawDetailClient mode="executive-orders" id="" />}>
+    <Suspense fallback={<LawDetailClient mode="executive-orders" id="" backHref="/executive-orders" backLabel="Executive Orders" />}>
       <ExecutiveOrderContent />
     </Suspense>
   );
@@ -14,5 +14,12 @@ export default function ExecutiveOrderPage() {
 
 function ExecutiveOrderContent() {
   const searchParams = useSearchParams();
-  return <LawDetailClient mode="executive-orders" id={searchParams.get('id') ?? ''} />;
+  return (
+    <LawDetailClient
+      mode="executive-orders"
+      id={searchParams.get('id') ?? ''}
+      backHref="/executive-orders"
+      backLabel="Executive Orders"
+    />
+  );
 }
