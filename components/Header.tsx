@@ -85,6 +85,9 @@ export default function Header() {
                     <Link href="/federal-funding" className="block px-4 py-2 hover:bg-gray-100">
                       Federal Funding
                     </Link>
+                    <Link href="/fiscal-policy" className="block px-4 py-2 hover:bg-gray-100">
+                      Fiscal
+                    </Link>
                     <Link href="/taxes" className="block px-4 py-2 hover:bg-gray-100">
                       Taxes
                     </Link>
@@ -225,6 +228,13 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Federal Funding
+            </Link>
+            <Link
+              href="/fiscal-policy"
+              className="block px-3 py-2 rounded-md hover:bg-[#1A3A5C] transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Fiscal
             </Link>
             <Link
               href="/taxes"

@@ -67,8 +67,15 @@ export default function HomePage() {
       color: 'from-yellow-50 to-yellow-100 border-yellow-600'
     },
     {
+      title: 'Fiscal Policy',
+      description: 'How federal taxing, borrowing, and spending power expanded over time.',
+      icon: Coins,
+      href: '/fiscal-policy',
+      color: 'from-amber-50 to-amber-100 border-amber-600'
+    },
+    {
       title: 'Taxes',
-      description: 'The evolution of federal taxation from 1900 to present day.',
+      description: 'Live federal receipts, inflation, and disposable income data from FRED.',
       icon: Coins,
       href: '/taxes',
       color: 'from-emerald-50 to-emerald-100 border-emerald-600'
