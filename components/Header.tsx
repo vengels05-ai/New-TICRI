@@ -100,9 +100,6 @@ export default function Header() {
 	                    <Link href="/535" className="block px-4 py-2 hover:bg-gray-100 font-bold text-[#C41E3A]">
 	                      Project 535
 	                    </Link>
-	                    <Link href="/congress-scanner" className="block px-4 py-2 hover:bg-gray-100 font-bold text-[#0F2C47]">
-	                      Congress Scanner
-	                    </Link>
 	                    <Link href="/truth-and-law" className="block px-4 py-2 hover:bg-gray-100">
 	                      Truth and Law
 	                    </Link>
@@ -264,13 +261,6 @@ export default function Header() {
             >
               Project 535
             </Link>
-	            <Link
-	              href="/congress-scanner"
-	              className="block px-3 py-2 rounded-md hover:bg-[#1A3A5C] transition-colors"
-	              onClick={() => setMobileMenuOpen(false)}
-	            >
-	              Congress Scanner
-	            </Link>
 	            <Link
 	              href="/truth-and-law"
 	              className="block px-3 py-2 rounded-md hover:bg-[#1A3A5C] transition-colors"

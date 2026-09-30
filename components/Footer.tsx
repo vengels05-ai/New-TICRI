@@ -82,11 +82,6 @@ export default function Footer() {
                 </Link>
               </li>
 	              <li>
-	                <Link href="/congress-scanner" className="text-gray-300 hover:text-[#C41E3A] transition-colors">
-	                  Congress Scanner
-	                </Link>
-	              </li>
-	              <li>
 	                <Link href="/contact" className="text-gray-300 hover:text-[#C41E3A] transition-colors">
 	                  Contact
 	                </Link>

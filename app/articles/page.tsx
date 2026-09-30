@@ -11,7 +11,7 @@ export default function ArticlesPage() {
       description: 'All federal lawmaking authority, including the power to tax, regulate interstate commerce, declare war, and establish federal courts. Divided into House of Representatives and Senate with specific powers and limitations.',
       keyPowers: 'Taxation, interstate commerce regulation, war declarations, federal court creation, impeachment',
       keyLimits: 'Enumerated powers only, no bills of attainder, no ex post facto laws',
-      href: '/articles/article-1'
+      href: '/articles/article-i'
     },
     {
       number: 'II',
@@ -21,7 +21,7 @@ export default function ArticlesPage() {
       description: 'Presidential powers including command of armed forces, treaty-making, appointments, and faithful execution of laws. Establishes Electoral College system and impeachment process.',
       keyPowers: 'Commander-in-Chief, treaty negotiations, federal appointments, law enforcement',
       keyLimits: 'Senate approval for treaties/appointments, congressional oversight, impeachment',
-      href: '/articles/article-2'
+      href: '/articles/article-ii'
     },
     {
       number: 'III',
@@ -31,7 +31,7 @@ export default function ArticlesPage() {
       description: 'Federal judiciary structure, judicial independence, and constitutional protections. Establishes Supreme Court and defines federal court jurisdiction over constitutional questions and interstate disputes.',
       keyPowers: 'Constitutional interpretation, federal law adjudication, interstate dispute resolution',
       keyLimits: 'Cases and controversies only, no advisory opinions, judicial impeachment possible',
-      href: '/articles/article-3'
+      href: '/articles/article-iii'
     },
     {
       number: 'IV',
@@ -41,7 +41,7 @@ export default function ArticlesPage() {
       description: 'How states interact with each other and requirements for mutual recognition. Includes Full Faith and Credit Clause, extradition procedures, and federal guarantee of republican government.',
       keyPrinciples: 'Full Faith and Credit, interstate privileges and immunities, state admission process',
       keyProtections: 'Republican government guarantee, protection from invasion and domestic violence',
-      href: '/articles/article-4'
+      href: '/articles/article-iv'
     },
     {
       number: 'V',
@@ -51,7 +51,7 @@ export default function ArticlesPage() {
       description: 'The deliberately difficult process for amending the Constitution. Requires broad consensus through multiple pathways for both proposing and ratifying constitutional changes.',
       proposalMethods: 'Congressional 2/3 vote OR Constitutional Convention',
       ratificationMethods: 'State legislatures 3/4 OR State conventions 3/4',
-      href: '/articles/article-5'
+      href: '/articles/article-v'
     },
     {
       number: 'VI',
@@ -61,7 +61,7 @@ export default function ArticlesPage() {
       description: 'The Supremacy Clause establishing federal constitutional law as supreme, oath requirements for all officials, and prohibition on religious tests for public office.',
       corePrinciple: 'Federal law supreme when constitutional',
       requirements: 'Constitutional oath for all federal and state officials',
-      href: '/articles/article-6'
+      href: '/articles/article-vi'
     },
     {
       number: 'VII',
@@ -71,7 +71,7 @@ export default function ArticlesPage() {
       description: 'The historical process by which the Constitution replaced the Articles of Confederation, requiring only nine states for ratification through popular conventions.',
       requirements: '9 of 13 state ratifications through popular conventions',
       legacy: 'Established constitutional legitimacy through popular sovereignty',
-      href: '/articles/article-7'
+      href: '/articles/article-vii'
     }
   ];
 
