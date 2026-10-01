@@ -1,8 +1,47 @@
+'use client';
+
 import Link from 'next/link';
-import { Suspense } from 'react';
+import { Suspense, useEffect, useMemo, useState } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import actsData from './acts-by-category.json';
-import { Landmark, Scale, Vote, Sprout, HardHat, Shield, ShoppingCart, Heart, Cpu, Globe, User, Gavel, FileText } from 'lucide-react';
+import { Landmark, Scale, Vote, Sprout, HardHat, Shield, ShoppingCart, Heart, Cpu, Globe, User, Gavel, FileText, Loader2 } from 'lucide-react';
 import ActsBillSearchClient from './ActsBillSearchClient';
+
+const API_BASE = 'https://thesource-worker.ticri2025.workers.dev';
+const BILL_PAGE_SIZE = 20;
+const CONGRESSES = [119, 118, 117, 116, 115, 114, 113, 112, 111, 110];
+const POLICY_AREAS = [
+  'Finance & Banking',
+  'Civil Rights',
+  'Voting Rights',
+  'Environmental',
+  'Labor & Employment',
+  'Defense & Security',
+  'Consumer & Commerce',
+  'Healthcare',
+  'Criminal Justice',
+  'Technology & Privacy',
+  'Immigration',
+  'Administrative Law',
+];
+
+type BillSummary = {
+  bill_id: string;
+  congress_number: number;
+  bill_type: string;
+  bill_number: string;
+  title: string;
+  short_title: string | null;
+  sponsor_name: string | null;
+  sponsor_party: string | null;
+  sponsor_state: string | null;
+  introduced_date: string | null;
+  policy_area: string | null;
+};
+
+type BillSearchPayload = {
+  results: BillSummary[];
+};
 
 export default function ActsPage() {
   const timelines = [
@@ -323,9 +362,319 @@ export default function ActsPage() {
               </Link>
             ))}
           </div>
+
+          <Suspense fallback={<div className="mt-12 rounded-lg bg-white p-6 text-sm text-gray-700 shadow-md">Loading congressional data...</div>}>
+            <LiveCongressDataSections />
+          </Suspense>
         </div>
       </section>
 
     </div>
   );
+}
+
+function LiveCongressDataSections() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const congressParam = searchParams.get('congress') ?? '';
+  const policyParam = searchParams.get('policy') ?? '';
+  const [bills, setBills] = useState<BillSummary[]>([]);
+  const [loading, setLoading] = useState(false);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [hasMore, setHasMore] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  const selectedCongress = useMemo(() => {
+    const parsed = Number.parseInt(congressParam, 10);
+    return Number.isNaN(parsed) ? undefined : parsed;
+  }, [congressParam]);
+
+  const activePolicy = policyParam ? decodeURIComponent(policyParam) : '';
+  const activeMode = selectedCongress ? 'congress' : activePolicy ? 'policy' : 'none';
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadBills() {
+      if (activeMode === 'none') {
+        setBills([]);
+        setHasMore(false);
+        setError(null);
+        return;
+      }
+
+      try {
+        setLoading(true);
+        setError(null);
+        const payload = await fetchBills({
+          congress: selectedCongress,
+          policy: activePolicy,
+          offset: 0,
+        });
+
+        if (active) {
+          const nextResults = payload.results ?? [];
+          setBills(nextResults);
+          setHasMore(nextResults.length === BILL_PAGE_SIZE);
+        }
+      } catch (loadError) {
+        if (active) {
+          setBills([]);
+          setHasMore(false);
+          setError(loadError instanceof Error ? loadError.message : 'Could not load bills.');
+        }
+      } finally {
+        if (active) {
+          setLoading(false);
+        }
+      }
+    }
+
+    void loadBills();
+    return () => {
+      active = false;
+    };
+  }, [activeMode, activePolicy, selectedCongress]);
+
+  function selectCongress(congress: number) {
+    router.push(`/acts?congress=${congress}`);
+  }
+
+  function selectPolicy(policy: string) {
+    router.push(`/acts?policy=${encodeURIComponent(policy)}`);
+  }
+
+  function clearFilters() {
+    router.push('/acts');
+  }
+
+  async function loadMore() {
+    if (activeMode === 'none') return;
+
+    try {
+      setLoadingMore(true);
+      setError(null);
+      const payload = await fetchBills({
+        congress: selectedCongress,
+        policy: activePolicy,
+        offset: bills.length,
+      });
+      const nextResults = payload.results ?? [];
+      setBills((current) => dedupeBills([...current, ...nextResults]));
+      setHasMore(nextResults.length === BILL_PAGE_SIZE);
+    } catch (loadError) {
+      setError(loadError instanceof Error ? loadError.message : 'Could not load more bills.');
+    } finally {
+      setLoadingMore(false);
+    }
+  }
+
+  return (
+    <div className="mt-12 space-y-10">
+      <section className="rounded-lg border border-gray-200 bg-white p-6 shadow-md">
+        <div className="mb-5">
+          <h2 className="text-3xl font-bold text-gray-900">Browse by Congress</h2>
+          <p className="mt-2 text-sm leading-6 text-gray-700">
+            Select a recent Congress to browse bills from the live TheSource congressional database.
+          </p>
+        </div>
+        <div className="flex flex-wrap gap-3">
+          {CONGRESSES.map((congress) => (
+            <button
+              key={congress}
+              type="button"
+              onClick={() => selectCongress(congress)}
+              className={`rounded-full border px-4 py-2 text-sm font-bold transition ${
+                selectedCongress === congress
+                  ? 'border-blue-700 bg-blue-700 text-white'
+                  : 'border-gray-300 bg-white text-gray-800 hover:border-blue-600 hover:text-blue-700'
+              }`}
+            >
+              {congress}th
+            </button>
+          ))}
+        </div>
+      </section>
+
+      <section className="rounded-lg border border-gray-200 bg-white p-6 shadow-md">
+        <div className="mb-5">
+          <h2 className="text-3xl font-bold text-gray-900">Browse by Policy Area</h2>
+          <p className="mt-2 text-sm leading-6 text-gray-700">
+            Filter live bill records using the same policy areas as the Acts timeline categories.
+          </p>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {POLICY_AREAS.map((policy) => (
+            <button
+              key={policy}
+              type="button"
+              onClick={() => selectPolicy(policy)}
+              className={`rounded border px-4 py-3 text-left text-sm font-bold transition ${
+                activePolicy === policy
+                  ? 'border-blue-700 bg-blue-50 text-blue-900'
+                  : 'border-gray-300 bg-white text-gray-800 hover:border-blue-600 hover:text-blue-700'
+              }`}
+            >
+              {policy}
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {activeMode !== 'none' ? (
+        <section className="space-y-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.16em] text-blue-700">Live Congressional Bills</p>
+              <h2 className="mt-1 text-3xl font-bold text-gray-900">
+                {selectedCongress ? `${selectedCongress}th Congress` : activePolicy}
+              </h2>
+              <p className="mt-1 text-sm text-gray-600">
+                {loading ? 'Loading bills...' : `${bills.length.toLocaleString()} bills shown`}
+              </p>
+            </div>
+            <button type="button" onClick={clearFilters} className="text-sm font-bold text-blue-700 hover:text-blue-900">
+              Clear filters
+            </button>
+          </div>
+
+          {error ? (
+            <div className="rounded border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">{error}</div>
+          ) : null}
+
+          {loading ? (
+            <BillSkeletonGrid />
+          ) : (
+            <>
+              <div className="grid gap-4 md:grid-cols-2">
+                {bills.map((bill) => (
+                  <BillCard key={bill.bill_id} bill={bill} />
+                ))}
+              </div>
+
+              {bills.length === 0 && !error ? (
+                <div className="rounded-lg bg-white p-8 text-center text-sm text-gray-600 shadow-md">
+                  No bills matched this filter.
+                </div>
+              ) : null}
+
+              {hasMore ? (
+                <div className="pt-3 text-center">
+                  <button
+                    type="button"
+                    onClick={loadMore}
+                    disabled={loadingMore}
+                    className="inline-flex items-center justify-center gap-2 rounded bg-blue-900 px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-70"
+                  >
+                    {loadingMore ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
+                    Load more
+                  </button>
+                </div>
+              ) : null}
+            </>
+          )}
+        </section>
+      ) : null}
+    </div>
+  );
+}
+
+async function fetchBills({
+  congress,
+  policy,
+  offset,
+}: {
+  congress?: number;
+  policy: string;
+  offset: number;
+}) {
+  const params = new URLSearchParams({ limit: String(BILL_PAGE_SIZE), offset: String(offset) });
+  if (congress) {
+    params.set('congress', String(congress));
+  } else if (policy) {
+    params.set('q', policy);
+  }
+
+  const response = await fetch(`${API_BASE}/api/bills/search?${params.toString()}`);
+  if (!response.ok) {
+    throw new Error(`TheSource API returned ${response.status}.`);
+  }
+
+  return response.json() as Promise<BillSearchPayload>;
+}
+
+function BillCard({ bill }: { bill: BillSummary }) {
+  return (
+    <Link
+      href={`/acts/bill?id=${encodeURIComponent(bill.bill_id)}`}
+      className="block rounded-lg border border-gray-200 bg-white p-5 shadow-md transition hover:border-blue-600 hover:shadow-lg"
+    >
+      <div className="mb-3 flex flex-wrap items-center gap-2">
+        <span className="rounded-full bg-blue-900 px-3 py-1 text-xs font-bold uppercase text-white">
+          {formatBillId(bill)}
+        </span>
+        <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700">
+          {bill.congress_number}th Congress
+        </span>
+        {bill.policy_area ? (
+          <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-bold text-gray-700">
+            {bill.policy_area}
+          </span>
+        ) : null}
+      </div>
+      <h3 className="line-clamp-2 min-h-[3.5rem] text-lg font-bold leading-7 text-gray-900">
+        {bill.short_title || bill.title}
+      </h3>
+      <p className="mt-3 text-sm text-gray-700">
+        {bill.sponsor_name ? `${bill.sponsor_name}${formatPartyState(bill.sponsor_party, bill.sponsor_state)}` : 'Sponsor unavailable'}
+      </p>
+      <p className="mt-1 text-sm text-gray-600">
+        {bill.introduced_date ? `Introduced ${formatDate(bill.introduced_date)}` : 'Introduced date unavailable'}
+      </p>
+    </Link>
+  );
+}
+
+function BillSkeletonGrid() {
+  return (
+    <div className="grid gap-4 md:grid-cols-2">
+      {Array.from({ length: 4 }).map((_, index) => (
+        <div key={index} className="rounded-lg border border-gray-200 bg-white p-5 shadow-md">
+          <div className="mb-4 flex gap-2">
+            <div className="h-6 w-24 animate-pulse rounded-full bg-gray-200" />
+            <div className="h-6 w-28 animate-pulse rounded-full bg-gray-200" />
+          </div>
+          <div className="mb-3 h-5 w-4/5 animate-pulse rounded bg-gray-200" />
+          <div className="mb-2 h-4 w-1/2 animate-pulse rounded bg-gray-200" />
+          <div className="h-4 w-1/3 animate-pulse rounded bg-gray-200" />
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function formatBillId(bill: BillSummary) {
+  return `${bill.bill_type.toUpperCase()} ${bill.bill_number}`;
+}
+
+function formatPartyState(party: string | null, state: string | null) {
+  const parts = [party, state].filter(Boolean);
+  return parts.length ? ` (${parts.join('-')})` : '';
+}
+
+function formatDate(value: string) {
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) {
+    return value;
+  }
+  return parsed.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
+function dedupeBills(bills: BillSummary[]) {
+  const seen = new Set<string>();
+  return bills.filter((bill) => {
+    if (seen.has(bill.bill_id)) return false;
+    seen.add(bill.bill_id);
+    return true;
+  });
 }
