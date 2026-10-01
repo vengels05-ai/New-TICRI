@@ -1,8 +1,9 @@
+import { Suspense } from 'react';
 import UscodeSearchClient from '@/components/thesource/UscodeSearchClient';
 
 export const metadata = {
-  title: 'U.S. Code Search | TICRI',
-  description: 'Search and read U.S. Code sections inside TICRI, served from TheSource.',
+  title: 'U.S. Code | TICRI',
+  description: 'Browse, search, and read U.S. Code sections inside TICRI, served from TheSource.',
 };
 
 export default function UscodePage() {
@@ -19,7 +20,9 @@ export default function UscodePage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6 lg:px-8">
-        <UscodeSearchClient />
+        <Suspense fallback={<div className="border border-[#0F2C47]/10 bg-white p-6 text-sm text-[#29465f]">Loading U.S. Code...</div>}>
+          <UscodeSearchClient />
+        </Suspense>
       </section>
     </main>
   );
