@@ -3,10 +3,13 @@
 import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { ArrowRight, FileSearch, Loader2, Search } from 'lucide-react';
+import { ArrowRight, ChevronDown, FileSearch, Loader2, Search } from 'lucide-react';
 import { searchEOs } from '@/lib/thesource';
 import type { ExecutiveOrder } from '@/lib/thesource';
 import { cleanDisplayText } from '@/lib/textClean';
+
+const PRESIDENT_PAGE_SIZE = 50;
+const SEARCH_PAGE_SIZE = 30;
 
 const presidents = [
   { name: 'Franklin D. Roosevelt', slug: 'franklin-d-roosevelt' },
@@ -36,6 +39,8 @@ export default function ExecutiveOrdersClient() {
   const [queryInput, setQueryInput] = useState(urlQuery);
   const [results, setResults] = useState<ExecutiveOrder[]>([]);
   const [loading, setLoading] = useState(false);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [hasMore, setHasMore] = useState(false);
   const [searched, setSearched] = useState(Boolean(urlQuery || urlPresident));
   const [error, setError] = useState<string | null>(null);
 
@@ -55,6 +60,7 @@ export default function ExecutiveOrdersClient() {
       if (!urlQuery && !urlPresident) {
         setResults([]);
         setSearched(false);
+        setHasMore(false);
         setError(null);
         return;
       }
@@ -64,15 +70,19 @@ export default function ExecutiveOrdersClient() {
         setSearched(true);
         setError(null);
 
-        const limit = urlPresident && !urlQuery ? 100 : 30;
+        const isPresidentBrowse = Boolean(urlPresident && !urlQuery);
+        const limit = isPresidentBrowse ? PRESIDENT_PAGE_SIZE : SEARCH_PAGE_SIZE;
         const payload = await searchEOs(urlQuery, urlPresident || undefined, limit, 0);
 
         if (active) {
-          setResults(payload.results ?? []);
+          const nextResults = sortExecutiveOrdersChronologically(payload.results ?? []);
+          setResults(nextResults);
+          setHasMore(nextResults.length === limit);
         }
       } catch (loadError) {
         if (active) {
           setResults([]);
+          setHasMore(false);
           setError(loadError instanceof Error ? loadError.message : 'Search failed.');
         }
       } finally {
@@ -99,6 +109,26 @@ export default function ExecutiveOrdersClient() {
   function submitSearch(event: React.FormEvent) {
     event.preventDefault();
     updateParams({ q: queryInput.trim() });
+  }
+
+  async function loadMore() {
+    if (!urlQuery && !urlPresident) return;
+
+    try {
+      setLoadingMore(true);
+      setError(null);
+      const isPresidentBrowse = Boolean(urlPresident && !urlQuery);
+      const limit = isPresidentBrowse ? PRESIDENT_PAGE_SIZE : SEARCH_PAGE_SIZE;
+      const payload = await searchEOs(urlQuery, urlPresident || undefined, limit, results.length);
+      const nextResults = payload.results ?? [];
+
+      setResults((current) => sortExecutiveOrdersChronologically(dedupeExecutiveOrders([...current, ...nextResults])));
+      setHasMore(nextResults.length === limit);
+    } catch (loadError) {
+      setError(loadError instanceof Error ? loadError.message : 'Could not load more executive orders.');
+    } finally {
+      setLoadingMore(false);
+    }
   }
 
   return (
@@ -134,7 +164,7 @@ export default function ExecutiveOrdersClient() {
           <div>
             <h2 className="text-2xl font-black text-[#0F2C47]">Browse by President</h2>
             <p className="mt-2 text-sm leading-6 text-[#29465f]">
-              Choose an administration to load up to 100 executive orders. Search results and president filters are saved in the URL.
+              Choose an administration to load executive orders 50 at a time. Search results and president filters are saved in the URL.
             </p>
           </div>
           {(urlQuery || urlPresident) ? (
@@ -194,6 +224,20 @@ export default function ExecutiveOrdersClient() {
               No executive orders matched that search.
             </div>
           ) : null}
+
+          {hasMore ? (
+            <div className="pt-3 text-center">
+              <button
+                type="button"
+                onClick={loadMore}
+                disabled={loadingMore}
+                className="inline-flex items-center justify-center gap-2 bg-[#0F2C47] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#173f63] disabled:cursor-not-allowed disabled:opacity-70"
+              >
+                {loadingMore ? <Loader2 className="h-4 w-4 animate-spin" /> : <ChevronDown className="h-4 w-4" />}
+                Load more
+              </button>
+            </div>
+          ) : null}
         </div>
       ) : null}
     </section>
@@ -232,4 +276,32 @@ function formatDate(value: string) {
     return value;
   }
   return date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+}
+
+function sortExecutiveOrdersChronologically(orders: ExecutiveOrder[]) {
+  return [...orders].sort((first, second) => {
+    const firstTime = getDateTime(first.signing_date);
+    const secondTime = getDateTime(second.signing_date);
+
+    if (firstTime !== secondTime) {
+      return firstTime - secondTime;
+    }
+
+    return (first.eo_number ?? 0) - (second.eo_number ?? 0);
+  });
+}
+
+function getDateTime(value: string | null) {
+  if (!value) return Number.MAX_SAFE_INTEGER;
+  const parsed = new Date(value).getTime();
+  return Number.isNaN(parsed) ? Number.MAX_SAFE_INTEGER : parsed;
+}
+
+function dedupeExecutiveOrders(orders: ExecutiveOrder[]) {
+  const seen = new Set<number>();
+  return orders.filter((order) => {
+    if (seen.has(order.id)) return false;
+    seen.add(order.id);
+    return true;
+  });
 }
