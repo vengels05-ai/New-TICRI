@@ -1,4 +1,27 @@
+'use client';
+
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
+
+const API_BASE = 'https://thesource-worker.ticri2025.workers.dev';
+const BILL_PAGE_SIZE = 20;
+
+type BillSummary = {
+  bill_id: string;
+  congress_number: number;
+  bill_type: string;
+  bill_number: string;
+  title: string;
+  short_title: string | null;
+  sponsor_name: string | null;
+  sponsor_party: string | null;
+  sponsor_state: string | null;
+  introduced_date: string | null;
+};
+
+type BillSearchPayload = {
+  results: BillSummary[];
+};
 
 export default function CivilRightsActsTimelinePage() {
   return (
@@ -102,6 +125,175 @@ export default function CivilRightsActsTimelinePage() {
           </div>
         </div>
       </section>
+      <RelatedCivilRightsBills />
     </div>
   );
+}
+
+function RelatedCivilRightsBills() {
+  const [bills, setBills] = useState<BillSummary[]>([]);
+  const [offset, setOffset] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
+  const [hasMore, setHasMore] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadInitialBills() {
+      try {
+        setLoading(true);
+        setError(null);
+        const payload = await fetchCivilRightsBills(0);
+        if (active) {
+          const nextBills = payload.results ?? [];
+          setBills(nextBills);
+          setOffset(BILL_PAGE_SIZE);
+          setHasMore(nextBills.length === BILL_PAGE_SIZE);
+        }
+      } catch (loadError) {
+        if (active) {
+          setBills([]);
+          setHasMore(false);
+          setError(loadError instanceof Error ? loadError.message : 'Could not load related bills.');
+        }
+      } finally {
+        if (active) {
+          setLoading(false);
+        }
+      }
+    }
+
+    void loadInitialBills();
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  async function loadMore() {
+    try {
+      setLoadingMore(true);
+      setError(null);
+      const payload = await fetchCivilRightsBills(offset);
+      const nextBills = payload.results ?? [];
+      setBills((current) => dedupeBills([...current, ...nextBills]));
+      setOffset((current) => current + BILL_PAGE_SIZE);
+      setHasMore(nextBills.length === BILL_PAGE_SIZE);
+    } catch (loadError) {
+      setError(loadError instanceof Error ? loadError.message : 'Could not load more related bills.');
+    } finally {
+      setLoadingMore(false);
+    }
+  }
+
+  return (
+    <section className="bg-white py-12">
+      <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+        <div className="mb-6">
+          <h2 className="text-3xl font-bold text-gray-900">Related Bills from Congress</h2>
+          <p className="mt-2 text-sm font-semibold text-blue-900">
+            Results from 378,000+ congressional bills in the TheSource database.
+          </p>
+        </div>
+
+        {error ? (
+          <div className="mb-5 rounded border border-red-200 bg-red-50 px-4 py-3 text-sm font-semibold text-red-700">{error}</div>
+        ) : null}
+
+        {loading ? (
+          <div className="grid gap-4 md:grid-cols-2">
+            {Array.from({ length: 4 }).map((_, index) => (
+              <div key={index} className="rounded-lg border border-gray-200 bg-white p-5 shadow-md">
+                <div className="mb-4 flex gap-2">
+                  <div className="h-6 w-24 animate-pulse rounded-full bg-gray-200" />
+                  <div className="h-6 w-28 animate-pulse rounded-full bg-gray-200" />
+                </div>
+                <div className="mb-3 h-5 w-4/5 animate-pulse rounded bg-gray-200" />
+                <div className="h-4 w-1/2 animate-pulse rounded bg-gray-200" />
+              </div>
+            ))}
+          </div>
+        ) : (
+          <>
+            <div className="grid gap-4 md:grid-cols-2">
+              {bills.map((bill) => (
+                <Link
+                  key={bill.bill_id}
+                  href={`/acts/bill?id=${encodeURIComponent(bill.bill_id)}`}
+                  className="block rounded-lg border border-gray-200 bg-white p-5 shadow-md transition hover:border-blue-600 hover:shadow-lg"
+                >
+                  <div className="mb-3 flex flex-wrap gap-2">
+                    <span className="rounded-full bg-blue-900 px-3 py-1 text-xs font-bold uppercase text-white">
+                      {formatBillId(bill)}
+                    </span>
+                    <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700">
+                      {bill.congress_number}th Congress
+                    </span>
+                  </div>
+                  <h3 className="line-clamp-2 min-h-[3.5rem] text-lg font-bold leading-7 text-gray-900">
+                    {bill.short_title || bill.title}
+                  </h3>
+                  <p className="mt-3 text-sm text-gray-700">
+                    {bill.sponsor_name ? `${bill.sponsor_name}${formatPartyState(bill.sponsor_party, bill.sponsor_state)}` : 'Sponsor unavailable'}
+                  </p>
+                  <p className="mt-1 text-sm text-gray-600">
+                    {bill.introduced_date ? `Introduced ${formatDate(bill.introduced_date)}` : 'Introduced date unavailable'}
+                  </p>
+                </Link>
+              ))}
+            </div>
+
+            {hasMore ? (
+              <div className="mt-8 text-center">
+                <button
+                  type="button"
+                  onClick={loadMore}
+                  disabled={loadingMore}
+                  className="rounded bg-blue-900 px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-800 disabled:cursor-not-allowed disabled:opacity-70"
+                >
+                  {loadingMore ? 'Loading...' : 'Load more'}
+                </button>
+              </div>
+            ) : null}
+          </>
+        )}
+      </div>
+    </section>
+  );
+}
+
+async function fetchCivilRightsBills(offset: number) {
+  const params = new URLSearchParams({ q: 'civil rights', limit: String(BILL_PAGE_SIZE), offset: String(offset) });
+  const response = await fetch(`${API_BASE}/api/bills/search?${params.toString()}`);
+  if (!response.ok) {
+    throw new Error(`TheSource API returned ${response.status}.`);
+  }
+  return response.json() as Promise<BillSearchPayload>;
+}
+
+function dedupeBills(bills: BillSummary[]) {
+  const seen = new Set<string>();
+  return bills.filter((bill) => {
+    if (seen.has(bill.bill_id)) return false;
+    seen.add(bill.bill_id);
+    return true;
+  });
+}
+
+function formatBillId(bill: BillSummary) {
+  return `${bill.bill_type.toUpperCase()} ${bill.bill_number}`;
+}
+
+function formatPartyState(party: string | null, state: string | null) {
+  const parts = [party, state].filter(Boolean);
+  return parts.length ? ` (${parts.join('-')})` : '';
+}
+
+function formatDate(value: string) {
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) {
+    return value;
+  }
+  return parsed.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
 }
