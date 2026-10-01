@@ -1,6 +1,90 @@
-import { Scale, Target, Landmark, Users, AlertCircle, MessageSquare, Flag, DollarSign, Heart, Shield, Sword, Star, BookOpen, Search } from 'lucide-react';
+'use client';
+
+import { useEffect, useState } from 'react';
+import { Scale, Target, Landmark, Users, AlertCircle, MessageSquare, Flag, DollarSign, Heart, Shield, Sword, Star, BookOpen, Search, TrendingUp, Clock } from 'lucide-react';
+
+const API_BASE = 'https://thesource-worker.ticri2025.workers.dev';
+
+type CaseSummary = {
+  id: number;
+  case_name: string;
+  date_filed: string | null;
+  scdb_decision_direction: string | null;
+  scdb_votes_majority: number | null;
+  scdb_votes_minority: number | null;
+  citation_count: number;
+};
+
+type CasesPayload = {
+  results: CaseSummary[];
+};
 
 export default function CasesPage() {
+  const [notableCases, setNotableCases] = useState<CaseSummary[]>([]);
+  const [recentCases, setRecentCases] = useState<CaseSummary[]>([]);
+  const [notableLoading, setNotableLoading] = useState(true);
+  const [recentLoading, setRecentLoading] = useState(true);
+  const [notableError, setNotableError] = useState<string | null>(null);
+  const [recentError, setRecentError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadNotableCases() {
+      try {
+        setNotableLoading(true);
+        setNotableError(null);
+        const payload = await fetchCaseList('/api/cases/notable?limit=12');
+        if (active) {
+          setNotableCases(payload.results ?? []);
+        }
+      } catch (error) {
+        if (active) {
+          setNotableCases([]);
+          setNotableError(error instanceof Error ? error.message : 'Could not load notable cases.');
+        }
+      } finally {
+        if (active) {
+          setNotableLoading(false);
+        }
+      }
+    }
+
+    void loadNotableCases();
+    return () => {
+      active = false;
+    };
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+
+    async function loadRecentCases() {
+      try {
+        setRecentLoading(true);
+        setRecentError(null);
+        const payload = await fetchCaseList('/api/cases/recent?limit=12');
+        if (active) {
+          setRecentCases(sortCasesByFiledDate(payload.results ?? []));
+        }
+      } catch (error) {
+        if (active) {
+          setRecentCases([]);
+          setRecentError(error instanceof Error ? error.message : 'Could not load recent cases.');
+        }
+      } finally {
+        if (active) {
+          setRecentLoading(false);
+        }
+      }
+    }
+
+    void loadRecentCases();
+    return () => {
+      active = false;
+    };
+  }, []);
+
   return (
     <div className="bg-white">
       {/* Hero Section */}
@@ -198,6 +282,22 @@ export default function CasesPage() {
             </a>
           </div>
 
+          <LiveCasesSection
+            title="Most Cited by Courts"
+            icon={TrendingUp}
+            cases={notableCases}
+            loading={notableLoading}
+            error={notableError}
+          />
+
+          <LiveCasesSection
+            title="Recent Decisions"
+            icon={Clock}
+            cases={recentCases}
+            loading={recentLoading}
+            error={recentError}
+          />
+
           {/* Note Section */}
           <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-lg mt-8">
             <p className="text-gray-800 flex items-start gap-2">
@@ -212,4 +312,129 @@ export default function CasesPage() {
       </section>
     </div>
   );
+}
+
+async function fetchCaseList(path: string) {
+  const response = await fetch(`${API_BASE}${path}`);
+  if (!response.ok) {
+    throw new Error(`TheSource API returned ${response.status}.`);
+  }
+  return response.json() as Promise<CasesPayload>;
+}
+
+function LiveCasesSection({
+  title,
+  icon: Icon,
+  cases,
+  loading,
+  error,
+}: {
+  title: string;
+  icon: typeof TrendingUp;
+  cases: CaseSummary[];
+  loading: boolean;
+  error: string | null;
+}) {
+  return (
+    <section className="mt-12">
+      <div className="flex items-center gap-3 mb-6">
+        <Icon className="w-8 h-8 text-gray-900" />
+        <h2 className="text-3xl font-bold text-gray-900">{title}</h2>
+      </div>
+
+      {error ? (
+        <div className="mb-6 rounded-lg border border-red-200 bg-red-50 p-4 text-sm font-semibold text-red-700">
+          {error}
+        </div>
+      ) : null}
+
+      {loading ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          {Array.from({ length: 6 }).map((_, index) => (
+            <div key={index} className="rounded-lg border border-gray-200 bg-white p-6 shadow-md">
+              <div className="mb-4 flex gap-2">
+                <div className="h-7 w-16 animate-pulse rounded-full bg-gray-200" />
+                <div className="h-7 w-24 animate-pulse rounded-full bg-gray-200" />
+              </div>
+              <div className="mb-3 h-6 w-4/5 animate-pulse rounded bg-gray-200" />
+              <div className="h-4 w-2/3 animate-pulse rounded bg-gray-200" />
+            </div>
+          ))}
+        </div>
+      ) : null}
+
+      {!loading && !error ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+          {cases.map((caseItem) => (
+            <LiveCaseCard key={caseItem.id} caseItem={caseItem} />
+          ))}
+        </div>
+      ) : null}
+    </section>
+  );
+}
+
+function LiveCaseCard({ caseItem }: { caseItem: CaseSummary }) {
+  return (
+    <a
+      href={`/cases/opinion?id=${caseItem.id}`}
+      className="block rounded-lg border border-gray-300 bg-gradient-to-br from-gray-100 to-gray-200 p-6 shadow-md transition-all hover:border-gray-800 hover:shadow-xl"
+    >
+      <div className="mb-4 flex flex-wrap gap-2">
+        <span className="rounded-full bg-gray-800 px-3 py-1 text-sm font-bold text-white">
+          {getCaseYear(caseItem.date_filed)}
+        </span>
+        {getDirectionLabel(caseItem.scdb_decision_direction) ? (
+          <span className={`rounded-full px-3 py-1 text-sm font-bold ${getDirectionClasses(caseItem.scdb_decision_direction)}`}>
+            {getDirectionLabel(caseItem.scdb_decision_direction)}
+          </span>
+        ) : null}
+      </div>
+      <h3 className="line-clamp-2 min-h-[3.5rem] text-xl font-bold leading-7 text-gray-900">
+        {caseItem.case_name}
+      </h3>
+      <p className="mt-4 text-sm font-semibold text-gray-700">
+        Vote: {formatVote(caseItem)} <span className="text-gray-400">•</span> {caseItem.citation_count.toLocaleString()} citations
+      </p>
+    </a>
+  );
+}
+
+function getCaseYear(value: string | null) {
+  if (!value) return 'Year unknown';
+  const parsed = new Date(value);
+  if (Number.isNaN(parsed.getTime())) {
+    const match = value.match(/\d{4}/);
+    return match?.[0] ?? 'Year unknown';
+  }
+  return String(parsed.getFullYear());
+}
+
+function formatVote(caseItem: CaseSummary) {
+  if (caseItem.scdb_votes_majority === null) {
+    return 'N/A';
+  }
+  return `${caseItem.scdb_votes_majority}-${caseItem.scdb_votes_minority ?? 0}`;
+}
+
+function getDirectionLabel(direction: string | null) {
+  if (direction === '1') return 'Conservative';
+  if (direction === '2') return 'Liberal';
+  return '';
+}
+
+function getDirectionClasses(direction: string | null) {
+  if (direction === '1') return 'bg-red-100 text-red-800';
+  if (direction === '2') return 'bg-blue-100 text-blue-800';
+  return 'bg-gray-100 text-gray-800';
+}
+
+function sortCasesByFiledDate(cases: CaseSummary[]) {
+  return [...cases].sort((first, second) => getDateTime(second.date_filed) - getDateTime(first.date_filed));
+}
+
+function getDateTime(value: string | null) {
+  if (!value) return 0;
+  const parsed = new Date(value).getTime();
+  return Number.isNaN(parsed) ? 0 : parsed;
 }
