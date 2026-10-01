@@ -18,8 +18,27 @@ async function apiFetch<T>(path: string): Promise<T> {
   const res = await fetch(`${getApiBase()}${path}`, {
     next: { revalidate: 3600 }, // cache for 1 hour
   });
-  if (!res.ok) throw new Error(`API error: ${res.status} ${path}`);
+  if (!res.ok) {
+    const message = await getApiErrorMessage(res, path);
+    throw new Error(message);
+  }
   return res.json() as Promise<T>;
+}
+
+async function getApiErrorMessage(res: Response, path: string): Promise<string> {
+  try {
+    const payload = await res.json() as { error?: string };
+    if (payload.error?.includes("exceeded D1's free tier daily row read limit")) {
+      return 'TheSource database has reached Cloudflare D1 daily read limits. Live database results will resume after the quota resets at midnight UTC, or immediately after moving D1 to a paid plan.';
+    }
+    if (payload.error) {
+      return payload.error;
+    }
+  } catch {
+    // Fall through to the generic status message.
+  }
+
+  return `API error: ${res.status} ${path}`;
 }
 
 // ─── Types ───────────────────────────────────────────────────────────────────
