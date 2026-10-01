@@ -1,3 +1,6 @@
+'use client';
+
+import LiveCasesSection from '@/components/thesource/LiveCasesSection';
 export default function ParentalRightsCasesPage() {
   const cases = [
     {
@@ -67,6 +70,7 @@ export default function ParentalRightsCasesPage() {
           </div>
         </div>
       </section>
+      <LiveCasesSection title="More Parental Rights Cases from the Database" queries={["parental rights","family"]} />
     </div>
   );
 }

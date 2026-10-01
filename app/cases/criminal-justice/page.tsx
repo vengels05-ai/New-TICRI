@@ -1,3 +1,6 @@
+'use client';
+
+import LiveCasesSection from '@/components/thesource/LiveCasesSection';
 export default function CriminalJusticeCasesPage() {
   const cases = [
     {
@@ -67,6 +70,7 @@ export default function CriminalJusticeCasesPage() {
           </div>
         </div>
       </section>
+      <LiveCasesSection title="More Criminal Justice Cases from the Database" queries={["criminal","fourth amendment"]} />
     </div>
   );
 }

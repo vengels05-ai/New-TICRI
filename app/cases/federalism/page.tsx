@@ -1,3 +1,6 @@
+'use client';
+
+import LiveCasesSection from '@/components/thesource/LiveCasesSection';
 export default function FederalismCasesPage() {
   const cases = [
     {
@@ -85,6 +88,7 @@ export default function FederalismCasesPage() {
           </div>
         </div>
       </section>
+      <LiveCasesSection title="More Federalism Cases from the Database" queries={["federalism","commerce clause"]} />
     </div>
   );
 }

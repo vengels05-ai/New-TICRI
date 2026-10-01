@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import LiveBillsSection from '@/components/thesource/LiveBillsSection';
 
 export default function LaborEmploymentRightsTimelinePage() {
   return (
@@ -157,6 +160,7 @@ export default function LaborEmploymentRightsTimelinePage() {
           </div>
         </div>
       </section>
+      <LiveBillsSection title="Related Bills from Congress" query="labor" />
     </div>
   );
 }

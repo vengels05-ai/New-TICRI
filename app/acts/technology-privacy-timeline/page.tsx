@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import LiveBillsSection from '@/components/thesource/LiveBillsSection';
 
 export default function TechnologyPrivacyTimelinePage() {
   return (
@@ -80,6 +83,7 @@ export default function TechnologyPrivacyTimelinePage() {
           </div>
         </div>
       </section>
+      <LiveBillsSection title="Related Bills from Congress" query="technology" />
     </div>
   );
 }

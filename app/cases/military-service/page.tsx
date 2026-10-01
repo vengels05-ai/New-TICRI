@@ -1,3 +1,6 @@
+'use client';
+
+import LiveCasesSection from '@/components/thesource/LiveCasesSection';
 export default function MilitaryServiceCasesPage() {
   const cases = [
     {
@@ -61,6 +64,7 @@ export default function MilitaryServiceCasesPage() {
           </div>
         </div>
       </section>
+      <LiveCasesSection title="More Military Service Cases from the Database" queries={["military","veterans"]} />
     </div>
   );
 }

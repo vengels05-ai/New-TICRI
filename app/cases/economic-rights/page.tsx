@@ -1,3 +1,6 @@
+'use client';
+
+import LiveCasesSection from '@/components/thesource/LiveCasesSection';
 export default function EconomicRightsCasesPage() {
   const cases = [
     {
@@ -67,6 +70,7 @@ export default function EconomicRightsCasesPage() {
           </div>
         </div>
       </section>
+      <LiveCasesSection title="More Economic Rights Cases from the Database" queries={["property rights","commerce"]} />
     </div>
   );
 }

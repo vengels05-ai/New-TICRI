@@ -1,3 +1,6 @@
+'use client';
+
+import LiveCasesSection from '@/components/thesource/LiveCasesSection';
 export default function ExecutivePowerCasesPage() {
   const cases = [
     {
@@ -67,6 +70,7 @@ export default function ExecutivePowerCasesPage() {
           </div>
         </div>
       </section>
+      <LiveCasesSection title="More Executive Power Cases from the Database" queries={["executive power","presidential"]} />
     </div>
   );
 }

@@ -1,3 +1,6 @@
+'use client';
+
+import LiveCasesSection from '@/components/thesource/LiveCasesSection';
 export default function HealthcareLawCasesPage() {
   const cases = [
     {
@@ -61,6 +64,7 @@ export default function HealthcareLawCasesPage() {
           </div>
         </div>
       </section>
+      <LiveCasesSection title="More Healthcare Law Cases from the Database" queries={["healthcare","medicaid"]} />
     </div>
   );
 }

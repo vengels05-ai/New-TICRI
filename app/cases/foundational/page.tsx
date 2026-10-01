@@ -1,3 +1,6 @@
+'use client';
+
+import LiveCasesSection from '@/components/thesource/LiveCasesSection';
 export default function FoundationalCasesPage() {
   const cases = [
     {
@@ -109,6 +112,7 @@ export default function FoundationalCasesPage() {
           </div>
         </div>
       </section>
+      <LiveCasesSection title="More Foundational Cases from the Database" queries={["constitutional","judicial review"]} />
     </div>
   );
 }

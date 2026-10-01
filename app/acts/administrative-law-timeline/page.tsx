@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import LiveBillsSection from '@/components/thesource/LiveBillsSection';
 
 export default function AdministrativeLawTimelinePage() {
   return (
@@ -69,6 +72,7 @@ export default function AdministrativeLawTimelinePage() {
           </div>
         </div>
       </section>
+      <LiveBillsSection title="Related Bills from Congress" query="administrative" />
     </div>
   );
 }

@@ -1,3 +1,6 @@
+'use client';
+
+import LiveCasesSection from '@/components/thesource/LiveCasesSection';
 export default function FirstAmendmentCasesPage() {
   const cases = [
     {
@@ -91,6 +94,7 @@ export default function FirstAmendmentCasesPage() {
           </div>
         </div>
       </section>
+      <LiveCasesSection title="More First Amendment Cases from the Database" queries={["first amendment","free speech"]} />
     </div>
   );
 }

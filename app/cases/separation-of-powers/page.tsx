@@ -1,3 +1,6 @@
+'use client';
+
+import LiveCasesSection from '@/components/thesource/LiveCasesSection';
 export default function SeparationOfPowersCasesPage() {
   const cases = [
     {
@@ -73,6 +76,7 @@ export default function SeparationOfPowersCasesPage() {
           </div>
         </div>
       </section>
+      <LiveCasesSection title="More Separation of Powers Cases from the Database" queries={["separation of powers","congress"]} />
     </div>
   );
 }
