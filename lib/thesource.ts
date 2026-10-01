@@ -209,8 +209,11 @@ export async function searchMembers(q: string, state?: string, party?: string, l
 // ─── LAW ─────────────────────────────────────────────────────────────────────
 
 export async function searchEOs(q: string, president?: string, limit = 20, offset = 0) {
-  const params = new URLSearchParams({ q, limit: String(limit), offset: String(offset) });
+  const params = new URLSearchParams();
   if (president) params.set('president', president);
+  if (q.trim()) params.set('q', q.trim());
+  params.set('limit', String(limit));
+  params.set('offset', String(offset));
   return apiFetch<{ results: ExecutiveOrder[] }>(`/api/eos/search?${params}`);
 }
 
