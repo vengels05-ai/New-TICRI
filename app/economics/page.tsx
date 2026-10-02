@@ -67,17 +67,48 @@ export default function EconomicsPage() {
 
       <div className="mx-auto max-w-6xl space-y-8 px-4 py-10 sm:px-6 lg:px-8">
         <section className="rounded-lg bg-white p-6 shadow-md">
-          <h2 className="text-2xl font-black text-gray-900">GDP, Inflation, and Everyday Purchasing Power</h2>
-          <div className="mt-4 grid gap-4 text-sm leading-7 text-gray-700 md:grid-cols-2">
-            <p>
-              Gross Domestic Product, or GDP, is a broad measure of the goods and services produced by the economy. Real GDP
-              adjusts for inflation, which makes it easier to compare output across different eras instead of confusing higher
-              prices with higher production.
-            </p>
-            <p>
-              Inflation measures how quickly prices rise. When asset prices, consumer prices, wages, and debt move at different
-              speeds, the same economy can feel very different to homeowners, renters, workers, savers, investors, and taxpayers.
-            </p>
+          <div className="space-y-8 text-sm leading-7 text-gray-700">
+            <div>
+              <h2 className="text-2xl font-black text-gray-900">What is Gross Domestic Product (GDP)?</h2>
+              <p className="mt-4">
+                Gross Domestic Product (GDP) is the total monetary value of all final goods and services produced within a country's borders during a specific time period. The government and many economists use it as the primary scorecard for measuring an economy's size, health, and overall performance.
+              </p>
+              <p className="mt-4">
+                The most common way to calculate GDP is through the expenditure approach: GDP = C + I + G + (X - M)
+              </p>
+              <p className="mt-4">
+                C (Consumption): Total household spending on final goods and services such as food, rent, and medical care.
+              </p>
+              <p>
+                I (Investment): Business spending on equipment, factories, and new home construction -- including current investments in data centers, chip manufacturing, power grids, and research.
+              </p>
+              <p>
+                G (Government Spending): Public expenditures on defense, infrastructure, and services. The federal budget.
+              </p>
+              <p>
+                NX or (X - M) (Net Exports): Total exports minus total imports. What the U.S. sells to other countries minus what it buys from other countries. The U.S. is almost always a net importer.
+              </p>
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-black text-gray-900">What is Inflation?</h2>
+              <p className="mt-4">
+                The Federal Reserve defines inflation as the increase in prices of goods and services over time. This reduces the purchasing power of your money -- the same dollar buys less than it did before.
+              </p>
+              <p className="mt-4">There are three primary causes:</p>
+              <p className="mt-4">
+                Excess money supply -- When money is created, whether through an Act of Congress or through bank lending of money that does not yet exist, more dollars chase the same goods.
+              </p>
+              <p>
+                Demand-pull -- High consumer demand can cause prices to increase when supply is limited. Think computer parts, technology, fuel, and energy.
+              </p>
+              <p>
+                Cost-push -- Increased production, material, or labor expenses push companies to raise prices to remain profitable.
+              </p>
+              <p className="mt-4">
+                When combined, these forces produce constant year-over-year inflation. One of the Federal Reserve's core roles is managing inflation -- because high inflation impacts the bond market, which the U.S. depends on to continue borrowing money.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -109,7 +140,7 @@ function CantillonEffectChart() {
   return (
     <ChartCard
       title="Central Bank Balance Sheet vs. Asset Prices vs. Consumer Prices"
-      description="This chart compares the Federal Reserve balance sheet, stock prices, home prices, and consumer prices after indexing each series to 100 at the start of 2000. It helps show whether newly created money and easier financial conditions appear first in financial assets, real estate, or everyday consumer prices."
+      description="New money created through central bank asset purchases enters the financial system through primary dealer banks and institutional capital markets first. This directly inflates collateral assets -- equities and real estate -- before diffusing into the broader real economy. The chart makes this visible by showing the Fed balance sheet and asset prices moving in lockstep, while consumer prices grow at a lower but compounding rate that erodes wages."
       loading={loading}
       error={error}
     >
@@ -136,7 +167,7 @@ function PurchasingPowerChart() {
   return (
     <ChartCard
       title="Hours of Work Required to Buy a Median Home"
-      description="A home price in dollars does not say much unless it is compared with wages. This chart divides the median home sales price by average hourly earnings, estimating how many hours of work it takes to buy a median-priced home."
+      description="Headline inflation metrics like the Consumer Price Index use basket substitution, geometric weighting, and hedonic adjustments that soften reported inflation. Non-substitutable essentials -- shelter, healthcare, and higher education -- have escalated far faster than median wages. In the 1970s a worker needed roughly 2,000 hours of labor to buy a median home. Today that figure exceeds 7,000 hours. This isolates how currency dilution reduces standard of living without requiring complex economic theory."
       loading={loading}
       error={error}
     >
@@ -167,7 +198,7 @@ function MoneySupplyInflationChart() {
   return (
     <ChartCard
       title="Does Printing Money Cause Inflation?"
-      description="Money supply growth and consumer price inflation do not always move together at the same moment. Comparing year-over-year growth rates helps show periods when money expanded first and consumer prices followed later, as well as periods when the connection was weaker."
+      description="Inflation is not an instantaneous event -- it is a monetary expansion that takes 12 to 24 months to circulate through credit creation, business contracts, inventory purchases, and final consumer pricing. The historic spike in M2 in 2020 mirrors the subsequent spike in CPI in 2021 and 2022. This demonstrates Milton Friedman's premise of long and variable lags in monetary expansion without requiring technical jargon."
       loading={loading}
       error={error}
     >
@@ -194,7 +225,7 @@ function DebtProductivityChart() {
   return (
     <ChartCard
       title="How Much Debt Does It Take to Grow the Economy?"
-      description="This chart compares the four-quarter increase in federal debt with the four-quarter increase in real GDP. A higher ratio means more debt was added for each additional dollar of measured real economic output."
+      description="In the early stages of development, $1.00 of debt builds productive infrastructure -- railroads, factories, power grids -- that yields more than $1.00 of real economic growth. Over time, debt shifts toward consumption, entitlement shortfalls, and servicing legacy obligations. In the 1960s it took roughly $1.20 to $1.50 of new total debt to generate $1.00 of real GDP growth. Today it takes $4.00 to $5.00 or more, visually exposing diminishing marginal returns to debt creation."
       loading={loading}
       error={error}
     >
@@ -223,7 +254,7 @@ function CapitalLaborChart() {
   return (
     <ChartCard
       title="Where Does Worker Productivity Go?"
-      description="Productivity measures output per hour, while real compensation tracks inflation-adjusted pay. The second panel compares labor's share of output with corporate profit growth, highlighting how gains can divide between workers and capital."
+      description="Through the 1950s and 1960s, wage growth tracked productivity gains almost perfectly. Beginning in the early 1970s -- coinciding with the closure of the gold window, the rise of globalization, and deregulation of financial flows -- the lines severed. Corporate margins capture an increasing share of output gains while the direct labor share of gross domestic income trends lower."
       loading={loading}
       error={error}
     >
@@ -270,7 +301,7 @@ function FinancialRepressionChart() {
   return (
     <ChartCard
       title="The Hidden Tax on Savers"
-      description="The real policy rate subtracts inflation from the federal funds rate. When it is negative, cash and short-term savings can lose purchasing power even if the posted interest rate is above zero."
+      description="When the central bank sets benchmark interest rates below the prevailing rate of consumer inflation, savers experience negative real yields. This policy acts as a hidden wealth tax on liquid cash balances -- reducing the real burden of outstanding government and corporate debt while transferring purchasing power from conservative savers to leveraged debtors and asset owners."
       loading={loading}
       error={error}
     >
@@ -299,7 +330,7 @@ function FiscalSqueezeChart() {
   return (
     <ChartCard
       title="Can the Government Pay Its Bills?"
-      description="Interest costs and defense spending are two major claims on federal revenue. Showing them as a share of federal receipts makes the pressure easier to compare across decades."
+      description="When total federal debt exceeds $34 trillion, every rate hike raises the Treasury's borrowing costs upon debt rollover. When annual net interest payments surpass the national defense budget and consume 20% to 25% or more of all federal tax revenues, discretionary spending is compressed. The government must either run larger deficits, cut entitlement programs, or expand taxation."
       loading={loading}
       error={error}
     >
