@@ -98,6 +98,9 @@ export default function Header() {
                     <Link href="/taxes" className="block px-4 py-2 hover:bg-gray-100">
                       Taxes
                     </Link>
+                    <Link href="/economics" className="block px-4 py-2 hover:bg-gray-100">
+                      Economics
+                    </Link>
                     <Link href="/voting" className="block px-4 py-2 hover:bg-gray-100">
                       Voting
                     </Link>
@@ -263,6 +266,13 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               Taxes
+            </Link>
+            <Link
+              href="/economics"
+              className="block px-3 py-2 rounded-md hover:bg-[#1A3A5C] transition-colors"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Economics
             </Link>
             <Link
               href="/voting"
