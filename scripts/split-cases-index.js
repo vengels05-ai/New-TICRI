@@ -8,37 +8,12 @@ const path = require('path');
 
 const INPUT  = path.join(__dirname, '../data/scotus/cases-index.json');
 const OUT_DIR = path.join(__dirname, '../data/scotus/chunks');
-const BUCKET_RULES_PATH = path.join(__dirname, '../data/scotus/bucket-rules.json');
 const CHUNK_SIZE = 5000; // cases per chunk
-const SEARCH_CHUNKS_DIR = path.join(__dirname, '../data/scotus/search-chunks');
-const SEARCH_MANIFEST_PATH = path.join(__dirname, '../data/scotus/search-manifest.json');
-const SEARCH_CHUNK_SIZE = 100000;
-
-function loadBucketRules() {
-  if (!fs.existsSync(BUCKET_RULES_PATH)) {
-    return [];
-  }
-
-  return JSON.parse(fs.readFileSync(BUCKET_RULES_PATH, 'utf-8'));
-}
-
-function inferBucketSlugs(caseName, bucketRules) {
-  const normalized = String(caseName || '').toLowerCase();
-  if (!normalized) {
-    return [];
-  }
-
-  return bucketRules
-    .filter((bucket) => bucket.keywords.some((keyword) => normalized.includes(keyword.toLowerCase())))
-    .map((bucket) => bucket.slug);
-}
 
 fs.mkdirSync(OUT_DIR, { recursive: true });
-fs.mkdirSync(SEARCH_CHUNKS_DIR, { recursive: true });
 
 console.log('Reading cases-index.json...');
 const cases = JSON.parse(fs.readFileSync(INPUT, 'utf-8'));
-const bucketRules = loadBucketRules();
 console.log(`Total cases: ${cases.length.toLocaleString()}`);
 
 // Write chunks
@@ -65,42 +40,18 @@ const searchIndex = cases.map(c => ({
   id: c.id,
   n: c.caseName,         // name
   y: c.year,             // year
-  dn: c.docketNumber || null, // docket number
   v: c.votesMajority !== null ? `${c.votesMajority}-${c.votesMinority ?? 0}` : null,
   d: c.direction ? c.direction[0] : null,  // C/L/U
   c: c.citationCount,    // citations
-  k: inferBucketSlugs(c.caseName, bucketRules), // bucket slugs
 }));
 fs.writeFileSync(
   path.join(path.join(__dirname, '../data/scotus'), 'search-index.json'),
   JSON.stringify(searchIndex)
 );
 
-console.log('Writing chunked search index...');
-const searchChunkFiles = [];
-const searchChunkCount = Math.ceil(searchIndex.length / SEARCH_CHUNK_SIZE);
-for (let i = 0; i < searchChunkCount; i++) {
-  const chunk = searchIndex.slice(i * SEARCH_CHUNK_SIZE, (i + 1) * SEARCH_CHUNK_SIZE);
-  const fileName = `search-chunk-${String(i).padStart(4, '0')}.json`;
-  const outPath = path.join(SEARCH_CHUNKS_DIR, fileName);
-  fs.writeFileSync(outPath, JSON.stringify(chunk));
-  searchChunkFiles.push(fileName);
-  console.log(`Wrote search chunk ${i + 1}/${searchChunkCount}: ${chunk.length} records`);
-}
-
-const searchManifest = {
-  totalCases: searchIndex.length,
-  chunkSize: SEARCH_CHUNK_SIZE,
-  chunks: searchChunkFiles,
-  generated: new Date().toISOString(),
-};
-fs.writeFileSync(SEARCH_MANIFEST_PATH, JSON.stringify(searchManifest, null, 2));
-
 console.log('\nDone.');
 console.log(`Chunks: ${OUT_DIR}`);
 console.log(`Search index: data/scotus/search-index.json`);
-console.log(`Search chunks: data/scotus/search-chunks`);
-console.log(`Search manifest: data/scotus/search-manifest.json`);
 console.log('\nNext steps:');
 console.log('1. Update lib/scotus.ts to use search-index.json for client search');
 console.log('2. Remove cases-index.json from git (add to .gitignore)');

@@ -1,6 +1,7 @@
 // app/cases/search/page.tsx
 // TICRI Supreme Court Cases -- powered by TheSource Worker API
 
+import { Suspense } from 'react';
 import { Scale, TrendingUp, Clock, BookOpen } from 'lucide-react';
 import { getRecentCases, getNotableCases, formatVotes, directionColor, directionLabel } from '@/lib/thesource';
 import type { CaseSummary } from '@/lib/thesource';
@@ -38,7 +39,9 @@ export default async function CasesSearchPage() {
       {/* Search */}
       <section className="py-8 bg-gray-50 border-b border-gray-200">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <CasesSearchClient />
+          <Suspense fallback={<p className="text-gray-600">Loading case search...</p>}>
+            <CasesSearchClient />
+          </Suspense>
         </div>
       </section>
 

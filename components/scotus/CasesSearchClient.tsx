@@ -2,30 +2,35 @@
 // components/scotus/CasesSearchClient.tsx
 // Searches TheSource Worker API on demand -- no local file loading
 
-import { useState, useCallback, useRef } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { Search } from 'lucide-react';
 import { searchCases } from '@/lib/thesource';
 import type { CaseSummary } from '@/lib/thesource';
 
 export default function CasesSearchClient() {
-  const [query, setQuery] = useState('');
+  const searchParams = useSearchParams();
+  const initialQuery = searchParams.get('q') || '';
+  return <CasesSearchInput key={initialQuery} initialQuery={initialQuery} />;
+}
+
+function CasesSearchInput({ initialQuery }: { initialQuery: string }) {
+  const [query, setQuery] = useState(initialQuery);
   const [results, setResults] = useState<CaseSummary[]>([]);
   const [total, setTotal] = useState(0);
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
-  const searchTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const searchRunRef = useRef(0);
 
   const doSearch = useCallback(async (q: string) => {
+    const runId = ++searchRunRef.current;
     if (!q.trim()) {
+      setLoading(false);
       setResults([]);
       setSearched(false);
       setTotal(0);
       return;
     }
-
-    const runId = searchRunRef.current + 1;
-    searchRunRef.current = runId;
 
     setLoading(true);
     setSearched(true);
@@ -42,12 +47,15 @@ export default function CasesSearchClient() {
     }
   }, []);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const val = e.target.value;
-    setQuery(val);
-    if (searchTimeoutRef.current) clearTimeout(searchTimeoutRef.current);
-    searchTimeoutRef.current = setTimeout(() => doSearch(val), 350);
-  };
+  useEffect(() => {
+    const searchRuns = searchRunRef;
+    const timer = setTimeout(() => void doSearch(query), 350);
+    return () => {
+      clearTimeout(timer);
+      // Prevent a previous query (or an unmounted input) from replacing results.
+      searchRuns.current++;
+    };
+  }, [query, doSearch]);
 
   return (
     <div className="relative">
@@ -57,7 +65,7 @@ export default function CasesSearchClient() {
           type="text"
           placeholder="Search by case name, party, or topic..."
           value={query}
-          onChange={handleChange}
+          onChange={(event) => setQuery(event.target.value)}
           className="flex-1 outline-none text-gray-900 text-base placeholder-gray-400"
         />
         {query && (

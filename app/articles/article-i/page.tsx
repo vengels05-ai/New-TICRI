@@ -121,7 +121,7 @@ export default function Article1Page() {
           <div className="mb-6">
             <h4 className="text-lg font-semibold text-blue-600 mb-2">🚫 Government Restrictions</h4>
             <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
-              <li><strong>Enumerated Powers Only</strong> — Congress has no power beyond what is specifically granted in Section 8</li>
+              <li><strong>Enumerated Powers Only</strong> — Congress has only the powers granted by the Constitution, including Section 8, other Article I provisions, and later amendments</li>
               <li><strong>No Implied General Authority</strong> — Cannot claim power because "it's reasonable" or "good policy"</li>
               <li><strong>Cannot Change Bicameralism</strong> — Cannot abolish or merge chambers</li>
               <li><strong>President and Courts Cannot Legislate</strong> — Executive and judicial branches cannot make laws</li>
@@ -202,7 +202,7 @@ export default function Article1Page() {
               each state. To serve, a person must be at least 25 years old, a U.S. citizen for at least seven years, and 
               live in the state they represent. Seats are divided among states by population using a census every 10 years. 
               The House chooses its Speaker and has the sole power to impeach federal officials. The States determine voter 
-              qualifications for House (and now also Senate following the ratification of the 17th Amendment)elections, 
+              qualifications for House elections (and now also Senate elections following the ratification of the 17th Amendment), 
               but they must allow anyone who can vote for the most numerous branch of the state legislature to also vote 
               for the House representatives and Senate following the 17th Amendment.
             </p>
@@ -1431,8 +1431,8 @@ export default function Article1Page() {
           <div className="bg-blue-50 border-l-4 border-blue-600 p-4">
             <p className="text-gray-700">
               <strong>TICRI Summary:</strong> Article I, Section 8 = The Enumerated Powers of Congress. This section 
-              establishes every major federal power: taxation, spending, war, commerce, money, courts, immigration, military, 
-              and implied powers. <strong>Everything the federal government does must trace back to something written here 
+              establishes many of Congress's central powers: taxation, spending, war, commerce, money, courts, immigration, military, 
+              and implied powers. <strong>Federal action must trace back to a power granted somewhere in the Constitution 
               or in the amendments.</strong>
             </p>
           </div>

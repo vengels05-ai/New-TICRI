@@ -11,6 +11,13 @@ export default function HomePage() {
       color: 'from-blue-50 to-blue-100 border-[#1A3A5C]'
     },
     {
+      title: 'Articles',
+      description: 'Explore each constitutional article with plain-English breakdowns.',
+      icon: ScrollText,
+      href: '/articles',
+      color: 'from-slate-50 to-slate-100 border-slate-700'
+    },
+    {
       title: 'Your Rights',
       description: 'Individual liberties and constitutional protections explained simply.',
       icon: Scale,
@@ -23,6 +30,13 @@ export default function HomePage() {
       icon: FileText,
       href: '/acts',
       color: 'from-indigo-50 to-indigo-100 border-indigo-600'
+    },
+    {
+      title: 'Executive Orders',
+      description: 'Browse and search presidential orders from the live TheSource database.',
+      icon: FileText,
+      href: '/executive-orders',
+      color: 'from-rose-50 to-rose-100 border-rose-600'
     },
     {
       title: 'U.S. Code',

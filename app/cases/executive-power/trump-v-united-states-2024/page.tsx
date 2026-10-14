@@ -22,7 +22,22 @@ export default function TrumpVUnitedStates2024Page() {
       <section className="py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           
-          
+          {/* Link to Opinion */}
+          <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-lg mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <h3 className="text-lg font-bold text-gray-900 mb-1">📄 Read the Opinion</h3>
+              <p className="text-sm text-gray-600">Read the original opinion text and vote breakdowns.</p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <a 
+                href="/cases/opinion/?id=10600038"
+                className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-bold transition-colors"
+              >
+                Read Full Text Online →
+              </a>
+              
+            </div>
+          </div>
 
           {/* Summary */}
           <div className="bg-white rounded-lg shadow-md p-8 mb-6">

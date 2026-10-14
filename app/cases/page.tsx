@@ -251,7 +251,7 @@ export default function CasesPage() {
               </div>
             </a>
 
-            <a href="/cases/first-amendment/new-york-times-co-v-united-states-1971" className="bg-gradient-to-br from-purple-100 to-purple-200 rounded-lg p-6 shadow-md hover:shadow-xl transition-all border border-purple-300 hover:border-purple-800">
+            <a href="/cases/search?q=New%20York%20Times%20v.%20United%20States" className="bg-gradient-to-br from-purple-100 to-purple-200 rounded-lg p-6 shadow-md hover:shadow-xl transition-all border border-purple-300 hover:border-purple-800">
               <span className="bg-purple-800 text-white px-3 py-1 rounded-full text-sm font-bold">1971</span>
               <div className="text-2xl font-bold text-gray-900 mt-3 mb-2">New York Times v. United States</div>
               <div className="text-gray-700 mb-3">Pentagon Papers — government can't stop press from publishing</div>
@@ -271,7 +271,7 @@ export default function CasesPage() {
               </div>
             </a>
 
-            <a href="/cases/civil-rights/dobbs-v-jackson-womens-health-organization-2022" className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg p-6 shadow-md hover:shadow-xl transition-all border border-blue-300 hover:border-blue-800">
+            <a href="/cases/civil-rights/dobbs-v-jackson-2022" className="bg-gradient-to-br from-blue-100 to-blue-200 rounded-lg p-6 shadow-md hover:shadow-xl transition-all border border-blue-300 hover:border-blue-800">
               <span className="bg-blue-800 text-white px-3 py-1 rounded-full text-sm font-bold">2022</span>
               <div className="text-2xl font-bold text-gray-900 mt-3 mb-2">Dobbs v. Jackson Women's Health</div>
               <div className="text-gray-700 mb-3">Overturned Roe v. Wade — abortion returned to states</div>

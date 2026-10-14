@@ -63,7 +63,7 @@ export default function FamiliesFirstCoronavirusResponseActFfcraPage() {
           <ul className="space-y-3 text-gray-700">
               <li className="flex items-start">
                 <span className="text-blue-600 mr-2">•</span>
-                <div><strong>Employers with fewer than 500 employees</strong> (required to provide paid leave)  </div>
+                <div><strong>Employers with fewer than 500 employees</strong> (were required to provide temporary paid leave during the 2020 emergency period)  </div>
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 mr-2">•</span>

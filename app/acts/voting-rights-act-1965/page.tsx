@@ -107,7 +107,7 @@ export default function VotingRightsActOf1965Page() {
           <ul className="space-y-3 text-gray-700">
               <li className="flex items-start">
                 <span className="text-blue-600 mr-2">•</span>
-                <div><strong><a href="/cases/shelby-county-v-holder-2013" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">Shelby County v. Holder</a> (2013):</strong> invalidated Section 4(b), ending federal preclearance formula  </div>
+                <div><strong><a href="/cases/civil-rights/shelby-county-v-holder-2013" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800 hover:underline">Shelby County v. Holder</a> (2013):</strong> invalidated Section 4(b), ending federal preclearance formula  </div>
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 mr-2">•</span>

@@ -103,7 +103,7 @@ export default function CivilRightsCasesPage() {
     {
         "name": "Dobbs v. Jackson",
         "year": 2022,
-        "slug": "dobbs-v-jackson-womens-health-organization-2022",
+        "slug": "dobbs-v-jackson-2022",
         "summary": "Overturned Roe v. Wade — no constitutional right to abortion"
     },
     {

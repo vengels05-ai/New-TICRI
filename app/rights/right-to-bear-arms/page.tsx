@@ -160,45 +160,48 @@ export default function RightToBearArmsPage() {
             <div className="bg-red-50 p-4 rounded border-l-4 border-red-600">
               <h4 className="font-bold text-gray-900 mb-2">The Bruen Standard (2022)</h4>
               <p className="text-gray-700">
-                <em>New York State Rifle & Pistol Association v. Bruen</em> (2022) established that <strong>any</strong>{' '}
-                firearm regulation must have a historical analogue from 1791 (when the Second Amendment was ratified). 
-                Modern gun control measures—background checks, licensing schemes, permit requirements, weapon type 
-                restrictions—generally have no basis in the 1791 historical tradition.
+                <em>New York State Rifle & Pistol Association v. Bruen</em> (2022) rejected interest-balancing tests and 
+                requires the government to show that firearm regulations are consistent with the Nation's historical 
+                tradition of firearm regulation. Courts may use historical analogues, but the test is not limited to an 
+                exact 1791 match.
               </p>
             </div>
 
             <div className="bg-red-50 p-4 rounded border-l-4 border-red-600">
-              <h4 className="font-bold text-gray-900 mb-2">No Federal Power to Regulate Types of Weapons</h4>
+              <h4 className="font-bold text-gray-900 mb-2">Weapon-Type Restrictions Remain Heavily Contested</h4>
               <p className="text-gray-700">
-                The Amendment protects "Arms" without qualification. There is no constitutional basis for federal laws 
-                banning specific weapon types, restricting magazine capacity, or regulating features. The "dangerous and 
-                unusual" language from <em>Heller</em> was dicta (non-binding commentary), not constitutional text.
+                The Amendment protects "Arms," and <em>Heller</em> protects weapons in common use for lawful purposes. 
+                But courts continue to litigate where that line falls for assault-weapon bans, magazine-capacity limits, 
+                and feature-based restrictions. These questions are contested rather than settled by a simple rule.
               </p>
             </div>
 
             <div className="bg-red-50 p-4 rounded border-l-4 border-red-600">
-              <h4 className="font-bold text-gray-900 mb-2">No Federal Power to Regulate Carrying Weapons</h4>
+              <h4 className="font-bold text-gray-900 mb-2">Carry Restrictions Must Fit the Historical-Tradition Test</h4>
               <p className="text-gray-700">
-                The text protects the right to <strong>bear</strong> (carry) arms. Federal laws restricting how, when, or 
-                where arms may be carried have no constitutional foundation. <em>Bruen</em> struck down New York's requirement 
-                for "proper cause" to carry and requires historical support for any carry restrictions.
+                The text protects the right to <strong>bear</strong> (carry) arms. <em>Bruen</em> struck down New York's 
+                requirement that applicants show "proper cause" to carry, but it did not eliminate all carry regulation. 
+                Permit rules, sensitive-place restrictions, and manner-of-carry limits must be evaluated under text, 
+                history, and tradition.
               </p>
             </div>
 
             <div className="bg-red-50 p-4 rounded border-l-4 border-red-600">
-              <h4 className="font-bold text-gray-900 mb-2">No Federal Power to Regulate Manner of Carrying</h4>
+              <h4 className="font-bold text-gray-900 mb-2">Manner-of-Carry Rules Are Not Automatically Invalid</h4>
               <p className="text-gray-700">
-                Laws prohibiting concealed carry, open carry, or prescribing specific manners of carrying are not supported 
-                by the constitutional text. Any such regulation would need to show a 1791 historical analogue under <em>Bruen</em>.
+                Laws regulating concealed carry, open carry, or the manner of carrying firearms must leave room for the 
+                constitutional right to public carry. Historically grounded regulations may still be valid, while rules 
+                that broadly deny ordinary citizens the ability to carry for self-defense face serious constitutional problems.
               </p>
             </div>
 
             <div className="bg-red-50 p-4 rounded border-l-4 border-red-600">
-              <h4 className="font-bold text-gray-900 mb-2">Category-Based Prohibitions Lack Textual Support</h4>
+              <h4 className="font-bold text-gray-900 mb-2">Category-Based Prohibitions Must Be Historically Justified</h4>
               <p className="text-gray-700">
-                Blanket prohibitions on firearm possession by felons, those adjudicated mentally ill, or other categories 
-                are not enumerated in the Amendment's text. While such laws exist, they must satisfy <em>Bruen</em>'s 
-                requirement of historical analogue from 1791. The Amendment says "the people," not "some people."
+                The Amendment protects "the people," but Supreme Court doctrine recognizes that some limits on firearm 
+                possession may be constitutional. After <em>Rahimi</em> (2024), courts ask whether a modern restriction is 
+                consistent with historical principles, including the tradition of temporarily disarming people found to 
+                pose a credible threat.
               </p>
             </div>
           </div>
@@ -248,6 +251,18 @@ export default function RightToBearArmsPage() {
                 Major expansion of gun rights. States can still require permits but cannot make applicants prove special 
                 need. Rejected "means-end" scrutiny in favor of historical analysis: regulation must be consistent with 
                 Nation's historical tradition.
+              </p>
+            </div>
+
+            <div className="bg-blue-50 p-6 rounded">
+              <h4 className="font-bold text-gray-900 text-lg mb-2">United States v. Rahimi (2024)</h4>
+              <p className="text-gray-700 mb-3">
+                <strong>Temporary Disarmament for Dangerousness</strong> — Upheld a federal law disarming people subject to 
+                domestic-violence restraining orders after a court finds they pose a credible threat to another person's safety.
+              </p>
+              <p className="text-gray-700 text-sm">
+                Rahimi clarified that the historical-tradition test does not require a perfect historical twin. Courts may 
+                reason by analogy from historical principles, especially where the modern law addresses dangerousness.
               </p>
             </div>
 
@@ -339,8 +354,8 @@ export default function RightToBearArmsPage() {
             <div>
               <h4 className="font-bold text-gray-900 mb-3">Evolving Area of Law</h4>
               <p className="text-gray-700">
-                Second Amendment law is rapidly developing. Heller (2008), McDonald (2010), and Bruen (2022) are recent 
-                cases. Many questions remain unanswered: constitutionality of age restrictions, large-capacity magazine 
+                Second Amendment law is rapidly developing. Heller (2008), McDonald (2010), Bruen (2022), and Rahimi (2024) 
+                are the key modern cases. Many questions remain unanswered: constitutionality of age restrictions, large-capacity magazine 
                 bans, assault weapon bans, and other regulations. Expect continued litigation.
               </p>
             </div>

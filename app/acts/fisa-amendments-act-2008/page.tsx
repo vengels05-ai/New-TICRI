@@ -107,7 +107,7 @@ export default function FISAAmendmentsActPage() {
           <ul className="space-y-3 text-gray-700">
               <li className="flex items-start">
                 <span className="text-blue-600 mr-2">•</span>
-                <div>§ 702 authority has been repeatedly reauthorized, most recently extended into 2025.  </div>
+                <div>§ 702 authority has been repeatedly reauthorized, including a 2024 extension that ran to April 20, 2026 absent further reauthorization.  </div>
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 mr-2">•</span>

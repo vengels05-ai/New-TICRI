@@ -1,0 +1,498 @@
+{
+  "marbury-v-madison-1803": {
+    "id": null,
+    "name": "Marbury v. Madison",
+    "year": 1803,
+    "category": "foundational",
+    "slug": "marbury-v-madison-1803"
+  },
+  "mcculloch-v-maryland-1819": {
+    "id": 1320585,
+    "name": "McCulloch v. Maryland",
+    "bulkName": "McCulloch v. Maryland",
+    "year": 1819,
+    "category": "foundational",
+    "slug": "mcculloch-v-maryland-1819"
+  },
+  "gibbons-v-ogden-1824": {
+    "id": 85412,
+    "name": "Gibbons v. Ogden",
+    "bulkName": "Gibbons v. Ogden",
+    "year": 1824,
+    "category": "foundational",
+    "slug": "gibbons-v-ogden-1824"
+  },
+  "martin-v-hunters-lessee-1816": {
+    "id": null,
+    "name": "Martin v. Hunter's Lessee",
+    "year": 1816,
+    "category": "foundational",
+    "slug": "martin-v-hunters-lessee-1816"
+  },
+  "fletcher-v-peck-1810": {
+    "id": null,
+    "name": "Fletcher v. Peck",
+    "year": 1810,
+    "category": "foundational",
+    "slug": "fletcher-v-peck-1810"
+  },
+  "dartmouth-college-v-woodward-1819": {
+    "id": 85282,
+    "name": "Dartmouth College v. Woodward",
+    "bulkName": "Dartmouth College v. Woodward",
+    "year": 1819,
+    "category": "foundational",
+    "slug": "dartmouth-college-v-woodward-1819"
+  },
+  "cohens-v-virginia-1821": {
+    "id": 85330,
+    "name": "Cohens v. Virginia",
+    "bulkName": "Cohens v. Virginia",
+    "year": 1821,
+    "category": "foundational",
+    "slug": "cohens-v-virginia-1821"
+  },
+  "chisholm-v-georgia-1793": {
+    "id": null,
+    "name": "Chisholm v. Georgia",
+    "year": 1793,
+    "category": "foundational",
+    "slug": "chisholm-v-georgia-1793"
+  },
+  "calder-v-bull-1798": {
+    "id": 84695,
+    "name": "Calder v. Bull",
+    "bulkName": "Calder v. Bull",
+    "year": 1798,
+    "category": "foundational",
+    "slug": "calder-v-bull-1798"
+  },
+  "hylton-v-united-states-1796": {
+    "id": 84686,
+    "name": "Hylton v. United States",
+    "bulkName": "Hylton v. United States",
+    "year": 1796,
+    "category": "foundational",
+    "slug": "hylton-v-united-states-1796"
+  },
+  "schenck-v-united-states-1919": {
+    "id": 99296,
+    "name": "Schenck v. United States",
+    "bulkName": "Schenck v. United States",
+    "year": 1919,
+    "category": "first-amendment",
+    "slug": "schenck-v-united-states-1919"
+  },
+  "near-v-minnesota-1931": {
+    "id": 101773,
+    "name": "Near v. Minnesota",
+    "bulkName": "Near v. Minnesota Ex Rel. Olson",
+    "year": 1931,
+    "category": "first-amendment",
+    "slug": "near-v-minnesota-1931"
+  },
+  "prince-v-massachusetts-1944": {
+    "id": 103933,
+    "name": "Prince v. Massachusetts",
+    "bulkName": "Prince v. Massachusetts",
+    "year": 1944,
+    "category": "first-amendment",
+    "slug": "prince-v-massachusetts-1944"
+  },
+  "engel-v-vitale-1962": {
+    "id": 106443,
+    "name": "Engel v. Vitale",
+    "bulkName": "Engel v. Vitale",
+    "year": 1962,
+    "category": "first-amendment",
+    "slug": "engel-v-vitale-1962"
+  },
+  "tinker-v-des-moines-1969": {
+    "id": 107841,
+    "name": "Tinker v. Des Moines",
+    "bulkName": "Tinker v. Des Moines Independent Community School District",
+    "year": 1969,
+    "category": "first-amendment",
+    "slug": "tinker-v-des-moines-1969"
+  },
+  "wisconsin-v-yoder-1972": {
+    "id": 108530,
+    "name": "Wisconsin v. Yoder",
+    "bulkName": "Wisconsin v. Yoder",
+    "year": 1972,
+    "category": "first-amendment",
+    "slug": "wisconsin-v-yoder-1972"
+  },
+  "texas-v-johnson-1989": {
+    "id": 112304,
+    "name": "Texas v. Johnson",
+    "bulkName": "Texas v. Johnson",
+    "year": 1989,
+    "category": "first-amendment",
+    "slug": "texas-v-johnson-1989"
+  },
+  "dred-scott-v-sandford-1857": {
+    "id": null,
+    "name": "Dred Scott v. Sandford",
+    "year": 1857,
+    "category": "civil-rights",
+    "slug": "dred-scott-v-sandford-1857"
+  },
+  "slaughter-house-cases-1873": {
+    "id": null,
+    "name": "Slaughter-House Cases",
+    "year": 1873,
+    "category": "civil-rights",
+    "slug": "slaughter-house-cases-1873"
+  },
+  "civil-rights-cases-1883": {
+    "id": 90897,
+    "name": "Civil Rights Cases",
+    "bulkName": "Civil Rights Cases",
+    "year": 1883,
+    "category": "civil-rights",
+    "slug": "civil-rights-cases-1883"
+  },
+  "plessy-v-ferguson-1896": {
+    "id": 94508,
+    "name": "Plessy v. Ferguson",
+    "bulkName": "Plessy v. Ferguson",
+    "year": 1896,
+    "category": "civil-rights",
+    "slug": "plessy-v-ferguson-1896"
+  },
+  "gitlow-v-new-york-1925": {
+    "id": 100708,
+    "name": "Gitlow v. New York",
+    "bulkName": "Gitlow v. New York",
+    "year": 1925,
+    "category": "civil-rights",
+    "slug": "gitlow-v-new-york-1925"
+  },
+  "brown-v-board-of-education-1954": {
+    "id": 105221,
+    "name": "Brown v. Board of Education",
+    "bulkName": "Brown v. Board of Education",
+    "year": 1954,
+    "category": "civil-rights",
+    "slug": "brown-v-board-of-education-1954"
+  },
+  "cooper-v-aaron-1958": {
+    "id": 105766,
+    "name": "Cooper v. Aaron",
+    "bulkName": "Cooper v. Aaron",
+    "year": 1958,
+    "category": "civil-rights",
+    "slug": "cooper-v-aaron-1958"
+  },
+  "loving-v-virginia-1967": {
+    "id": 107480,
+    "name": "Loving v. Virginia",
+    "bulkName": "Loving v. Virginia",
+    "year": 1967,
+    "category": "civil-rights",
+    "slug": "loving-v-virginia-1967"
+  },
+  "roe-v-wade-1973": {
+    "id": 108713,
+    "name": "Roe v. Wade",
+    "bulkName": "Roe v. Wade",
+    "year": 1973,
+    "category": "civil-rights",
+    "slug": "roe-v-wade-1973"
+  },
+  "regents-v-bakke-1978": {
+    "id": 109930,
+    "name": "Regents v. Bakke",
+    "bulkName": "Regents of the University of California v. Bakke",
+    "year": 1978,
+    "category": "civil-rights",
+    "slug": "regents-v-bakke-1978"
+  },
+  "planned-parenthood-v-casey-1992": {
+    "id": 112786,
+    "name": "Planned Parenthood v. Casey",
+    "bulkName": "Planned Parenthood of Southeastern Pa. v. Casey",
+    "year": 1992,
+    "category": "civil-rights",
+    "slug": "planned-parenthood-v-casey-1992"
+  },
+  "lawrence-v-texas-2003": {
+    "id": 130160,
+    "name": "Lawrence v. Texas",
+    "bulkName": "Lawrence v. Texas",
+    "year": 2003,
+    "category": "civil-rights",
+    "slug": "lawrence-v-texas-2003"
+  },
+  "dc-v-heller-2008": {
+    "id": 145777,
+    "name": "DC v. Heller",
+    "bulkName": "District of Columbia v. Heller",
+    "year": 2008,
+    "category": "civil-rights",
+    "slug": "dc-v-heller-2008"
+  },
+  "mcdonald-v-chicago-2010": {
+    "id": 149702,
+    "name": "McDonald v. Chicago",
+    "bulkName": "McDonald v. City of Chicago",
+    "year": 2010,
+    "category": "civil-rights",
+    "slug": "mcdonald-v-chicago-2010"
+  },
+  "shelby-county-v-holder-2013": {
+    "id": 931614,
+    "name": "Shelby County v. Holder",
+    "bulkName": "Shelby County v. Holder",
+    "year": 2013,
+    "category": "civil-rights",
+    "slug": "shelby-county-v-holder-2013"
+  },
+  "obergefell-v-hodges-2015": {
+    "id": 2812209,
+    "name": "Obergefell v. Hodges",
+    "bulkName": "Obergefell v. Hodges",
+    "year": 2015,
+    "category": "civil-rights",
+    "slug": "obergefell-v-hodges-2015"
+  },
+  "dobbs-v-jackson-2022": {
+    "id": 6481357,
+    "name": "Dobbs v. Jackson",
+    "bulkName": "Dobbs v. Jackson Women's Health Organization",
+    "year": 2022,
+    "category": "civil-rights",
+    "slug": "dobbs-v-jackson-2022"
+  },
+  "students-for-fair-admissions-v-harvard-2023": {
+    "id": 10049657,
+    "name": "Students for Fair Admissions v. Harvard",
+    "bulkName": "Students for Fair Admissions, Inc. v. President and Fellows of Harvard College",
+    "year": 2023,
+    "category": "civil-rights",
+    "slug": "students-for-fair-admissions-v-harvard-2023"
+  },
+  "gideon-v-wainwright-1963": {
+    "id": 106545,
+    "name": "Gideon v. Wainwright",
+    "bulkName": "Gideon v. Wainwright",
+    "year": 1963,
+    "category": "criminal-justice",
+    "slug": "gideon-v-wainwright-1963"
+  },
+  "miranda-v-arizona-1966": {
+    "id": 107252,
+    "name": "Miranda v. Arizona",
+    "bulkName": "Miranda v. Arizona",
+    "year": 1966,
+    "category": "criminal-justice",
+    "slug": "miranda-v-arizona-1966"
+  },
+  "new-jersey-v-tlo-1985": {
+    "id": 111301,
+    "name": "New Jersey v. TLO",
+    "bulkName": "New Jersey v. T. L. O.",
+    "year": 1985,
+    "category": "criminal-justice",
+    "slug": "new-jersey-v-tlo-1985"
+  },
+  "meyer-v-nebraska-1923": {
+    "id": 100233,
+    "name": "Meyer v. Nebraska",
+    "bulkName": "Meyer v. Nebraska",
+    "year": 1923,
+    "category": "parental-rights",
+    "slug": "meyer-v-nebraska-1923"
+  },
+  "pierce-v-society-of-sisters-1925": {
+    "id": null,
+    "name": "Pierce v. Society of Sisters",
+    "year": 1925,
+    "category": "parental-rights",
+    "slug": "pierce-v-society-of-sisters-1925"
+  },
+  "troxel-v-granville-2000": {
+    "id": 1087668,
+    "name": "Troxel v. Granville",
+    "bulkName": "Troxel v. Granville",
+    "year": 2000,
+    "category": "parental-rights",
+    "slug": "troxel-v-granville-2000"
+  },
+  "united-states-v-nixon-1974": {
+    "id": 109101,
+    "name": "United States v. Nixon",
+    "bulkName": "United States v. Nixon",
+    "year": 1974,
+    "category": "executive-power",
+    "slug": "united-states-v-nixon-1974"
+  },
+  "hamdan-v-rumsfeld-2006": {
+    "id": 145625,
+    "name": "Hamdan v. Rumsfeld",
+    "bulkName": "Hamdan v. Rumsfeld",
+    "year": 2006,
+    "category": "executive-power",
+    "slug": "hamdan-v-rumsfeld-2006"
+  },
+  "trump-v-united-states-2024": {
+    "id": 10600038,
+    "name": "Trump v. United States",
+    "bulkName": "Trump v. United States",
+    "year": 2024,
+    "category": "executive-power",
+    "slug": "trump-v-united-states-2024"
+  },
+  "worcester-v-georgia-1832": {
+    "id": null,
+    "name": "Worcester v. Georgia",
+    "year": 1832,
+    "category": "federalism",
+    "slug": "worcester-v-georgia-1832"
+  },
+  "us-term-limits-v-thornton-1995": {
+    "id": 117935,
+    "name": "US Term Limits v. Thornton",
+    "bulkName": "U. S. Term Limits, Inc. v. Thornton",
+    "year": 1995,
+    "category": "federalism",
+    "slug": "us-term-limits-v-thornton-1995"
+  },
+  "massachusetts-v-epa-2007": {
+    "id": 145749,
+    "name": "Massachusetts v. EPA",
+    "bulkName": "Massachusetts v. Environmental Protection Agency",
+    "year": 2007,
+    "category": "federalism",
+    "slug": "massachusetts-v-epa-2007"
+  },
+  "nfib-v-sebelius-2012": {
+    "id": 809122,
+    "name": "NFIB v. Sebelius",
+    "bulkName": "National Federation of Independent Business v. Sebelius",
+    "year": 2012,
+    "category": "federalism",
+    "slug": "nfib-v-sebelius-2012"
+  },
+  "rucho-v-common-cause-2019": {
+    "id": 4633469,
+    "name": "Rucho v. Common Cause",
+    "bulkName": "Rucho v. Common Cause",
+    "year": 2019,
+    "category": "federalism",
+    "slug": "rucho-v-common-cause-2019"
+  },
+  "west-virginia-v-epa-2022": {
+    "id": 6620345,
+    "name": "West Virginia v. EPA",
+    "bulkName": "West Virginia v. EPA",
+    "year": 2022,
+    "category": "federalism",
+    "slug": "west-virginia-v-epa-2022"
+  },
+  "ins-v-chadha-1983": {
+    "id": 110985,
+    "name": "INS v. Chadha",
+    "bulkName": "Immigration & Naturalization Service v. Chadha",
+    "year": 1983,
+    "category": "separation-of-powers",
+    "slug": "ins-v-chadha-1983"
+  },
+  "clinton-v-city-of-new-york-1998": {
+    "id": 118238,
+    "name": "Clinton v. City of New York",
+    "bulkName": "Clinton v. City of New York",
+    "year": 1998,
+    "category": "separation-of-powers",
+    "slug": "clinton-v-city-of-new-york-1998"
+  },
+  "bush-v-gore-2000": {
+    "id": 118395,
+    "name": "Bush v. Gore",
+    "bulkName": "Bush v. Gore",
+    "year": 2000,
+    "category": "separation-of-powers",
+    "slug": "bush-v-gore-2000"
+  },
+  "citizens-united-v-fec-2010": {
+    "id": 1741,
+    "name": "Citizens United v. FEC",
+    "bulkName": "Citizens United v. Federal Election Commission",
+    "year": 2010,
+    "category": "separation-of-powers",
+    "slug": "citizens-united-v-fec-2010"
+  },
+  "lochner-v-new-york-1905": {
+    "id": 96276,
+    "name": "Lochner v. New York",
+    "bulkName": "Lochner v. New York",
+    "year": 1905,
+    "category": "economic-rights",
+    "slug": "lochner-v-new-york-1905"
+  },
+  "west-coast-hotel-v-parrish-1937": {
+    "id": 102784,
+    "name": "West Coast Hotel v. Parrish",
+    "bulkName": "West Coast Hotel Co. v. Parrish",
+    "year": 1937,
+    "category": "economic-rights",
+    "slug": "west-coast-hotel-v-parrish-1937"
+  },
+  "united-states-v-carolene-products-1938": {
+    "id": 103017,
+    "name": "United States v. Carolene Products",
+    "bulkName": "United States v. Carolene Products Co.",
+    "year": 1938,
+    "category": "economic-rights",
+    "slug": "united-states-v-carolene-products-1938"
+  },
+  "fda-v-alliance-for-hippocratic-medicine-2024": {
+    "id": 9546125,
+    "name": "FDA v. Alliance for Hippocratic Medicine",
+    "bulkName": "FDA v. Alliance for Hippocratic Medicine",
+    "year": 2024,
+    "category": "healthcare-law",
+    "slug": "fda-v-alliance-for-hippocratic-medicine-2024"
+  },
+  "medina-v-planned-parenthood-2025": {
+    "id": 10617643,
+    "name": "Medina v. Planned Parenthood",
+    "bulkName": "Medina v. Planned Parenthood South Atlantic",
+    "year": 2025,
+    "category": "healthcare-law",
+    "slug": "medina-v-planned-parenthood-2025"
+  },
+  "boone-v-lightner-1943": {
+    "id": 103864,
+    "name": "Boone v. Lightner",
+    "bulkName": "Boone v. Lightner",
+    "year": 1943,
+    "category": "military-service",
+    "slug": "boone-v-lightner-1943"
+  },
+  "conroy-v-aniskoff-1993": {
+    "id": 112840,
+    "name": "Conroy v. Aniskoff",
+    "bulkName": "Conroy v. Aniskoff",
+    "year": 1993,
+    "category": "military-service",
+    "slug": "conroy-v-aniskoff-1993"
+  },
+  "ex-parte-milligan-1866": {
+    "id": 1528394,
+    "name": "Ex Parte Milligan",
+    "bulkName": "Ex Parte Milligan",
+    "year": 1866,
+    "category": "wartime-powers",
+    "slug": "ex-parte-milligan-1866"
+  },
+  "korematsu-v-united-states-1944": {
+    "id": 104040,
+    "name": "Korematsu v. United States",
+    "bulkName": "Korematsu v. United States",
+    "year": 1944,
+    "category": "wartime-powers",
+    "slug": "korematsu-v-united-states-1944"
+  }
+}

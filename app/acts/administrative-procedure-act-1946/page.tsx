@@ -103,7 +103,7 @@ export default function AdministrativeProcedureActApaPage() {
           <ul className="space-y-3 text-gray-700">
               <li className="flex items-start">
                 <span className="text-blue-600 mr-2">•</span>
-                <div><strong>Chevron deference</strong> (1984) gave agencies broad interpretive power; the Supreme Court may now revisit or overturn it.  </div>
+                <div><strong>Chevron deference</strong> (1984) gave agencies broad interpretive power, but the Supreme Court overruled Chevron in <em>Loper Bright Enterprises v. Raimondo</em> (2024).  </div>
               </li>
               <li className="flex items-start">
                 <span className="text-blue-600 mr-2">•</span>

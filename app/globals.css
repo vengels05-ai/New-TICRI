@@ -33,3 +33,17 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
+
+/* CourtListener opinion HTML styles */
+.opinion-text p { margin-bottom: 0.75rem; line-height: 1.7; }
+.opinion-text .num { display: flex; gap: 1rem; margin-bottom: 0.5rem; }
+.opinion-text .num span.num { color: #6b7280; font-size: 0.75rem; min-width: 1.5rem; padding-top: 0.2rem; }
+.opinion-text .indent { text-indent: 2rem; }
+.opinion-text .case_cite { color: #374151; font-style: italic; font-size: 0.875rem; }
+.opinion-text .parties { font-weight: 600; text-align: center; margin: 1rem 0; }
+.opinion-text .date { text-align: center; color: #6b7280; font-size: 0.875rem; }
+.opinion-text i { font-style: italic; }
+.opinion-text b { font-weight: 600; }
+.opinion-text .citation a { color: #1d4ed8; text-decoration: underline; }
+.opinion-text .prelims { margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid #e5e7eb; }
+.opinion-text author { display: block; font-weight: 600; margin-bottom: 0.5rem; }

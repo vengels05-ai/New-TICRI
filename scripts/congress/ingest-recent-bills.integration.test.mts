@@ -4,7 +4,7 @@ import { ingestRecentBills } from '../../lib/congress-scanner/ingestRecentBills.
 import { CongressApiClient } from '../../lib/congress-scanner/congressApiClient.ts';
 import { execSql } from '../db/psql.mjs';
 
-function jsonResponse(body, init = {}) {
+function jsonResponse(body: any, init: ResponseInit & { headers?: Record<string, string> } = {}) {
   return new Response(JSON.stringify(body), {
     status: 200,
     headers: {
@@ -15,7 +15,7 @@ function jsonResponse(body, init = {}) {
   });
 }
 
-function queryJson(sql) {
+function queryJson(sql: string) {
   const output = execSql(sql).trim();
   if (!output) {
     return null;
@@ -34,7 +34,7 @@ test('ingestion upserts bills/actions idempotently and stores raw JSON', { timeo
 
   execSql('TRUNCATE TABLE bill_members, bill_actions, bills, members RESTART IDENTITY CASCADE;');
 
-  const fetchMock = async (input) => {
+  const fetchMock = async (input: RequestInfo | URL) => {
     const url = new URL(String(input));
 
     if (url.pathname.endsWith('/bill/119')) {

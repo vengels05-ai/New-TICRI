@@ -29,7 +29,7 @@ async function getApiErrorMessage(res: Response, path: string): Promise<string> 
   try {
     const payload = await res.json() as { error?: string };
     if (payload.error?.includes("exceeded D1's free tier daily row read limit")) {
-      return 'TheSource database has reached Cloudflare D1 daily read limits. Live database results will resume after the quota resets at midnight UTC, or immediately after moving D1 to a paid plan.';
+      return 'TheSource database is temporarily rate-limited. Live database results should resume shortly.';
     }
     if (payload.error) {
       return payload.error;

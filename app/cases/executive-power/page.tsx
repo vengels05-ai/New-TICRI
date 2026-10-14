@@ -19,7 +19,7 @@ export default function ExecutivePowerCasesPage() {
         "name": "Trump v. United States",
         "year": 2024,
         "slug": "trump-v-united-states-2024",
-        "summary": "Presidents have immunity for official acts"
+        "summary": "Absolute immunity for core acts; presumptive immunity for other official acts"
     }
 ];
 

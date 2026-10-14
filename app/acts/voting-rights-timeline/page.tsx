@@ -85,7 +85,7 @@ export default function VotingRightsActTimelinePage() {
                 </div>
                 <div className={`ml-24 md:ml-0 ${5 % 2 === 0 ? 'md:mr-auto md:pr-12' : 'md:ml-auto md:pl-12'} md:w-5/12`}>
                   <div className="bg-white rounded-lg shadow-lg p-6 border-l-4 border-blue-600 hover:shadow-xl transition-shadow">
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">Supreme Court: [Shelby County v. Holder](/cases/shelby-county-v-holder-2013) (2013)</h3>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">Supreme Court: <a href="/cases/civil-rights/shelby-county-v-holder-2013" className="text-blue-600 hover:text-blue-800 hover:underline">Shelby County v. Holder</a> (2013)</h3>
                     <p className="text-gray-700">- Struck down the VRA’s coverage formula (Section 4(b)), effectively disabling preclearance under Section 5.   - After Shelby, states previously under preclearance could change voting laws without federal approval.   ---</p>
                   </div>
                 </div>

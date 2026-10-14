@@ -131,8 +131,8 @@ export default function Article3Page() {
             <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4">
               <li><strong>Cannot Reduce Judicial Salaries</strong> — Protects against financial intimidation</li>
               <li><strong>Cannot Remove Judges Except by Impeachment</strong> — Life tenure protects independence</li>
-              <li><strong>Congress Must Create Lower Courts</strong> — Constitution only creates Supreme Court; Congress must establish others</li>
-              <li><strong>Judges Cannot Hold Other Offices</strong> — Incompatibility Clause (Article I, Section 6)</li>
+              <li><strong>Congress May Create Lower Courts</strong> — Constitution creates the Supreme Court and lets Congress decide whether to establish inferior federal courts</li>
+              <li><strong>Judges Hold Office During Good Behaviour</strong> — Life tenure protects independence unless a judge is removed through impeachment</li>
             </ul>
           </div>
 
@@ -153,7 +153,7 @@ export default function Article3Page() {
             <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 text-sm">
               <li><strong>Marbury v. Madison (1803)</strong> — Established judicial review; courts can declare laws unconstitutional</li>
               <li><strong>United States v. Will (1980)</strong> — Salary protection prevents reducing judges' real compensation</li>
-              <li><strong>Evans v. Gore (1920)</strong> — Cannot apply new taxes to sitting judges if it reduces their compensation</li>
+              <li><strong>Evans v. Gore (1920)</strong> — Once limited taxes on judicial salaries, but later doctrine permits generally applicable, nondiscriminatory income taxes</li>
               <li><strong>Northern Pipeline Construction Co. v. Marathon Pipe Line Co. (1982)</strong> — Limits on non-Article III courts handling core judicial functions</li>
             </ul>
           </div>

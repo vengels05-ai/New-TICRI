@@ -511,7 +511,7 @@ export default function Article2Page() {
             <ul className="list-disc list-inside space-y-2 text-gray-700 ml-4 text-sm">
               <li><strong>Nixon v. United States (1993)</strong> — Courts cannot review Senate impeachment procedures (political question)</li>
               <li><strong>United States v. Nixon (1974)</strong> — President must comply with judicial subpoenas; not immune from legal process</li>
-              <li><strong>Trump v. United States (2024)</strong> — Presidents have immunity from criminal prosecution for official acts within constitutional authority</li>
+              <li><strong>Trump v. United States (2024)</strong> — Presidents have absolute immunity for core constitutional acts, presumptive immunity for other official acts, and no immunity for unofficial acts</li>
             </ul>
           </div>
 
