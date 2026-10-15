@@ -38,6 +38,18 @@ function copyDirectoryContents(sourceDir, targetDir) {
   }
 }
 
+// Opinion readers fetch case detail from TheSource. Exporting the local corpus
+// adds over 237,000 files and exceeds Cloudflare Pages' deployment file limit.
+// Remove both old copies and symlinks (including dangling links), without
+// following a link back into data/scotus/cases.
+const staleCasesPath = path.join(TARGET_DIR, 'cases');
+const staleCasesStat = fs.lstatSync(staleCasesPath, { throwIfNoEntry: false });
+if (staleCasesStat?.isSymbolicLink()) {
+  fs.unlinkSync(staleCasesPath);
+} else if (staleCasesStat) {
+  fs.rmSync(staleCasesPath, { recursive: true, force: true });
+}
+
 fs.mkdirSync(TARGET_DIR, { recursive: true });
 
 for (const staleFile of STALE_FILES) {
@@ -67,23 +79,3 @@ for (const fileName of FILES) {
 
 copyDirectoryContents(SEARCH_CHUNKS_SOURCE_DIR, SEARCH_CHUNKS_TARGET_DIR);
 
-const CASES_SOURCE_DIR = path.join(SOURCE_DIR, 'cases');
-const CASES_TARGET_DIR = path.join(TARGET_DIR, 'cases');
-
-if (fs.existsSync(CASES_SOURCE_DIR)) {
-  if (fs.existsSync(CASES_TARGET_DIR)) {
-    const stat = fs.lstatSync(CASES_TARGET_DIR);
-    if (!stat.isSymbolicLink()) {
-      console.log('Removing old cases directory to replace with symlink...');
-      fs.rmSync(CASES_TARGET_DIR, { recursive: true, force: true });
-      console.log('Creating symlink...');
-      fs.symlinkSync(CASES_SOURCE_DIR, CASES_TARGET_DIR, 'junction');
-    } else {
-      console.log('Cases directory is already symlinked.');
-    }
-  } else {
-    console.log('Symlinking cases directory to public/scotus/cases...');
-    fs.symlinkSync(CASES_SOURCE_DIR, CASES_TARGET_DIR, 'junction');
-  }
-  console.log('Successfully synced cases.');
-}

@@ -7,6 +7,7 @@
     "dev": "next dev",
     "prebuild": "node scripts/scotus-sync-public-assets.js",
     "build": "next build",
+    "postbuild": "node scripts/validate-pages-assets.mjs",
     "start": "next start",
     "lint": "eslint",
     "lint:congress-scanner": "eslint next.config.ts playwright.config.ts app/congress-scanner components/congress-scanner lib/congress-scanner tests/e2e",
