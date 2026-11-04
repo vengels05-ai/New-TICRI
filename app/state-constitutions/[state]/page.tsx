@@ -2,6 +2,19 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getStateBySlug, usStates } from '@/lib/usStates';
 import { getStateConstitution, hasConstitutionData } from '@/lib/stateConstitutions';
+import { createPageMetadata } from '@/lib/seo';
+
+export async function generateMetadata({ params }: { params: Promise<{ state: string }> }) {
+  const { state } = await params;
+  const stateInfo = getStateBySlug(state);
+  if (!stateInfo) notFound();
+
+  return createPageMetadata(
+    `/state-constitutions/${state}/`,
+    `${stateInfo.name} State Constitution`,
+    `Explore the ${stateInfo.name} Constitution, its history and government structure, with available constitutional text and links to primary sources.`,
+  );
+}
 
 function formatArticleHeading(article: { number: string; title: string }) {
   if (!article.number) {

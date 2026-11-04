@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/parental-rights/troxel-v-granville-2000/",
+  "Troxel v. Granville (2000)",
+  "Courts can't force grandparent visitation over parent objections. Read TICRI’s plain-English overview of Troxel v. Granville (2000).",
+);
+
 export default function TroxelVGranville2000Page() {
   return (
     <div className="bg-white">

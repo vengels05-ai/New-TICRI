@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/criminal-justice/miranda-v-arizona-1966/",
+  "Miranda v. Arizona (1966)",
+  "Police must inform you of rights before questioning. Read TICRI’s plain-English overview of Miranda v. Arizona (1966).",
+);
+
 export default function MirandaVArizona1966Page() {
   return (
     <div className="bg-white">

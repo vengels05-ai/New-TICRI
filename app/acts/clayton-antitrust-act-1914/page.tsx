@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/clayton-antitrust-act-1914/",
+  "Clayton Antitrust Act (1914)",
+  "The Clayton Act was enacted to strengthen and clarify antitrust laws after weaknesses in the Sherman Act became evident.",
+);
 
 export default function ClaytonAntitrustActPage() {
   return (

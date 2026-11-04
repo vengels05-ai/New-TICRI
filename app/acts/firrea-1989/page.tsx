@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/firrea-1989/",
+  "Financial Institutions Reform, Recovery, and Enforcement Act (FIRREA) (1989)",
+  "Passed in response to the Savings and Loan crisis, FIRREA overhauled regulation of thrift institutions, abolished the Federal Home Loan Bank Board, created new oversight agencies, and authorized taxpayer funds to resolve failing S&Ls.",
+);
 
 export default function FinancialInstitutionsReformRecoveryAndEnforcementActFirreaPage() {
   return (

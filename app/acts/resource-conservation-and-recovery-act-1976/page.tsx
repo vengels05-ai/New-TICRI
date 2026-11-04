@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/resource-conservation-and-recovery-act-1976/",
+  "Resource Conservation and Recovery Act (RCRA) (1976)",
+  "RCRA was passed to address growing concerns about solid and hazardous waste disposal, ensuring safe management from “cradle to grave” and protecting human health and the environment.",
+);
 
 export default function ResourceConservationAndRecoveryActRcraPage() {
   return (

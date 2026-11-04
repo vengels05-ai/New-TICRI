@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/trade-act-1974/",
+  "Trade Act of 1974",
+  "The Trade Act of 1974 was enacted to give the President fast-track authority to negotiate trade agreements, expand global commerce, and create mechanisms to deal with unfair foreign trade practices.",
+);
 
 export default function TradeActOf1974Page() {
   return (

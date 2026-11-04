@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/rights/right-to-bear-arms/",
+  "Right to Bear Arms",
+  "The Second Amendment protects an individual right to keep and bear arms for self-defense and other lawful purposes, though this right is not unlimited and can be subject to reasonable regulations.",
+);
 
 export default function RightToBearArmsPage() {
   return (

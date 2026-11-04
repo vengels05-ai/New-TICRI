@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/childrens-online-privacy-protection-act-1998/",
+  "Children’s Online Privacy Protection Act (COPPA) (1998)",
+  "With the rise of the internet in the 1990s, Congress passed COPPA to protect children’s personal information online.",
+);
 
 export default function ChildrenSOnlinePrivacyProtectionActCoppaPage() {
   return (

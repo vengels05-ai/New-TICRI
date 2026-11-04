@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-9/",
+  "Ninth Amendment: Rights Retained by the People",
+  "Read the Ninth Amendment and learn why enumerating constitutional rights does not deny other rights retained by the people.",
+);
 
 export default function Amendment9Page() {
   return (

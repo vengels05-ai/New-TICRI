@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/federal-food-drug-and-cosmetic-act-1938/",
+  "Federal Food, Drug, and Cosmetic Act (FDCA) (1938)",
+  "The FDCA was passed after a public health disaster involving a toxic drug (Elixir Sulfanilamide) killed over 100 people.",
+);
 
 export default function FederalFoodDrugAndCosmeticActFdcaPage() {
   return (

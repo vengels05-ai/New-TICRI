@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/gramm-leach-bliley-act-1999/",
+  "Gramm–Leach–Bliley Act (GLBA) (1999)",
+  "GLBA was enacted to modernize financial services by repealing parts of the Glass–Steagall Act (1933), allowing banks, securities firms, and insurance companies to affiliate.",
+);
 
 export default function GrammLeachBlileyActGlbaPage() {
   return (

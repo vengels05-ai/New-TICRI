@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/economic-growth-regulatory-relief-act-2018/",
+  "Economic Growth, Regulatory Relief, and Consumer Protection Act (2018)",
+  "Passed to amend and roll back parts of the Dodd–Frank Act (2010), the Act was intended to ease regulatory burdens on small and mid-sized banks while maintaining protections for consumers and systemic risk oversight.",
+);
 
 export default function EconomicGrowthRegulatoryReliefAndConsumerProtectionActPage() {
   return (

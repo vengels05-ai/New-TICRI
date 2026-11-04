@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/posse-comitatus-act-1878/",
+  "Posse Comitatus Act (1878)",
+  "Enacted after Reconstruction to limit the use of the U.S. Army in domestic law enforcement. It reinforced the separation between military and civilian authority.",
+);
 
 export default function PosseComitatusActPage() {
   return (

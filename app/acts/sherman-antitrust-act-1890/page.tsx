@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/sherman-antitrust-act-1890/",
+  "Sherman Antitrust Act (1890)",
+  "The Sherman Act was passed to combat the growing power of monopolies and trusts in the late 19th century, ensuring fair competition and protecting consumers from price-fixing and market domination.",
+);
 
 export default function ShermanAntitrustActPage() {
   return (

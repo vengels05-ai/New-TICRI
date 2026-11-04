@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/executive-power/united-states-v-nixon-1974/",
+  "United States v. Nixon (1974)",
+  "Executive privilege is not absolute. Read TICRI’s plain-English overview of United States v. Nixon (1974).",
+);
+
 export default function UnitedStatesVNixon1974Page() {
   return (
     <div className="bg-white">

@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/american-rescue-plan-act-2021/",
+  "American Rescue Plan Act (ARPA) (2021)",
+  "ARPA was enacted to provide continued economic and public health relief during the COVID-19 pandemic, expanding on the CARES Act with more direct payments, extended unemployment aid, and major funding for vaccines, schools, and local governments.",
+);
 
 export default function AmericanRescuePlanActArpaPage() {
   return (

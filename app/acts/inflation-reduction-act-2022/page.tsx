@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/inflation-reduction-act-2022/",
+  "Inflation Reduction Act (IRA) (2022)",
+  "The IRA was passed to lower prescription drug costs, invest in clean energy, reduce the federal deficit, and address inflation concerns.",
+);
 
 export default function InflationReductionActIraPage() {
   return (

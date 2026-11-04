@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/illegal-immigration-reform-immigrant-responsibility-act-1996/",
+  "Illegal Immigration Reform and Immigrant Responsibility Act (IIRIRA) (1996)",
+  "IIRIRA was passed to tighten immigration enforcement in response to growing concerns about unauthorized immigration.",
+);
 
 export default function IllegalImmigrationReformAndImmigrantResponsibilityActIiriraPage() {
   return (

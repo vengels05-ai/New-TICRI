@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/clean-water-act-1972/",
+  "Clean Water Act (CWA) (1972)",
+  "Congress enacted the CWA to restore and maintain the chemical, physical, and biological integrity of the nation’s waters, after decades of severe pollution in rivers, lakes, and coastal areas.",
+);
 
 export default function CleanWaterActCwaPage() {
   return (

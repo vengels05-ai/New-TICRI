@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/wartime-powers/korematsu-v-united-states-1944/",
+  "Korematsu v. United States (1944)",
+  "Upheld Japanese internment (later repudiated). Read TICRI’s plain-English overview of Korematsu v. United States (1944).",
+);
+
 export default function KorematsuVUnitedStates1944Page() {
   return (
     <div className="bg-white">

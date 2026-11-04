@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/civil-rights/shelby-county-v-holder-2013/",
+  "Shelby County v. Holder (2013)",
+  "Struck down Voting Rights Act preclearance formula. Read TICRI’s plain-English overview of Shelby County v. Holder (2013).",
+);
+
 export default function ShelbyCountyVHolder2013Page() {
   return (
     <div className="bg-white">

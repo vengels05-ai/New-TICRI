@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/medicare-medicaid-act-1965/",
+  "Medicare & Medicaid Act (1965)",
+  "Before 1965, older and low-income Americans often had little or no access to affordable healthcare.",
+);
 
 export default function MedicareMedicaidActPage() {
   return (

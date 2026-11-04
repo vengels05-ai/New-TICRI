@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/civil-asset-forfeiture-reform-act-2000/",
+  "Civil Asset Forfeiture Reform Act (CAFRA) (2000)",
+  "Civil asset forfeiture allowed law enforcement to seize property suspected of being connected to crime, often without charging the owner.",
+);
 
 export default function CivilAssetForfeitureReformActCafraPage() {
   return (

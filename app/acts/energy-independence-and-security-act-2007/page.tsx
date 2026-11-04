@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/energy-independence-and-security-act-2007/",
+  "Energy Independence and Security Act (EISA) (2007)",
+  "EISA was passed to reduce U.S. dependence on oil, improve energy efficiency, and promote renewable fuels.",
+);
 
 export default function EnergyIndependenceAndSecurityActEisaPage() {
   return (

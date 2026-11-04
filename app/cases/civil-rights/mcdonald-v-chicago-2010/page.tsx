@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/civil-rights/mcdonald-v-chicago-2010/",
+  "McDonald v. Chicago (2010)",
+  "Second Amendment applies to states. Read TICRI’s plain-English overview of McDonald v. Chicago (2010).",
+);
+
 export default function McdonaldVChicago2010Page() {
   return (
     <div className="bg-white">

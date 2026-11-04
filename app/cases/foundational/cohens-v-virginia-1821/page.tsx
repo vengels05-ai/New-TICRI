@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/foundational/cohens-v-virginia-1821/",
+  "Cohens v. Virginia (1821)",
+  "Federal courts can review state criminal convictions. Read TICRI’s plain-English overview of Cohens v. Virginia (1821).",
+);
+
 export default function CohensVVirginia1821Page() {
   return (
     <div className="bg-white">

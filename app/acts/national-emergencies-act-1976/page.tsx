@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/national-emergencies-act-1976/",
+  "National Emergencies Act (NEA) (1976)",
+  "The NEA was enacted to limit presidential emergency powers by requiring declarations of national emergency to be formally proclaimed, published, and subject to congressional oversight and renewal.",
+);
 
 export default function NationalEmergenciesActNeaPage() {
   return (

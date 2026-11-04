@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/voting-rights-act-1965/",
+  "Voting Rights Act of 1965",
+  "The Act was enacted to enforce the 15th Amendment, which prohibits racial discrimination in voting.",
+);
 
 export default function VotingRightsActOf1965Page() {
   return (

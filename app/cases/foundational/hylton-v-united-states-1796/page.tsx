@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/foundational/hylton-v-united-states-1796/",
+  "Hylton v. United States (1796)",
+  "First case examining federal taxing power. Read TICRI’s plain-English overview of Hylton v. United States (1796).",
+);
+
 export default function HyltonVUnitedStates1796Page() {
   return (
     <div className="bg-white">

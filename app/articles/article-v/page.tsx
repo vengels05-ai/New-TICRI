@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/articles/article-v/",
+  "Article V: The Amendment Process",
+  "Read Article V of the U.S. Constitution with a plain-English explanation of the amendment process.",
+);
 
 export default function Article5Page() {
   return (

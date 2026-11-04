@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-21/",
+  "Twenty-First Amendment: Repeal of Prohibition",
+  "Read the Twenty-First Amendment and learn how it repealed the Eighteenth Amendment’s national alcohol prohibition.",
+);
 
 export default function Amendment21() {
   return (

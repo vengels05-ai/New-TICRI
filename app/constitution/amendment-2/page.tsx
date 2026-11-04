@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-2/",
+  "Second Amendment: The Right to Bear Arms",
+  "Read the Second Amendment and its plain-English explanation of the right to keep and bear arms.",
+);
 
 export default function Amendment2Page() {
   return (

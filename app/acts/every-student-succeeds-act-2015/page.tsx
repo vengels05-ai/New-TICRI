@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/every-student-succeeds-act-2015/",
+  "Every Student Succeeds Act (ESSA) (2015)",
+  "ESSA replaced the No Child Left Behind Act (NCLB, 2001) to reduce federal micromanagement of schools while maintaining accountability.",
+);
 
 export default function EveryStudentSucceedsActEssaPage() {
   return (

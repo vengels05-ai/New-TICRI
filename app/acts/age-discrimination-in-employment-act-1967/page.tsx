@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/age-discrimination-in-employment-act-1967/",
+  "Age Discrimination in Employment Act (ADEA) (1967)",
+  "The ADEA was enacted to protect workers aged 40 and older from employment discrimination, addressing widespread workplace bias against older employees.",
+);
 
 export default function AgeDiscriminationInEmploymentActAdeaPage() {
   return (

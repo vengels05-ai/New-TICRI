@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/federal-land-policy-and-management-act-1976/",
+  "Federal Land Policy and Management Act (FLPMA) (1976)",
+  "FLPMA was enacted to establish a comprehensive framework for managing U.S. public lands, primarily under the Bureau of Land Management (BLM).",
+);
 
 export default function FederalLandPolicyAndManagementActFlpmaPage() {
   return (

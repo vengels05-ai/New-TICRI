@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/social-security-act-1935/",
+  "Social Security Act (1935)",
+  "Enacted during the Great Depression to provide a federal safety net for the elderly, unemployed, and disadvantaged.",
+);
 
 export default function SocialSecurityActPage() {
   return (

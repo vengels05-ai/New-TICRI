@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/foundational/mcculloch-v-maryland-1819/",
+  "McCulloch v. Maryland (1819)",
+  "Federal law is supreme over state law; implied powers established. Read TICRI’s plain-English overview of McCulloch v. Maryland (1819).",
+);
+
 export default function MccullochVMaryland1819Page() {
   return (
     <div className="bg-white">

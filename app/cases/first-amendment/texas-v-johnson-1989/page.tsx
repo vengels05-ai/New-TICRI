@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/first-amendment/texas-v-johnson-1989/",
+  "Texas v. Johnson (1989)",
+  "Flag burning is protected symbolic speech. Read TICRI’s plain-English overview of Texas v. Johnson (1989).",
+);
+
 export default function TexasVJohnson1989Page() {
   return (
     <div className="bg-white">

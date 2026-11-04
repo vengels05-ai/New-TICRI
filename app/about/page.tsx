@@ -1,11 +1,13 @@
-import type { Metadata } from 'next';
+import { createPageMetadata } from '@/lib/seo';
+
 import Image from 'next/image';
 import styles from './about.module.css';
 
-export const metadata: Metadata = {
-  title: 'About TICRI | The Informed Constitutional Republic Initiative',
-  description: 'Learn about TICRI’s mission, independent approach to civic education, and founder Richard W. “Rich” Vengels III, a retired USAF Senior Master Sergeant.',
-};
+export const metadata = createPageMetadata(
+  "/about/",
+  "About TICRI: Mission, Approach & Founder",
+  "Learn about TICRI’s mission, independent approach to civic education, and founder Richard W. “Rich” Vengels III, a retired USAF Senior Master Sergeant.",
+);
 
 const sectionLinks = [
   { href: '#why-ticri-exists', label: 'Why TICRI exists' },

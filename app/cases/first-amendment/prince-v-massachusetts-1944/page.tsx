@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/first-amendment/prince-v-massachusetts-1944/",
+  "Prince v. Massachusetts (1944)",
+  "State can limit parental religious practices that harm children. Read TICRI’s plain-English overview of Prince v. Massachusetts (1944).",
+);
+
 export default function PrinceVMassachusetts1944Page() {
   return (
     <div className="bg-white">

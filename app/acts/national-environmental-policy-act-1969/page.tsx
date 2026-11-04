@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/national-environmental-policy-act-1969/",
+  "National Environmental Policy Act (NEPA) (1969)",
+  "NEPA was enacted to ensure that federal agencies consider the environmental impacts of their actions and decisions.",
+);
 
 export default function NationalEnvironmentalPolicyActNepaPage() {
   return (

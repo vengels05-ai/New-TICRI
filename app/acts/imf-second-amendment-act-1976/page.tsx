@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/imf-second-amendment-act-1976/",
+  "IMF Second Amendment Implementation Act (End of Gold Standard) (1976)",
+  "This Act ratified U.S. participation in the International Monetary Fund’s (IMF) Second Amendment, which followed the Jamaica Accords of 1976.",
+);
 
 export default function IMFSecondAmendmentImplementationActEndOfGoldStandardPage() {
   return (

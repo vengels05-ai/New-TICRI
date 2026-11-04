@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/fdicia-1991/",
+  "Federal Deposit Insurance Corporation Improvement Act (FDICIA) (1991)",
+  "Passed after continuing bank and thrift failures in the late 1980s and early 1990s, FDICIA strengthened the FDIC’s authority, imposed stricter capital requirements, and introduced a system of prompt corrective action to intervene in troubled banks before collapse.",
+);
 
 export default function FederalDepositInsuranceCorporationImprovementActFdiciaPage() {
   return (

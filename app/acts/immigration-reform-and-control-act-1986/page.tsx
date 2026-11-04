@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/immigration-reform-and-control-act-1986/",
+  "Immigration Reform and Control Act (IRCA) (1986)",
+  "The IRCA was passed to address concerns about unauthorized immigration.",
+);
 
 export default function ImmigrationReformAndControlActIrcaPage() {
   return (

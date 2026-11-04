@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/articles/article-vi/",
+  "Article VI: Supremacy, Oaths & Public Debts",
+  "Read Article VI of the U.S. Constitution with a plain-English explanation of supremacy, oaths and public debts.",
+);
 
 export default function Article6Page() {
   return (

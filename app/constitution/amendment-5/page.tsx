@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-5/",
+  "Fifth Amendment: Due Process & Accused Persons’ Rights",
+  "Understand the Fifth Amendment’s protections for due process, self-incrimination, double jeopardy, grand juries, and property.",
+);
 
 export default function Amendment5Page() {
   return (

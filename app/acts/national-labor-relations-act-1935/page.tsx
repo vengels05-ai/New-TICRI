@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/national-labor-relations-act-1935/",
+  "National Labor Relations Act (NLRA) (1935)",
+  "The NLRA was enacted to protect employees’ rights to organize, form unions, engage in collective bargaining, and take collective action, including strikes, in order to balance the power between employers and workers.",
+);
 
 export default function NationalLaborRelationsActNlraPage() {
   return (

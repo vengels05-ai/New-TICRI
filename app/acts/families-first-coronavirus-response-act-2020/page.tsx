@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/families-first-coronavirus-response-act-2020/",
+  "Families First Coronavirus Response Act (FFCRA) (2020)",
+  "The FFCRA was enacted in response to the COVID-19 pandemic to provide emergency paid sick leave, expanded family and medical leave, and free COVID-19 testing, while also funding nutrition assistance and unemployment programs.",
+);
 
 export default function FamiliesFirstCoronavirusResponseActFfcraPage() {
   return (

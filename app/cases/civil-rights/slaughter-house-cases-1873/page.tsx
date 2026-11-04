@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/civil-rights/slaughter-house-cases-1873/",
+  "Slaughter-House Cases (1873)",
+  "Narrowly interpreted 14th Amendment Privileges or Immunities. Read TICRI’s plain-English overview of Slaughter-House Cases (1873).",
+);
+
 export default function SlaughterHouseCases1873Page() {
   return (
     <div className="bg-white">

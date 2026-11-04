@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/energy-policy-act-1992/",
+  "Energy Policy Act of 1992",
+  "The Act was designed to reduce U.S. dependence on foreign oil, promote energy efficiency, encourage development of renewable and alternative fuels, and expand investment in nuclear and clean coal technologies.",
+);
 
 export default function EnergyPolicyActOf1992Page() {
   return (

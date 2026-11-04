@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/federalism/",
+  "Federalism: Federal and State Powers",
+  "Explore how the Constitution divides authority between federal and state governments and how that balance has changed over time.",
+);
+
 export default function FederalismPage() {
   return (
     <div className="bg-white">

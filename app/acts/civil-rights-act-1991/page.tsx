@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/civil-rights-act-1991/",
+  "Civil Rights Act of 1991",
+  "The Act was passed to strengthen and expand federal civil rights laws, particularly in response to Supreme Court decisions that had narrowed protections against employment discrimination under Title VII of the 1964 Civil Rights Act.",
+);
 
 export default function CivilRightsActOf1991Page() {
   return (

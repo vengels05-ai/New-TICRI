@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/civil-rights/obergefell-v-hodges-2015/",
+  "Obergefell v. Hodges (2015)",
+  "Same-sex marriage is a constitutional right. Read TICRI’s plain-English overview of Obergefell v. Hodges (2015).",
+);
+
 export default function ObergefellVHodges2015Page() {
   return (
     <div className="bg-white">

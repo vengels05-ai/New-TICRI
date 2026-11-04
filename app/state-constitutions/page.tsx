@@ -1,6 +1,14 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
 import UsStateMap from '@/components/UsStateMap';
 import { usStates } from '@/lib/usStates';
+
+export const metadata = createPageMetadata(
+  "/state-constitutions/",
+  "The 50 U.S. State Constitutions",
+  "Explore all 50 U.S. state constitutions, their history, government structure, and available constitutional text and primary sources.",
+);
 
 export default function StateConstitutionsPage() {
   return (

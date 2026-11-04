@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/administrative-procedure-act-1946/",
+  "Administrative Procedure Act (APA) (1946)",
+  "Passed in the aftermath of the New Deal, the APA established a uniform process for federal agency rulemaking, adjudication, and judicial review, ensuring agencies operate with transparency and accountability.",
+);
 
 export default function AdministrativeProcedureActApaPage() {
   return (

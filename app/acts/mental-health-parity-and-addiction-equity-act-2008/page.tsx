@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/mental-health-parity-and-addiction-equity-act-2008/",
+  "Mental Health Parity and Addiction Equity Act (MHPAEA) (2008)",
+  "The MHPAEA was enacted to require health insurance plans that offer mental health or substance use disorder benefits to provide them at parity with medical and surgical benefits—meaning no stricter limits or higher costs.",
+);
 
 export default function MentalHealthParityAndAddictionEquityActMhpaeaPage() {
   return (

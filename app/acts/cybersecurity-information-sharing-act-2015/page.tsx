@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/cybersecurity-information-sharing-act-2015/",
+  "Cybersecurity Information Sharing Act (CISA) (2015)",
+  "The Act was passed to improve the nation’s cybersecurity defenses by encouraging private companies and the federal government to share cyber threat indicators.",
+);
 
 export default function CybersecurityInformationSharingActCisaPage() {
   return (

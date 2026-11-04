@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/consumer-product-safety-act-1972/",
+  "Consumer Product Safety Act (CPSA) (1972)",
+  "The CPSA was enacted to protect the public from unreasonable risks of injury or death associated with consumer products.",
+);
 
 export default function ConsumerProductSafetyActCpsaPage() {
   return (

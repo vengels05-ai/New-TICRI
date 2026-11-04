@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/civil-rights/gitlow-v-new-york-1925/",
+  "Gitlow v. New York (1925)",
+  "First Amendment applies to states via 14th Amendment. Read TICRI’s plain-English overview of Gitlow v. New York (1925).",
+);
+
 export default function GitlowVNewYork1925Page() {
   return (
     <div className="bg-white">

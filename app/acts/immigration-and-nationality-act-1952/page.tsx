@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/immigration-and-nationality-act-1952/",
+  "Immigration and Nationality Act (INA) (1952)",
+  "The INA consolidated earlier immigration laws into a single framework, defining rules for immigration, naturalization, deportation, and asylum.",
+);
 
 export default function ImmigrationAndNationalityActInaPage() {
   return (

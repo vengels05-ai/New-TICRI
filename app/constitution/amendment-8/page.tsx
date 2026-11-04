@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-8/",
+  "Eighth Amendment: Bail, Fines & Punishment",
+  "Read the Eighth Amendment and learn about excessive bail, excessive fines, and cruel and unusual punishment.",
+);
 
 export default function Amendment8Page() {
   return (

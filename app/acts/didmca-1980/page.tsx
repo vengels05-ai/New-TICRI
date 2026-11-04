@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/didmca-1980/",
+  "Depository Institutions Deregulation and Monetary Control Act (DIDMCA) (1980)",
+  "Passed amid high inflation and interest rate volatility, the Act sought to modernize banking, improve monetary control, and promote competition.",
+);
 
 export default function DepositoryInstitutionsDeregulationAndMonetaryControlActDidmcaPage() {
   return (

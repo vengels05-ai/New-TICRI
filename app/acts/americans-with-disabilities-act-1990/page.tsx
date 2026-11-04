@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/americans-with-disabilities-act-1990/",
+  "Americans with Disabilities Act (ADA) (1990)",
+  "The ADA was passed to eliminate discrimination against individuals with disabilities and ensure equal opportunity in employment, government services, public accommodations, and telecommunications.",
+);
 
 export default function AmericansWithDisabilitiesActAdaPage() {
   return (

@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/rights/equal-protection/",
+  "Equal Protection",
+  "The Equal Protection Clause requires government to treat similarly situated people equally.",
+);
 
 export default function EqualProtectionPage() {
   return (

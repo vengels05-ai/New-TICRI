@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/communications-decency-act-230-1996/",
+  "Communications Decency Act § 230 (1996)",
+  "Enacted as part of the Telecommunications Act of 1996, § 230 was designed to promote the growth of the internet by shielding online platforms from liability for most user-generated content while allowing them to moderate harmful material in “good faith.”.",
+);
 
 export default function CommunicationsDecencyAct230Page() {
   return (

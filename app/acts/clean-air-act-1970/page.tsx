@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/clean-air-act-1970/",
+  "Clean Air Act (CAA) (1970)",
+  "The CAA established a comprehensive federal program to regulate air emissions from stationary and mobile sources, protect public health, and improve air quality.",
+);
 
 export default function CleanAirActCaaPage() {
   return (

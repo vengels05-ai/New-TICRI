@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/foundational/fletcher-v-peck-1810/",
+  "Fletcher v. Peck (1810)",
+  "First time Supreme Court struck down a state law. Read TICRI’s plain-English overview of Fletcher v. Peck (1810).",
+);
+
 export default function FletcherVPeck1810Page() {
   return (
     <div className="bg-white">

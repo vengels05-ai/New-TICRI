@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/gold-reserve-act-1934/",
+  "Gold Reserve Act (1934)",
+  "Learn how the Gold Reserve Act transferred monetary gold to the U.S. Treasury and expanded federal control over gold reserves and dollar valuation.",
+);
 
 export default function GoldReserveActPage() {
   return (

@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/glass-steagall-act-1933/",
+  "Glass–Steagall Act (Banking Act of 1933)",
+  "Enacted during the Great Depression, the Act aimed to restore trust in the financial system by separating commercial and investment banking and creating the Federal Deposit Insurance Corporation (FDIC).",
+);
 
 export default function GlassSteagallActBankingActOf1933Page() {
   return (

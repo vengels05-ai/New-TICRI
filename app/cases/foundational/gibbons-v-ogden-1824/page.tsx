@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/foundational/gibbons-v-ogden-1824/",
+  "Gibbons v. Ogden (1824)",
+  "Federal government can regulate interstate commerce. Read TICRI’s plain-English overview of Gibbons v. Ogden (1824).",
+);
+
 export default function GibbonsVOgden1824Page() {
   return (
     <div className="bg-white">

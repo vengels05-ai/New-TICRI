@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/articles/article-ii/",
+  "Article II: The President & Executive Powers",
+  "Read Article II of the U.S. Constitution with a plain-English explanation of the president and executive powers.",
+);
 
 export default function Article2Page() {
   return (

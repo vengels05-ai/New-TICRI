@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-26/",
+  "Twenty-Sixth Amendment: Voting at Age 18",
+  "Read the Twenty-Sixth Amendment and learn how it protects the voting rights of citizens aged 18 and older.",
+);
 
 export default function Amendment26() {
   return (

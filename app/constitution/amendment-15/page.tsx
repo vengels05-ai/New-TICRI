@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-15/",
+  "Fifteenth Amendment: Voting Rights & Race",
+  "Read the Fifteenth Amendment and learn how it prohibits denying voting rights based on race, color, or previous enslavement.",
+);
 
 export default function Amendment15Page() {
   return (

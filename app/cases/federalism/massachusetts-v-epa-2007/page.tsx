@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/federalism/massachusetts-v-epa-2007/",
+  "Massachusetts v. Environmental Protection Agency (2007)",
+  "EPA must regulate greenhouse gases under Clean Air Act. Read TICRI’s plain-English overview of Massachusetts v. EPA (2007).",
+);
+
 export default function MassachusettsVEpa2007Page() {
   return (
     <div className="bg-white">

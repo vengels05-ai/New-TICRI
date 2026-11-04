@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/rights/due-process-procedural/",
+  "Due Process (Procedural)",
+  "Procedural due process ensures that government follows fair procedures before depriving you of life, liberty, or property.",
+);
 
 export default function DueProcessProceduralPage() {
   return (

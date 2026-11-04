@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/family-educational-rights-and-privacy-act-1974/",
+  "Family Educational Rights and Privacy Act (FERPA) (1974)",
+  "FERPA was enacted to protect the privacy of student education records and to give parents (and later students themselves) rights to access and control disclosure of those records.",
+);
 
 export default function FamilyEducationalRightsAndPrivacyActFerpaPage() {
   return (

@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/military-service/conroy-v-aniskoff-1993/",
+  "Conroy v. Aniskoff (1993)",
+  "USERRA protections for service members. Read TICRI’s plain-English overview of Conroy v. Aniskoff (1993).",
+);
+
 export default function ConroyVAniskoff1993Page() {
   return (
     <div className="bg-white">

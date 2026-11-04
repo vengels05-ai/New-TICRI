@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/higher-education-act-1965/",
+  "Higher Education Act (HEA) (1965)",
+  "Explore how the Higher Education Act strengthened colleges and universities and expanded financial aid to make higher education more accessible.",
+);
 
 export default function HigherEducationActHeaPage() {
   return (

@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/rights/free-exercise-of-religion/",
+  "Free Exercise of Religion",
+  "The Free Exercise Clause protects the right to hold religious beliefs and practice religion without government interference, though religious practice can be regulated when it conflicts with important government interests.",
+);
 
 export default function FreeExerciseOfReligionPage() {
   return (

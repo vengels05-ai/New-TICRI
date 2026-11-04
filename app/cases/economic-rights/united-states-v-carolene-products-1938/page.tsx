@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/economic-rights/united-states-v-carolene-products-1938/",
+  "United States v. Carolene Products Co. (1938)",
+  "Economic regulation gets rational basis review. Read TICRI’s plain-English overview of United States v. Carolene Products (1938).",
+);
+
 export default function UnitedStatesVCaroleneProducts1938Page() {
   return (
     <div className="bg-white">

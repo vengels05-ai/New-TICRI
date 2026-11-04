@@ -1,3 +1,5 @@
+import { createPageMetadata } from '@/lib/seo';
+
 // app/cases/search/page.tsx
 // TICRI Supreme Court Cases -- powered by TheSource Worker API
 
@@ -7,10 +9,11 @@ import { getRecentCases, getNotableCases, formatVotes, directionColor, direction
 import type { CaseSummary } from '@/lib/thesource';
 import CasesSearchClient from '@/components/scotus/CasesSearchClient';
 
-export const metadata = {
-  title: 'Supreme Court Cases | TICRI',
-  description: 'Search 486,000+ Supreme Court cases from 1789 to present. Read actual opinions, vote breakdowns, and real legal history.',
-};
+export const metadata = createPageMetadata(
+  "/cases/search/",
+  "Search Supreme Court Cases & Opinions",
+  "Search Supreme Court records by keyword and read available opinions, case details, and vote breakdowns in TICRI.",
+);
 
 export default async function CasesSearchPage() {
   const [recentData, notableData] = await Promise.all([

@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/articles/article-vii/",
+  "Article VII: Ratification of the Constitution",
+  "Read Article VII of the U.S. Constitution with a plain-English explanation of ratification of the constitution.",
+);
 
 export default function Article7Page() {
   return (

@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/violence-against-women-act-1994/",
+  "Violence Against Women Act (VAWA) (1994)",
+  "VAWA was enacted to address domestic violence, sexual assault, and stalking, creating comprehensive legal protections, victim services, and funding for law enforcement and prevention programs.",
+);
 
 export default function ViolenceAgainstWomenActVawaPage() {
   return (

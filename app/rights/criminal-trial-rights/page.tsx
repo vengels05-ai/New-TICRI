@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/rights/criminal-trial-rights/",
+  "Criminal Trial Rights",
+  "The Constitution provides extensive protections for people accused of crimes, including rights to counsel, jury trial, confrontation of witnesses, protection against self-incrimination, and freedom from cruel and unusual punishment.",
+);
 
 export default function CriminalTrialRightsPage() {
   return (

@@ -1,10 +1,13 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import { Suspense } from 'react';
 import CaseOpinionRouteClient from '@/components/scotus/CaseOpinionRouteClient';
 
-export const metadata = {
-  title: 'Supreme Court Opinion | TICRI',
-  description: 'Read Supreme Court opinion text in TICRI, served from TheSource.',
-};
+export const metadata = createPageMetadata(
+  "/cases/opinion/",
+  "Supreme Court Opinion Reader",
+  "Read Supreme Court opinion text and case details from the TICRI case library.",
+);
 
 export default function OpinionPage() {
   return (

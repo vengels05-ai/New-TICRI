@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/electronic-fund-transfer-act-1978/",
+  "Electronic Fund Transfer Act (EFTA) (1978)",
+  "The EFTA was enacted to protect consumers in electronic banking transactions, ensuring fair treatment, clear disclosures, and protection against unauthorized transfers.",
+);
 
 export default function ElectronicFundTransferActEftaPage() {
   return (

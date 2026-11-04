@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/federalism/us-term-limits-v-thornton-1995/",
+  "U.S. Term Limits, Inc. v. Thornton (1995)",
+  "States can't impose congressional term limits. Read TICRI’s plain-English overview of US Term Limits v. Thornton (1995).",
+);
+
 export default function UsTermLimitsVThornton1995Page() {
   return (
     <div className="bg-white">

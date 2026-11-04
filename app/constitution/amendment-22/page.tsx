@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-22/",
+  "Twenty-Second Amendment: Presidential Term Limits",
+  "Read the Twenty-Second Amendment and learn about constitutional limits on presidential terms.",
+);
 
 export default function Amendment22() {
   return (

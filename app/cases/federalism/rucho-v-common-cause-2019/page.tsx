@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/federalism/rucho-v-common-cause-2019/",
+  "Rucho v. Common Cause (2019)",
+  "Political gerrymandering is non-justiciable. Read TICRI’s plain-English overview of Rucho v. Common Cause (2019).",
+);
+
 export default function RuchoVCommonCause2019Page() {
   return (
     <div className="bg-white">

@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-10/",
+  "Tenth Amendment: Reserved State & People’s Powers",
+  "Read the Tenth Amendment and learn about powers reserved to the states and the people.",
+);
 
 export default function Amendment10Page() {
   return (

@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/economic-rights/lochner-v-new-york-1905/",
+  "Lochner v. New York (1905)",
+  "Struck down maximum hours law (later repudiated). Read TICRI’s plain-English overview of Lochner v. New York (1905).",
+);
+
 export default function LochnerVNewYork1905Page() {
   return (
     <div className="bg-white">

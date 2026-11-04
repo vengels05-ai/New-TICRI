@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/rights/due-process-substantive/",
+  "Due Process (Substantive)",
+  "Substantive due process protects fundamental rights from government interference regardless of procedures used.",
+);
 
 export default function DueProcessSubstantivePage() {
   return (

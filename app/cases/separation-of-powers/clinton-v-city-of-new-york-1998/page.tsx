@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/separation-of-powers/clinton-v-city-of-new-york-1998/",
+  "Clinton v. City of New York (1998)",
+  "Line-item veto is unconstitutional. Read TICRI’s plain-English overview of Clinton v. City of New York (1998).",
+);
+
 export default function ClintonVCityOfNewYork1998Page() {
   return (
     <div className="bg-white">

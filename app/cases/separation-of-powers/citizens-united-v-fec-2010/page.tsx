@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/separation-of-powers/citizens-united-v-fec-2010/",
+  "Citizens United v. Federal Election Commission (2010)",
+  "Corporations have First Amendment right to political spending. Read TICRI’s plain-English overview of Citizens United v. FEC (2010).",
+);
+
 export default function CitizensUnitedVFec2010Page() {
   return (
     <div className="bg-white">

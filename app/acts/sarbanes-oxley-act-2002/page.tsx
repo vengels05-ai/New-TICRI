@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/sarbanes-oxley-act-2002/",
+  "Sarbanes–Oxley Act (SOX) (2002)",
+  "Passed in response to corporate scandals like Enron and WorldCom, SOX aimed to restore investor confidence by improving corporate governance, financial disclosures, and accountability of executives and auditors.",
+);
 
 export default function SarbanesOxleyActSoxPage() {
   return (

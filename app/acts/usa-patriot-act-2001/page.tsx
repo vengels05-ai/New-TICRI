@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/usa-patriot-act-2001/",
+  "USA PATRIOT Act (2001)",
+  "Passed quickly after the September 11, 2001 terrorist attacks, the PATRIOT Act expanded law enforcement and intelligence agencies’ powers to investigate and prevent terrorism.",
+);
 
 export default function USAPatriotActPage() {
   return (

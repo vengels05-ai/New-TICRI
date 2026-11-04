@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/fair-housing-act-1968/",
+  "Fair Housing Act (1968)",
+  "Explore the Fair Housing Act, its anti-discrimination protections, and its role in expanding access to housing, rentals, and home ownership.",
+);
 
 export default function FairHousingActPage() {
   return (

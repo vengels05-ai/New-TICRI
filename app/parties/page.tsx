@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/parties/",
+  "U.S. Political Party History & Realignment",
+  "Explore how America’s major political parties, policy positions, and ideas about federal and state power have changed over time.",
+);
+
 export default function PartiesPage() {
   return (
     <div className="bg-gray-50">

@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/foreign-intelligence-surveillance-act-1978/",
+  "Foreign Intelligence Surveillance Act (FISA) (1978)",
+  "FISA was enacted after revelations of widespread domestic spying (e.g., the Church Committee) to regulate government surveillance for foreign intelligence purposes and establish judicial oversight.",
+);
 
 export default function ForeignIntelligenceSurveillanceActFisaPage() {
   return (

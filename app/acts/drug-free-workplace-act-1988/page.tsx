@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/drug-free-workplace-act-1988/",
+  "Drug-Free Workplace Act (1988)",
+  "The Act was passed to require federal contractors and grantees to maintain drug-free workplaces as a condition of receiving federal funding, part of the broader “War on Drugs.”.",
+);
 
 export default function DrugFreeWorkplaceActPage() {
   return (

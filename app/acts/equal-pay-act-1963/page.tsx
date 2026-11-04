@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/equal-pay-act-1963/",
+  "Equal Pay Act of 1963",
+  "The Act was passed to address wage disparities between men and women by making it illegal for employers to pay unequal wages for substantially equal work.",
+);
 
 export default function EqualPayActOf1963Page() {
   return (

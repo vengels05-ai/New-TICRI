@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/fair-labor-standards-act-1938/",
+  "Fair Labor Standards Act (FLSA) (1938)",
+  "The FLSA was enacted during the New Deal to establish minimum wage, overtime pay, recordkeeping, and youth employment standards, addressing abusive labor practices and exploitation.",
+);
 
 export default function FairLaborStandardsActFlsaPage() {
   return (

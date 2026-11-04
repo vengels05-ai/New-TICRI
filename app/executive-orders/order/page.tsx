@@ -1,25 +1,13 @@
-'use client';
+import { createPageMetadata } from '@/lib/seo';
 
-import { Suspense } from 'react';
-import { useSearchParams } from 'next/navigation';
-import LawDetailClient from '@/components/thesource/LawDetailClient';
+import PageClient from './PageClient';
 
-export default function ExecutiveOrderPage() {
-  return (
-    <Suspense fallback={<LawDetailClient mode="executive-orders" id="" backHref="/executive-orders" backLabel="Executive Orders" />}>
-      <ExecutiveOrderContent />
-    </Suspense>
-  );
-}
+export const metadata = createPageMetadata(
+  "/executive-orders/order/",
+  "Executive Order Reader",
+  "Read presidential executive order records and available source text in TICRI.",
+);
 
-function ExecutiveOrderContent() {
-  const searchParams = useSearchParams();
-  return (
-    <LawDetailClient
-      mode="executive-orders"
-      id={searchParams.get('id') ?? ''}
-      backHref="/executive-orders"
-      backLabel="Executive Orders"
-    />
-  );
+export default function Page() {
+  return <PageClient />;
 }

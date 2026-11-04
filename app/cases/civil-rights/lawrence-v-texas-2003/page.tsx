@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/civil-rights/lawrence-v-texas-2003/",
+  "Lawrence v. Texas (2003)",
+  "State sodomy laws violate due process. Read TICRI’s plain-English overview of Lawrence v. Texas (2003).",
+);
+
 export default function LawrenceVTexas2003Page() {
   return (
     <div className="bg-white">

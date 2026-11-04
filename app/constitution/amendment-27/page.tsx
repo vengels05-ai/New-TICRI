@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-27/",
+  "Twenty-Seventh Amendment: Congressional Pay",
+  "Read the Twenty-Seventh Amendment and learn why changes to congressional pay must wait until after an election.",
+);
 
 export default function Amendment27() {
   return (

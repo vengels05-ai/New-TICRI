@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/emergency-economic-stabilization-act-2008/",
+  "Emergency Economic Stabilization Act (EESA, TARP) (2008)",
+  "Learn about the Emergency Economic Stabilization Act, the Troubled Asset Relief Program (TARP), and the federal response to the 2008 financial crisis.",
+);
 
 export default function EmergencyEconomicStabilizationActEesaTarpPage() {
   return (

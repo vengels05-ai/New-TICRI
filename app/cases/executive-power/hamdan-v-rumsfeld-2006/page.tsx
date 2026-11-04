@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/executive-power/hamdan-v-rumsfeld-2006/",
+  "Hamdan v. Rumsfeld (2006)",
+  "President's military commissions violated Geneva Conventions. Read TICRI’s plain-English overview of Hamdan v. Rumsfeld (2006).",
+);
+
 export default function HamdanVRumsfeld2006Page() {
   return (
     <div className="bg-white">

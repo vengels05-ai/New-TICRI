@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/foundational/calder-v-bull-1798/",
+  "Calder v. Bull (1798)",
+  "Defined ex post facto laws and limits on retroactive legislation. Read TICRI’s plain-English overview of Calder v. Bull (1798).",
+);
+
 export default function CalderVBull1798Page() {
   return (
     <div className="bg-white">

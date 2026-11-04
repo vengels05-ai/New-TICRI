@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/civil-rights/roe-v-wade-1973/",
+  "Roe v. Wade (1973)",
+  "Created constitutional right to abortion (overruled 2022). Read TICRI’s plain-English overview of Roe v. Wade (1973).",
+);
+
 export default function RoeVWade1973Page() {
   return (
     <div className="bg-white">

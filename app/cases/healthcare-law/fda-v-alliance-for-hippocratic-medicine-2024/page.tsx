@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/healthcare-law/fda-v-alliance-for-hippocratic-medicine-2024/",
+  "FDA v. Alliance for Hippocratic Medicine (2024)",
+  "Challengers lacked standing to sue over abortion pill access. Read TICRI’s plain-English overview of FDA v. Alliance for Hippocratic Medicine (2024).",
+);
+
 export default function FdaVAllianceForHippocraticMedicine2024Page() {
   return (
     <div className="bg-white">

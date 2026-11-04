@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/first-step-act-2018/",
+  "First Step Act (2018)",
+  "The Act was passed to address concerns over mass incarceration, sentencing disparities, and prison conditions.",
+);
 
 export default function FirstStepActPage() {
   return (

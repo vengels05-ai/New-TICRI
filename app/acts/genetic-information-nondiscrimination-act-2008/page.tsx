@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/genetic-information-nondiscrimination-act-2008/",
+  "Genetic Information Nondiscrimination Act (GINA) (2008)",
+  "GINA was passed to prohibit discrimination in health coverage and employment based on genetic information, addressing concerns raised by advances in genetic testing and research.",
+);
 
 export default function GeneticInformationNondiscriminationActGinaPage() {
   return (

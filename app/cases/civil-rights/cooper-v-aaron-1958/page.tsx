@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/civil-rights/cooper-v-aaron-1958/",
+  "Cooper v. Aaron (1958)",
+  "States must follow Supreme Court rulings. Read TICRI’s plain-English overview of Cooper v. Aaron (1958).",
+);
+
 export default function CooperVAaron1958Page() {
   return (
     <div className="bg-white">

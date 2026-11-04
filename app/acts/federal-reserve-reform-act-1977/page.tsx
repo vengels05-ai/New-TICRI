@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/federal-reserve-reform-act-1977/",
+  "Federal Reserve Reform Act (1977)",
+  "Passed in the wake of the 1970s stagflation crisis, the Act clarified the Federal Reserve’s responsibilities, strengthened oversight, and set policy goals for monetary stability, employment, and growth.",
+);
 
 export default function FederalReserveReformActPage() {
   return (

@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/foundational/martin-v-hunters-lessee-1816/",
+  "Martin v. Hunter’s Lessee (1816)",
+  "Supreme Court can review state court decisions on federal questions. Read TICRI’s plain-English overview of Martin v. Hunter's Lessee (1816).",
+);
+
 export default function MartinVHuntersLessee1816Page() {
   return (
     <div className="bg-white">

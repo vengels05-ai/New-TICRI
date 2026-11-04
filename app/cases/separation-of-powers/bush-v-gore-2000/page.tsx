@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/separation-of-powers/bush-v-gore-2000/",
+  "Bush v. Gore (2000)",
+  "Stopped Florida recount, effectively deciding 2000 election. Read TICRI’s plain-English overview of Bush v. Gore (2000).",
+);
+
 export default function BushVGore2000Page() {
   return (
     <div className="bg-white">

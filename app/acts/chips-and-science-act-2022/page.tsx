@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/chips-and-science-act-2022/",
+  "CHIPS and Science Act (2022)",
+  "The Act was passed to strengthen U.S. semiconductor manufacturing, reduce dependence on foreign supply chains, and boost scientific research and innovation competitiveness—particularly against China.",
+);
 
 export default function CHIPSAndScienceActPage() {
   return (

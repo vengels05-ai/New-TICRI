@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/first-amendment/schenck-v-united-states-1919/",
+  "Schenck v. United States (1919)",
+  "\"Clear and present danger\" test for free speech limits. Read TICRI’s plain-English overview of Schenck v. United States (1919).",
+);
+
 export default function SchenckVUnitedStates1919Page() {
   return (
     <div className="bg-white">

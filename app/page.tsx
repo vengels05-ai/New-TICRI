@@ -1,5 +1,38 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
 import { ScrollText, Scale, FileText, Landmark, Gavel, Vote, Building2, Map, DollarSign, Coins, BadgeCheck, Building, BarChart3, Users, ShieldCheck, BookOpen } from 'lucide-react';
+import { SITE_URL, SITE_DESCRIPTION } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/",
+  "U.S. Constitution, Rights & Government Explained",
+  "Understand the U.S. Constitution, your rights, Supreme Court cases, federal laws, and government in plain English.",
+);
+
+const siteStructuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/#organization`,
+      name: 'TICRI',
+      alternateName: 'The Informed Constitutional Republic Initiative',
+      url: `${SITE_URL}/`,
+      logo: `${SITE_URL}/TICRI.png`,
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${SITE_URL}/#website`,
+      name: 'TICRI',
+      alternateName: 'The Informed Constitutional Republic Initiative',
+      url: `${SITE_URL}/`,
+      description: SITE_DESCRIPTION,
+      inLanguage: 'en-US',
+      publisher: { '@id': `${SITE_URL}/#organization` },
+    },
+  ],
+};
 
 export default function HomePage() {
   const sections = [
@@ -140,6 +173,10 @@ export default function HomePage() {
 
   return (
     <div className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(siteStructuredData).replace(/</g, '\\u003c') }}
+      />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-[#0F2C47] via-[#1A3A5C] to-[#C41E3A] text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

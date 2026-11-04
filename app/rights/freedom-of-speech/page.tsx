@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/rights/freedom-of-speech/",
+  "Freedom of Speech",
+  "The First Amendment protects your right to express opinions, criticize government, engage in political speech, and communicate ideas without government censorship or punishment.",
+);
 
 export default function FreedomOfSpeechPage() {
   return (

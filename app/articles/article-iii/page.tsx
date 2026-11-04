@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/articles/article-iii/",
+  "Article III: The Judiciary & Supreme Court",
+  "Read Article III of the U.S. Constitution with a plain-English explanation of the judiciary and supreme court.",
+);
 
 export default function Article3Page() {
   return (

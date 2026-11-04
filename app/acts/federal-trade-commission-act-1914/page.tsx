@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/federal-trade-commission-act-1914/",
+  "Federal Trade Commission Act (FTC Act) (1914)",
+  "The FTC Act was enacted to establish the Federal Trade Commission and empower it to prevent unfair methods of competition and unfair or deceptive acts or practices in commerce.",
+);
 
 export default function FederalTradeCommissionActFtcActPage() {
   return (

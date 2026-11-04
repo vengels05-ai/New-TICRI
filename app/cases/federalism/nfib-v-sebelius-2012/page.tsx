@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/federalism/nfib-v-sebelius-2012/",
+  "National Federation of Independent Business v. Sebelius (2012)",
+  "ACA individual mandate upheld as tax, not commerce power. Read TICRI’s plain-English overview of NFIB v. Sebelius (2012).",
+);
+
 export default function NfibVSebelius2012Page() {
   return (
     <div className="bg-white">

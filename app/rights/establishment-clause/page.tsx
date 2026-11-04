@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/rights/establishment-clause/",
+  "Establishment Clause",
+  "The Establishment Clause prevents government from establishing an official religion, endorsing religion over non-religion, or favoring one religion over others.",
+);
 
 export default function EstablishmentClausePage() {
   return (

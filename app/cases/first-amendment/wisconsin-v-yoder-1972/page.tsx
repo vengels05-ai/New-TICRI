@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/first-amendment/wisconsin-v-yoder-1972/",
+  "Wisconsin v. Yoder (1972)",
+  "Amish can withdraw children from school for religious reasons. Read TICRI’s plain-English overview of Wisconsin v. Yoder (1972).",
+);
+
 export default function WisconsinVYoder1972Page() {
   return (
     <div className="bg-white">

@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/civil-rights/loving-v-virginia-1967/",
+  "Loving v. Virginia (1967)",
+  "Bans on interracial marriage are unconstitutional. Read TICRI’s plain-English overview of Loving v. Virginia (1967).",
+);
+
 export default function LovingVVirginia1967Page() {
   return (
     <div className="bg-white">

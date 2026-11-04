@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-14/",
+  "Fourteenth Amendment: Citizenship & Equal Protection",
+  "Understand the Fourteenth Amendment’s citizenship, due process, and equal protection provisions.",
+);
 
 export default function Amendment14Page() {
   return (

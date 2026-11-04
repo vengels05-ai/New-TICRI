@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/civil-rights/students-for-fair-admissions-v-harvard-2023/",
+  "Students for Fair Admissions v. President and Fellows of Harvard College (2023)",
+  "Race-based college admissions violate Equal Protection. Read TICRI’s plain-English overview of Students for Fair Admissions v. Harvard (2023).",
+);
+
 export default function StudentsForFairAdmissionsVHarvard2023Page() {
   return (
     <div className="bg-white">

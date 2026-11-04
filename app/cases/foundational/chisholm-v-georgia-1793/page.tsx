@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/foundational/chisholm-v-georgia-1793/",
+  "Chisholm v. Georgia (1793)",
+  "Led to the 11th Amendment on state sovereign immunity. Read TICRI’s plain-English overview of Chisholm v. Georgia (1793).",
+);
+
 export default function ChisholmVGeorgia1793Page() {
   return (
     <div className="bg-white">

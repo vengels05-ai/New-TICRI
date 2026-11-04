@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/humphrey-hawkins-act-1978/",
+  "Full Employment and Balanced Growth Act (Humphrey–Hawkins Act) (1978)",
+  "Enacted during the economic turmoil of the 1970s (stagflation, high unemployment, and inflation), the Act built on the Employment Act of 1946 by setting explicit goals for reducing unemployment and inflation, while requiring the Federal Reserve to coordinate with Congress.",
+);
 
 export default function FullEmploymentAndBalancedGrowthActHumphreyHawkinsActPage() {
   return (

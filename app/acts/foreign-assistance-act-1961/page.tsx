@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/foreign-assistance-act-1961/",
+  "Foreign Assistance Act (FAA) (1961)",
+  "Explore how the Foreign Assistance Act reorganized U.S. foreign aid, established USAID, and shaped economic and humanitarian assistance.",
+);
 
 export default function ForeignAssistanceActFaaPage() {
   return (

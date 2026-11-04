@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/securities-act-1933/",
+  "Securities Act of 1933",
+  "Passed in the wake of the 1929 stock market crash, the Act aimed to restore investor confidence by requiring transparency in the offer and sale of securities and preventing fraud.",
+);
 
 export default function SecuritiesActOf1933Page() {
   return (

@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/scra-timeline/",
+  "Servicemembers Civil Relief Act Timeline",
+  "Explore servicemembers civil relief act legislation and related federal bills, with links to TICRI’s legislative resources.",
+);
 
 export default function ServicemembersCivilReliefActTimelinePage() {
   return (

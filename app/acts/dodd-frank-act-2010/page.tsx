@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/dodd-frank-act-2010/",
+  "Dodd–Frank Wall Street Reform and Consumer Protection Act (2010)",
+  "Enacted after the 2008 financial crisis, Dodd–Frank aimed to reduce systemic risk, increase transparency, and protect consumers from abusive financial practices.",
+);
 
 export default function DoddFrankWallStreetReformAndConsumerProtectionActPage() {
   return (

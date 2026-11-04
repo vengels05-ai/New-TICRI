@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/pregnancy-discrimination-act-1978/",
+  "Pregnancy Discrimination Act (1978)",
+  "The Act was passed to amend Title VII of the Civil Rights Act of 1964 to clarify that discrimination based on pregnancy, childbirth, or related medical conditions constitutes unlawful sex discrimination.",
+);
 
 export default function PregnancyDiscriminationActPage() {
   return (

@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/civil-rights/dred-scott-v-sandford-1857/",
+  "Dred Scott v. Sandford (1857)",
+  "Infamous decision denying citizenship to Black Americans. Read TICRI’s plain-English overview of Dred Scott v. Sandford (1857).",
+);
+
 export default function DredScottVSandford1857Page() {
   return (
     <div className="bg-white">

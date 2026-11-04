@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/criminal-justice/gideon-v-wainwright-1963/",
+  "Gideon v. Wainwright (1963)",
+  "Right to attorney even if you can't afford one. Read TICRI’s plain-English overview of Gideon v. Wainwright (1963).",
+);
+
 export default function GideonVWainwright1963Page() {
   return (
     <div className="bg-white">

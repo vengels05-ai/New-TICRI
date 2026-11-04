@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/war-powers-resolution-1973/",
+  "War Powers Resolution (1973)",
+  "Passed over President Nixon’s veto, the Resolution sought to reassert congressional authority over decisions to commit U.S. forces to hostilities, following the Vietnam War and decades of expanding presidential war powers.",
+);
 
 export default function WarPowersResolutionPage() {
   return (

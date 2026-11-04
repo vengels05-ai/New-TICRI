@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/energy-policy-act-2005/",
+  "Energy Policy Act of 2005",
+  "The Act was passed to encourage energy production and investment across all sectors: oil, gas, coal, nuclear, and renewables.",
+);
 
 export default function EnergyPolicyActOf2005Page() {
   return (

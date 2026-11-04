@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/occupational-safety-and-health-act-1970/",
+  "Occupational Safety and Health Act (OSH Act) (1970)",
+  "Enacted to ensure safe and healthful working conditions for employees by authorizing standards, enforcement, and education programs through the Occupational Safety and Health Administration (OSHA).",
+);
 
 export default function OccupationalSafetyAndHealthActOshActPage() {
   return (

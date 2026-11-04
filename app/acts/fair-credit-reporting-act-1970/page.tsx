@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/fair-credit-reporting-act-1970/",
+  "Fair Credit Reporting Act (FCRA) (1970)",
+  "The FCRA was enacted to promote accuracy, fairness, and privacy in consumer credit reporting. It regulates how consumer information is collected, used, and shared.",
+);
 
 export default function FairCreditReportingActFcraPage() {
   return (

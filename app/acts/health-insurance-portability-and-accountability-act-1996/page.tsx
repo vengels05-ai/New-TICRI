@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/health-insurance-portability-and-accountability-act-1996/",
+  "Health Insurance Portability and Accountability Act (HIPAA) (1996)",
+  "HIPAA was enacted to improve portability and continuity of health insurance coverage, combat waste and fraud, and protect the privacy and security of patients’ medical information.",
+);
 
 export default function HealthInsurancePortabilityAndAccountabilityActHipaaPage() {
   return (

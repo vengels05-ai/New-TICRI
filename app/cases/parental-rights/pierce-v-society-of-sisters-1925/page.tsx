@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/parental-rights/pierce-v-society-of-sisters-1925/",
+  "Pierce v. Society of Sisters (1925)",
+  "Parents can choose private/religious schools. Read TICRI’s plain-English overview of Pierce v. Society of Sisters (1925).",
+);
+
 export default function PierceVSocietyOfSisters1925Page() {
   return (
     <div className="bg-white">

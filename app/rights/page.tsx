@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/rights/",
+  "Your Constitutional Rights Explained",
+  "Explore freedom of speech, religion, assembly, due process, equal protection, and other constitutional rights in plain English.",
+);
 
 export default function RightsPage() {
   const rights = [

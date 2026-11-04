@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/healthcare-law/medina-v-planned-parenthood-2025/",
+  "Medina v. Planned Parenthood South Atlantic (2025)",
+  "Recent healthcare-related decision. Read TICRI’s plain-English overview of Medina v. Planned Parenthood (2025).",
+);
+
 export default function MedinaVPlannedParenthood2025Page() {
   return (
     <div className="bg-white">

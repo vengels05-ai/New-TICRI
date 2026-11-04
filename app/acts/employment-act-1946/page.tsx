@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/employment-act-1946/",
+  "Employment Act (1946)",
+  "Passed after World War II to ensure economic stability, the Act declared it the policy of the federal government to promote maximum employment, production, and purchasing power.",
+);
 
 export default function EmploymentActPage() {
   return (

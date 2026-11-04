@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/index/",
+  "Acts of Congress Index",
+  "Explore TICRI’s collection of major federal legislation and plain-English explanations of Acts of Congress.",
+);
 
 export default function ActsOfCongressPage() {
   return (

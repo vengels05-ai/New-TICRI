@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/separation-of-powers/ins-v-chadha-1983/",
+  "INS v. Chadha (1983)",
+  "Legislative veto violates separation of powers. Read TICRI’s plain-English overview of INS v. Chadha (1983).",
+);
+
 export default function InsVChadha1983Page() {
   return (
     <div className="bg-white">

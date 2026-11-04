@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/military-service/boone-v-lightner-1943/",
+  "Boone v. Lightner (1943)",
+  "Military service and veterans' rights. Read TICRI’s plain-English overview of Boone v. Lightner (1943).",
+);
+
 export default function BooneVLightner1943Page() {
   return (
     <div className="bg-white">

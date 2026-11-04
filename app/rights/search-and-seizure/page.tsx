@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/rights/search-and-seizure/",
+  "Search and Seizure Protections",
+  "The Fourth Amendment protects against unreasonable searches and seizures by government.",
+);
 
 export default function SearchAndSeizurePage() {
   return (

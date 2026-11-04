@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/first-amendment/near-v-minnesota-1931/",
+  "Near v. Minnesota (1931)",
+  "Prior restraint on press is unconstitutional. Read TICRI’s plain-English overview of Near v. Minnesota (1931).",
+);
+
 export default function NearVMinnesota1931Page() {
   return (
     <div className="bg-white">

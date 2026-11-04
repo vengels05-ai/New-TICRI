@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/first-amendment/engel-v-vitale-1962/",
+  "Engel v. Vitale (1962)",
+  "School-sponsored prayer violates Establishment Clause. Read TICRI’s plain-English overview of Engel v. Vitale (1962).",
+);
+
 export default function EngelVVitale1962Page() {
   return (
     <div className="bg-white">

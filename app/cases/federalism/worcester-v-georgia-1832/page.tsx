@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/federalism/worcester-v-georgia-1832/",
+  "Worcester v. Georgia (1832)",
+  "Federal government has exclusive authority over Native American affairs. Read TICRI’s plain-English overview of Worcester v. Georgia (1832).",
+);
+
 export default function WorcesterVGeorgia1832Page() {
   return (
     <div className="bg-white">

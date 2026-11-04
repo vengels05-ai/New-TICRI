@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/affordable-care-act-2010/",
+  "Patient Protection and Affordable Care Act (ACA) (2010)",
+  "The ACA was enacted to expand access to affordable health insurance, improve quality of care, and reduce healthcare costs.",
+);
 
 export default function PatientProtectionAndAffordableCareActAcaPage() {
   return (

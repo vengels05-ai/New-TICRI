@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/535/",
+  "Project 535: How Congress Works",
+  "Learn how the House and Senate work, how members are elected, and how the 17th Amendment, filibuster, and committees shape policymaking.",
+);
+
 export default function Congress535Page() {
   return (
     <div className="bg-gray-50">

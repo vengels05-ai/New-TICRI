@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/endangered-species-act-1973/",
+  "Endangered Species Act (ESA) (1973)",
+  "The ESA was passed to protect species at risk of extinction and conserve the ecosystems upon which they depend.",
+);
 
 export default function EndangeredSpeciesActEsaPage() {
   return (

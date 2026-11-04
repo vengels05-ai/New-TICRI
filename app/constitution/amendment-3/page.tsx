@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-3/",
+  "Third Amendment: Quartering Soldiers",
+  "Read the Third Amendment and learn how it limits quartering soldiers in private homes.",
+);
 
 export default function Amendment3Page() {
   return (

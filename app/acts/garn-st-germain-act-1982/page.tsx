@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/garn-st-germain-act-1982/",
+  "Garn–St Germain Depository Institutions Act (1982)",
+  "Enacted to address the crisis in the savings and loan (S&L) industry, the Act further deregulated depository institutions, expanded lending powers, and introduced new mortgage options.",
+);
 
 export default function GarnStGermainDepositoryInstitutionsActPage() {
   return (

@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/child-abuse-prevention-and-treatment-act-1974/",
+  "Child Abuse Prevention and Treatment Act (CAPTA) (1974)",
+  "CAPTA was enacted to create a federal framework for preventing, identifying, and responding to child abuse and neglect, and to support state child protective services with federal funding.",
+);
 
 export default function ChildAbusePreventionAndTreatmentActCaptaPage() {
   return (

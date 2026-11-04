@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/infrastructure-investment-and-jobs-act-2021/",
+  "Infrastructure Investment and Jobs Act (IIJA) (2021)",
+  "The IIJA was enacted to provide historic investments in U.S. infrastructure, including transportation, clean energy, water systems, and broadband internet, with the goal of modernizing the nation’s core systems and creating jobs.",
+);
 
 export default function InfrastructureInvestmentAndJobsActIijaPage() {
   return (

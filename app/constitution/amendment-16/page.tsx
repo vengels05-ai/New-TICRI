@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-16/",
+  "Sixteenth Amendment: Federal Income Tax",
+  "Read the Sixteenth Amendment and learn about Congress’s constitutional authority to collect income taxes.",
+);
 
 export default function Amendment16Page() {
   return (

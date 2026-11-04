@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/safe-drinking-water-act-1974/",
+  "Safe Drinking Water Act (SDWA) (1974)",
+  "The SDWA was enacted to protect public drinking water supplies across the United States, setting national health-based standards and requiring states and water suppliers to ensure safety.",
+);
 
 export default function SafeDrinkingWaterActSdwaPage() {
   return (

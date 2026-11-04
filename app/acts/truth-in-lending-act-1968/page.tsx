@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/truth-in-lending-act-1968/",
+  "Truth in Lending Act (TILA) (1968)",
+  "TILA was enacted to ensure consumers receive clear and accurate information about the costs of credit, preventing deceptive practices and enabling informed borrowing decisions.",
+);
 
 export default function TruthInLendingActTilaPage() {
   return (

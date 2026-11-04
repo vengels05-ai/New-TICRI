@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/bankruptcy-reform-act-1978/",
+  "Bankruptcy Reform Act of 1978",
+  "The Act overhauled federal bankruptcy law, replacing the Bankruptcy Act of 1898 with the modern Bankruptcy Code, designed to balance debtor relief with creditor protections.",
+);
 
 export default function BankruptcyReformActOf1978Page() {
   return (

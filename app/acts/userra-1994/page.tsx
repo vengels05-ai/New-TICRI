@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/userra-1994/",
+  "Uniformed Services Employment and Reemployment Rights Act (USERRA) (1994)",
+  "To ensure people who leave civilian jobs for uniformed service can return to work with the same status, pay, and seniority they would have attained, and to prohibit discrimination or retaliation based on service obligations.",
+);
 
 export default function UniformedServicesEmploymentAndReemploymentRightsActUserraPage() {
   return (

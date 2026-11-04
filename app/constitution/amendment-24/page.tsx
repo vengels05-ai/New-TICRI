@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-24/",
+  "Twenty-Fourth Amendment: Ban on Federal Poll Taxes",
+  "Read the Twenty-Fourth Amendment and learn how it prohibits poll taxes in federal elections.",
+);
 
 export default function Amendment24() {
   return (

@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/criminal-justice/new-jersey-v-tlo-1985/",
+  "New Jersey v. T.L.O. (1985)",
+  "Students have reduced Fourth Amendment rights at school. Read TICRI’s plain-English overview of New Jersey v. TLO (1985).",
+);
+
 export default function NewJerseyVTlo1985Page() {
   return (
     <div className="bg-white">

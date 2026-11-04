@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/civil-rights/civil-rights-cases-1883/",
+  "Civil Rights Cases (1883)",
+  "14th Amendment doesn't apply to private discrimination. Read TICRI’s plain-English overview of Civil Rights Cases (1883).",
+);
+
 export default function CivilRightsCases1883Page() {
   return (
     <div className="bg-white">

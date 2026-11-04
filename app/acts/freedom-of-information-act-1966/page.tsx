@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/freedom-of-information-act-1966/",
+  "Freedom of Information Act (FOIA) (1966)",
+  "FOIA was enacted to guarantee public access to federal agency records, promoting government transparency and accountability.",
+);
 
 export default function FreedomOfInformationActFoiaPage() {
   return (

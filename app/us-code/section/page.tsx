@@ -1,10 +1,13 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import { Suspense } from 'react';
 import UscodeSectionRouteClient from '@/components/thesource/UscodeSectionRouteClient';
 
-export const metadata = {
-  title: 'U.S. Code Section | TICRI',
-  description: 'Read U.S. Code section text inside TICRI, served from TheSource.',
-};
+export const metadata = createPageMetadata(
+  "/us-code/section/",
+  "U.S. Code Section Reader",
+  "Read federal statutory law and U.S. Code section text in TICRI.",
+);
 
 export default function UscodeSectionPage() {
   return (

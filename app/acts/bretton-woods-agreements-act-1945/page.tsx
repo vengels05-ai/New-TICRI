@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/bretton-woods-agreements-act-1945/",
+  "Bretton Woods Agreements Act (1945)",
+  "Enacted to approve U.S. participation in the Bretton Woods Conference agreements of 1944, which created the International Monetary Fund (IMF) and the World Bank.",
+);
 
 export default function BrettonWoodsAgreementsActPage() {
   return (

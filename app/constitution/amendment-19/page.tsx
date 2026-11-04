@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-19/",
+  "Nineteenth Amendment: Women’s Suffrage",
+  "Read the Nineteenth Amendment and learn how it prohibits denying the right to vote on account of sex.",
+);
 
 export default function Amendment19Page() {
   return (

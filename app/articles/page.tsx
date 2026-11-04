@@ -1,5 +1,13 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
 import { Landmark, Building2, Scale, Map, FileEdit, Zap, Target } from 'lucide-react';
+
+export const metadata = createPageMetadata(
+  "/articles/",
+  "The Seven Articles of the U.S. Constitution",
+  "Explore the seven Articles of the U.S. Constitution, including Congress, the presidency, the courts, federalism, and the amendment process.",
+);
 
 export default function ArticlesPage() {
   const articles = [

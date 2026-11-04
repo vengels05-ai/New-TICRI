@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/bipartisan-safer-communities-act-2022/",
+  "Bipartisan Safer Communities Act (2022)",
+  "Passed in the wake of mass shootings in Buffalo, NY, and Uvalde, TX, the Act was designed to enhance background checks, fund mental health and school safety programs, and support state “red flag” laws.",
+);
 
 export default function BipartisanSaferCommunitiesActPage() {
   return (

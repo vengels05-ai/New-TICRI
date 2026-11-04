@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/defense-production-act-1950/",
+  "Defense Production Act (DPA) (1950)",
+  "Originally enacted during the Korean War, the DPA was designed to ensure the U.S. government could mobilize and prioritize industrial capacity for national defense needs, including production, materials, and technology.",
+);
 
 export default function DefenseProductionActDpaPage() {
   return (

@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/securities-exchange-act-1934/",
+  "Securities Exchange Act of 1934",
+  "The Act created the Securities and Exchange Commission (SEC) and gave it authority to regulate securities markets, broker-dealers, and ongoing disclosures by public companies.",
+);
 
 export default function SecuritiesExchangeActOf1934Page() {
   return (

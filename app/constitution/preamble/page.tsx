@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/preamble/",
+  "The Preamble to the U.S. Constitution",
+  "Read “We the People” and explore a plain-English explanation of the purposes set out in the Preamble to the U.S. Constitution.",
+);
 
 export default function PreamblePage() {
   return (

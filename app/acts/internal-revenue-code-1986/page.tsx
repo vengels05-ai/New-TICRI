@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/internal-revenue-code-1986/",
+  "Internal Revenue Code of 1986",
+  "The Internal Revenue Code of 1986 was enacted as part of the Tax Reform Act of 1986, a major overhaul of the U.S. tax system.",
+);
 
 export default function InternalRevenueCodeOf1986Page() {
   return (

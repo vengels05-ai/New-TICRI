@@ -1,10 +1,13 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import { Suspense } from 'react';
 import UscodeSearchClient from '@/components/thesource/UscodeSearchClient';
 
-export const metadata = {
-  title: 'U.S. Code | TICRI',
-  description: 'Browse, search, and read U.S. Code sections inside TICRI, served from TheSource.',
-};
+export const metadata = createPageMetadata(
+  "/us-code/",
+  "Search the U.S. Code: Federal Statutory Law",
+  "Search federal statutory law by keyword, citation, title number, or section and read U.S. Code text in TICRI.",
+);
 
 export default function UscodePage() {
   return (

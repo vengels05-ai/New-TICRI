@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/childrens-health-insurance-program-1997/",
+  "Children’s Health Insurance Program (CHIP) (1997)",
+  "CHIP was created to expand health insurance coverage for children in families with incomes too high for Medicaid eligibility but too low to afford private insurance.",
+);
 
 export default function ChildrenSHealthInsuranceProgramChipPage() {
   return (

@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/civil-rights/planned-parenthood-v-casey-1992/",
+  "Planned Parenthood v. Casey (1992)",
+  "Reaffirmed Roe with \"undue burden\" standard. Read TICRI’s plain-English overview of Planned Parenthood v. Casey (1992).",
+);
+
 export default function PlannedParenthoodVCasey1992Page() {
   return (
     <div className="bg-white">

@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-17/",
+  "Seventeenth Amendment: Direct Election of Senators",
+  "Read the Seventeenth Amendment and learn how it changed the selection of U.S. senators to direct election by voters.",
+);
 
 export default function Amendment17Page() {
   return (

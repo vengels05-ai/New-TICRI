@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-12/",
+  "Twelfth Amendment: Electing the President & Vice President",
+  "Read the Twelfth Amendment and learn how the Electoral College votes separately for president and vice president.",
+);
 
 export default function Amendment12Page() {
   return (

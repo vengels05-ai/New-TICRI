@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/federal-reserve-act-1913/",
+  "Federal Reserve Act (1913)",
+  "Enacted to create a central banking system for the United States.",
+);
 
 export default function FederalReserveActPage() {
   return (

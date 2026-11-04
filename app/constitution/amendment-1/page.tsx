@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-1/",
+  "First Amendment: Speech, Religion, Press & Assembly",
+  "Understand the First Amendment’s protections for speech, religion, the press, peaceful assembly, and petitions to government.",
+);
 
 export default function Amendment1Page() {
   return (

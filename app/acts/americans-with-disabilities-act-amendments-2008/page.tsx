@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/americans-with-disabilities-act-amendments-2008/",
+  "Americans with Disabilities Act Amendments Act (ADAAA) (2008)",
+  "The ADAAA was enacted to restore the broad protections of the Americans with Disabilities Act of 1990 after a series of Supreme Court decisions had narrowed the definition of “disability.”.",
+);
 
 export default function AmericansWithDisabilitiesActAmendmentsActAdaaaPage() {
   return (

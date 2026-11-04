@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/head-start-act-1965/",
+  "Head Start Act (1965)",
+  "Learn how Head Start supports school readiness for children from low-income families through early education, nutrition, health, and parental involvement.",
+);
 
 export default function HeadStartActPage() {
   return (

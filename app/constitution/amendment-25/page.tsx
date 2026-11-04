@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-25/",
+  "Twenty-Fifth Amendment: Presidential Succession & Disability",
+  "Read the Twenty-Fifth Amendment and learn about presidential succession, vice presidential vacancies, and presidential disability.",
+);
 
 export default function Amendment25() {
   return (

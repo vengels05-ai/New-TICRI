@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/comprehensive-environmental-response-compensation-and-liability-act-1980/",
+  "CERCLA / Superfund Act (1980) Explained",
+  "CERCLA, known as Superfund, was enacted in response to toxic waste disasters (e.g., Love Canal).",
+);
 
 export default function ComprehensiveEnvironmentalResponseCompensationAndLiabilityActCerclaSuperfundPage() {
   return (

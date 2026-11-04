@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/individuals-with-disabilities-education-act-1990/",
+  "Individuals with Disabilities Education Act (IDEA) (1990)",
+  "Congress enacted IDEA to ensure children with disabilities have the right to a free appropriate public education (FAPE) tailored to their needs, with access to special education and related services.",
+);
 
 export default function IndividualsWithDisabilitiesEducationActIdeaPage() {
   return (

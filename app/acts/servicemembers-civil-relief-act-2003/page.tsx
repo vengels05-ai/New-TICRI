@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/servicemembers-civil-relief-act-2003/",
+  "Servicemembers Civil Relief Act (SCRA) (2003)",
+  "Congress enacted the SCRA to ensure servicemembers are not unfairly disadvantaged in civil legal matters while serving on active duty.",
+);
 
 export default function ServicemembersCivilReliefActScraPage() {
   return (

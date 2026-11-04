@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/rights/freedom-of-the-press/",
+  "Freedom of the Press",
+  "The First Amendment protects the press from government censorship, allowing journalists to investigate, report, and publish information without prior restraint or government interference.",
+);
 
 export default function FreedomOfPressPage() {
   return (

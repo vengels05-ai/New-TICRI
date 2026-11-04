@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/fair-debt-collection-practices-act-1977/",
+  "Fair Debt Collection Practices Act (FDCPA) (1977)",
+  "The FDCPA was enacted to eliminate abusive, deceptive, and unfair debt collection practices, while ensuring ethical collectors could still recover debts.",
+);
 
 export default function FairDebtCollectionPracticesActFdcpaPage() {
   return (

@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-23/",
+  "Twenty-Third Amendment: D.C. Presidential Electors",
+  "Read the Twenty-Third Amendment and learn how Washington, D.C. gained electors in presidential elections.",
+);
 
 export default function Amendment23() {
   return (

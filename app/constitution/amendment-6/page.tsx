@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-6/",
+  "Sixth Amendment: Criminal Trial Rights",
+  "Understand the Sixth Amendment’s protections for speedy public trials, impartial juries, legal counsel, and confronting witnesses.",
+);
 
 export default function Amendment6Page() {
   return (

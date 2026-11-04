@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/parental-rights/meyer-v-nebraska-1923/",
+  "Meyer v. Nebraska (1923)",
+  "Parents have liberty to direct children's education. Read TICRI’s plain-English overview of Meyer v. Nebraska (1923).",
+);
+
 export default function MeyerVNebraska1923Page() {
   return (
     <div className="bg-white">

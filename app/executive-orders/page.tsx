@@ -1,11 +1,14 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import { Suspense } from 'react';
 import { Database, FileText, Search } from 'lucide-react';
 import ExecutiveOrdersClient from './ExecutiveOrdersClient';
 
-export const metadata = {
-  title: 'Executive Orders | TICRI',
-  description: 'Browse and search executive orders by president, keyword, order number, and date.',
-};
+export const metadata = createPageMetadata(
+  "/executive-orders/",
+  "Search Presidential Executive Orders",
+  "Browse and search presidential executive orders by president, keyword, order number, and date.",
+);
 
 export default function ExecutiveOrdersPage() {
   return (

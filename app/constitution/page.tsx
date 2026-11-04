@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/",
+  "The U.S. Constitution Explained",
+  "Read the U.S. Constitution, Preamble, seven Articles, and all 27 Amendments with plain-English explanations.",
+);
 
 export default function ConstitutionPage() {
   const amendments = [

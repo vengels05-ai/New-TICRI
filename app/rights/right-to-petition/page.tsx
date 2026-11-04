@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/rights/right-to-petition/",
+  "Right to Petition the Government",
+  "The Petition Clause protects the right to make complaints to the government, seek assistance, and request government action.",
+);
 
 export default function RightToPetitionPage() {
   return (

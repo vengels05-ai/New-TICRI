@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/articles/article-i/",
+  "Article I: Congress & Legislative Powers",
+  "Read Article I of the U.S. Constitution with a plain-English explanation of congress and legislative powers.",
+);
 
 export default function Article1Page() {
   return (

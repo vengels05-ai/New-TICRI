@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/cares-act-2020/",
+  "CARES Act (2020)",
+  "The CARES Act was enacted to provide massive emergency economic and public health relief during the COVID-19 pandemic, including stimulus payments, expanded unemployment benefits, business loans, and hospital funding.",
+);
 
 export default function CARESActPage() {
   return (

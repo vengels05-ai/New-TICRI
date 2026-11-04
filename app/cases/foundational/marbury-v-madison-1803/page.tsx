@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/foundational/marbury-v-madison-1803/",
+  "Marbury v. Madison (1803)",
+  "Created judicial review — courts can strike down unconstitutional laws. Read TICRI’s plain-English overview of Marbury v. Madison (1803).",
+);
+
 export default function MarburyVMadison1803Page() {
   return (
     <div className="bg-white">

@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/hatch-act-1939/",
+  "Hatch Act (1939)",
+  "The Hatch Act was passed to prevent federal employees from engaging in partisan political activity, ensuring that government functions are carried out in a nonpartisan, impartial manner.",
+);
 
 export default function HatchActPage() {
   return (

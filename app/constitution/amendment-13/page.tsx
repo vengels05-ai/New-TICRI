@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-13/",
+  "Thirteenth Amendment: Abolition of Slavery",
+  "Read the Thirteenth Amendment and its plain-English explanation of the abolition of slavery and involuntary servitude.",
+);
 
 export default function Amendment13Page() {
   return (

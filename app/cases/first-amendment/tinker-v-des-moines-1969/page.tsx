@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/first-amendment/tinker-v-des-moines-1969/",
+  "Tinker v. Des Moines Independent Community School District (1969)",
+  "Students don't lose free speech rights at school. Read TICRI’s plain-English overview of Tinker v. Des Moines (1969).",
+);
+
 export default function TinkerVDesMoines1969Page() {
   return (
     <div className="bg-white">

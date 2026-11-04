@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/controlled-substances-act-1970/",
+  "Controlled Substances Act (CSA) (1970)",
+  "The CSA consolidated federal drug laws and established a comprehensive system for regulating the manufacture, distribution, and possession of controlled substances.",
+);
 
 export default function ControlledSubstancesActCsaPage() {
   return (

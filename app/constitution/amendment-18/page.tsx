@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-18/",
+  "Eighteenth Amendment: Prohibition (Repealed)",
+  "Read the Eighteenth Amendment and learn about national alcohol prohibition and its later repeal.",
+);
 
 export default function Amendment18Page() {
   return (

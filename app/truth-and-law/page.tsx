@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/truth-and-law/",
+  "Truth & Law",
+  "TICRI’s Truth & Law resource is under development. Explore the site’s existing Constitution, federal law, and Supreme Court case resources.",
+);
+
 export default function TruthAndLawPage() {
   return (
     <main className="min-h-screen bg-[#EEF3F8]">

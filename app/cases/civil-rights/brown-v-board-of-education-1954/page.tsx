@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/civil-rights/brown-v-board-of-education-1954/",
+  "Brown v. Board of Education (1954)",
+  "Separate is not equal — segregation unconstitutional. Read TICRI’s plain-English overview of Brown v. Board of Education (1954).",
+);
+
 export default function BrownVBoardOfEducation1954Page() {
   return (
     <div className="bg-white">

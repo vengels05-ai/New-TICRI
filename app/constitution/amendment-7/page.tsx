@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-7/",
+  "Seventh Amendment: Civil Jury Trials",
+  "Read the Seventh Amendment and its plain-English explanation of the right to a jury trial in civil cases.",
+);
 
 export default function Amendment7Page() {
   return (

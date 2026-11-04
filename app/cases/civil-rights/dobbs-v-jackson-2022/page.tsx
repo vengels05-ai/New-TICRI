@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/civil-rights/dobbs-v-jackson-2022/",
+  "Dobbs v. Jackson Women’s Health Organization (2022)",
+  "Overturned Roe v. Wade — no constitutional right to abortion. Read TICRI’s plain-English overview of Dobbs v. Jackson (2022).",
+);
+
 export default function DobbsVJackson2022Page() {
   return (
     <div className="bg-white">

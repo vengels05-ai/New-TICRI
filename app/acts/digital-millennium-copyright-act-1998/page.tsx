@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/digital-millennium-copyright-act-1998/",
+  "Digital Millennium Copyright Act (DMCA) (1998)",
+  "Passed to update U.S. copyright law for the digital age, the DMCA implemented international copyright treaties and created new rules for online service providers, digital media, and technological protections.",
+);
 
 export default function DigitalMillenniumCopyrightActDmcaPage() {
   return (

@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/foundational/dartmouth-college-v-woodward-1819/",
+  "Trustees of Dartmouth College v. Woodward (1819)",
+  "Contracts are protected from state interference. Read TICRI’s plain-English overview of Dartmouth College v. Woodward (1819).",
+);
+
 export default function DartmouthCollegeVWoodward1819Page() {
   return (
     <div className="bg-white">

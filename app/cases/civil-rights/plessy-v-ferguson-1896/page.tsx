@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/civil-rights/plessy-v-ferguson-1896/",
+  "Plessy v. Ferguson (1896)",
+  "\"Separate but equal\" upheld racial segregation. Read TICRI’s plain-English overview of Plessy v. Ferguson (1896).",
+);
+
 export default function PlessyVFerguson1896Page() {
   return (
     <div className="bg-white">

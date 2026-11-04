@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/executive-power/trump-v-united-states-2024/",
+  "Trump v. United States (2024)",
+  "Absolute immunity for core acts; presumptive immunity for other official acts. Read TICRI’s plain-English overview of Trump v. United States (2024).",
+);
+
 export default function TrumpVUnitedStates2024Page() {
   return (
     <div className="bg-white">

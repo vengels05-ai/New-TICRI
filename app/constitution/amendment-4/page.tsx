@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-4/",
+  "Fourth Amendment: Searches & Seizures",
+  "Read the Fourth Amendment and learn about unreasonable searches, seizures, warrants, and probable cause.",
+);
 
 export default function Amendment4Page() {
   return (

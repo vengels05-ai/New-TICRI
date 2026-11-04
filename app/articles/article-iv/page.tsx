@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/articles/article-iv/",
+  "Article IV: Relations Between the States",
+  "Read Article IV of the U.S. Constitution with a plain-English explanation of relations between the states.",
+);
 
 export default function Article4Page() {
   return (

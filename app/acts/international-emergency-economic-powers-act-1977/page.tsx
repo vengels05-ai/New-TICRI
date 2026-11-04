@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/international-emergency-economic-powers-act-1977/",
+  "International Emergency Economic Powers Act (IEEPA) (1977)",
+  "Congress passed IEEPA to give the President authority to regulate commerce and block assets during declared national emergencies originating outside the United States, especially threats involving foreign states or actors.",
+);
 
 export default function InternationalEmergencyEconomicPowersActIeepaPage() {
   return (

@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/rehabilitation-act-1973/",
+  "Rehabilitation Act of 1973",
+  "The Act was passed to prohibit discrimination on the basis of disability in programs conducted by federal agencies, programs receiving federal funding, and federal employment.",
+);
 
 export default function RehabilitationActOf1973Page() {
   return (

@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/elementary-and-secondary-education-act-1965/",
+  "Elementary and Secondary Education Act (ESEA) (1965)",
+  "Learn how the Elementary and Secondary Education Act expanded federal education funding to help disadvantaged students and close achievement gaps.",
+);
 
 export default function ElementaryAndSecondaryEducationActEseaPage() {
   return (

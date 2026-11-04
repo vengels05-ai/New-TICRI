@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/economic-rights/west-coast-hotel-v-parrish-1937/",
+  "West Coast Hotel v. Parrish (1937)",
+  "Upheld minimum wage law, overturning Lochner era. Read TICRI’s plain-English overview of West Coast Hotel v. Parrish (1937).",
+);
+
 export default function WestCoastHotelVParrish1937Page() {
   return (
     <div className="bg-white">

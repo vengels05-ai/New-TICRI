@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/support-for-patients-and-communities-act-2018/",
+  "SUPPORT for Patients and Communities Act (2018)",
+  "The SUPPORT Act was passed to build on the Comprehensive Addiction and Recovery Act (CARA, 2016) and provide a more robust federal response to the opioid crisis, including prevention, treatment, recovery, and Medicaid reforms.",
+);
 
 export default function SUPPORTForPatientsAndCommunitiesActPage() {
   return (

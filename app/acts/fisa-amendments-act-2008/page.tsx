@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/fisa-amendments-act-2008/",
+  "FISA Amendments Act (2008)",
+  "The Act was passed to update the Foreign Intelligence Surveillance Act of 1978 (FISA) in response to modern communications technology and post-9/11 counterterrorism needs.",
+);
 
 export default function FISAAmendmentsActPage() {
   return (

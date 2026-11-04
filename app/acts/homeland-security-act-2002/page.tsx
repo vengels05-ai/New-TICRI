@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/homeland-security-act-2002/",
+  "Homeland Security Act (2002)",
+  "Passed in the aftermath of September 11, 2001, the Act created the Department of Homeland Security (DHS) to coordinate national efforts against terrorism, improve border security, and streamline emergency response.",
+);
 
 export default function HomelandSecurityActPage() {
   return (

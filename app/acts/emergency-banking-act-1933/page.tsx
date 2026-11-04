@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/emergency-banking-act-1933/",
+  "Emergency Banking Act (1933)",
+  "Explore how the Emergency Banking Act gave President Franklin D. Roosevelt powers to stabilize banks and the financial system during the Great Depression.",
+);
 
 export default function EmergencyBankingActPage() {
   return (

@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/civil-rights-act-1964/",
+  "Civil Rights Act of 1964",
+  "The Act was passed to end segregation in public places and ban employment discrimination based on race, color, religion, sex, or national origin.",
+);
 
 export default function CivilRightsActOf1964Page() {
   return (

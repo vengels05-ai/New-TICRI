@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/civil-rights/dc-v-heller-2008/",
+  "District of Columbia v. Heller (2008)",
+  "Second Amendment protects individual right to bear arms. Read TICRI’s plain-English overview of DC v. Heller (2008).",
+);
+
 export default function DcVHeller2008Page() {
   return (
     <div className="bg-white">

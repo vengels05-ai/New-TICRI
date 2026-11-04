@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/insurrection-act-1807/",
+  "Insurrection Act (1807)",
+  "Passed to provide the President with authority to deploy military forces domestically to respond to insurrections, enforce federal law, and protect civil rights when states are unwilling or unable to act.",
+);
 
 export default function InsurrectionActPage() {
   return (

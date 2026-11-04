@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-11/",
+  "Eleventh Amendment: Suits Against States",
+  "Read the Eleventh Amendment and learn about constitutional limits on federal lawsuits against states.",
+);
 
 export default function Amendment11Page() {
   return (

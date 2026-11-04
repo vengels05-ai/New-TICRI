@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/federal-election-campaign-act-1971/",
+  "Federal Election Campaign Act (FECA) (1971)",
+  "FECA was enacted to regulate campaign finance, requiring disclosure of contributions and expenditures, setting limits on donations, and establishing enforcement mechanisms.",
+);
 
 export default function FederalElectionCampaignActFecaPage() {
   return (

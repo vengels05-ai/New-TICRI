@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/civil-rights/regents-v-bakke-1978/",
+  "Regents of the University of California v. Bakke (1978)",
+  "Race can be a factor in admissions, but not quotas. Read TICRI’s plain-English overview of Regents v. Bakke (1978).",
+);
+
 export default function RegentsVBakke1978Page() {
   return (
     <div className="bg-white">

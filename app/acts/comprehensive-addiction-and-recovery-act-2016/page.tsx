@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/comprehensive-addiction-and-recovery-act-2016/",
+  "Comprehensive Addiction and Recovery Act (CARA) (2016)",
+  "CARA was enacted to combat the opioid epidemic by authorizing a comprehensive response including prevention, treatment, recovery, law enforcement, and criminal justice reform.",
+);
 
 export default function ComprehensiveAddictionAndRecoveryActCaraPage() {
   return (

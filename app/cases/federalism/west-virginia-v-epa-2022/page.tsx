@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/federalism/west-virginia-v-epa-2022/",
+  "West Virginia v. Environmental Protection Agency (2022)",
+  "EPA can't regulate power plant emissions without clear authorization. Read TICRI’s plain-English overview of West Virginia v. EPA (2022).",
+);
+
 export default function WestVirginiaVEpa2022Page() {
   return (
     <div className="bg-white">

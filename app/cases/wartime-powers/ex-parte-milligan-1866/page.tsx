@@ -1,3 +1,11 @@
+import { createPageMetadata } from '@/lib/seo';
+
+export const metadata = createPageMetadata(
+  "/cases/wartime-powers/ex-parte-milligan-1866/",
+  "Ex parte Milligan (1866)",
+  "Military tribunals can't try civilians when courts are open. Read TICRI’s plain-English overview of Ex Parte Milligan (1866).",
+);
+
 export default function ExParteMilligan1866Page() {
   return (
     <div className="bg-white">

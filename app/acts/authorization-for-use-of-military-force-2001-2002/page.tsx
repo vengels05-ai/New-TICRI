@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/authorization-for-use-of-military-force-2001-2002/",
+  "Authorization for Use of Military Force (AUMF) (2002)",
+  "The Constitution divides war powers between Congress and the President. These AUMFs served as statutory substitutes for formal declarations of war, last used in WWII.",
+);
 
 export default function AuthorizationForUseOfMilitaryForceAumfPage() {
   return (

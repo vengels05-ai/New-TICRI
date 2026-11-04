@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/family-and-medical-leave-act-1993/",
+  "Family and Medical Leave Act (FMLA) (1993)",
+  "Congress enacted FMLA to provide eligible employees with job-protected, unpaid leave for family and medical reasons, recognizing the need to balance work demands with family responsibilities.",
+);
 
 export default function FamilyAndMedicalLeaveActFmlaPage() {
   return (

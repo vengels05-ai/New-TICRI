@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/constitution/amendment-20/",
+  "Twentieth Amendment: Presidential & Congressional Terms",
+  "Read the Twentieth Amendment and learn about the start of presidential and congressional terms and presidential succession.",
+);
 
 export default function Amendment20Page() {
   return (

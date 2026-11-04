@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/acts/emergency-medical-treatment-and-labor-act-1986/",
+  "Emergency Medical Treatment and Labor Act (EMTALA) (1986)",
+  "EMTALA was enacted to prevent “patient dumping,” where hospitals refused to treat or transferred patients unable to pay.",
+);
 
 export default function EmergencyMedicalTreatmentAndLaborActEmtalaPage() {
   return (

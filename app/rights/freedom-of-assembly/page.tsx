@@ -1,4 +1,12 @@
+import { createPageMetadata } from '@/lib/seo';
+
 import Link from 'next/link';
+
+export const metadata = createPageMetadata(
+  "/rights/freedom-of-assembly/",
+  "Freedom of Assembly",
+  "The right to peacefully assemble allows people to gather together for protests, demonstrations, meetings, and collective action.",
+);
 
 export default function FreedomOfAssemblyPage() {
   return (
