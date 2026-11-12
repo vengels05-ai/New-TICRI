@@ -22,9 +22,9 @@ The existing generic readers remain available for the broader live datasets. Exp
 
 ## Remaining account actions
 
-### Redirect www to the preferred host
+### Redirect www to the preferred host — completed directly
 
-The live www host still serves pages without redirecting. Set a permanent host redirect in the Cloudflare account, following [Cloudflare’s www-to-apex guide](https://developers.cloudflare.com/pages/how-to/www-redirect/):
+The tested `services/www-redirect` Worker is deployed on `www.ticri.org/*` using the existing Wrangler OAuth login. Public checks confirmed HTTP 301 to the apex for both the homepage and a nested opinion URL with its complete query string. POST and other non-GET/HEAD requests use HTTP 308 to preserve their bodies.
 
 | Setting | Value |
 | --- | --- |
@@ -35,13 +35,24 @@ The live www host still serves pages without redirecting. Set a permanent host r
 | Subpath matching | On |
 | Preserve path suffix | On |
 
-Check any existing redirects before enabling a new rule. Verify both the homepage and a nested URL with query parameters. The existing www host already resolves; changing its DNS is not necessary just to add a matching redirect rule.
+There were no existing Worker routes before deployment. No DNS changes were needed. The apex sitemap still returns HTTP 200 with 375 URLs.
 
-Pages `_redirects` does not support domain-level matching, so adding an absolute source host to that file would not fix this. See [supported Pages redirects](https://developers.cloudflare.com/pages/configuration/redirects/). The saved Wrangler login does not include redirect-rule editing permissions, and the browser account connection was unavailable; this account action has not been performed.
+Pages `_redirects` does not support domain-level matching. The existing login lacked ruleset-editing permissions but had Worker and route permissions, so a narrowly scoped Worker provided the direct alternative. See [Worker routing](https://developers.cloudflare.com/workers/configuration/routing/routes/) and the service README for validation and rollback.
+
+### Notify participating search engines directly
+
+IndexNow can verify domain ownership using the public `indexnow-key.txt` file instead of an account connection. After that file is live, run:
+
+```sh
+npm run seo:notify
+npm run seo:notify -- --submit
+```
+
+The first command previews the canonical URLs from the live sitemap. The second sends them to the IndexNow API used by Bing and other participating search engines. The script verifies the deployed key, rejects URLs on other hosts, and reports the actual response status. The verification key is intentionally public and is not a private account credential. See [IndexNow documentation](https://www.indexnow.org/documentation).
 
 ### Submit and inspect the sitemap
 
-In the verified `ticri.org` property, submit `https://ticri.org/sitemap.xml` in [Google Search Console](https://support.google.com/webmasters/answer/7451001) and [Bing Webmaster Tools](https://www2.bing.com/webmasters/help/sitemaps-3b5cf6ed). Ownership verification and submission require account access; neither submission has been performed in this chat.
+Google can discover the live sitemap through the existing robots.txt declaration. Formal submission and indexing reports in [Google Search Console](https://support.google.com/webmasters/answer/7451001) still require the owner's Google sign-in or an API token with the `webmasters` scope. There are no existing Google CLI credentials on this machine. This needs no ChatGPT plugin, but authentication cannot be replaced by a public endpoint. IndexNow does not submit URLs to Google.
 
 After the follow-up deploys, inspect the homepage, First Amendment, a state constitution, and `/cases/opinions/brown-v-board-of-education-1954/`. Confirm the chosen canonical, rendered content, and indexability. Inspect a nonexistent opinion slug to confirm HTTP 404. Record Search Console impressions, clicks, and landing pages as the starting point for measuring discovery.
 
