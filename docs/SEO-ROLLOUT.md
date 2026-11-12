@@ -20,7 +20,7 @@ Only verified entries in `data/scotus/curated-mapping.json` are published. `lib/
 
 The existing generic readers remain available for the broader live datasets. Expanding record-specific pages to additional cases, bills, executive orders, and U.S. Code sections requires verified, substantive source records and review of static build limits.
 
-## Remaining account actions
+## Hosting and search discovery
 
 ### Redirect www to the preferred host — completed directly
 
@@ -41,7 +41,9 @@ Pages `_redirects` does not support domain-level matching. The existing login la
 
 ### Notify participating search engines directly
 
-IndexNow can verify domain ownership using the public `indexnow-key.txt` file instead of an account connection. After that file is live, run:
+The public `indexnow-key.txt` file is deployed, and direct IndexNow submission accepted all **375 canonical URLs with HTTP 200**. Its initial response requested a wait for domain verification; a later retry succeeded. No ChatGPT plugin or separate account connection was used.
+
+For future submissions after publishing substantive changes, run:
 
 ```sh
 npm run seo:notify
@@ -54,6 +56,6 @@ The first command previews the canonical URLs from the live sitemap. The second 
 
 Google can discover the live sitemap through the existing robots.txt declaration. Formal submission and indexing reports in [Google Search Console](https://support.google.com/webmasters/answer/7451001) still require the owner's Google sign-in or an API token with the `webmasters` scope. There are no existing Google CLI credentials on this machine. This needs no ChatGPT plugin, but authentication cannot be replaced by a public endpoint. IndexNow does not submit URLs to Google.
 
-After the follow-up deploys, inspect the homepage, First Amendment, a state constitution, and `/cases/opinions/brown-v-board-of-education-1954/`. Confirm the chosen canonical, rendered content, and indexability. Inspect a nonexistent opinion slug to confirm HTTP 404. Record Search Console impressions, clicks, and landing pages as the starting point for measuring discovery.
+Production checks confirmed the updated First Amendment metadata, the Brown and Roe opinion pages' text and breadcrumbs, and HTTP 404 for a nonexistent opinion slug. The sitemap serves 375 URLs. Record Search Console impressions, clicks, and landing pages after the owner signs in to establish a traffic baseline. IndexNow acceptance confirms receipt, not a promise of indexing or ranking.
 
 No analytics tracker or third-party account connection has been installed. Site-wide legal-content review and mobile performance measurement remain additional work.
