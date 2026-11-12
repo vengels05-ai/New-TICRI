@@ -60,6 +60,7 @@ export default async function CasesSearchPage() {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
               {[
+                { label: 'Landmark Opinion Library', href: '/cases/opinions/' },
                 { label: 'Constitutional Foundations', href: '/cases/foundational' },
                 { label: 'Civil Rights', href: '/cases/civil-rights' },
                 { label: 'Criminal Justice', href: '/cases/criminal-justice' },

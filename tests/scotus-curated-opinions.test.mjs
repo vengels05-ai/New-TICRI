@@ -29,7 +29,7 @@ test('every verified curated opinion has substantive text and a working reader U
     const source = fs.readFileSync(path.join(root, 'app/cases', entry.category, entry.slug, 'page.tsx'), 'utf8');
     assert.doesNotMatch(source, /href="\/cases\/opinion\/\d+/, entry.slug);
     if (entry.id === null) continue;
-    assert.ok(source.includes(`href="/cases/opinion/?id=${entry.id}"`), entry.slug);
+    assert.ok(source.includes(`href="/cases/opinions/${entry.slug}/"`), entry.slug);
     const detail = JSON.parse(fs.readFileSync(path.join(root, `data/scotus/cases/${entry.id}.json`), 'utf8'));
     const text = detail.opinions.map(opinion => opinion.text || '').join('').replace(/<[^>]*>/g, '');
     assert.ok(text.trim().length > 2000, `${entry.slug}: substantive opinion text`);

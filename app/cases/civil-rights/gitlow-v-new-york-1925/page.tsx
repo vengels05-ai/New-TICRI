@@ -38,7 +38,7 @@ export default function GitlowVNewYork1925Page() {
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
               <a 
-                href="/cases/opinion/?id=100708"
+                href="/cases/opinions/gitlow-v-new-york-1925/"
                 className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-bold transition-colors"
               >
                 Read Full Text Online →

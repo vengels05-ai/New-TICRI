@@ -38,7 +38,7 @@ export default function GibbonsVOgden1824Page() {
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
               <a 
-                href="/cases/opinion/?id=85412"
+                href="/cases/opinions/gibbons-v-ogden-1824/"
                 className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-bold transition-colors"
               >
                 Read Full Text Online →

@@ -124,6 +124,12 @@ export default function CasesPage() {
                     Open Case Search
                   </a>
                   <a
+                    href="/cases/opinions/"
+                    className="inline-flex items-center rounded-lg border border-gray-600 bg-gray-800 px-5 py-3 font-medium text-white transition-colors hover:bg-gray-700"
+                  >
+                    Read Landmark Opinions
+                  </a>
+                  <a
                     href="/cases"
                     className="inline-flex items-center bg-gray-800 text-white px-5 py-3 rounded-lg font-medium border border-gray-600 hover:bg-gray-700 transition-colors"
                   >

@@ -38,7 +38,7 @@ export default function LovingVVirginia1967Page() {
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
               <a 
-                href="/cases/opinion/?id=107480"
+                href="/cases/opinions/loving-v-virginia-1967/"
                 className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-bold transition-colors"
               >
                 Read Full Text Online →

@@ -38,7 +38,7 @@ export default function DartmouthCollegeVWoodward1819Page() {
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
               <a 
-                href="/cases/opinion/?id=85282"
+                href="/cases/opinions/dartmouth-college-v-woodward-1819/"
                 className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-bold transition-colors"
               >
                 Read Full Text Online →

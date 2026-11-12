@@ -38,7 +38,7 @@ export default function WestCoastHotelVParrish1937Page() {
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
               <a 
-                href="/cases/opinion/?id=102784"
+                href="/cases/opinions/west-coast-hotel-v-parrish-1937/"
                 className="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-bold transition-colors"
               >
                 Read Full Text Online →

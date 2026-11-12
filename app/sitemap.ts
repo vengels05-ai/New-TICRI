@@ -3,6 +3,7 @@ import { readdirSync } from 'node:fs';
 import path from 'node:path';
 import { canonicalUrl, NON_INDEXABLE_PATHS } from '@/lib/seo';
 import { usStates } from '@/lib/usStates';
+import { getCuratedOpinionEntries, opinionPath } from '@/lib/curatedOpinions';
 
 export const dynamic = 'force-static';
 
@@ -22,6 +23,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   visit(path.join(process.cwd(), 'app'));
   for (const state of usStates) routes.add(`/state-constitutions/${state.slug}/`);
+  for (const opinion of getCuratedOpinionEntries()) routes.add(opinionPath(opinion.slug));
 
   // Omit lastModified rather than claiming every page changed on each build.
   return [...routes].filter(route => !NON_INDEXABLE_PATHS.has(route)).sort().map(route => ({ url: canonicalUrl(route) }));

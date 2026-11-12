@@ -43,6 +43,18 @@ function visit(directory) {
         try { JSON.parse(payload); } catch { errors.push(`${route}: invalid JSON-LD`); }
       }
 
+      if (/^\/cases\/opinions\/[^/]+\/$/.test(route)) {
+        const texts = [...html.matchAll(/<div\b([^>]*\bdata-opinion-text[^>]*)>([\s\S]*?)<\/div>/g)];
+        let totalChars = 0;
+        for (const [, tag, content] of texts) {
+          const actualLength = decode(content).length;
+          totalChars += actualLength;
+          check(actualLength === Number(attributes(tag)['data-source-length']), `${route}: opinion text was clipped in the exported HTML`);
+        }
+        check(totalChars >= 2000, `${route}: missing substantive opinion text in the initial HTML`);
+        check(html.includes('BreadcrumbList') && html.includes('https://www.courtlistener.com/opinion/'), `${route}: missing breadcrumbs or original source link`);
+      }
+
       for (const [tag] of html.matchAll(/<a\b[^>]*>/g)) {
         const href = attributes(tag).href;
         if (!href?.startsWith('/') || href.startsWith('//')) continue;
